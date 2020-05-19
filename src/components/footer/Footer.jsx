@@ -31,7 +31,7 @@ export default class Footer extends Component {
                             </div>
                             <div className="footer-description">
                                 <p> Ana Moretto </p>
-                                <p> anamoretto@4pressnews.com.br </p>
+                                <p> anamoretto@4pressnews.com. </p>
                                 <p> Tel: (11) 5096-0439 </p>
                                 <p> Cel: (11) 97300-8584 </p>
                             </div>
