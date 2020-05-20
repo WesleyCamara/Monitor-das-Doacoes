@@ -6,6 +6,7 @@ function GraficoIndicadores() {
     <section >
       <div>
         <h2>Empresas com mais doações</h2>
+        {/* aqui vem o grafico  */}
         <div> Gráfico</div>
         <div>ver detalhes</div>
       </div>
