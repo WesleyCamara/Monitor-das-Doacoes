@@ -1,0 +1,43 @@
+.container-menu {
+    width: 100%;
+    height: 80px;
+    background: #F3F3F3;
+    margin: 0;
+    display: flex;
+    /* align-content: center; */
+}
+
+.menu {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu-title h1 {
+    font-size: 20px;
+    font-family: 'Rubik', sans-serif;
+}
+
+.menu-language {
+    font-size: 20px;
+    font-family: 'Rubik', sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70px
+}
+
+.menu-language a {
+    font-family: 'Rubik', sans-serif;
+    font-size: 20px;
+    color: #000;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.ativo a {
+    color: #6320EE;
+    text-decoration: underline;
+}
