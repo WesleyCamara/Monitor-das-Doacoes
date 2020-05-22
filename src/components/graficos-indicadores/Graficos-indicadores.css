@@ -1,8 +1,12 @@
-
-/* Reset de margin nos elementos de texto e padronização da fonte  */
-h3{
-    margin: 0;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
 }
+
+
+
 
 .section-grafico-container {
   width: 100%;
@@ -29,16 +33,11 @@ h3{
 /* Estilos do item indicadores ---------------------  */
 .div-grafico {
   background: #f3f3f3;
-  flex: 1;
-  padding-left: 15vw;
+  width: 50%;
+  padding-left: 10vw;
   border-radius: 5px;
 }
 
-
-/* Muda a cor do titulo do gráfico  */
-/* .div-grafico .titulo {
-  color: #6320ee;
-} */
 
 .grafico{
 margin-right: 30px;
@@ -47,20 +46,39 @@ margin-right: 30px;
 
 /* Posiciona o item  */
 .div-indicadores {
-  flex: 1;
-  padding-right: 10vw;
-  padding-left: 100px;
+  width: 50%;
+  padding-right: 9vw;
+  padding-left: 130px;
 }
+
 
 .indicadores-subitem{
-    margin-bottom: 130px;
+  display: flex;
+  margin-bottom: 130px;
 }
 
+.linhas{
+  display: block;
+  content: "casa";
+  width: 800px;
+  height: 2px;
+  background: #E1DFDF;
+  position: relative;
+  left: -80px;
+  top: -70px;
+}
+
+.imagem-mao-dinheiro {
+  position: relative;
+  left: -30px;
+}
 h3,
 .span-h3 {
   font-size: 37px;
   line-height: 44px;
   font-weight: 300;
+  margin-bottom: 16px;
+
   
 }
 
@@ -83,7 +101,13 @@ span {
     line-height: 33px;
 }
 
+.total-doadores{
+  width: 181px;
+}
 
+.maior-doador{
+  min-width: 267px;
+}
 
 
 
@@ -103,4 +127,5 @@ span {
     margin-top: 100px;
     align-items: center;
     justify-content: center;
+    text-transform: uppercase;
 }
