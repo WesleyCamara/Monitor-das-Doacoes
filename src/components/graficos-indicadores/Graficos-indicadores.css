@@ -1,0 +1,106 @@
+
+/* Reset de margin nos elementos de texto e padronização da fonte  */
+h3{
+    margin: 0;
+}
+
+.section-grafico-container {
+  width: 100%;
+  font-family: "Rubik", sans-serif;
+  color: #222222;
+  margin: 0;
+
+}
+
+/* Coloca os elementos lado a lado  */
+.grafico-indicadores {
+  display: flex;
+}
+
+/* Titulo dos dois itens  */
+.titulo {
+  font-size: 50px;
+  margin-top: 140px;
+  margin-bottom: 86px;
+  font-weight: 700;
+}
+
+
+/* Estilos do item indicadores ---------------------  */
+.div-grafico {
+  background: #f3f3f3;
+  flex: 1;
+  padding-left: 15vw;
+  border-radius: 5px;
+}
+
+
+/* Muda a cor do titulo do gráfico  */
+/* .div-grafico .titulo {
+  color: #6320ee;
+} */
+
+.grafico{
+margin-right: 30px;
+}
+
+
+/* Posiciona o item  */
+.div-indicadores {
+  flex: 1;
+  padding-right: 10vw;
+  padding-left: 100px;
+}
+
+.indicadores-subitem{
+    margin-bottom: 130px;
+}
+
+h3,
+.span-h3 {
+  font-size: 37px;
+  line-height: 44px;
+  font-weight: 300;
+  
+}
+
+.span-h3 {
+  color: #6320ee;
+  font-weight: bold;
+}
+
+span {
+  color: #6320ee;
+  font-weight: bold;
+}
+
+.indicadores-subitem-doadores{
+    display: flex;
+}
+
+.indicadores-subitem-doadores p{
+    margin-right: 100px;
+    line-height: 33px;
+}
+
+
+
+
+
+
+/* Botão ver mais */
+
+.grafico-indicadores-botao{
+    display: flex;
+    width: 334px;
+    height: 79px;
+    background-color:  #6320ee;
+    border-radius: 40px;
+    font-size: 24px;
+    line-height: 28px;
+    color: #FFFFFF;
+    margin: 0 auto;
+    margin-top: 100px;
+    align-items: center;
+    justify-content: center;
+}

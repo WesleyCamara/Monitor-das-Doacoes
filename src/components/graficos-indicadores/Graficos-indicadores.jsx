@@ -1,24 +1,16 @@
 import React from "react";
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
+import './Graficos-indicadores.css'
 
-// categories: [
-//   'Itaú',
-//   'Vale',
-//   'Cogna',
-//   'AMBEV',
-//   "Rede D'or",
-//   'Bradesco, Itaú e Santander',
-//   'Alcoa',
-//   'Nestlé',
-//   'iFood',
-//   'BRF',
-//   'Outros Doadores (200)'
-// ]
+
 
 const options = {
   chart: {
     type: "column",
+    backgroundColor: "#F3F3F3",
+    
+
   },
   colors: ["#4DB6AC"],
   title: {
@@ -28,9 +20,11 @@ const options = {
     type: "category",
     labels: {
       rotation: 0,
+
       style: {
         fontSize: "13px",
-        fontFamily: "Verdana, sans-serif",
+        fontFamily: "rubik, sans-serif",
+        
       },
     },
   },
@@ -39,39 +33,46 @@ const options = {
     title: {
       text: "",
     },
-    format: "R${point.y:.2f}",
+    format: "{point.y:,.1f}",
+    gridLineDashStyle: 'Dash',
+    
   },
   legend: {
     enabled: false,
   },
   tooltip: {
-    pointFormat: "Population in 2017: <b>{point.y:.1f} millions</b>",
+    enable: false,
   },
   series: [
     {
-      name: "Population",
+      name: "Valor doado",
       data: [
-        ["Shanghai", 5245564.2],
-        ["Beijing", 3245564.2],
-        ["Karachi", 7245564.2],
-        ["Shenzhen", 1245564.2],
-        ["Guangzhou", 5245564.21],
-        ["Istanbul", 2045564.2],
-        ["Mumbai", 15242422.4],
-        ["Moscow", 12245245.2],
-        ["São Paulo", 12542522.0],
-        ["Delhi", 1252421.7],
+        ["Itaú", 1247100000],
+        ["Vale", 500000000],
+        ["Cogna", 267000000],
+        ["AMBEV", 110000000],
+        ["Rede D'or", 108000000],
+        ["Bradesco, Itaú e Santander", 80000000],
+        ["Alcoa", 77000000],
+        ["Nestlé", 55000000],
+        ["iFood", 52000000],
+        ["BRF", 50000000],
+        ["Outros Doadores (200)", 1307626767],
       ],
+
       dataLabels: {
         enabled: true,
         rotation: -90,
         color: "#222222",
+
         // align: 'right',
-        format: "R${point.y:.2f}", // one decimal
+        format: "{point.y:,.0f}", // one decimal
         y: 65, // 10 pixels down from the top
         style: {
-          fontSize: "13px",
-          fontFamily: "Verdana, sans-serif",
+          fontSize: "1em",
+          fontFamily: "rubik, sans-serif",
+          fontWeight: "400",
+          textOutline: "none",
         },
       },
     },
@@ -80,79 +81,80 @@ const options = {
 
 function GraficoIndicadores() {
   return (
-    <section>
-      <div>
-        <h2>Empresas com mais doações</h2>
-
+    <section className="section-grafico-container">
+      <div className="grafico-indicadores">
+      <div className="div-grafico">
+        <h2 className="titulo">Empresas com mais doações</h2>
+        <div className="grafico">
         <HighchartsReact highcharts={Highcharts} options={options} />
-
-        <div> Gráfico</div>
-        <div>ver detalhes</div>
+        </div>
+        <div className="grafico-indicadores-botao">ver detalhes</div>
       </div>
 
-      <div>
-        <h2>Resumo</h2>
+      <div className="div-indicadores">
+        <h2 className="titulo">Resumo</h2>
 
-        <div>
-          <div>
+        <div className="indicadores-subitem">
+          <div >
             <h3> Doações (mínimo R$3.000)</h3>
-            <span>R$ 3.853.726.767</span>
+            <span className="span-h3">R$ 3.853.726.767</span>
           </div>
 
-          <div>
+          <div className="indicadores-subitem-doadores">
             <p>
               Total de doadores <br />
               <span>210</span>
             </p>
 
             <p>
-              Maior doador: <span>Itaú</span> <br />
-              R$<span>1.127.100.000</span>
+              Maior doador: Itaú <br />
+              <span>R$ 1.127.100.000</span>
               <span>(32%)</span>
             </p>
           </div>
         </div>
 
-        <div>
-          <div>
+        <div className="indicadores-subitem">
+          <div >
             <h3>Capanhas Doações </h3>
-            <span>R$ 278.275.247</span>
+            <span className="span-h3">R$ 278.275.247</span>
           </div>
 
-          <div>
+          <div className="indicadores-subitem-doadores">
             <p>
               Total de doadores <br />
               <span>191.032</span>
             </p>
 
             <p>
-              Maior Campanha: <span>Na Luta contra a COVID-19</span> <br />
-              R$<span>38.144.000</span>
+              Maior Campanha: Na Luta contra a COVID-19 <br />
+              <span>R$ 38.144.000</span>
               <span>(14%)</span>
             </p>
           </div>
         </div>
 
-        <div>
-          <div>
+        <div className="indicadores-subitem">
+          <div >
             <h3>Lives de Doações</h3> <br />
-            <span>R$ 12.258.946</span>
+            <span className="span-h3">R$ 12.258.946</span>
           </div>
 
-          <div>
+          <div className="indicadores-subitem-doadores">
             <p>
               Total de doadores <br />
               <span>191.032</span>
             </p>
 
             <p>
-              Maior Live: <span>Fome de Música (inclui Sandy&Junior)</span>{" "}
+              Maior Live: Fome de Música (inclui Sandy&Junior)
               <br />
-              R$<span>6.750.757</span>
+              <span>R$ 6.750.757</span>
               <span>(55%)</span>
             </p>
           </div>
         </div>
+      </div>
       </div>
     </section>
   );
