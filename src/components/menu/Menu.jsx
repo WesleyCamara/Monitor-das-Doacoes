@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-import Menucss from './Menu.css';
+import './Menu.css';
+import { Link } from "react-router-dom";
+import { FormattedMessage } from "react-intl";
 
 export default class Menu extends Component {
     render() {
@@ -7,14 +9,17 @@ export default class Menu extends Component {
             <div className="container-menu">
                 <div className="menu">
                     <div className="menu-title">
-                        <h1>Monitor das doações COVID 19</h1>
+                        <h1>
+                        <FormattedMessage id="menu-title" />
+                        </h1>
                     </div>
                     <div className="menu-language">
                         <div className="menu-pt ativo">
-                            <a href="">PT</a>
+                            {/* <a href="">PT</a> */}
+                            <Link to="/pt">PT</Link>
                         </div>
                         <div className="menu-en">
-                            <a href="">EN</a>
+                            <Link to="/en">EN</Link>
                         </div>
                     </div>
                 </div>

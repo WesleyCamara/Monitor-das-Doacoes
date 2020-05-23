@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Footercss from "./Footer.css"
+import "./Footer.css"
 import abcr from '../../assets/img/footer/abcr.png';
 import promocao from '../../assets/img/footer/movimento-por-uma-cultura-de-doação.png';
 import qrcode from '../../assets/img/footer/qr-code-footer.png';
@@ -8,6 +8,7 @@ import instagram from '../../assets/img/footer/instagram.svg';
 import facebook from '../../assets/img/footer/facebook.svg';
 import linkedin from '../../assets/img/footer/linkedin.svg';
 import youtube from '../../assets/img/footer/youtube.svg';
+import { FormattedMessage } from "react-intl";
 
 export default class Footer extends Component {
     render() {
@@ -17,7 +18,9 @@ export default class Footer extends Component {
                     <div className="footer-first">
                         <div className="footer-first-promocao">
                             <div className="footer-title">
-                                <h3>Promoção</h3>
+                                <h3>
+                                <FormattedMessage id="footer-title-promotion"/>
+                                </h3>
                             </div>
                             <div className="footer-img-promocao">
                                 <img src={(promocao)}/>
@@ -26,7 +29,9 @@ export default class Footer extends Component {
 
                         <div className="footer-first-realizacao">
                             <div className="footer-title">
-                                <h3>Realização</h3>
+                                <h3>
+                                <FormattedMessage id="footer-title-realization"/>
+                                </h3>
                             </div>
                             <div className="footer-img-realizacao">
                                 <img src={(abcr)} />
@@ -35,7 +40,9 @@ export default class Footer extends Component {
 
                         <div className="footer-first-imprenssa">
                             <div className="footer-title">
-                                <h3>Imprensa ABCR</h3>
+                                <h3>
+                                <FormattedMessage id="footer-title-press"/>
+                                </h3>
                             </div>
                             <div className="footer-description">
                                 <p> <span className="footer-description-name">Ana Moretto</span> </p>
@@ -50,7 +57,9 @@ export default class Footer extends Component {
                             </div>
                             <div className="footer-link">
                                 <a href="https://www.paypal.com/donate/?token=1bQivV0Os67wJQiuN9aFb59wqVx0KPQ44Z_CG-3nk-qiwMF8EmdXAyvQUlIEyxMp8DwMYG&country.x=BR&locale.x=BR" target="_blank">
-                                    <p> Clique e doe para a ABCR desenvolver ainda mais o Monitor das Doações </p>
+                                    <p>
+                                    <FormattedMessage id="footer-link-donation"/>
+                                    </p>
                                 </a>
                             </div>
                         </div>
@@ -60,7 +69,9 @@ export default class Footer extends Component {
                         <div className="footer-secondary-compartilhar">
                             <a href="https://web.facebook.com/sharer.php?u=https%3A%2F%2Fwww.monitordasdoacoes.org.br&_rdc=1&_rdr" target="_blank">
                                 <img src={(facebook)} />
-                                <h4>Compartilhar</h4>
+                                <h4>
+                                <FormattedMessage id="footer-secondary-compartilhar"/>
+                                </h4>
                             </a>
                         </div>
                         <div className="footer-secondary-sociais">
