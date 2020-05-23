@@ -1,0 +1,22 @@
+{
+    "en-US": {
+        "_comment-menu": "Idioma Menu",
+        "menu-title": "Donation monitor",
+        "_comment-footer": "Idioma Footer",
+        "footer-title-promotion": "Promotion",
+        "footer-title-realization": "Realization",
+        "footer-title-press": "Press office ABCR",
+        "footer-link-donation": "Click and donate to ABCR to further develop the Donation Monitor",
+        "footer-secondary-compartilhar": "share"
+    },
+    "pt-BR": {
+        "_comment-menu": "Idioma Menu",
+        "menu-title": "Monitor das doações",
+        "_comment-footer": "Idioma Footer",
+        "footer-title-promotion": "Promoção",
+        "footer-title-realization": "Realização",
+        "footer-title-press": "Imprensa ABCR",
+        "footer-link-donation": "Clique e doe para a ABCR desenvolver ainda mais o Monitor das Doações",
+        "footer-secondary-compartilhar": "compartilhar"
+    }
+}
