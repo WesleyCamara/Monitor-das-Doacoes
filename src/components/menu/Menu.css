@@ -37,9 +37,10 @@
     text-decoration: none;
 }
 
-.ativo a {
+.menu-language a:hover {
     color: #6320EE;
-    text-decoration: underline;
+    /* padding-bottom: -15px; */
+    border-bottom: 3px solid #6320EE;
 }
 
 @media only screen and (max-width: 540px) {

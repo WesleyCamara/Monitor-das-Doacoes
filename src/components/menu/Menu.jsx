@@ -14,7 +14,7 @@ export default class Menu extends Component {
                         </h1>
                     </div>
                     <div className="menu-language">
-                        <div className="menu-pt ativo">
+                        <div className="menu-pt">
                             {/* <a href="">PT</a> */}
                             <Link to="/pt">PT</Link>
                         </div>
