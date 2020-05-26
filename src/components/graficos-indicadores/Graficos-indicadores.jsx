@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 import "./Graficos-indicadores.css";
-import handMoney from '../../assets/img/graficos-indicadores/hand-money.png';
+import handMoney from "../../assets/img/graficos-indicadores/hand-money.png";
+import { FormattedMessage } from "react-intl";
 
 Highcharts.setOptions({
   lang: {
@@ -14,7 +15,6 @@ const options = {
   chart: {
     type: "column",
     backgroundColor: "#F3F3F3",
-    
   },
   colors: ["#4DB6AC"],
   title: {
@@ -23,7 +23,7 @@ const options = {
   plotOptions: {
     series: {
       groupPadding: 0,
-      borderColor: 'none'
+      borderColor: "none",
     },
   },
   xAxis: {
@@ -90,100 +90,112 @@ const options = {
   ],
 };
 
-function GraficoIndicadores() {
+
+
+function graficosIndicators() {
   return (
-    <section className="section-grafico-container">
-      <div className="grafico-indicadores">
-        <div className="div-grafico">
-          <h2 className="titulo">Empresas com mais doações</h2>
-          <div className="grafico">
+    <section className="section-chart-container">
+      <div className="chart-indicators">
+        <div className="div-chart">
+          <h2 className="chart-title">
+            <FormattedMessage id="chart-indicators-chart" />
+          </h2>
+          <div className="chart">
             <HighchartsReact highcharts={Highcharts} options={options} />
           </div>
-          <div className="grafico-indicadores-botao">ver detalhes</div>
+          <div className="chart-indicators-button"> <FormattedMessage id="chart-indicators-button" /></div>
         </div>
 
-        <div className="div-indicadores">
-          <h2 className="titulo">Resumo</h2>
+        <div className="div-indicators">
+          <h2 className="indicators-title"><FormattedMessage id="indicators-title" /></h2>
 
-          <div className="indicadores-subitem">
-          <div><img className="imagem-mao-dinheiro" src={handMoney} /></div>
+          <div className="indicators-subitem">
             <div>
-           <div>
-              <h3>Doações (mínimo R$3.000) </h3>
-              <h3>
-                <span className="span-h3">R$ 3.853.726.767</span>
-              </h3>
+              <img className="img-hand-money" src={handMoney} />
             </div>
-
-            <div className="indicadores-subitem-doadores">
+            <div>
               <div>
-                <p className="total-doadores">Total de doadores</p>
-                <p>
-                  <span>210</span>
-                </p>
+                <h3><FormattedMessage id="indicators-donations" /> </h3>
+                <h3>
+                  <span className="span-h3">R$ 3.853.726.767</span>
+                </h3>
               </div>
 
-              <div className="maior-doador">
-                <p>Maior doador: Itaú</p>
-                <p >
-                  <span className="valor-doado">R$ 1.247.100.000</span>
-                  <span>(32%)</span>
-                </p>
+              <div className="indicators-subitem-doadores">
+                <div>
+                  <p className="total-doadores"><FormattedMessage id="total-donors" /></p>
+                  <p>
+                    <span>210</span>
+                  </p>
+                </div>
+
+                <div className="biggest-donor">
+                  <p><FormattedMessage id="largest-donor" />: Itaú</p>
+                  <p>
+                    <span className="valor-doado">R$ 1.247.100.000</span>
+                    <span>(32%)</span>
+                  </p>
+                </div>
               </div>
-            </div>
             </div>
           </div>
           <div className="linhas"></div>
-          <div className="indicadores-subitem" >
-          <div><img className="imagem-mao-dinheiro" src={handMoney} /></div>
+          <div className="indicators-subitem">
             <div>
-           <div>
-              <h3>Capanhas Doações </h3>
-              <h3>
-                <span className="span-h3">R$ 278.275.247</span>
-              </h3>
+              <img className="img-hand-money" src={handMoney} />
             </div>
-
-            <div className="indicadores-subitem-doadores">
+            <div>
               <div>
-                <p className="total-doadores">Total de doadores</p>
-                <p>
-                  <span>191.032</span>
-                </p>
+                <h3><FormattedMessage id="donations-campaigns" /></h3>
+                <h3>
+                  <span className="span-h3">R$ 278.275.247</span>
+                </h3>
               </div>
 
-              <div className="maior-doador">
-                <p>Maior Campanha: Na Luta contra a COVID-19</p>
-                <p>
-                  <span className="valor-doado">R$ 38.144.000</span>
-                  <span>(14%)</span>
-                </p>
+              <div className="indicators-subitem-doadores">
+                <div>
+                  <p className="total-doadores"><FormattedMessage id="total-donors" /></p>
+                  <p>
+                    <span>191.032</span>
+                  </p>
+                </div>
+
+                <div
+                  className="biggest-donor"
+                >
+                  <p><FormattedMessage id="largest-campaign" />: Na Luta contra a COVID-19</p>
+                  <p>
+                    <span className="valor-doado">R$ 38.144.000</span>
+                    <span>(14%)</span>
+                  </p>
+                </div>
               </div>
-            </div>
             </div>
           </div>
-    <div className="linhas"></div>
-          <div className="indicadores-subitem">
-          <div><img className="imagem-mao-dinheiro" src={handMoney} /></div>
-          <div>
+          <div className="linhas"></div>
+          <div className="indicators-subitem">
             <div>
-              <h3>Lives de Doações</h3>
-              <h3>
-                <span className="span-h3">R$ 12.258.946</span>
-              </h3>
+              <img className="img-hand-money" src={handMoney} />
             </div>
-
-            <div className="indicadores-subitem-doadores">
-
-
+            <div>
               <div>
-                <p className="maior-doador">Maior Live: Fome de Música (inclui Sandy&Junior) </p>
-
-                <p>
-                  <span>R$ 6.750.757</span>
-                  <span>(55%)</span>
-                </p>
+                <h3><FormattedMessage id="donations-lives" /></h3>
+                <h3>
+                  <span className="span-h3">R$ 12.258.946</span>
+                </h3>
               </div>
+
+              <div className="indicators-subitem-doadores">
+                <div>
+                  <p className="biggest-donor"                  >
+                  <FormattedMessage id="biggest-live" />: Fome de Música (inclui Sandy&Junior){" "}
+                  </p>
+
+                  <p>
+                    <span>R$ 6.750.757</span>
+                    <span>(55%)</span>
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -193,4 +205,4 @@ function GraficoIndicadores() {
   );
 }
 
-export default GraficoIndicadores;
+export default graficosIndicators;

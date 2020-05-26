@@ -8,7 +8,7 @@
 
 
 
-.section-grafico-container {
+.section-chart-container {
   width: 100%;
   font-family: "Rubik", sans-serif;
   color: #222222;
@@ -17,12 +17,13 @@
 }
 
 /* Coloca os elementos lado a lado  */
-.grafico-indicadores {
+.chart-indicators {
   display: flex;
 }
 
-/* Titulo dos dois itens  */
-.titulo {
+/* 
+title dos dois itens  */
+.indicators-title, .chart-title {
   font-size: 50px;
   margin-top: 140px;
   margin-bottom: 86px;
@@ -30,29 +31,30 @@
 }
 
 
-/* Estilos do item indicadores ---------------------  */
-.div-grafico {
+/* Estilos do item 
+indicators ---------------------  */
+.div-chart {
   background: #f3f3f3;
   width: 50%;
-  padding-left: 10vw;
+  padding-left: 10%;
   border-radius: 5px;
 }
 
 
-.grafico{
+.chart{
 margin-right: 30px;
 }
 
 
 /* Posiciona o item  */
-.div-indicadores {
+.div-indicators {
   width: 50%;
-  padding-right: 9vw;
+  padding-right: 10%;
   padding-left: 130px;
 }
 
 
-.indicadores-subitem{
+.indicators-subitem{
   display: flex;
   margin-bottom: 130px;
 }
@@ -68,17 +70,17 @@ margin-right: 30px;
   top: -70px;
 }
 
-.imagem-mao-dinheiro {
+.img-hand-money {
   position: relative;
   left: -30px;
 }
-h3,
-.span-h3 {
-  font-size: 37px;
+
+h3, .span-h3 {
+  font-size: 37.5px;
   line-height: 44px;
   font-weight: 300;
   margin-bottom: 16px;
-
+  text-align: left;
   
 }
 
@@ -92,11 +94,11 @@ span {
   font-weight: bold;
 }
 
-.indicadores-subitem-doadores{
+.indicators-subitem-doadores{
     display: flex;
 }
 
-.indicadores-subitem-doadores p{
+.indicators-subitem-doadores p{
     margin-right: 100px;
     line-height: 33px;
 }
@@ -105,7 +107,7 @@ span {
   width: 181px;
 }
 
-.maior-doador{
+.biggest-donor{
   min-width: 267px;
 }
 
@@ -114,7 +116,7 @@ span {
 
 /* Botão ver mais */
 
-.grafico-indicadores-botao{
+.chart-indicators-button{
     display: flex;
     width: 334px;
     height: 79px;
