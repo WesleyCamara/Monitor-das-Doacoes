@@ -1,15 +1,12 @@
-import React, { Component } from 'react'
-// import React, { useState, useEffect } from 'react';
-// import Axios from 'axios';
+import React, { useState, useEffect } from 'react';
+import Axios from 'axios';
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 import "./Graficos-indicadores.css";
 import handMoney from "../../assets/img/graficos-indicadores/hand-money.png";
 import { FormattedMessage } from "react-intl";
-import Axios from 'axios';
 
-
-// import getData from "./API"
+import GetData from "../../services/API"
 
 Highcharts.setOptions({
   lang: {
@@ -101,31 +98,22 @@ const options = {
 
 
 
-  export default class graficosIndicators extends Component {
-    state = {
-      data: [],
-
-  
-    }
-
-    componentDidMount() {
-      this.buscaApi()
-    }
 
 
-    buscaApi = async () => {
-      const response = await Axios.get(`https://script.googleusercontent.com/macros/echo?user_content_key=Q_9Dq5-x6AKhozZ-Pr4RARJLq0xr1B-TEKmmvM_UyPCjvDLJ4dS8Pxya0YI6uedx3kD9YDME9wkwc2Y1Ufgv1VUAEGiYXU3_m5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnFkSJ3OGPU4PNUNksnCEJmJS93T2ZzyujjUpxX3tYNvUSMYBj7AgB7_TWN7yU7wky0W-dnclfdIe&lib=MiU-jTl38wC2L3rz6MLSQoNcSVaJnOjrd`)
-      await this.setState({ data: response.data })
-      console.log(this.state.data.Consolidação[2][1])
 
-  
-    }
 
-    render() {
+
+const graficosIndicators = () => {
+
+
+const teste = GetData()
+console.log(teste)
+
 
   return (
     <section className="section-chart-container">
       <div className="chart-indicators">
+      {/* <GetData /> */}
         <div className="div-chart">
           <h2 className="chart-title">
             <FormattedMessage id="chart-indicators-chart" />
@@ -147,7 +135,7 @@ const options = {
               <div>
                 <h3><FormattedMessage id="indicators-donations" /> </h3>
                 <h3>
-                  <span className="span-h3">R$ 3.853.726.767 {this.state.data.Consolidação[2][1] | 8}</span>
+                  <span className="span-h3">R$ 3.853.726.767</span>
                 </h3>
               </div>
 
@@ -231,8 +219,9 @@ const options = {
           </div>
         </div>
       </div>
+      
     </section>
   );
 }
 
-  }
+export default graficosIndicators;
