@@ -121,7 +121,7 @@ export default class graficosIndicators extends Component {
         series: [
           { data: [
             ["Itaú", 6 ],
-            ["Vale", 8],
+            ["Vale", this.state.valor],
             ["Cogna", 3],
             ["AMBEV", 4],
             ["Rede D'or", 5],
