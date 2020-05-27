@@ -16,13 +16,12 @@ Highcharts.setOptions({
   },
 });
 
-
 export default class graficosIndicators extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-            options : {
+      options: {
         chart: {
           type: "column",
           backgroundColor: "#F3F3F3",
@@ -56,7 +55,7 @@ export default class graficosIndicators extends Component {
           title: {
             text: "",
           },
-      
+
           gridLineDashStyle: "Dash",
           lineWidth: 2,
           lineColor: "#222222",
@@ -67,24 +66,24 @@ export default class graficosIndicators extends Component {
         tooltip: {
           enable: false,
         },
-      
+
         series: [
           {
             name: "Valor doado",
             data: [
-              ["Itaú", 625252520 ],
-              ["Vale", 500000000],
-              ["Cogna", 267000000],
-              ["AMBEV", 110000000],
-              ["Rede D'or", 108000000],
-              ["Bradesco, Itaú e Santander", 80000000],
-              ["Alcoa", 77000000],
-              ["Nestlé", 55000000],
-              ["iFood", 52000000],
-              ["BRF", 50000000],
-              ["Outros Doadores (200)", 1307626767],
+              ["Itaú", 12],
+              ["Vale", 13],
+              ["Cogna", 85],
+              ["AMBEV", 74],
+              ["Rede D'or", 15],
+              ["Bradesco, Itaú e Santander", 63],
+              ["Alcoa", 48],
+              ["Nestlé", 24],
+              ["iFood", 10],
+              ["BRF", 5],
+              ["Outros Doadores (200)", 85],
             ],
-      
+
             dataLabels: {
               enabled: true,
               rotation: -90,
@@ -100,50 +99,97 @@ export default class graficosIndicators extends Component {
           },
         ],
       },
-      
+
       data: [],
       totalDoado: [],
-      valor: 55555555,
-      
+      doadores: 0,
+      maiorDoador: [],
+      maiorValorDoado: [],
+      valor: 50,
     };
   }
 
- 
+  formatNumber(number) {
+    let aux = Math.round(number);
+  }
 
   async componentDidMount() {
     const response = await api.get();
 
-    this.setState({ data: response.data});
-    this.setState({ totalDoado: Math.round(this.state.data.Consolidação[3][1])});
+    this.setState({ data: response.data });
+    this.setState({
+      totalDoado: this.formatNumber(this.state.data.Consolidação[3][1]),
+      doadores: this.state.data.Doações.length - 1,
+      maiorDoador: this.maiorDoador(this.state.data.Doações),
+      maiorValorDoado: this.formatNumber(this.state.maiorDoador["Valor Anunciado"])
 
-    this.setState({ 
-      options: {
-        series: [
-          { data: [
-            ["Itaú", 6 ],
-            ["Vale", this.state.valor],
-            ["Cogna", 3],
-            ["AMBEV", 4],
-            ["Rede D'or", 5],
-            ["Bradesco, Itaú e Santander", 6],
-            ["Alcoa", 7],
-            ["Nestlé", 8],
-            ["iFood", 9],
-            ["BRF", 10],
-            ["Outros Doadores (200)", 11],
-          ]}
-        ]
-      }
     });
 
+    this.setState({
+      options: {
+        series: [
+          {
+            data: [
+              ["Itaú", 6],
+              ["Vale", this.state.valor],
+              ["Cogna", 3],
+              ["AMBEV", 4],
+              ["Rede D'or", 5],
+              ["Bradesco, Itaú e Santander", 6],
+              ["Alcoa", 7],
+              ["Nestlé", 8],
+              ["iFood", 9],
+              ["BRF", 10],
+              ["Outros Doadores (200)", 11],
+            ],
+          },
+        ],
+      },
+    });
+
+    
   }
 
+  // Formata o número com arredondamento e formatação de ponto no milhar
+  formatNumber(number) {
+    let formattedNumber = Math.round(number).toLocaleString("pt-BR");
+    return formattedNumber;
+  }
 
+  maiorDoador(array) {
+    let maiorDoacao = 0;
+    let maiorDoador = [];
+
+    for (let item of array) {
+      if (
+        item["Valor Anunciado"] > maiorDoacao &&
+        item["Quem doa"] !== "Total"
+      ) {
+        maiorDoacao = item["Valor Anunciado"];
+        maiorDoador = item;
+      }
+    }
+
+    console.log(maiorDoador);
+    // let novo = {
+    //   Valor: item["Valor Anunciado"],
+    //   Setor: item["Setor"],
+    //   Doador: item["Quem doa"],
+    //   Classificacao: item["Classificação"],
+    //   EmDolar : item["in Dollars"],
+    //   Referencia: item["Referência"]
+    // }
+    // console.log(novo);
+
+    return maiorDoador;
+  }
 
   render() {
     const { options } = this.state;
-  
-    {console.log(this.state.options.series[0].data[0][1])}
+
+    {
+      console.log(this.state.maiorDoador);
+    }
     return (
       <section className="section-chart-container">
         <div className="chart-indicators">
@@ -175,9 +221,7 @@ export default class graficosIndicators extends Component {
                     <FormattedMessage id="indicators-donations" />{" "}
                   </h3>
                   <h3>
-                    <span className="span-h3">
-                      R$ {this.state.totalDoado }
-                    </span>
+                    <span className="span-h3">R$ {this.state.totalDoado}</span>
                   </h3>
                 </div>
 
@@ -187,17 +231,17 @@ export default class graficosIndicators extends Component {
                       <FormattedMessage id="total-donors" />
                     </p>
                     <p>
-                      <span>210</span>
+                      <span>{this.state.doadores}</span>
                     </p>
                   </div>
 
                   <div className="biggest-donor">
                     <p>
-                      <FormattedMessage id="largest-donor" />: Itaú
+                      <FormattedMessage id="largest-donor" />: {this.state.maiorDoador["Quem doa"]}
                     </p>
                     <p>
-                      <span className="valor-doado">R$ 1.247.100.000</span>
-                      <span>(32%)</span>
+                      <span className="valor-doado">R$ {this.state.maiorDoador["Valor Anunciado"]}</span>
+                      <span>(00%)</span>
                     </p>
                   </div>
                 </div>
