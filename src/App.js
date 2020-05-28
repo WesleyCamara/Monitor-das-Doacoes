@@ -1,17 +1,17 @@
 import React from 'react';
 import './App.css';
-import TesteGrafico from './components/doacao-setores/TesteGrafico';
 import DoacaoSetores from './components/doacao-setores/DoacaoSetores';
+//import TesteGrafico from './components/doacao-setores/TesteGrafico';
+//import Menu from './components/menu/Menu';
+//import Footer from './components/footer/Footer';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-
-        <p>
-          Monitor das doações COVID-19
-        </p>
+      <header className="App-header">        
+        
         <DoacaoSetores/>
+        
       </header>
     </div>
   );
