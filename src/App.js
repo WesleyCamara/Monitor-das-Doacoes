@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import Menu from './components/menu/Menu';
+import GraficosIndicadores from './components/graficos-indicadores/Graficos-indicadores'
 import Footer from './components/footer/Footer';
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
         </p>
       </header> */}
       <Menu/>
+      <GraficosIndicadores/>
       <Footer/>
     </div>
   );
