@@ -3,6 +3,7 @@ import './App.css';
 import Menu from './components/menu/Menu';
 import GraficosIndicadores from './components/graficos-indicadores/Graficos-indicadores'
 import Footer from './components/footer/Footer';
+import ChamadaInicialIndicadores from './components/chamada-inicial-indicadores/Chamada-inicial-indicadores';
 
 function App() {
   return (
@@ -13,9 +14,10 @@ function App() {
           Monitor das doações COVID-19
         </p>
       </header> */}
-      <Menu/>
+      <Menu />
+      <ChamadaInicialIndicadores />
       <GraficosIndicadores/>
-      <Footer/>
+      <Footer />
     </div>
   );
 }

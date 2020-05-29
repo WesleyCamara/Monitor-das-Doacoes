@@ -1,0 +1,239 @@
+/*-------Reset------------*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*----------------------------*/
+/*-----------Font-----------------*/
+/*----------------------------*/
+h4 {
+    color: #fff;
+    margin-top: 30px;
+    font-size: 14px;
+    font-family: adobe-clean, sans-serif;
+}
+
+h2 {
+    font-size: 16px;
+    font-family: adobe-clean, sans-serif;
+    margin: 8px 0 17px 0;
+    text-align: center;
+}
+
+/*----------------------------*/
+/*-----------Banner----------------*/
+/*----------------------------*/
+/*-----------Ids-----------------*/
+#banner {
+    width: 100%;
+    height: auto;
+    background-color: #fff;
+}
+
+#doacoes,
+#doadores {
+    color: #6e5fbd;
+    font-weight: 900;
+    font-size: 60px;
+    font-family: adobe-clean, sans-serif;
+}
+
+#img-center {
+    margin-top: 20px;
+    margin-bottom: 0;
+
+}
+
+#money>img,
+#hand>img {
+    height: 55px;
+    width: 75px;
+    margin-left: 40%;
+    margin-right: 40%;
+}
+
+#img-center {
+    margin-top: 9px;
+}
+
+/*----------Class------------------*/
+.banner-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding-top: 28px;
+}
+
+/*----------------------------*/
+/*-----------Sections-cards----------------*/
+/*----------------------------*/
+
+/*-----------Class-----------------*/
+.container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    background-color: #262626;
+}
+
+.dados {
+    padding-top: 10px;
+    color: #6e5fbd;
+    font-size: 18px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 900;
+}
+
+.section-container {
+    width: 240px;
+    min-height: 160px;
+    max-height: auto;
+    text-align: start;
+    margin: 15px 5px 0 5px;
+    border-radius: 5px;
+    background-color: #2c2b32;
+    padding-left: 20px;
+}
+
+/*----------------------------*/
+/*-----------Mobil----------------*/
+/*----------------------------*/
+/*-----------ids-----------------*/
+
+@media only screen and (max-width:460px) {
+    h4 {
+        font-size: 1.2rem;
+    }
+
+    /*-----------ids-----------------*/
+    #banner {
+        width: 100%;
+        height: auto;
+    }
+
+    #doacoes,
+    #doadores {
+        font-size: 2.5rem;
+        text-align: center;
+    }
+
+    #img-center>img {
+        width: 100%;
+    }
+
+    #hand,
+    #money {
+        margin: 10px;
+    }
+
+    /*----------Class------------------*/
+    .banner-container {
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+    }
+
+    .container {
+        width: 100%;
+        height: auto;
+        justify-content: center;
+    }
+
+    .dados {
+        font-size: 1.8rem;
+    }
+}
+
+@media only screen and (max-width:620px) {
+    #img-center>img {
+        width: 100%;
+    }
+
+    .banner-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+}
+
+@media only screen and (max-width: 810px) {
+
+    .container,
+    #banner {
+        width: 100%;
+        margin: auto;
+    }
+
+    .section-container {
+        margin: 15px;
+    }
+
+    #hand,
+    #money {
+        margin-top: 20px;
+    }
+
+}
+
+@media only screen and (max-width: 860px) {
+
+    .section-container {
+        margin: 25px;
+    }
+
+    h4 {
+        font-size: 1.5rem;
+    }
+
+    .dados {
+        font-size: 1.7rem;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+
+    .container,
+    #banner {
+        width: 100%;
+        margin: auto;
+        height: auto;
+    }
+
+
+    h4 {
+        font-size: 1.3rem;
+    }
+
+    .dados {
+        font-size: 1.5rem;
+    }
+
+
+}
+
+@media only screen and (max-width: 1300px) {
+
+    .container,
+    #banner {
+        width: 100%;
+        margin: auto;
+        height: auto;
+    }
+
+
+    h4 {
+        font-size: 1.3rem;
+    }
+
+    .dados {
+        font-size: 1.5rem;
+    }
+
+
+}
