@@ -106,6 +106,8 @@ export default class graficosIndicators extends Component {
       doadoresCampanhas: 0,
       maiorDoador: [],
       maiorValorDoado: [0],
+      maiorValorDoadoCampanha: [0],
+      maiorCampanha: [],
       totalLive: [0],
       totalLivesAxiliar: [0],
       totalCampanhas: [0],
@@ -126,16 +128,17 @@ export default class graficosIndicators extends Component {
       totalLive: this.formatNumber(this.state.data.Lives[this.state.data.Lives.length - 1][5]).toLocaleString("pt-BR"),
       totalLiveAuxiliar: this.formatNumber(this.state.data.Lives[this.state.data.Lives.length - 1][5]),
       doadoresCampanhas: (this.state.data.Consolidação[5][1] - this.state.doadores).toLocaleString("pt-BR"),
-      // totalCampanhas: (this.formatNumber(this.state.data.Consolidação[2][1]) - this.state.totalLive)
+      maiorCampanha: this.maiorCampanha(this.state.data.Campanhas),
+      
+    
 
     });
-    console.log(this.state.data.Consolidação[5][1] - this.state.doadores)
-    console.log(this.state.doadores)
+   
     this.setState({
       totalCampanhas: (this.formatNumber(this.state.data.Consolidação[2][1]) - this.state.totalLiveAuxiliar).toLocaleString("pt-BR"),
+      maiorValorDoadoCampanha: this.formatNumber(this.state.maiorCampanha["Valor Doado"]).toLocaleString("pt-BR"),
     });
 
-    this.maiorCampanha(this.state.data.Campanhas);
 
     this.setState({
       options: {
@@ -188,16 +191,16 @@ export default class graficosIndicators extends Component {
     let maiorDoador = [];
 
     for (let item of array) {
-      const val = item["Valor Doado"]
-
       if (
-        val > maiorDoacao 
-      ) {
-        maiorDoacao = val;
+      item["Valor Doado"] > maiorDoacao &&
+      item["Organizador (a) / Beneficiário (a)"] !== "Total" &&
+      item["Organizador (a) / Beneficiário (a)"] !== "Campanhas + lives"
+       )  {
+        maiorDoacao = item["Valor Doado"];
         maiorDoador = item;
       }
     }
-    console.log (maiorDoador["Organizador (a) / Beneficiário (a)"])
+    console.log(maiorDoador.Campanhas)
     return maiorDoador;
   
 }
@@ -206,7 +209,7 @@ export default class graficosIndicators extends Component {
   render() {
     const { options } = this.state;
 
-    
+    console.log(this.state.maiorCampanha["Valor Doado"])
   
     return (
       <section className="section-chart-container">
@@ -292,12 +295,11 @@ export default class graficosIndicators extends Component {
 
                   <div className="biggest-donor">
                     <p>
-                      <FormattedMessage id="largest-campaign" />: Na Luta contra
-                      a COVID-19
+                      <FormattedMessage id="largest-campaign" />: {this.state.maiorCampanha.Campanhas}
                     </p>
                     <p>
-                      <span className="valor-doado">R$ 0</span>
-                      <span>(0%)</span>
+                      <span className="valor-doado">R$ {this.state.maiorValorDoadoCampanha}</span>
+                      <span>(%)</span>
                     </p>
                   </div>
                 </div>
