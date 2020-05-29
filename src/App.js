@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Menu from './components/menu/Menu';
 import Footer from './components/footer/Footer';
+import ChamadaInicialIndicadores from './components/chamada-inicial-indicadores/Chamada-inicial-indicadores';
 
 function App() {
   return (
@@ -12,8 +13,9 @@ function App() {
           Monitor das doações COVID-19
         </p>
       </header> */}
-      <Menu/>
-      <Footer/>
+      <ChamadaInicialIndicadores />
+      <Menu />
+      <Footer />
     </div>
   );
 }
