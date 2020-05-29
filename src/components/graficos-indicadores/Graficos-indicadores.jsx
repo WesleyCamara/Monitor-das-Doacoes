@@ -103,27 +103,39 @@ export default class graficosIndicators extends Component {
       data: [],
       totalDoado: [],
       doadores: 0,
+      doadoresCampanhas: 0,
       maiorDoador: [],
-      maiorValorDoado: [],
-      valor: 50,
+      maiorValorDoado: [0],
+      totalLive: [0],
+      totalLivesAxiliar: [0],
+      totalCampanhas: [0],
+      valor: 5222220,
     };
   }
 
-  formatNumber(number) {
-    let aux = Math.round(number);
-  }
 
   async componentDidMount() {
     const response = await api.get();
 
     this.setState({ data: response.data });
     this.setState({
-      totalDoado: this.formatNumber(this.state.data.Consolidação[3][1]),
+      totalDoado: this.formatNumber(this.state.data.Consolidação[3][1]).toLocaleString("pt-BR"),
       doadores: this.state.data.Doações.length - 1,
       maiorDoador: this.maiorDoador(this.state.data.Doações),
-      maiorValorDoado: this.formatNumber(this.state.maiorDoador["Valor Anunciado"])
+      maiorValorDoado: this.formatNumber(this.state.maiorDoador["Valor Anunciado"]),
+      totalLive: this.formatNumber(this.state.data.Lives[this.state.data.Lives.length - 1][5]).toLocaleString("pt-BR"),
+      totalLiveAuxiliar: this.formatNumber(this.state.data.Lives[this.state.data.Lives.length - 1][5]),
+      doadoresCampanhas: (this.state.data.Consolidação[5][1] - this.state.doadores).toLocaleString("pt-BR"),
+      // totalCampanhas: (this.formatNumber(this.state.data.Consolidação[2][1]) - this.state.totalLive)
 
     });
+    console.log(this.state.data.Consolidação[5][1] - this.state.doadores)
+    console.log(this.state.doadores)
+    this.setState({
+      totalCampanhas: (this.formatNumber(this.state.data.Consolidação[2][1]) - this.state.totalLiveAuxiliar).toLocaleString("pt-BR"),
+    });
+
+    this.maiorCampanha(this.state.data.Campanhas);
 
     this.setState({
       options: {
@@ -132,7 +144,7 @@ export default class graficosIndicators extends Component {
             data: [
               ["Itaú", 6],
               ["Vale", this.state.valor],
-              ["Cogna", 3],
+              ["Cogna", 5],
               ["AMBEV", 4],
               ["Rede D'or", 5],
               ["Bradesco, Itaú e Santander", 6],
@@ -145,15 +157,14 @@ export default class graficosIndicators extends Component {
           },
         ],
       },
-    });
-
-    
+    });    
   }
 
   // Formata o número com arredondamento e formatação de ponto no milhar
   formatNumber(number) {
-    let formattedNumber = Math.round(number).toLocaleString("pt-BR");
+    let formattedNumber = Math.round(number)
     return formattedNumber;
+    
   }
 
   maiorDoador(array) {
@@ -169,27 +180,34 @@ export default class graficosIndicators extends Component {
         maiorDoador = item;
       }
     }
-
-    console.log(maiorDoador);
-    // let novo = {
-    //   Valor: item["Valor Anunciado"],
-    //   Setor: item["Setor"],
-    //   Doador: item["Quem doa"],
-    //   Classificacao: item["Classificação"],
-    //   EmDolar : item["in Dollars"],
-    //   Referencia: item["Referência"]
-    // }
-    // console.log(novo);
-
     return maiorDoador;
   }
+
+  maiorCampanha(array) {
+    let maiorDoacao = 0;
+    let maiorDoador = [];
+
+    for (let item of array) {
+      const val = item["Valor Doado"]
+
+      if (
+        val > maiorDoacao 
+      ) {
+        maiorDoacao = val;
+        maiorDoador = item;
+      }
+    }
+    console.log (maiorDoador["Organizador (a) / Beneficiário (a)"])
+    return maiorDoador;
+  
+}
+
 
   render() {
     const { options } = this.state;
 
-    {
-      console.log(this.state.maiorDoador);
-    }
+    
+  
     return (
       <section className="section-chart-container">
         <div className="chart-indicators">
@@ -218,7 +236,7 @@ export default class graficosIndicators extends Component {
               <div>
                 <div>
                   <h3>
-                    <FormattedMessage id="indicators-donations" />{" "}
+                    <FormattedMessage id="indicators-donations" />
                   </h3>
                   <h3>
                     <span className="span-h3">R$ {this.state.totalDoado}</span>
@@ -258,7 +276,7 @@ export default class graficosIndicators extends Component {
                     <FormattedMessage id="donations-campaigns" />
                   </h3>
                   <h3>
-                    <span className="span-h3">R$ 278.275.247</span>
+                    <span className="span-h3">R$ {this.state.totalCampanhas}</span>
                   </h3>
                 </div>
 
@@ -268,7 +286,7 @@ export default class graficosIndicators extends Component {
                       <FormattedMessage id="total-donors" />
                     </p>
                     <p>
-                      <span>191.032</span>
+                      <span>{this.state.doadoresCampanhas}</span>
                     </p>
                   </div>
 
@@ -278,8 +296,8 @@ export default class graficosIndicators extends Component {
                       a COVID-19
                     </p>
                     <p>
-                      <span className="valor-doado">R$ 38.144.000</span>
-                      <span>(14%)</span>
+                      <span className="valor-doado">R$ 0</span>
+                      <span>(0%)</span>
                     </p>
                   </div>
                 </div>
@@ -296,7 +314,7 @@ export default class graficosIndicators extends Component {
                     <FormattedMessage id="donations-lives" />
                   </h3>
                   <h3>
-                    <span className="span-h3">R$ 12.258.946</span>
+                    <span className="span-h3">R$ {this.state.totalLive}</span>
                   </h3>
                 </div>
 
@@ -308,8 +326,8 @@ export default class graficosIndicators extends Component {
                     </p>
 
                     <p>
-                      <span>R$ 6.750.757</span>
-                      <span>(55%)</span>
+                      <span>R$ 0</span>
+                      <span>(0%)</span>
                     </p>
                   </div>
                 </div>
