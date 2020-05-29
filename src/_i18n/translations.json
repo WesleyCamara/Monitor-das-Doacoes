@@ -7,7 +7,13 @@
         "footer-title-realization": "Realization",
         "footer-title-press": "Press office ABCR",
         "footer-link-donation": "Click and donate to ABCR to further develop the Donation Monitor",
-        "footer-secondary-compartilhar": "share"
+        "footer-secondary-compartilhar": "share",
+        "banner-title-donations": "donated in response to COVID-19",
+        "banner-title-donors": "donors",
+        "card-title-sector": "Sector with more donations",
+        "card-title-city": "City with more donations",
+        "card-title-campaign": "Campaign with more donations",
+        "card-title-live": "Live with more donations"
     },
     "pt-BR": {
         "_comment-menu": "Idioma Menu",
@@ -17,6 +23,12 @@
         "footer-title-realization": "Realização",
         "footer-title-press": "Imprensa ABCR",
         "footer-link-donation": "Clique e doe para a ABCR desenvolver ainda mais o Monitor das Doações",
-        "footer-secondary-compartilhar": "compartilhar"
+        "footer-secondary-compartilhar": "compartilhar",
+        "banner-title-donations": "reais doados como resposta a COVID-19",
+        "banner-title-donors": "doadores",
+        "card-title-sector": "Setor com mais doações",
+        "card-title-city": "Cidade com mais doações",
+        "card-title-campaign": "Campanha com mais doações",
+        "card-title-live": "Live com mais doações"
     }
 }
