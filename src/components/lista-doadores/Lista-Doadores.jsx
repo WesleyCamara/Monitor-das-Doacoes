@@ -9,31 +9,25 @@ export default class ListaDoadores extends Component {
     super(props);
 
     this.handleSubmit = this.handleSubmit.bind(this);
-  }
 
-  state = {
-    teste: [],
-    doacao: ([] = []),
-  };
+    this.state = {
+        lista: [],
+        doacao: [],
+        num: 10
+      };
+  }
 
   handleSubmit(event) {
     this.state.doacao = [];
     this.limparDoacaoObject();
     this.maisResultados();
-    this.componentDidMount();
-    // this.carregar();
     event.preventDefault();
   }
-
-  maisResultados = (num) => {
-    this.num += 10;
-    // this.doacaoObject.length += 10;
-    console.log("Clicou", this.num);
-    return num;
-  };
-
-  carregar = () => {
-    return this.listaDoadores;
+  
+  maisResultados = () => {
+    this.setState({
+        num: this.state.num + 10
+    })
   };
 
   limparDoacaoObject = () => {
@@ -41,32 +35,29 @@ export default class ListaDoadores extends Component {
   };
 
   doacaoObject = [];
-  // doacao= [];
-  num = 10;
+  url_atual = window.location.pathname;
 
 
   async componentDidMount() {
     const options =
       "https://script.googleusercontent.com/macros/echo?user_content_key=HHPgHY0VTjUOtvbiM59KZSfpXISWkOsv6VDGAbI-16-RHELWJOk66ERsKhQ73D6Z7ohS8jGm_iyH3nHl8n7O4S0WuK_EtGHWm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnFkSJ3OGPU4PNUNksnCEJmJS93T2ZzyujjUpxX3tYNvUSMYBj7AgB7_TWN7yU7wky0W-dnclfdIe&lib=MiU-jTl38wC2L3rz6MLSQoNcSVaJnOjrd";
 
-
     const response = await fetch(options);
 
     const body = await response.json();
-    console.log("data", body);
 
-    this.setState({ teste: body.Doações });
-    console.log("data", this.state.data);
+    this.setState({ lista: body.Doações });
   }
 
-  formatValueReal(value) {
-    let formattedValue = Math.round(value).toLocaleString("pt-BR");
-    return formattedValue;
-  }
 
-  formatValueDollar(value) {
-    let formattedValue = Math.round(value).toLocaleString("en-US");
-    return formattedValue;
+  formatValue(value) {
+      if (this.url_atual !== "/en") {
+        let formattedValue = Math.round(value).toLocaleString("pt-BR");
+        return formattedValue;
+      } else {
+        let formattedValue = Math.round(value).toLocaleString("en-US");
+        return formattedValue;
+      }
   }
 
   quantidade = (qtde) => {
@@ -74,13 +65,19 @@ export default class ListaDoadores extends Component {
     return quantidade
   }
 
-  render() {
-    const { teste } = this.state;
+  shouldComponentUpdate(nextState) {
+    if (this.state.num !== nextState.num) {
+        return true;
+    }
+  }
 
-    teste &&
-      teste.map((donation) => {
-        console.log("NUM", this.num);
-        if (donation["Quem doa"] !== "Quem doa") {
+  render() {
+
+    const { lista } = this.state;
+
+    lista &&
+      lista.map((donation) => {
+        if (donation["Quem doa"] !== "Quem doa" && donation["Quem doa"] !== "Total") {
           this.doacaoObject.push({
             quemdoa: donation["Quem doa"],
             valor: donation["Valor Anunciado"],
@@ -88,31 +85,32 @@ export default class ListaDoadores extends Component {
             referencia: donation["Referência"]
           });
         }
-        console.log("Teste", this.doacaoObject);
       });
 
     this.doacaoObject.map((donation) => {
-      if (this.state.doacao.length < this.num) {
-        this.state.doacao.push({
+      if (this.state.doacao.length < this.state.num && this.url_atual !== "/en") {
+       this.setState.doacao = this.state.doacao.push({
           quemdoa: donation.quemdoa,
           valor: donation.valor,
-          dollar: donation.dollar,
           referencia: donation.referencia
         });
-      }
+      } else if (this.state.doacao.length < this.state.num) {
+        this.setState.doacao = this.state.doacao.push({
+            quemdoa: donation.quemdoa,
+            valor: donation.dollar,
+            referencia: donation.referencia
+      })
+    }
     });
 
-    console.log("Objeto de doação", this.state.doacao);
-
     for (var listaDoadores of this.state.doacao) {
-      // if (this.doacaoObject.length < (this.num)) {
       this.listaDoadores =
         this.state.doacao &&
-        this.state.doacao.map((teste) => (
+        this.state.doacao.map((donation) => (
           <div>
             <p>
-              <span className="donation"> <a href={(teste.referencia)} target="_blank"> {teste.quemdoa} </a> - </span> <FormattedMessage id="donation-value"/> {" "}
-              {this.formatValueReal(teste.valor)}
+              <span className="donation"> <a href={(donation.referencia)} target="_blank"> {donation.quemdoa} </a> - </span> <FormattedMessage id="donation-value"/> {" "}
+              {this.formatValue(donation.valor)}
             </p>
           </div>
         ));
@@ -140,7 +138,7 @@ export default class ListaDoadores extends Component {
           </div>
           <div className="donations-list">
             <div className="lista">
-              {this.listaDoadores || (
+              { this.listaDoadores || (
                 <div className="loading">
                   {" "}
                   <img src={Loading} />{" "}
