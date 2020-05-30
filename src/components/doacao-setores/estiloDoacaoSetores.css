@@ -17,7 +17,11 @@
     position: absolute;
     right: 150px;
     top: 50px;
-    z-index: 2;
+    z-index: 20;
+}
+
+.grafico-pie{
+    z-index: 10;
 }
 
 .chart-title {
@@ -53,4 +57,40 @@
     align-items: center;
     justify-content: center;
     text-transform: uppercase;
+}
+
+@media screen and (max-width: 600px){
+    .square-shape2{
+        display: none;
+    }
+
+    .img-fundo-setor{
+        display: none;
+    }
+    .chart-title {
+        font-size: 30px;
+        margin-top: 140px;
+        margin-bottom: 86px;
+        font-weight: 700;
+        text-align: center;
+        color: #222222;        
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .square-shape2{
+        display: none;
+    }
+
+    .img-fundo-setor{
+        display: none;
+    }
+    .chart-title {
+        font-size: 40px;
+        margin-top: 140px;
+        margin-bottom: 86px;
+        font-weight: 700;
+        text-align: center;
+        color: #222222;        
+    }
 }

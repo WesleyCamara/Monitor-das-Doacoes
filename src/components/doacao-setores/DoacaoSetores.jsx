@@ -25,14 +25,7 @@ class DoacaoSetores extends Component {
             options:{
                 chart: {
                     type: 'pie',
-                    renderTo: 'doacao-setores',
-                    dataLabels:{
-                        style: {
-                            fontSize: '30px',
-                            fontFamily: 'rubik, sans-serif',
-                            fontWeight: 'regular'
-                        }
-                    },
+                    renderTo: 'doacao-setores',                    
                     backgroundColor: 'rgba(0,0,0,0)'
                 },
                 
@@ -48,7 +41,12 @@ class DoacaoSetores extends Component {
                         allowPointSelect: true,
                         cursor: 'pointer',                
                         dataLabels: {
-                            format: '{point.name}, {point.y} '
+                            format: '{point.name}, {point.y} ',
+                            style: {
+                                fontSize: '16px',
+                                fontFamily: 'rubik, sans-serif',
+                                fontWeight: 'regular'
+                            }
                         }
                         
                     }
@@ -58,7 +56,7 @@ class DoacaoSetores extends Component {
                     name: 'Setores',
                     data: [
                         {
-                        name: 'SETOR FINANCEIRO',
+                        name: 'Setor Financeiro',
                         y: 1640056334,
                         
                         },
@@ -130,7 +128,7 @@ class DoacaoSetores extends Component {
             data: [
                 {
                 name: this.state.info[10][6],
-                y: this.state.info[10][7],
+                y: Math.round(this.state.info[10][7]),
                 
                 },
                 {
@@ -145,7 +143,7 @@ class DoacaoSetores extends Component {
                 },
                 {
                 name: this.state.info[13][6],
-                y: this.state.info[13][7],
+                y: Math.round(this.state.info[13][7]),
                 
                 },
                 {
@@ -190,12 +188,12 @@ class DoacaoSetores extends Component {
                 },
                 {
                 name: this.state.info[22][6],
-                y: this.state.info[22][7],
+                y: Math.round(this.state.info[22][7]),
                     
                 },
             ]
         }]}})
-        console.log(this.state.info)
+        
     }
 
 
@@ -211,9 +209,9 @@ class DoacaoSetores extends Component {
                     <FormattedMessage id="chart-sectors-chart" />
                 </h2>
                 <div id="doacao-setores">
-                    <HighchartsReact highcharts={Highcharts} options={options} />
+                    <HighchartsReact className="grafico-pie" highcharts={Highcharts} options={options} />
                 </div>
-                <a href="https://docs.google.com/spreadsheets/d/1RA0oP9EBHxpsLGvHTaX2TTYHT2oQHTfNrM8Z40hqVus/edit#gid=816672137" target="_blank">
+                <a href="https://docs.google.com/spreadsheets/d/1RA0oP9EBHxpsLGvHTaX2TTYHT2oQHTfNrM8Z40hqVus/edit#gid=816672137" target="_blank" rel="noopener noreferrer">
                     <button className="estiloBtn"><FormattedMessage id="chart-indicators-button" /></button>
                 </a>
                 <div>
