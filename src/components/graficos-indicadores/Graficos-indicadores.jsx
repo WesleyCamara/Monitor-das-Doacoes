@@ -108,10 +108,12 @@ export default class graficosIndicators extends Component {
       maiorValorDoado: [0],
       maiorValorDoadoCampanha: [0],
       maiorCampanha: [],
+      maiorLive: [],
       totalLive: [0],
       totalLivesAxiliar: [0],
       totalCampanhas: [0],
-      valor: 5222220,
+      valor: 10,
+      valorMaiorLive: [0]
     };
   }
 
@@ -129,33 +131,39 @@ export default class graficosIndicators extends Component {
       totalLiveAuxiliar: this.formatNumber(this.state.data.Lives[this.state.data.Lives.length - 1][5]),
       doadoresCampanhas: (this.state.data.Consolidação[5][1] - this.state.doadores).toLocaleString("pt-BR"),
       maiorCampanha: this.maiorCampanha(this.state.data.Campanhas),
-      
-    
-
     });
    
     this.setState({
       totalCampanhas: (this.formatNumber(this.state.data.Consolidação[2][1]) - this.state.totalLiveAuxiliar).toLocaleString("pt-BR"),
       maiorValorDoadoCampanha: this.formatNumber(this.state.maiorCampanha["Valor Doado"]).toLocaleString("pt-BR"),
+      maiorLive: this.maiorLive(this.state.data.Lives),
+      
     });
 
+    this.setState({ 
+      valorMaiorLive: this.formatNumber(this.state.maiorLive[5]).toLocaleString("pt-BR"),
+    })
+
+    console.log(this.state.valorMaiorLive)
+
+   
 
     this.setState({
       options: {
         series: [
           {
             data: [
-              ["Itaú", 6],
-              ["Vale", this.state.valor],
-              ["Cogna", 5],
-              ["AMBEV", 4],
-              ["Rede D'or", 5],
-              ["Bradesco, Itaú e Santander", 6],
-              ["Alcoa", 7],
-              ["Nestlé", 8],
-              ["iFood", 9],
-              ["BRF", 10],
-              ["Outros Doadores (200)", 11],
+              ["Itaú", Math.round(Math.random() * 10000000)],
+              ["Vale", Math.round(Math.random() * 10000000)],
+              ["Cogna", Math.round(Math.random() * 10000000)],
+              ["AMBEV", Math.round(Math.random() * 10000000)],
+              ["Rede D'or", Math.round(Math.random() * 10000000)],
+              ["Bradesco, Itaú e Santander", Math.round(Math.random() * 10000000)],
+              ["Alcoa", Math.round(Math.random() * 10000000)],
+              ["Nestlé", Math.round(Math.random() * 10000000)],
+              ["iFood", Math.round(Math.random() * 10000000)],
+              ["BRF", Math.round(Math.random() * 10000000)],
+              ["Outros Doadores (200)", Math.round(Math.random() * 50000000)],
             ],
           },
         ],
@@ -205,11 +213,29 @@ export default class graficosIndicators extends Component {
   
 }
 
+maiorLive(array) {
+  let maiorDoacao = 0;
+  let maiorDoador = [];
+
+  for (let item of array) {
+    if (
+      item[5] > maiorDoacao &&
+      item[1] !== "Artista / Projeto" &&
+      item[2] !== "Total"
+    ) {
+      maiorDoacao = item[5];
+      maiorDoador = item;
+    }
+  }
+  console.log(maiorDoador)
+  return maiorDoador;
+}
+
 
   render() {
     const { options } = this.state;
 
-    console.log(this.state.maiorCampanha["Valor Doado"])
+
   
     return (
       <section className="section-chart-container">
@@ -262,7 +288,7 @@ export default class graficosIndicators extends Component {
                     </p>
                     <p>
                       <span className="valor-doado">R$ {this.state.maiorDoador["Valor Anunciado"]}</span>
-                      <span>(00%)</span>
+                      {/* <span>(0%)</span> */}
                     </p>
                   </div>
                 </div>
@@ -299,7 +325,7 @@ export default class graficosIndicators extends Component {
                     </p>
                     <p>
                       <span className="valor-doado">R$ {this.state.maiorValorDoadoCampanha}</span>
-                      <span>(%)</span>
+                      {/* <span>(%)</span> */}
                     </p>
                   </div>
                 </div>
@@ -323,13 +349,12 @@ export default class graficosIndicators extends Component {
                 <div className="indicators-subitem-doadores">
                   <div>
                     <p className="biggest-donor">
-                      <FormattedMessage id="biggest-live" />: Fome de Música
-                      (inclui Sandy&Junior){" "}
+                      <FormattedMessage id="biggest-live" />: {this.state.maiorLive[1]}
                     </p>
 
                     <p>
-                      <span>R$ 0</span>
-                      <span>(0%)</span>
+                      <span>R$ {this.state.valorMaiorLive}</span>
+                      {/* <span>(0%)</span> */}
                     </p>
                   </div>
                 </div>
