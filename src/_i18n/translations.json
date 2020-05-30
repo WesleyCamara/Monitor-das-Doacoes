@@ -5,6 +5,8 @@
         "_comment-menu": "Idioma Menu",
         "menu-title": "Donation monitor",
 
+        "chart-sectors-chart": "Donations by Sector",
+
         "chart-indicators-chart": "Companies with more donations" ,
         "chart-indicators-button": "see details",
         "indicators-title": "Summary",
@@ -40,6 +42,8 @@
 
         "_comment-menu": "Idioma Menu",
         "menu-title": "Monitor das doações",
+
+        "chart-sectors-chart": "Doação por Setores",
 
         "chart-indicators-chart": "Empresas com mais doações" ,
         "chart-indicators-button": "ver detalhes",
