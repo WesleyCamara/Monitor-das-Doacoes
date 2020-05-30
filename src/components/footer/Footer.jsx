@@ -8,12 +8,36 @@ import instagram from '../../assets/img/footer/instagram.svg';
 import facebook from '../../assets/img/footer/facebook.svg';
 import linkedin from '../../assets/img/footer/linkedin.svg';
 import youtube from '../../assets/img/footer/youtube.svg';
+import cocreare from '../../assets/img/footer/partner-cocreare.png'
+import anna from '../../assets/img/footer/partner-anna.png'
 import { FormattedMessage } from "react-intl";
 
 export default class Footer extends Component {
     render() {
         return (
-            <div className="container">
+            <div className="container-footer">
+                <div className="partner-title">
+                    <h3>
+                        <FormattedMessage id="partner-title"/>
+                    </h3>
+                </div>
+                
+                <div className="partner">
+                    <div className="partner-one">
+                        <img src={(cocreare)}/>
+                    </div>
+                    <div className="partner-two">
+                        <img src={(anna)}/>
+                    </div>
+                    <div className="partner-three">
+                        <img src={(cocreare)}/>
+                    </div>
+                    <div className="partner-four">
+                        <img src={(anna)}/>
+                    </div>
+
+                </div>
+
                 <div className="footer">
                     <div className="footer-first">
                         <div className="footer-first-promocao">
@@ -38,7 +62,7 @@ export default class Footer extends Component {
                             </div>
                         </div>
 
-                        <div className="footer-first-imprenssa">
+                        <div className="footer-first-imprensa">
                             <div className="footer-title">
                                 <h3>
                                 <FormattedMessage id="footer-title-press"/>
