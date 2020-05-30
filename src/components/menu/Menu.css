@@ -4,7 +4,8 @@
     background: #F3F3F3;
     margin: 0;
     display: flex;
-    /* align-content: center; */
+    position: fixed;
+    top: 0;
 }
 
 .menu {
