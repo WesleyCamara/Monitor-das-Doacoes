@@ -76,7 +76,7 @@ margin-right: 30px;
   left: -30px;
 }
 
-h3, .span-h3 {
+.section-chart-container h3, .span-h3 {
   font-size: 37.5px;
   line-height: 44px;
   font-weight: 300;
@@ -91,7 +91,7 @@ h3, .span-h3 {
   text-align: left;
 }
 
-span {
+.section-chart-container span {
   color: #6320ee;
   font-weight: bold;
 }

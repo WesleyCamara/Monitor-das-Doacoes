@@ -1,5 +1,7 @@
 {
     "en-US": {
+        "paragrafo-exemplo" : "paragrafo em ingles",
+
         "_comment-menu": "Idioma Menu",
         "menu-title": "Donation monitor",
 
@@ -28,6 +30,8 @@
         "card-title-live": "Live with more donations"
     },
     "pt-BR": {
+        "paragrafo-exemplo" : "paragrafo em portugues",
+
         "_comment-menu": "Idioma Menu",
         "menu-title": "Monitor das doações",
         
