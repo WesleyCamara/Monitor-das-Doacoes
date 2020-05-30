@@ -79,15 +79,9 @@
 }
 
 .donations-list p {
-<<<<<<< HEAD
-    margin: 0;
-    padding: 10px 0;
-    text-align: left;
-=======
     text-align: left;
     margin: 0;
     padding: 10px 0;
->>>>>>> lista-doadores
 }
 
 p .donation {
