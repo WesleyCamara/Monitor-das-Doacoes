@@ -117,7 +117,7 @@ class DoacaoSetores extends Component {
         }
     }
 
-    
+    //info guarda as informações puxadas da API e joga no options do grafico
 
     async componentDidMount() {
         const response = await api.get();        
