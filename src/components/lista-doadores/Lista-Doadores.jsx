@@ -2,11 +2,11 @@ import React, { Component } from "react";
 import "./Lista-Doadores.css";
 import Loading from "../../assets/img/lista-doadores/loading.gif";
 import shape from "../../assets/img/lista-doadores/square-shapes.svg";
+import { FormattedMessage } from "react-intl";
 
 export default class ListaDoadores extends Component {
   constructor(props) {
     super(props);
-    // this.state = {doacao:[]};
 
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -44,9 +44,11 @@ export default class ListaDoadores extends Component {
   // doacao= [];
   num = 10;
 
+
   async componentDidMount() {
     const options =
       "https://script.googleusercontent.com/macros/echo?user_content_key=HHPgHY0VTjUOtvbiM59KZSfpXISWkOsv6VDGAbI-16-RHELWJOk66ERsKhQ73D6Z7ohS8jGm_iyH3nHl8n7O4S0WuK_EtGHWm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnFkSJ3OGPU4PNUNksnCEJmJS93T2ZzyujjUpxX3tYNvUSMYBj7AgB7_TWN7yU7wky0W-dnclfdIe&lib=MiU-jTl38wC2L3rz6MLSQoNcSVaJnOjrd";
+
 
     const response = await fetch(options);
     console.log("res ", response);
@@ -57,9 +59,19 @@ export default class ListaDoadores extends Component {
     console.log("data", this.state.data);
   }
 
-  formatValor(valor) {
-    let valorFormatado = Math.round(valor).toLocaleString("pt-BR");
-    return valorFormatado;
+  formatValueReal(value) {
+    let formattedValue = Math.round(value).toLocaleString("pt-BR");
+    return formattedValue;
+  }
+
+  formatValueDollar(value) {
+    let formattedValue = Math.round(value).toLocaleString("en-US");
+    return formattedValue;
+  }
+
+  quantidade = (qtde) => {
+    let quantidade = this.doacaoObject.length;  
+    return quantidade
   }
 
   render() {
@@ -72,6 +84,7 @@ export default class ListaDoadores extends Component {
           this.doacaoObject.push({
             quemdoa: donation["Quem doa"],
             valor: donation["Valor Anunciado"],
+            dollar: donation["in Dollars"]
           });
         }
         console.log("Teste", this.doacaoObject);
@@ -82,6 +95,7 @@ export default class ListaDoadores extends Component {
         this.state.doacao.push({
           quemdoa: donation.quemdoa,
           valor: donation.valor,
+          dollar: donation.dollar
         });
       }
     });
@@ -95,8 +109,8 @@ export default class ListaDoadores extends Component {
         this.state.doacao.map((teste) => (
           <div>
             <p>
-              <span className="donation"> {teste.quemdoa} - </span> R${" "}
-              {this.formatValor(teste.valor)}
+              <span className="donation"> {teste.quemdoa} - </span> <FormattedMessage id="donation-value"/> {" "}
+              {this.formatValueReal(teste.valor)}
             </p>
           </div>
         ));
@@ -108,12 +122,13 @@ export default class ListaDoadores extends Component {
           <div className="donations-top">
             <div className="donations-top-text">
               <div className="donations-top-title">
-                <h2>Quem está doando:</h2>
+                <h2> <FormattedMessage id="donations-top-title"/> </h2>
               </div>
               <div className="donations-top-description">
                 <p>
-                  (para cada um dos 232 doadores - mínimo de 3 mil reais - há um
-                  link com a referência principal da notícia sobre a doação)
+                <FormattedMessage id="donations-top-description"/>
+                {this.quantidade() || "0"}
+                <FormattedMessage id="donations-top-description-two"/>
                 </p>
               </div>
             </div>
@@ -131,7 +146,7 @@ export default class ListaDoadores extends Component {
               )}
             </div>
             <div className="load-more">
-              <a onClick={this.handleSubmit}> + Carregar mais </a>
+              <a onClick={this.handleSubmit}>  + <FormattedMessage id="load-more"/></a>
             </div>
           </div>
         </div>

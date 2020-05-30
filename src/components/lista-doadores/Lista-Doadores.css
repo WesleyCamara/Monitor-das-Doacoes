@@ -7,7 +7,7 @@
     font-family: 'Rubik', sans-serif;
     color: #222222;
     display: flex;
-    margin: 200px auto;
+    margin: 200px auto 100px;
     /* padding: 120px 100px; */
 }
 
@@ -16,7 +16,6 @@
     flex-direction: column;
     align-content: flex-start;
     align-items: flex-start;
-    /* border: solid blue; */
     margin: 0 auto;
     width: 80%;
 }
