@@ -84,14 +84,24 @@
 }
 
 .donations-list p {
-    font-size: 16.50px;
-    margin: 0;
-    padding: 10px 0;
-    text-align: left;
+    
 }
 
 p .donation {
     font-weight: 600;
+}
+
+.donation a {
+    font-size: 16px;
+    margin: 0;
+    padding: 10px 0;
+    text-align: left;
+    text-decoration: none;
+    color: #222222;
+}
+
+.donation a:hover {
+    text-decoration: underline;
 }
 
 .load-more {
