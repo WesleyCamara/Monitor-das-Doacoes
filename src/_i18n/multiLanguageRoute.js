@@ -5,7 +5,7 @@ const MultiLanguageRoute = (props) => {
     const isBasePathWithoutLang = props.path === "/"
 
     if(isBasePathWithoutLang)  return  <Redirect to={`/${defaultLanguage}`} />
-    if(!hasLang >
+    if(!hasLang && !is404Page) return <Redirect to={`/${defaultLanguage}`} />
 
     return <Route {...props} />    
 }
