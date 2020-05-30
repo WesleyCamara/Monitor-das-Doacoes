@@ -3,23 +3,13 @@ import Highcharts from 'highcharts';
 import HighchartsReact from "highcharts-react-official";
 
 import api from "../../services/API";
+import "./estiloDoacaoSetores.css";
+import { FormattedMessage } from "react-intl";
 
-const estiloSetoresContainer = {
-    width: '80%',
-    background: 'white',
-    padding: '20px'
-}
+import squareShapes2 from '../../assets/img/doacao-setores/square-shapes-2.png'
+import setorBg from '../../assets/img/doacao-setores/setor-bg.png'
 
-const estiloBtn = {
-    background: '#8075ff',
-    border: 'none',
-    padding: '10px 35px',
-    borderRadius: '20px',
-    color: 'white',
-    fontSize: '12px',
-    fontWeight: 'bold',
 
-}
 
 Highcharts.setOptions({
     lang: {
@@ -35,16 +25,22 @@ class DoacaoSetores extends Component {
             options:{
                 chart: {
                     type: 'pie',
-                    renderTo: 'doacao-setores'
+                    renderTo: 'doacao-setores',
+                    dataLabels:{
+                        style: {
+                            fontSize: '30px',
+                            fontFamily: 'rubik, sans-serif',
+                            fontWeight: 'regular'
+                        }
+                    },
+                    backgroundColor: 'rgba(0,0,0,0)'
                 },
+                
                     credits: {
                         enabled: false
                     },
                     title: {
-                    text: 'Doação por setores',
-                    style: {
-                        fontSize: '20px',
-                    }
+                    text: ''                    
                     },
                     colors: ['#8075ff'],
                     plotOptions: {
@@ -130,7 +126,7 @@ class DoacaoSetores extends Component {
         this.setState({ info: response.data.Consolidação });
         this.setState({ options:{
             series: [{
-            name: 'Setores',
+            name: 'Doação',
             data: [
                 {
                 name: this.state.info[10][6],
@@ -199,7 +195,7 @@ class DoacaoSetores extends Component {
                 },
             ]
         }]}})
-        console.log(this.state.data)
+        console.log(this.state.info)
     }
 
 
@@ -207,11 +203,23 @@ class DoacaoSetores extends Component {
    	render() {
         const { options } = this.state;
        	return (
-            <div className="container" style={estiloSetoresContainer}>
+            <div className="container-setores" >
+                <div>
+                    <img className="img-fundo-setor" src={setorBg} />                
+                </div>
+                <h2 className="chart-title">
+                    <FormattedMessage id="chart-sectors-chart" />
+                </h2>
                 <div id="doacao-setores">
                     <HighchartsReact highcharts={Highcharts} options={options} />
                 </div>
-                <button style={estiloBtn}>VER DETALHES</button>
+                <a href="https://docs.google.com/spreadsheets/d/1RA0oP9EBHxpsLGvHTaX2TTYHT2oQHTfNrM8Z40hqVus/edit#gid=816672137" target="_blank">
+                    <button className="estiloBtn"><FormattedMessage id="chart-indicators-button" /></button>
+                </a>
+                <div>
+                    <img className="square-shape2" src={squareShapes2} />
+                </div>
+                
             </div>
             
        	);
