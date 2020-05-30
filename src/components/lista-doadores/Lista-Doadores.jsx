@@ -51,9 +51,9 @@ export default class ListaDoadores extends Component {
 
 
     const response = await fetch(options);
-    console.log("res ", response);
 
     const body = await response.json();
+    console.log("data", body);
 
     this.setState({ teste: body.Doações });
     console.log("data", this.state.data);
@@ -84,7 +84,8 @@ export default class ListaDoadores extends Component {
           this.doacaoObject.push({
             quemdoa: donation["Quem doa"],
             valor: donation["Valor Anunciado"],
-            dollar: donation["in Dollars"]
+            dollar: donation["in Dollars"],
+            referencia: donation["Referência"]
           });
         }
         console.log("Teste", this.doacaoObject);
@@ -95,7 +96,8 @@ export default class ListaDoadores extends Component {
         this.state.doacao.push({
           quemdoa: donation.quemdoa,
           valor: donation.valor,
-          dollar: donation.dollar
+          dollar: donation.dollar,
+          referencia: donation.referencia
         });
       }
     });
@@ -109,7 +111,7 @@ export default class ListaDoadores extends Component {
         this.state.doacao.map((teste) => (
           <div>
             <p>
-              <span className="donation"> {teste.quemdoa} - </span> <FormattedMessage id="donation-value"/> {" "}
+              <span className="donation"> <a href={(teste.referencia)} target="_blank"> {teste.quemdoa} </a> - </span> <FormattedMessage id="donation-value"/> {" "}
               {this.formatValueReal(teste.valor)}
             </p>
           </div>
