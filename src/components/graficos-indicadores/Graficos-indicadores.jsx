@@ -262,7 +262,7 @@ export default class graficosIndicators extends Component {
                     </p>
                     <p>
                       <span className="valor-doado">R$ {this.state.maiorDoador["Valor Anunciado"]}</span>
-                      <span>(00%)</span>
+                      <span>(0%)</span>
                     </p>
                   </div>
                 </div>
