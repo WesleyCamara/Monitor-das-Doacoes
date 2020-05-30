@@ -1,31 +1,61 @@
-.container {
+.container-footer {
     width: 100%;
-    height: 450px;
-    background: #6320EE;
+    height: auto;
     display: flex;
+    flex-direction: column;
+    font-family: 'Rubik', sans-serif;
 }
+
+.partner-title {
+    width: 50%;
+    margin-left: 5%;
+}
+
+.partner-title h3 {
+    font-size: 30px;
+    text-align: left;
+    /* margin-left: 100px; */
+}
+
+.partner {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px 0;
+    margin-bottom: 80px;
+}
+
+.partner-one img,
+.partner-two img,
+.partner-three img,
+.partner-four img {
+    width: 200px;
+}
+
 
 .footer {
     display: flex;
     flex-direction: column;
     justify-content: center;
     width: 100%;
+    background: #6320EE;
+    padding: 70px 0;
 }
 
 .footer-first {
     display: flex;
-    margin: 50px auto;
+    margin: 0 auto 50px;
 }
 
 .footer-first-promocao,
 .footer-first-realizacao,
-.footer-first-imprenssa,
+.footer-first-imprensa,
 .footer-first-qrcode {
-    width: 190px;
+    width: 200px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
     margin: 0 50px;
 }
 
@@ -33,8 +63,9 @@
     color: #FFF;
     text-transform: uppercase;
     font-size: 16px;
-    font-family: 'Rubik', sans-serif;
     letter-spacing: 4px;
+    margin: 10px auto;
+    text-align: center;
 }
 
 .footer-img-promocao,
@@ -47,7 +78,7 @@
 .footer-img-qrcode {
     width: auto;
     height: auto;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .footer-img-promocao img {
@@ -181,7 +212,7 @@
 
     .footer-first-promocao,
     .footer-first-realizacao,
-    .footer-first-imprenssa,
+    .footer-first-imprensa,
     .footer-first-qrcode {
         margin: 0 10px;
     }
@@ -220,6 +251,15 @@
     .footer-secondary-compartilhar,
     .footer-secondary-sociais {
         margin: 20px 0;
+    }
+
+    .partner-title {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .partner-title h3 {
+        text-align: center;
     }
 
 }

@@ -7,6 +7,7 @@ import ChamadaInicialIndicadores from './components/chamada-inicial-indicadores/
 import Blocoinfo from './components/blocoinfo/Blocoinfo';
 import BlocoInfoDois from './components/blocoinfodois/Blocoinfodois';
 import BlocoInfoTres from './components/blocoinfotres/Blocoinfotres'
+import ListaDoadores from './components/lista-doadores/Lista-Doadores';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       </header> */}
       <Menu />
       <ChamadaInicialIndicadores />
+      <ListaDoadores/>
       <GraficosIndicadores/>
       <Blocoinfo />
       <BlocoInfoDois />
