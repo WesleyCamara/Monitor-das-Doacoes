@@ -294,10 +294,6 @@ export default class graficosIndicators extends Component {
   }
 
   async porcentagem(parte, total) {
-    console.log(+parte);
-    console.log(total);
-    console.log((parte * 100) / total);
-
     return (parte * 100) / total;
   }
 
@@ -314,10 +310,13 @@ export default class graficosIndicators extends Component {
             <div className="chart">
               <HighchartsReact highcharts={Highcharts} options={options} />
             </div>
+
+            <a href="https://docs.google.com/spreadsheets/d/1RA0oP9EBHxpsLGvHTaX2TTYHT2oQHTfNrM8Z40hqVus/edit#gid=816672137" target="_blank" rel="noopener noreferrer">
             <div className="chart-indicators-button">
              
               <FormattedMessage id="chart-indicators-button" />
             </div>
+            </a>
           </div>
 
           <div className="div-indicators">
