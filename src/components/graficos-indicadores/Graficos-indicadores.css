@@ -96,6 +96,10 @@ margin-right: 30px;
   font-weight: bold;
 }
 
+.section-chart-container p {
+  text-align: left;
+}
+
 .indicators-subitem-doadores{
     display: flex;
 }
