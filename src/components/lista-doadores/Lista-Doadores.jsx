@@ -4,6 +4,8 @@ import Loading from "../../assets/img/lista-doadores/loading.gif";
 import shape from "../../assets/img/lista-doadores/square-shapes.svg";
 import { FormattedMessage } from "react-intl";
 
+import api from "../../services/API";
+
 export default class ListaDoadores extends Component {
   constructor(props) {
     super(props);
@@ -39,14 +41,17 @@ export default class ListaDoadores extends Component {
 
 
   async componentDidMount() {
-    const options =
-      "https://script.googleusercontent.com/macros/echo?user_content_key=HHPgHY0VTjUOtvbiM59KZSfpXISWkOsv6VDGAbI-16-RHELWJOk66ERsKhQ73D6Z7ohS8jGm_iyH3nHl8n7O4S0WuK_EtGHWm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnFkSJ3OGPU4PNUNksnCEJmJS93T2ZzyujjUpxX3tYNvUSMYBj7AgB7_TWN7yU7wky0W-dnclfdIe&lib=MiU-jTl38wC2L3rz6MLSQoNcSVaJnOjrd";
+    // const options =
+    //   "https://script.googleusercontent.com/macros/echo?user_content_key=HHPgHY0VTjUOtvbiM59KZSfpXISWkOsv6VDGAbI-16-RHELWJOk66ERsKhQ73D6Z7ohS8jGm_iyH3nHl8n7O4S0WuK_EtGHWm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnFkSJ3OGPU4PNUNksnCEJmJS93T2ZzyujjUpxX3tYNvUSMYBj7AgB7_TWN7yU7wky0W-dnclfdIe&lib=MiU-jTl38wC2L3rz6MLSQoNcSVaJnOjrd";
 
-    const response = await fetch(options);
+    // const response = await fetch(options);
 
-    const body = await response.json();
+    // const body = await response.json();
 
-    this.setState({ lista: body.Doações });
+    const response = await api.get('');
+    console.log("Response", response);
+
+    this.setState({ lista: response.data.Doações });
   }
 
 
