@@ -351,12 +351,12 @@ export default class graficosIndicators extends Component {
 
                   <div className="biggest-donor">
                     <p>
-                      <FormattedMessage id="largest-donor" />:{" "}
+                      <FormattedMessage id="largest-donor" />:
                       {this.state.maiorDoador["Quem doa"]}
                     </p>
                     <p>
                       <span className="valor-doado">
-                        R$ {this.state.maiorDoador["Valor Anunciado"]}
+                        R${this.state.maiorDoador["Valor Anunciado"]}
                       </span>
                       <span>(00%)</span>
                     </p>
@@ -376,7 +376,7 @@ export default class graficosIndicators extends Component {
                   </h3>
                   <h3>
                     <span className="span-h3">
-                      R$ {this.state.totalCampanhas}
+                      R${this.state.totalCampanhas}
                     </span>
                   </h3>
                 </div>
@@ -393,12 +393,12 @@ export default class graficosIndicators extends Component {
 
                   <div className="biggest-donor">
                     <p>
-                      <FormattedMessage id="largest-campaign" />:{" "}
+                      <FormattedMessage id="largest-campaign" />:
                       {this.state.maiorCampanha.Campanhas}
                     </p>
                     <p>
                       <span className="valor-doado">
-                        R$ {this.state.maiorValorDoadoCampanha}
+                        R${this.state.maiorValorDoadoCampanha}
                       </span>
                       <span>(00%)</span>
                     </p>
@@ -424,12 +424,12 @@ export default class graficosIndicators extends Component {
                 <div className="indicators-subitem-doadores">
                   <div>
                     <p className="biggest-donor">
-                      <FormattedMessage id="biggest-live" />:{" "}
+                      <FormattedMessage id="biggest-live" />:
                       {this.state.maiorLive[1]}
                     </p>
 
                     <p>
-                      <span>R$ {this.state.valorMaiorLive}</span>
+                      <span>R${this.state.valorMaiorLive}</span>
                       <span>(00%)</span>
                     </p>
                   </div>

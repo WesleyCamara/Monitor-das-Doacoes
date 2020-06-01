@@ -52,6 +52,7 @@ indicators ---------------------  */
   padding-left: 130px;
 }
 
+
 .indicators-subitem {
   display: flex;
   margin-bottom: 130px;
@@ -129,6 +130,14 @@ indicators ---------------------  */
 }
 
 /* Ajustes para responsivo  */
+@media screen and (max-width: 1920px) {
+  .total-doadores{
+    width: 170px;
+  }
+  .biggest-donor p{
+    margin-left: 300px;
+  }
+}
 
 @media screen and (max-width: 1440px) {
   .div-indicators {
