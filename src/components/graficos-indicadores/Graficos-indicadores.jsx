@@ -91,7 +91,7 @@ export default class graficosIndicators extends Component {
       data: [],
       totalDoado: [],
       doadores: 0,
-      doadoresCampanhas: 0,
+      doadoresCampanhas: 4,
       maiorDoador: [],
       maiorValorDoado: [0],
       maiorValorDoadoCampanha: [0],
@@ -100,6 +100,7 @@ export default class graficosIndicators extends Component {
       totalLive: [0],
       totalLivesAxiliar: [0],
       totalCampanhas: [0],
+      totalDoadoresCampanhas: 0,
       valor: 10,
       valorMaiorLive: [0],
       doacoesParaGrafico: [0],
@@ -113,23 +114,22 @@ export default class graficosIndicators extends Component {
 
     this.setState({ data: response.data });
     this.setState({
-      totalDoado: this.formatNumber(this.state.data.Consolidação[3][1]).toLocaleString("pt-BR"),
+      totalDoado: this.formatNumber(this.state.data.Consolidação[1][1]).toLocaleString("pt-BR"),
       doadores: this.state.data.Doações.length - 1,
       maiorDoador: this.maiorDoador(this.state.data.Doações),
       maiorValorDoado: this.formatNumber(this.state.maiorDoador["Valor Anunciado"]),
       totalLive: this.formatNumber(this.state.data.Lives[this.state.data.Lives.length - 1][5]).toLocaleString("pt-BR"),
       totalLiveAuxiliar: this.formatNumber(this.state.data.Lives[this.state.data.Lives.length - 1][5]),
-      doadoresCampanhas: (this.state.data.Consolidação[5][1] - this.state.doadores).toLocaleString("pt-BR"),
+      doadoresCampanhas: (this.state.data.Consolidação[6][1] - this.state.doadores).toLocaleString("pt-BR"),
       maiorCampanha: this.maiorCampanha(this.state.data.Campanhas),
     });
+
    
     this.setState({
       totalCampanhas: (this.formatNumber(this.state.data.Consolidação[2][1]) - this.state.totalLiveAuxiliar).toLocaleString("pt-BR"),
       maiorValorDoadoCampanha: this.formatNumber(this.state.maiorCampanha["Valor Doado"]).toLocaleString("pt-BR"),
       maiorLive: this.maiorLive(this.state.data.Lives),
       doacoesOrdenadas: this.ordenaDoacoes(this.state.data.Doações),
-      
-      
     });
 
     this.setState({ 
