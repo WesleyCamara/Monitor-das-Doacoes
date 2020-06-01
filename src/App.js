@@ -20,13 +20,13 @@ function App() {
         </p>
       </header> */}
       <Menu />
-      <ChamadaInicialIndicadores />
+      {/* <ChamadaInicialIndicadores /> */}
       <ListaDoadores/>
       <DoacaoSetores/>
       <GraficosIndicadores/>
-      <Blocoinfo />
+      {/* <Blocoinfo />
       <BlocoInfoDois />
-      <BlocoInfoTres />
+      <BlocoInfoTres /> */}
       <Footer />
     </div>
   );
