@@ -132,7 +132,7 @@ export default class GraficosIndicators extends Component {
   
     if (this.state.data) {
       
-     
+     console.log(this.state.data['Consolidação'][2][1])
 
       this.setState({
         totalCampanhas:
@@ -148,7 +148,7 @@ export default class GraficosIndicators extends Component {
 
       this.setState({
 
-        // doacoesParaGrafico: this.filtraDoacoes(this.state.doacoesOrdenadas),
+        doacoesParaGrafico: this.filtraDoacoes(this.state.doacoesOrdenadas),
       });
 
       // chama a função que ordena a array de doações
@@ -161,69 +161,71 @@ export default class GraficosIndicators extends Component {
 
       console.log('data', this.state.data)
 
-      // Atualiza o grafico com as 11 maiores doações
-    //   this.setState({
-    //     options: {
-    //       series: [
-    //         {
-    //           data: [
-    //             [
-    //               this.state.doacoesParaGrafico[0].doador,
-    //               this.state.doacoesParaGrafico[0].valorDoado,
-    //             ],
-    //             [
-    //               this.state.doacoesParaGrafico[1].doador,
-    //               this.state.doacoesParaGrafico[1].valorDoado,
-    //             ],
-    //             [
-    //               this.state.doacoesParaGrafico[2].doador,
-    //               this.state.doacoesParaGrafico[2].valorDoado,
-    //             ],
-    //             [
-    //               this.state.doacoesParaGrafico[3].doador,
-    //               this.state.doacoesParaGrafico[3].valorDoado,
-    //             ],
-    //             [
-    //               this.state.doacoesParaGrafico[4].doador,
-    //               this.state.doacoesParaGrafico[4].valorDoado,
-    //             ],
-    //             [
-    //               this.state.doacoesParaGrafico[5].doador,
-    //               this.state.doacoesParaGrafico[5].valorDoado,
-    //             ],
-    //             [
-    //               this.state.doacoesParaGrafico[6].doador,
-    //               this.state.doacoesParaGrafico[6].valorDoado,
-    //             ],
-    //             [
-    //               this.state.doacoesParaGrafico[7].doador,
-    //               this.state.doacoesParaGrafico[7].valorDoado,
-    //             ],
-    //             [
-    //               this.state.doacoesParaGrafico[8].doador,
-    //               this.state.doacoesParaGrafico[8].valorDoado,
-    //             ],
-    //             [
-    //               this.state.doacoesParaGrafico[9].doador,
-    //               this.state.doacoesParaGrafico[9].valorDoado,
-    //             ],
-    //             [
-    //               this.state.doacoesParaGrafico[10].doador,
-    //               this.state.doacoesParaGrafico[10].valorDoado,
-    //             ],
-    //           ],
-    //         },
-    //       ],
-    //     },
-    //   });
-    }
+    //   Atualiza o grafico com as 11 maiores doações 
+      this.setState({
+        options: {
+          series: [
+            {
+              data: [
+                [
+                  this.state.doacoesParaGrafico[0].doador,
+                  this.state.doacoesParaGrafico[0].valorDoado,
+                ],
+                [
+                  this.state.doacoesParaGrafico[1].doador,
+                  this.state.doacoesParaGrafico[1].valorDoado,
+                ],
+                [
+                  this.state.doacoesParaGrafico[2].doador,
+                  this.state.doacoesParaGrafico[2].valorDoado,
+                ],
+                [
+                  this.state.doacoesParaGrafico[3].doador,
+                  this.state.doacoesParaGrafico[3].valorDoado,
+                ],
+                [
+                  this.state.doacoesParaGrafico[4].doador,
+                  this.state.doacoesParaGrafico[4].valorDoado,
+                ],
+                [
+                  this.state.doacoesParaGrafico[5].doador,
+                  this.state.doacoesParaGrafico[5].valorDoado,
+                ],
+                [
+                  this.state.doacoesParaGrafico[6].doador,
+                  this.state.doacoesParaGrafico[6].valorDoado,
+                ],
+                [
+                  this.state.doacoesParaGrafico[7].doador,
+                  this.state.doacoesParaGrafico[7].valorDoado,
+                ],
+                [
+                  this.state.doacoesParaGrafico[8].doador,
+                  this.state.doacoesParaGrafico[8].valorDoado,
+                ],
+                [
+                  this.state.doacoesParaGrafico[9].doador,
+                  this.state.doacoesParaGrafico[9].valorDoado,
+                ],
+                [
+                  this.state.doacoesParaGrafico[10].doador,
+                  this.state.doacoesParaGrafico[10].valorDoado,
+                ],
+              ],
+            },
+          ],
+        },
+      });
+    
   }
-
+}
   // Formata o número com arredondamento
   formatNumber(number) {
     let formattedNumber = Math.round(number);
     return formattedNumber;
   }
+
+
 
   // retorna o maior doador
   maiorDoador(array) {
@@ -286,22 +288,24 @@ export default class GraficosIndicators extends Component {
     return saida;
   }
 
-//   // filtra os primeiros 11 itens uteis da array
-//   filtraDoacoes(itens) {
-//     let maioresDoacoes = [];
+  // filtra os primeiros 11 itens uteis da array
+  filtraDoacoes(itens) {
+    let maioresDoacoes = [];
 
-//     for (let item = 2; item < 13; item++) {
-//       maioresDoacoes.push({
-//         doador: itens[item]["Quem doa"],
-//         valorDoado: itens[item]["Valor Anunciado"],
-//       });
-//     }
-//     return maioresDoacoes;
-//   }
+    for (let item = 2; item < 13; item++) {
+      maioresDoacoes.push({
+        doador: itens[item]["Quem doa"],
+        valorDoado: itens[item]["Valor Anunciado"],
+      });
+    }
+    return maioresDoacoes;
+  }
 
   async porcentagem(parte, total) {
     return (parte * 100) / total;
   }
+
+
 
   render() {
     const { options } = this.state;
