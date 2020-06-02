@@ -1,7 +1,11 @@
 {
     "en-US": {
+        "paragrafo-exemplo" : "paragrafo em ingles",
+
         "_comment-menu": "Idioma Menu",
         "menu-title": "Donation monitor",
+
+        "chart-sectors-chart": "Donations by Sector",
 
         "chart-indicators-chart": "Companies with more donations" ,
         "chart-indicators-button": "see details",
@@ -13,24 +17,34 @@
         "largest-donor" : "Largest Donor",
         "largest-campaign" : "Largest Campaign",
         "biggest-live" : " Biggest Live",
-        "_comment-footer": "Idioma Footer",
-
-        "footer-title-promotion": "Promotion",
-        "footer-title-realization": "Realization",
-        "footer-title-press": "Press office ABCR",
-        "footer-link-donation": "Click and donate to ABCR to further develop the Donation Monitor",
-        "footer-secondary-compartilhar": "share",
         "banner-title-donations": "donated in response to COVID-19",
         "banner-title-donors": "donors",
         "card-title-sector": "Sector with more donations",
         "card-title-city": "City with more donations",
         "card-title-campaign": "Campaign with more donations",
-        "card-title-live": "Live with more donations"
+        "card-title-live": "Live with more donations",
+        "_comment-list-donations": "Idioma Lista Doadores",
+        "donations-top-title": "Who is donating:",
+        "donations-top-description": "(for each of the ",
+        "donations-top-description-two": " donors there's a weblink to the main internet reference - in Portuguese)",
+        "donation-value": "$",
+        "load-more": "Load more",
+        "_comment-footer": "Idioma Footer",
+        "partner-title": "Partner:",
+        "footer-title-promotion": "Part of",
+        "footer-title-realization": "Powered by",
+        "footer-title-press": "Press",
+        "footer-link-donation": "Donate to ABCR for us to keep developing the Monitor.",
+        "footer-secondary-compartilhar": "share"
     },
     "pt-BR": {
+        "paragrafo-exemplo" : "paragrafo em portugues",
+
         "_comment-menu": "Idioma Menu",
         "menu-title": "Monitor das doações",
-        
+
+        "chart-sectors-chart": "Doação por Setores",
+
         "chart-indicators-chart": "Empresas com mais doações" ,
         "chart-indicators-button": "ver detalhes",
         "indicators-title": "Resumo",
@@ -41,8 +55,14 @@
         "largest-donor" : "Maior Doador",
         "largest-campaign" : "Maior Campanha",
         "biggest-live" : "Maior Live",
-
+        "_comment-list-donations": "Idioma Lista Doadores",
+        "donations-top-title": "Quem está doando:",
+        "donations-top-description": "(para cada um dos ",
+        "donations-top-description-two": " doadores - mínimo de 3 mil reais - há um link com a referência principal da notícia sobre a doação)",
+        "donation-value": "R$",
+        "load-more": "Carregar mais",
         "_comment-footer": "Idioma Footer",
+        "partner-title": "Parceiros:",
         "footer-title-promotion": "Promoção",
         "footer-title-realization": "Realização",
         "footer-title-press": "Imprensa ABCR",
