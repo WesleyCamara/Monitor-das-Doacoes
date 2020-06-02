@@ -153,7 +153,7 @@ const GraficosIndicadores = (props) => {
                     <FormattedMessage id="indicators-donations" />
                   </h3>
                   <h3>
-                    <span className="span-h3">R$ {valores.total} </span>
+                    <span className="span-h3">R$ {formatNumber(valores.total)} </span>
                   </h3>
                 </div>
 
@@ -163,14 +163,13 @@ const GraficosIndicadores = (props) => {
                       <FormattedMessage id="total-donors" />
                     </p>
                     <p>
-                      <span>{valores.totalDoadores}</span>
+                      <span>{formatNumber(valores.totalDoadores)}</span>
                     </p>
                   </div>
 
                   <div className="biggest-donor">
                     <p>
-                      <FormattedMessage id="largest-donor" />:{" "}
-                      {valores.maiorDoador["Quem doa"]}
+                      <FormattedMessage id="largest-donor" />:{valores.maiorDoador["Quem doa"]}
                     </p>
                     <p>
                       <span className="valor-doado">
@@ -203,7 +202,7 @@ const GraficosIndicadores = (props) => {
                       <FormattedMessage id="total-donors" />
                     </p>
                     <p>
-                      <span>{valores.totalDoadoresCampanhas}</span>
+                      <span>{formatNumber(valores.totalDoadoresCampanhas)}</span>
                     </p>
                   </div>
 
