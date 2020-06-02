@@ -7,7 +7,7 @@ import handMoney from "../../assets/img/graficos-indicadores/hand-money.png";
 
   const GraficosIndicadores = (props) => {
   const [count, setCount] = useState(0);
-  var [valores, setValores] = useState({
+  const [valores, setValores] = useState({
     total: 0,
     totalCampanhas: 0,
     totalLives: 0,
@@ -15,21 +15,27 @@ import handMoney from "../../assets/img/graficos-indicadores/hand-money.png";
     maiorDoador: ''
   })
 
+  // const [valoresTratados, setValoresTratados] = useState({
+
+  // })
+
+
+
   useEffect(() => {
     if(props.valor.status == 'ok'){
       console.log('as props', props.valor['Consolidação'][3][1])
       setValores({
-        total : formatNumber(props.valor['Consolidação'][4][1]),
+      total : formatNumber(props.valor['Consolidação'][4][1]),
       totalCampanhas : formatNumber(props.valor['Consolidação'][2][1]),
       totalLives : formatNumber(props.valor['Consolidação'][3][1]),
       totalDoadores: props.valor['Doações'].length -2,
       maiorDoador: maiorDoador(props.valor['Doações'])
     })
     console.log(maiorDoador(props.valor['Doações']))
-    console.log(valores.maiorDoador)
-
-  }
+    console.log('maior doador' , valores.maiorDoador)  }
   }, [props]);
+
+
 
 
     // Formata o número com arredondamento
@@ -117,7 +123,7 @@ import handMoney from "../../assets/img/graficos-indicadores/hand-money.png";
                     </p>
                     <p>
                       <span className="valor-doado">
-                        R$
+                        R$ {valores.maiorDoador["Valor Anunciado"]}
                       </span>
                       <span>(00%)</span>
                     </p>
