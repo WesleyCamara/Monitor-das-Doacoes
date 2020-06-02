@@ -293,7 +293,7 @@ export default class GraficosIndicators extends Component {
     return maioresDoacoes;
   }
 
-  async porcentagem(parte, total) {
+ porcentagem(parte, total) {
     return (parte * 100) / total;
   }
 
