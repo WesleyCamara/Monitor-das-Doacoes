@@ -2,7 +2,19 @@
     "en-US": {
         "_comment-menu": "Idioma Menu",
         "menu-title": "Donation monitor",
+
+        "chart-indicators-chart": "Companies with more donations" ,
+        "chart-indicators-button": "see details",
+        "indicators-title": "Summary",
+        "indicators-donations": "Donations (minimum R$3,000)",
+        "donations-campaigns" : "Donations Campaigns",
+        "donations-lives" : "Donations Lives",
+        "total-donors" : "Total Donors",
+        "largest-donor" : "Largest Donor",
+        "largest-campaign" : "Largest Campaign",
+        "biggest-live" : " Biggest Live",
         "_comment-footer": "Idioma Footer",
+
         "footer-title-promotion": "Promotion",
         "footer-title-realization": "Realization",
         "footer-title-press": "Press office ABCR",
@@ -18,6 +30,18 @@
     "pt-BR": {
         "_comment-menu": "Idioma Menu",
         "menu-title": "Monitor das doações",
+        
+        "chart-indicators-chart": "Empresas com mais doações" ,
+        "chart-indicators-button": "ver detalhes",
+        "indicators-title": "Resumo",
+        "indicators-donations": "Doações (mínimo R$3.000)",
+        "donations-campaigns" : "Campanhas Doações",
+        "donations-lives" : "Lives de Doações",
+        "total-donors" : "Total de doadores",
+        "largest-donor" : "Maior Doador",
+        "largest-campaign" : "Maior Campanha",
+        "biggest-live" : "Maior Live",
+
         "_comment-footer": "Idioma Footer",
         "footer-title-promotion": "Promoção",
         "footer-title-realization": "Realização",

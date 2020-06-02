@@ -6,36 +6,43 @@ import centerImg from '../../assets/img/chamada-inicial-indicadores/center-img.p
 import { FormattedMessage } from "react-intl";
 
 
+
 export default class ChamadaInicialIndicadores extends Component {
+
     render() {
         return (
             <div id="container-chamada">
                 <section id="banner">
                     {/*-----section-banner------*/}
                     <div className="banner-container">
-                        <div id="money">
-                            {/*-----doações-recebidas-----*/}
-                            <img src={(money)} alt="quantidade doada" />
-                            {/*-----"doacoes"-receberá-dados-da-api--*/}
-                            <div id="doacoes">
-                                1.234.567.898
+                        {/*-----container-main------*/}
+                        <div id="banner-content">
+                            {/*-----div-to-center-items------*/}
+                            <div id="money">
+                                {/*-----doações-recebidas-----*/}
+                                <img src={(money)} alt="quantidade doada" />
+                                {/*-----"doacoes"-receberá-dados-da-api--*/}
+                                <div id="doacoes">
+                                    1.234.567.898
                             </div>
-                            <h2>
-                                <FormattedMessage id="banner-title-donations" />
-                            </h2>
-                        </div>
-                        <div id="hand">
-                            {/*-----doadores------*/}
-                            <img src={(hand)} alt="doadores" />
-                            {/*-----"doadores"-receberá-dados-da-api------*/}
-                            <div id="doadores">
-                                123.456
+                                <h2>
+                                    <FormattedMessage id="banner-title-donations" />
+                                </h2>
                             </div>
-                            <h2>
-                                <FormattedMessage id="banner-title-donors" />
-                            </h2>
+                            <div id="hand">
+                                {/*-----doadores------*/}
+                                <img src={(hand)} alt="doadores" />
+                                {/*-----"doadores"-receberá-dados-da-api------*/}
+                                <div id="doadores">
+                                    123.456
+                            </div>
+                                <h2>
+                                    <FormattedMessage id="banner-title-donors" />
+                                </h2>
+                            </div>
                         </div>
                         <div id="img-center">
+                            {/*-----div-to-center-img------*/}
                             <img src={(centerImg)} alt="imagen principal" />
                         </div>
                     </div>
