@@ -111,8 +111,8 @@ export default class ListaDoadores extends Component {
     for (var listaDoadores of this.state.doacao) {
       this.listaDoadores =
         this.state.doacao &&
-        this.state.doacao.map((donation) => (
-          <div>
+        this.state.doacao.map((donation, index) => (
+          <div key={'donations' + index}>
             <p>
               <span className="donation"> <a href={(donation.referencia)} target="_blank"> {donation.quemdoa} </a> - </span> <FormattedMessage id="donation-value"/> {" "}
               {this.formatValue(donation.valor)}

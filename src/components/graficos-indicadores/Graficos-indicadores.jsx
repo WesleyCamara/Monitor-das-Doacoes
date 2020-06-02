@@ -16,7 +16,7 @@ Highcharts.setOptions({
   },
 });
 
-export default class graficosIndicators extends Component {
+export default class GraficosIndicators extends Component {
   constructor(props) {
     super(props);
 
