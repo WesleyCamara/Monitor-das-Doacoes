@@ -19,14 +19,14 @@ const GraficosIndicadores = (props) => {
 })
 
 
-  const [moeda, setMoeda] = useState({
+  const moeda = {
     valorAnunciado : "Valor Anunciado",
     valorDoado: "Valor Doado",
     acessoIndiceTotal: 1,
     acessoIndiceLives: 5,
     simbolo: "R$",
     valorDoadoLabel: "Valor doado"
-  })
+  }
 
   const [valores, setValores] = useState({
     total: 0,
@@ -73,7 +73,6 @@ const GraficosIndicadores = (props) => {
       valores.doacoesOrdenadas.length > 0 &&
       valores.doacoesOrdenadas[0].doador.length > 0
     ) {
-      formatValue()
       updateSeries();
 
     }
@@ -308,15 +307,12 @@ const GraficosIndicadores = (props) => {
   const formatValue = () => {
     const url_atual = window.location.pathname;
     if (url_atual !== "/pt") {
-
-     setMoeda({
-      valorAnunciado : "in Dollars",
-        valorDoado : "in Dollars",
-       acessoIndiceTotal : 2,
-        acessoIndiceLives : 6,
-        simbolo : "$",
-        valorDoadoLabel : "Donated amount"
-      })
+      moeda.valorAnunciado = "in Dollars"
+      moeda.valorDoado = "in Dollars"
+      moeda.acessoIndiceTotal = 2
+      moeda.acessoIndiceLives = 6
+      moeda.simbolo = "$"
+      moeda.valorDoadoLabel = "Donated amount"
     } 
  
   };
@@ -324,7 +320,7 @@ const GraficosIndicadores = (props) => {
   return (
     
     <>
-    
+      {formatValue()}
       <section className="section-chart-container">
         <div className="chart-indicators">
           <div className="div-chart">
@@ -468,7 +464,7 @@ const GraficosIndicadores = (props) => {
                 </div>
 
                 <div className="indicators-subitem-doadores">
-                  <div>
+                <div className="biggest-live">
                     <p className="biggest-donor">
                       <FormattedMessage id="biggest-live" />:{valores.maiorLive[1]}
                     </p>

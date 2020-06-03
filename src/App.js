@@ -33,16 +33,16 @@ export default class App extends Component {
   render() {
     return (
       <div className="App">
-        <Menu />
+        {/* <Menu />
 
         <ChamadaInicialIndicadores />
         <ListaDoadores />
-        <DoacaoSetores />
+        <DoacaoSetores /> */}
         <GraficosIndicadores valor={this.state.newData} />
-        <Blocoinfo />
+        {/* <Blocoinfo />
         <BlocoInfoDois />
         <BlocoInfoTres />
-        <Footer />
+        <Footer /> */}
       </div>
     );
   }

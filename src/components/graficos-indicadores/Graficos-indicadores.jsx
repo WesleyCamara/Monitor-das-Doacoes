@@ -421,7 +421,7 @@ export default class GraficosIndicators extends Component {
                 </div>
 
                 <div className="indicators-subitem-doadores">
-                  <div>
+                  <div className="biggest-live">
                     <p className="biggest-donor">
                       <FormattedMessage id="biggest-live" />:
                       {this.state.maiorLive[1]}
