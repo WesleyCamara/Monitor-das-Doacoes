@@ -18,7 +18,7 @@ const GraficosIndicadores = (props) => {
     visibleStyle: {opacity: 0},
 })
 
-
+  // A const possui os valores iniciais que servirão de referencia para mudar os valores para dolar 
   const moeda = {
     valorAnunciado : "Valor Anunciado",
     valorDoado: "Valor Doado",
@@ -28,6 +28,8 @@ const GraficosIndicadores = (props) => {
     valorDoadoLabel: "Valor doado"
   }
 
+
+  // Possui os valores iniciais de estado, serão atualizados quando receber as props pela API 
   const [valores, setValores] = useState({
     total: 0,
     totalCampanhas: 0,
@@ -59,7 +61,7 @@ const GraficosIndicadores = (props) => {
         doacoesOrdenadas: ordenaDoacoes(props.valor["Doações"]),
       });
       
-
+      // Torna os dados visiveis após receber e processar da API 
     setVisible({
       visibleStyle: {opacity: 1},
     })
@@ -105,8 +107,6 @@ const GraficosIndicadores = (props) => {
   const filtraMaiorCampanha = (array) => {
     let maiorDoacao = 0;
     let maiorDoador = [];
-
-
     for (let item of array) {
       if (
         item["Valor Doado"] > maiorDoacao &&
@@ -304,6 +304,7 @@ const GraficosIndicadores = (props) => {
     });
   };
 
+  // Altera os parametros quando o site estiver em ingles, os dados são buscados na URL 
   const formatValue = () => {
     const url_atual = window.location.pathname;
     if (url_atual !== "/pt") {
