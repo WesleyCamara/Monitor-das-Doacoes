@@ -107,6 +107,10 @@ indicators ---------------------  */
   line-height: 33px;
 }
 
+.indicators-subitem-doadores:nth-child(2) {
+  margin-right: 100px;
+}
+
 .total-doadores {
   width: 181px;
 }
@@ -131,11 +135,8 @@ indicators ---------------------  */
 
 /* Ajustes para responsivo  */
 /* @media screen and (max-width: 1920px) {
-  .total-doadores{
-    width: 170px;
-  }
-  .biggest-donor p{
-    margin-left: 300px;
+  .indicators-subitem-doadores p:nth-child(2) {
+    margin-right: 100px ; 
   }
 } */
 

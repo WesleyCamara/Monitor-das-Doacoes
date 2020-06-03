@@ -4,34 +4,29 @@ import { FormattedMessage } from "react-intl";
 import handMoney from "../../assets/img/graficos-indicadores/hand-money.png";
 import HighchartsReact from "highcharts-react-official";
 import Highcharts from "highcharts";
-import axios from "axios";
+
 
 const GraficosIndicadores = (props) => {
-const moeda = {
-  valorAnunciado : "Valor Anunciado",
-  valorDoado: "Valor Doado",
-  acessoIndiceTotal: 1,
-  acessoIndiceLives: 5,
-  simbolo: "R$",
-  valorDoadoLabel: "Valor doado 123"
-}
-
-
-
-  // const buscaDolar = async () => {
-  //   await axios.get("https://economia.awesomeapi.com.br/all/USD-BRL").then((res) => {
-  //     const valorDolar = res.data.USD.bid
-  //     console.log(valorDolar);
-
-  //     return valorDolar
-  //   });
-  // };
 
   Highcharts.setOptions({
     lang: {
       thousandsSep: ".",
     },
   });
+
+  const [visible, setVisible] = useState({
+    visibleStyle: {opacity: 0},
+})
+
+
+  const [moeda, setMoeda] = useState({
+    valorAnunciado : "Valor Anunciado",
+    valorDoado: "Valor Doado",
+    acessoIndiceTotal: 1,
+    acessoIndiceLives: 5,
+    simbolo: "R$",
+    valorDoadoLabel: "Valor doado"
+  })
 
   const [valores, setValores] = useState({
     total: 0,
@@ -64,6 +59,10 @@ const moeda = {
         doacoesOrdenadas: ordenaDoacoes(props.valor["Doações"]),
       });
       
+
+    setVisible({
+      visibleStyle: {opacity: 1},
+    })
       
     }
   }, [props, valores.maiorCampanha]);
@@ -76,7 +75,7 @@ const moeda = {
     ) {
       formatValue()
       updateSeries();
-      console.log("valor", moeda.valorAnunciado)
+
     }
   }, [valores.doacoesOrdenadas]);
 
@@ -174,6 +173,7 @@ const moeda = {
     chart: {
       type: "column",
       backgroundColor: "#F3F3F3",
+      height: (92) + '%'
     },
     colors: ["#4DB6AC"],
     title: {
@@ -195,7 +195,7 @@ const moeda = {
           fontSize: "12px",
           fontFamily: "rubik, sans-serif",
           width: 9,
-          textOverflow: "auto",
+          // textOverflow: "auto",
         },
       },
     },
@@ -296,12 +296,15 @@ const moeda = {
   const formatValue = () => {
     const url_atual = window.location.pathname;
     if (url_atual !== "/pt") {
-      moeda.valorAnunciado = "in Dollars"
-      moeda.valorDoado = "in Dollars"
-      moeda.acessoIndiceTotal = 2
-      moeda.acessoIndiceLives = 6
-      moeda.simbolo = "$"
-      moeda.valorDoadoLabel = "Donated amount"
+
+     setMoeda({
+      valorAnunciado : "in Dollars",
+        valorDoado : "in Dollars",
+       acessoIndiceTotal : 2,
+        acessoIndiceLives : 6,
+        simbolo : "$",
+        valorDoadoLabel : "Donated amount"
+      })
     } 
  
   };
@@ -309,7 +312,7 @@ const moeda = {
   return (
     
     <>
-    {formatValue()}
+    
       <section className="section-chart-container">
         <div className="chart-indicators">
           <div className="div-chart">
@@ -347,7 +350,7 @@ const moeda = {
                     <FormattedMessage id="indicators-donations" />
                   </h3>
                   <h3>
-                    <span className="span-h3">
+                    <span className="span-h3" style={visible.visibleStyle}>
                       {moeda.simbolo} {formatNumber(valores.total)}{" "}
                     </span>
                   </h3>
@@ -359,7 +362,7 @@ const moeda = {
                       <FormattedMessage id="total-donors" />
                     </p>
                     <p>
-                      <span>{formatNumber(valores.totalDoadores)}</span>
+                      <span style={visible.visibleStyle}>{formatNumber(valores.totalDoadores)}</span>
                     </p>
                   </div>
 
@@ -369,11 +372,9 @@ const moeda = {
                       {valores.maiorDoador["Quem doa"]}
                     </p>
                     <p>
-                      <span className="valor-doado">
-                        {moeda.simbolo}{formatNumber(valores.maiorDoador[moeda.valorAnunciado])}{" "}
-                       
-                      </span>
-                      <span>
+                      <span className="valor-doado" style={visible.visibleStyle}>
+                        {moeda.simbolo}{formatNumber(valores.maiorDoador[moeda.valorAnunciado])}</span>
+                      <span style={visible.visibleStyle}>
                         (
                         {porcentagem(
                           Number(valores.maiorDoador[moeda.valorAnunciado]),
@@ -397,7 +398,7 @@ const moeda = {
                     <FormattedMessage id="donations-campaigns" />
                   </h3>
                   <h3>
-                    <span className="span-h3">
+                    <span className="span-h3" style={visible.visibleStyle}>
                       {moeda.simbolo} {formatNumber(valores.totalCampanhas)}
                     </span>
                   </h3>
@@ -409,7 +410,7 @@ const moeda = {
                       <FormattedMessage id="total-donors" />
                     </p>
                     <p>
-                      <span>
+                      <span style={visible.visibleStyle}>
                         {formatNumber(valores.totalDoadoresCampanhas - valores.totalDoadores)}
                       </span>
                     </p>
@@ -421,11 +422,10 @@ const moeda = {
                       {valores.maiorCampanha["Campanhas"]}
                     </p>
                     <p>
-                      {/* voltar isso pra valor doado----------------------------------- */}
-                      <span className="valor-doado"> 
+                      <span className="valor-doado" style={visible.visibleStyle}> 
                         {moeda.simbolo}{formatNumber(valores.maiorCampanha[moeda.valorDoado])}
                       </span>
-                      <span>
+                      <span style={visible.visibleStyle}>
                         (
                         {porcentagem(
                           Number(valores.maiorCampanha[moeda.valorDoado]),
@@ -449,7 +449,7 @@ const moeda = {
                     <FormattedMessage id="donations-lives" />
                   </h3>
                   <h3>
-                    <span className="span-h3">
+                    <span className="span-h3" style={visible.visibleStyle}>
                       {moeda.simbolo} {formatNumber(valores.totalLives)}
                     </span>
                   </h3>
@@ -461,9 +461,9 @@ const moeda = {
                       <FormattedMessage id="biggest-live" />:{valores.maiorLive[1]}
                     </p>
 
-                    <p>
+                    <p style={visible.visibleStyle}>
                       <span>{moeda.simbolo} {formatNumber(valores.maiorLive[moeda.acessoIndiceLives])}</span>
-                      <span>
+                      <span style={visible.visibleStyle}>
                         (
                         {porcentagem(
                           Number(valores.maiorLive[moeda.acessoIndiceLives]),
