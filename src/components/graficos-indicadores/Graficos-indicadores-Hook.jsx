@@ -208,6 +208,18 @@ const GraficosIndicadores = (props) => {
       gridLineDashStyle: "Dash",
       lineWidth: 2,
       lineColor: "#222222",
+      labels: {
+        rotation: 0,
+        style: {
+          fontSize: "12px",
+          fontFamily: "rubik, sans-serif",
+          width: 9,
+          // textOverflow: "auto",
+        },
+        formatter: function () {
+          return  this.value.toLocaleString("pt-BR")
+      }
+      },
     },
     legend: {
       enabled: false,
