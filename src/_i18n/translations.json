@@ -35,7 +35,40 @@
         "footer-title-realization": "Powered by",
         "footer-title-press": "Press",
         "footer-link-donation": "Donate to ABCR for us to keep developing the Monitor.",
-        "footer-secondary-compartilhar": "share"
+        "footer-secondary-compartilhar": "share",
+
+        "campanhaum": "Donation Campaign:",
+        "totalum": "$",
+        "iniciocamp" : "There are ",
+        "informacaocamp": " campaigns - minimum 10 thousand reais - and lives currently mapped. Click",
+        "informacaoaqui": "HERE",
+        "informacaocampdois": "to know them and access the links",
+
+        "tituloumbldois": "The Monitor of",
+        "titulodoisbldois": "Donations COVID-19",
+        "text1":"The COVID 19 Donation Monitor is updated daily by ABCR",
+        "text2":"with public data, collected daily on the internet or that are",
+        "text3":"sent to us. No donation is added if it has not been",
+        "text4": "publicly announced - links are released for conference. The",
+        "text5": "Donor numbers and campaigns are checked for",
+        "text6": "that are not counted twice",
+        "text7": "The objective of the COVID 19 Donation Monitor is to consolidate and learn about the",
+        "text8": "numbers of donations made due to the coronavirus, promoting them and",
+        "text9": "inspire donors and organizations, and we don't oversee. Responsibility for",
+        "text10": "making the announced donation belongs to each donor.",
+        "pessoasdoando":"SEE WHO'S GIVING",
+        "textcode": "Check graphically",
+        "textcodeum": "the results of",
+        "textcodedois": "MD COVID 19",
+        "textinferior": "Check out the FULL spreadsheet of the entire",
+        "textinferiorum": "survey carried out accessing",
+        "textinferiordois": "HERE",
+
+        "textemail1": "If you want to include information about your",
+        "textemail2": "donation made write to",
+        "textemail3": "abcr@captadores.org.br.",
+        "textemail4": "We can only count donations whose",
+        "textemail5": "value in reais is informed."
     },
     "pt-BR": {
         "paragrafo-exemplo" : "paragrafo em portugues",
@@ -73,6 +106,40 @@
         "card-title-sector": "Setor com mais doações",
         "card-title-city": "Cidade com mais doações",
         "card-title-campaign": "Campanha com mais doações",
-        "card-title-live": "Live com mais doações"
+        "card-title-live": "Live com mais doações",
+        
+        "campanhaum": "Campanha de Doação:",
+        "totalum": "R$",
+        "iniciocamp" : "São ",
+        "informacaocamp": " campanhas - mínimo 10 mil reais - e lives atualmente mapeadas. Clique",
+        "informacaoaqui": "AQUI",
+        "informacaocampdois": "para conhecê-las e acessar os links",
+
+        
+        "tituloumbldois": "O Monitor das",
+        "titulodoisbldois": "Doações COVID 19:",
+        "text1": "O Monitor Das Doações COVID 19 é atualizado diariamente pela ABCR",
+        "text2": "com dados públicos, coletados diariamente na internet ou que são",
+        "text3": "enviados para nós. Nenhuma doação é somada se ela não tiver sido",
+        "text4": "anunciada publicamente - os links são divulgados para conferência. Os",
+        "text5": "números referentes aos doadorese às campanhas são checados para",
+        "text6": "que não sejam contados duas vezes",
+        "text7": "O objetivo do Monitor Das Doações COVID 19 é consolidar e conhecer os",
+        "text8": "números das doações realizadas em razão do coronavírus, promovê-las e",
+        "text9": "inspirar doadores e organizações, e não fiscalizamos. A responsabilidade por",
+        "text10": "realizar a doação anunciada é de cada doador.",
+        "pessoasdoando": "VEJA QUEM ESTÁ DOANDO",
+        "textcode": "Confira graficamente",
+        "textcodeum": "os resultados do",
+        "textcodedois": "MD COVID 19",
+        "textinferior": "Confira a planilha COMPLETA de todo o",
+        "textinferiorum": "levantamento realizado acessando",
+        "textinferiordois": "AQUI",
+
+        "textemail1": "Caso você queira incluir a informação sobre sua",
+        "textemail2": "doação realizada escreva para",
+        "textemail3": "abcr@captadores.org.br.",
+        "textemail4": "Somente conseguimos contabilizar doações cujo",
+        "textemail5": "valor em reais seja informado."
     }
 }
