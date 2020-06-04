@@ -37,7 +37,7 @@ export default class App extends Component {
         <ListaDoadores />
         <DoacaoSetoresHook valor={this.state.newData} />
         <GraficosIndicadores valor={this.state.newData} />
-        <Blocoinfo />
+        <Blocoinfo valor={this.state.newData}/>
         <BlocoInfoDois />
         <BlocoInfoTres />
         <Footer />

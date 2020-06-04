@@ -21,7 +21,7 @@ const DoacaoSetoresHook = (props) => {
             updateGraficos();
             updateGraphic();
         }
-    })
+    }, [props])
 
     //opções do grafico em portugues
 

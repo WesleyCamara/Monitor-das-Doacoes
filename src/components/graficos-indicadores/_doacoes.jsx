@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from "react";
-import "./Graficos-indicadores.css";
 import { FormattedMessage } from "react-intl";
-import handMoney from "../../assets/img/graficos-indicadores/hand-money.png";
-import HighchartsReact from "highcharts-react-official";
-import Highcharts from "highcharts";
+import './Blocoinfo.css';
 
 
-const GraficosIndicadores = (props) => {
+const Blocoinfo = (props) => {
 
 //   Highcharts.setOptions({
 //     lang: {
@@ -307,11 +304,26 @@ const GraficosIndicadores = (props) => {
   return (
     
     <>
-      {/* {formatValue()} */}
-      <h1 className="section-chart-container">
-      {valores.total}
-      </h1>
+  <div className="container-bloco-info">
+                        <div className="blocoinfo">
+                            <div className="container-partesuperior">
+                                <div className="campanha">
+                                    <h1>Campanha de Doação:</h1>
+                                    <p><FormattedMessage id="paragrafo-exemplo" /></p>
+                                </div>
+                                <div className="totaldoado">
+                                    <h1>R$  {valores.total}</h1>
+                                </div>
+                                <div className="informacao">
+                                    <h3>São 295 campanhas - mínimo 10 mil reais - e lives atualmente mapeadas.<br />
+                                    Clique <a href='https://docs.google.com/spreadsheets/d/1RA0oP9EBHxpsLGvHTaX2TTYHT2oQHTfNrM8Z40hqVus/edit#gid=0' target="_blank">AQUI</a> para conhecê-las e acessar os links</h3>
+                                </div>
+                            <div>
+                        </div>
+                    </div>
+                </div>
+            </div>
     </>
   );
 };
-export default GraficosIndicadores;
+export default Blocoinfo;
