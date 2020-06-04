@@ -15,7 +15,7 @@ import axios from "axios";
 
 export default class App extends Component {
   state = {
-    newData: ['teste'],
+    newData: [],
   };
 
   async componentDidMount() {
@@ -31,12 +31,13 @@ export default class App extends Component {
   }
 
   render() {
+    // const teste = this.state.newData;
     return (
       <div className="App">
         <Menu />
 
         <ChamadaInicialIndicadores />
-        <ListaDoadores />
+        <ListaDoadores teste={this.state.newData["Doações"]}/>
         <DoacaoSetores />
         <GraficosIndicadores valor={this.state.newData} />
         <Blocoinfo />

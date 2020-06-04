@@ -9,15 +9,23 @@ import api from "../../services/API";
 export default class ListaDoadores extends Component {
   constructor(props) {
     super(props);
+    
+    // this.setState = {
+    //     oi: this.props.teste
+
+    // }
 
     this.handleSubmit = this.handleSubmit.bind(this);
 
     this.state = {
         lista: [],
         doacao: [],
-        num: 10
+        num: 10,
+        oi: []
       };
   }
+
+  
 
   handleSubmit(event) {
     this.state.doacao = [];
@@ -40,7 +48,7 @@ export default class ListaDoadores extends Component {
   url_atual = window.location.pathname;
 
 
-  async componentDidMount() {
+  async componentDidMount(props) {
     // const options =
     //   "https://script.googleusercontent.com/macros/echo?user_content_key=HHPgHY0VTjUOtvbiM59KZSfpXISWkOsv6VDGAbI-16-RHELWJOk66ERsKhQ73D6Z7ohS8jGm_iyH3nHl8n7O4S0WuK_EtGHWm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnFkSJ3OGPU4PNUNksnCEJmJS93T2ZzyujjUpxX3tYNvUSMYBj7AgB7_TWN7yU7wky0W-dnclfdIe&lib=MiU-jTl38wC2L3rz6MLSQoNcSVaJnOjrd";
 
@@ -48,10 +56,23 @@ export default class ListaDoadores extends Component {
 
     // const body = await response.json();
 
-    const response = await api.get('');
-    console.log("Response", response);
+    // const response = await api.get('');
 
-    this.setState({ lista: response.data.Doações });
+    // const response = this.props.oi;
+    
+    // const teste = this.props.teste;
+
+    // this.setState({ lista: this.response });
+    // console.log("Teste", this.state.lista)
+    // this.setState({ oi: teste });
+    
+  }
+  
+
+  shouldComponentUpdate(nextState) {
+    if (this.state.lista !== nextState.lista) {
+        return console.log("Lista", this.state.lista);
+    }
   }
 
 
@@ -76,12 +97,27 @@ export default class ListaDoadores extends Component {
     }
   }
 
+  componentDidUpdate(prevProps) {
+
+    if ( this.props.teste !== prevProps.teste){
+      
+    const teste = this.props.teste;
+
+    this.setState({ oi: teste });
+  }
+}
+
   render() {
 
-    const { lista } = this.state;
+    const { oi } = this.state;
+    
 
-    lista &&
-      lista.map((donation) => {
+    console.log("OI", this.state.oi);
+
+    // console.log("TESTE", this.teste);
+
+    oi &&
+      oi.map((donation) => {
         if (donation["Quem doa"] !== "Quem doa" && donation["Quem doa"] !== "Total") {
           this.doacaoObject.push({
             quemdoa: donation["Quem doa"],
