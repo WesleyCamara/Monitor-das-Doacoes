@@ -7,10 +7,8 @@ import Blocoinfo from "./components/blocoinfo/Blocoinfo";
 import BlocoInfoDois from "./components/blocoinfodois/Blocoinfodois";
 import BlocoInfoTres from "./components/blocoinfotres/Blocoinfotres";
 import ListaDoadores from "./components/lista-doadores/Lista-Doadores";
-import DoacaoSetores from "./components/doacao-setores/DoacaoSetores";
+import DoacaoSetoresHook from "./components/doacao-setores/DoacaoSetoresHook";
 import GraficosIndicadores from "./components/graficos-indicadores/Graficos-indicadores";
-
-
 
 import axios from "axios";
 
@@ -37,7 +35,7 @@ export default class App extends Component {
          <Menu />
         <ChamadaInicialIndicadores />
         <ListaDoadores />
-        <DoacaoSetores />
+        <DoacaoSetoresHook valor={this.state.newData} />
         <GraficosIndicadores valor={this.state.newData} />
         <Blocoinfo />
         <BlocoInfoDois />
