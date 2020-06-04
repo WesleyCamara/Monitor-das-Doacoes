@@ -19,21 +19,21 @@ export default class BlocoInfoDois extends Component {
                             </div>
                         </div>
                         <div className="textotitulo">
-                            <h1>O Monitor das<br />Doações COVID 19:</h1>
-                            <p>O Monitor Das Doações COVID 19 é atualizado diariamente pela ABCR<br />
-                                com dados públicos, coletados diariamente na internet ou que são<br />
-                                enviados para nós. Nenhuma doação é somada se ela não tiver sido<br />
-                                anunciada publicamente - os links são divulgados para conferência. Os<br />
-                                números referentes aos doadorese às campanhas são checados para<br />
-                                que não sejam contados duas vezes<br /><br />
-                                O objetivo do Monitor Das Doações COVID 19 é consolidar e conhecer os<br />
-                                números das doações realizadas em razão do coronavírus, promovê-las e<br />
-                                inspirar doadores e organizações, e não fiscalizamos. A responsabilidade por<br />
-                                realizar a doação anunciada é de cada doador.
-                                </p>
+                            <h1><FormattedMessage id="tituloumbldois" /><br /><FormattedMessage id="titulodoisbldois" /></h1>
+                            <p><FormattedMessage id="text1" /><br />
+                                <FormattedMessage id="text2" /><br />
+                                <FormattedMessage id="text3" /><br />
+                                <FormattedMessage id="text4" /><br />
+                                <FormattedMessage id="text5" /><br />
+                                <FormattedMessage id="text6" /><br /><br />
+                                <FormattedMessage id="text7" /><br />
+                                <FormattedMessage id="text8" /><br />
+                                <FormattedMessage id="text9" /><br />
+                                <FormattedMessage id="text10" />
+                            </p>
                         </div>
                         <div className="botao">
-                            <h1><a href="https://docs.google.com/spreadsheets/d/1RA0oP9EBHxpsLGvHTaX2TTYHT2oQHTfNrM8Z40hqVus/edit#gid=0" target="_blank">VEJA QUEM ESTÁ DOANDO</a></h1>
+                            <h1><a href="https://docs.google.com/spreadsheets/d/1RA0oP9EBHxpsLGvHTaX2TTYHT2oQHTfNrM8Z40hqVus/edit#gid=0" target="_blank"><FormattedMessage id= "pessoasdoando" /></a></h1>
                         </div>
                         <div className="imgdecorativo">
                             <img src={imgcanto} />
@@ -43,15 +43,15 @@ export default class BlocoInfoDois extends Component {
                         </div>
                         <div className="qrcode">
                             <img src={code} /><a href="http://bi.anna.center/w5/tdaportalclient.aspx" target="_blank" />
-                            <p>Confira graficamente<br />
-                                os resultados do<br />
-                                MD COVID 19</p>
+                            <p><FormattedMessage id="textcode" /><br />
+                            <FormattedMessage id="textcodeum" /><br />
+                            <FormattedMessage id="textcodedois" /></p>
                         <div className="seta">
                             <img src={seta} />
                         </div>
                         <div className="textbaixo">
-                            <p>Confira a planilha COMPLETA de todo o<br />
-                            levantamento realizado acessando <a href='https://docs.google.com/spreadsheets/d/1RA0oP9EBHxpsLGvHTaX2TTYHT2oQHTfNrM8Z40hqVus/edit#gid=0' target="_blank">AQUI</a></p>
+                            <p><FormattedMessage id="textinferior" /><br />
+                            <FormattedMessage id="textinferiorum" /> <a href='https://docs.google.com/spreadsheets/d/1RA0oP9EBHxpsLGvHTaX2TTYHT2oQHTfNrM8Z40hqVus/edit#gid=0' target="_blank"><FormattedMessage id="textinferiordois" /></a></p>
                         </div> 
                     </div>       
                 </div> 

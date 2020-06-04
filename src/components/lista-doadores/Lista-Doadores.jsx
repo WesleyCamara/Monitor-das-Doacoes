@@ -9,23 +9,15 @@ import api from "../../services/API";
 export default class ListaDoadores extends Component {
   constructor(props) {
     super(props);
-    
-    // this.setState = {
-    //     oi: this.props.teste
-
-    // }
-
-    this.handleSubmit = this.handleSubmit.bind(this);
-
     this.state = {
         lista: [],
         doacao: [],
         num: 10,
         oi: []
       };
+      this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  
 
   handleSubmit(event) {
     this.state.doacao = [];
@@ -46,27 +38,6 @@ export default class ListaDoadores extends Component {
 
   doacaoObject = [];
   url_atual = window.location.pathname;
-
-
-  async componentDidMount(props) {
-    // const options =
-    //   "https://script.googleusercontent.com/macros/echo?user_content_key=HHPgHY0VTjUOtvbiM59KZSfpXISWkOsv6VDGAbI-16-RHELWJOk66ERsKhQ73D6Z7ohS8jGm_iyH3nHl8n7O4S0WuK_EtGHWm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnFkSJ3OGPU4PNUNksnCEJmJS93T2ZzyujjUpxX3tYNvUSMYBj7AgB7_TWN7yU7wky0W-dnclfdIe&lib=MiU-jTl38wC2L3rz6MLSQoNcSVaJnOjrd";
-
-    // const response = await fetch(options);
-
-    // const body = await response.json();
-
-    // const response = await api.get('');
-
-    // const response = this.props.oi;
-    
-    // const teste = this.props.teste;
-
-    // this.setState({ lista: this.response });
-    // console.log("Teste", this.state.lista)
-    // this.setState({ oi: teste });
-    
-  }
   
 
   shouldComponentUpdate(nextState) {
@@ -74,7 +45,6 @@ export default class ListaDoadores extends Component {
         return console.log("Lista", this.state.lista);
     }
   }
-
 
   formatValue(value) {
       if (this.url_atual !== "/en") {
@@ -99,25 +69,19 @@ export default class ListaDoadores extends Component {
 
   componentDidUpdate(prevProps) {
 
-    if ( this.props.teste !== prevProps.teste){
-      
-    const teste = this.props.teste;
+    if ( this.props.valor !== prevProps.valor){
+        
+        this.setState({ lista: this.props.valor });
 
-    this.setState({ oi: teste });
   }
 }
 
   render() {
 
-    const { oi } = this.state;
-    
+    const { lista } = this.state;
 
-    console.log("OI", this.state.oi);
-
-    // console.log("TESTE", this.teste);
-
-    oi &&
-      oi.map((donation) => {
+    lista &&
+      lista.map((donation) => {
         if (donation["Quem doa"] !== "Quem doa" && donation["Quem doa"] !== "Total") {
           this.doacaoObject.push({
             quemdoa: donation["Quem doa"],
@@ -125,6 +89,11 @@ export default class ListaDoadores extends Component {
             dollar: donation["in Dollars"],
             referencia: donation["Referência"]
           });
+          this.doacaoObject.sort(function (a, b) {
+	
+            return (a.quemdoa > b.quemdoa) ? 1 : ((b.quemdoa > a.quemdoa) ? -1 : 0);
+         
+        });
         }
       });
 

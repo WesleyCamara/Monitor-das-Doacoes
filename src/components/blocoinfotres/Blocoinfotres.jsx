@@ -12,10 +12,10 @@ export default class BlocoInfoTres extends Component {
                         <img src={doar} />
                     </div>
                     <div className="textoemail">
-                        <p>Caso você queira incluir a informação sobre sua<br />
-                            doação realizada escreva para <a href="malito:abcr@captadores.org.br" target="_blank">abcr@captadores.org.br.</a><br />
-                            Somente conseguimos contabilizar doações cujo<br />
-                            valor em reais seja informado.</p>
+                        <p><FormattedMessage id="textemail1" /><br />
+                            <FormattedMessage id="textemail2" /> <a href="malito:abcr@captadores.org.br" target="_blank"><FormattedMessage id="textemail3" /></a><br />
+                            <FormattedMessage id="textemail4" /><br />
+                            <FormattedMessage id="textemail5" /></p>
                     </div>
                 </div>
             </div>

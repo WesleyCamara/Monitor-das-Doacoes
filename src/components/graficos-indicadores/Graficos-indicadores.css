@@ -60,13 +60,13 @@ indicators ---------------------  */
 
 .linhas {
   display: block;
-  content: "casa";
-  width: 80%;
+  content: "";
+  width: 40vw;
   height: 2px;
   background: #e1dfdf;
   position: relative;
-  left: -80px;
   top: -70px;
+  margin: 0 auto;
 }
 
 .img-hand-money {
@@ -107,8 +107,17 @@ indicators ---------------------  */
   line-height: 33px;
 }
 
+.indicators-subitem-doadores:nth-child(2) {
+  margin-right: 100px;
+}
+
+
 .total-doadores {
   width: 181px;
+}
+
+.biggest-donor p{
+  width: 8vw;
 }
 
 /* Botão ver mais */
@@ -131,11 +140,8 @@ indicators ---------------------  */
 
 /* Ajustes para responsivo  */
 /* @media screen and (max-width: 1920px) {
-  .total-doadores{
-    width: 170px;
-  }
-  .biggest-donor p{
-    margin-left: 300px;
+  .indicators-subitem-doadores p:nth-child(2) {
+    margin-right: 100px ; 
   }
 } */
 
@@ -152,6 +158,9 @@ indicators ---------------------  */
   }
   .indicators-subitem-doadores p {
     margin-right: 6vw;
+  }
+  .biggest-donor p{
+    width: 10vw;
   }
 }
 
@@ -170,7 +179,10 @@ indicators ---------------------  */
     margin-right: 0;
   }
   .img-hand-money {
-    width: 75%;
+    width: 5vw;
+  }
+  .biggest-donor p{
+    width: 14vw;
   }
 }
 
@@ -215,6 +227,15 @@ indicators ---------------------  */
   .indicators-subitem-doadores p {
     margin-right: 5px;
   }
+
+  .biggest-donor p{
+    width: 18.5vw;
+  }
+
+  .linhas {
+    width: 45vw;
+    top: -45px;
+  }
 }
 
 @media screen and (max-width: 425px) {
@@ -242,6 +263,15 @@ indicators ---------------------  */
     margin-top: 50px;
     margin-bottom: 30px;
   }
+
+  .biggest-donor p{
+    width: 18.5vw;
+  }
+
+  .linhas {
+    width: 80vw;
+    top: -45px;
+  }
 }
 
 @media screen and (max-width: 375px) {
@@ -253,25 +283,62 @@ indicators ---------------------  */
     margin-top: 25px;
     margin-bottom: 25px;
   }
+  .biggest-donor p{
+    width: 39vw;
+    margin-right: 0;
+  }
+  .section-chart-container h3,
+  .span-h3 {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .linhas {
+    width: 90vw;
+    top: -45px;
+  }
 }
 
 @media screen and (max-width: 320px) {
+  .div-indicators,.div-chart{
+    padding-left: 10px;
+    padding-right: 10px;
+  }
   .section-chart-container h3,
   .span-h3 {
     text-align: center;
+    max-width: 100vw;
+
   }
 
   .indicators-subitem p {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+
   }
   .indicators-subitem-doadores {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+
   }
   .span-h3 {
+    text-align: center;
+  }
+  .chart-indicators-button {
+width: 90vw;
+  }
+
+  .biggest-donor p{
+    width: 100vw;
+    text-align: center;
+  }
+
+  .biggest-live  {
+    width: 100vw;
+    margin: 0 auto;
     text-align: center;
   }
 }

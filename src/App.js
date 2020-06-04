@@ -1,15 +1,14 @@
 import React, { Component } from "react";
 import "./App.css";
 import Menu from "./components/menu/Menu";
-// import GraficosIndicadores from './components/graficos-indicadores/Graficos-indicadores'
 import Footer from "./components/footer/Footer";
 import ChamadaInicialIndicadores from "./components/chamada-inicial-indicadores/Chamada-inicial-indicadores";
 import Blocoinfo from "./components/blocoinfo/Blocoinfo";
 import BlocoInfoDois from "./components/blocoinfodois/Blocoinfodois";
 import BlocoInfoTres from "./components/blocoinfotres/Blocoinfotres";
 import ListaDoadores from "./components/lista-doadores/Lista-Doadores";
-import DoacaoSetores from "./components/doacao-setores/DoacaoSetores";
-import GraficosIndicadores from "./components/graficos-indicadores/Graficos-indicadores-Hook";
+import DoacaoSetoresHook from "./components/doacao-setores/DoacaoSetoresHook";
+import GraficosIndicadores from "./components/graficos-indicadores/Graficos-indicadores";
 
 import axios from "axios";
 
@@ -31,16 +30,14 @@ export default class App extends Component {
   }
 
   render() {
-    // const teste = this.state.newData;
     return (
       <div className="App">
-        <Menu />
-
+         <Menu />
         <ChamadaInicialIndicadores />
-        <ListaDoadores teste={this.state.newData["Doações"]}/>
-        <DoacaoSetores />
+        <ListaDoadores valor={this.state.newData["Doações"]}/>
+        <DoacaoSetoresHook valor={this.state.newData} />
         <GraficosIndicadores valor={this.state.newData} />
-        <Blocoinfo />
+        <Blocoinfo valor={this.state.newData}/>
         <BlocoInfoDois />
         <BlocoInfoTres />
         <Footer />

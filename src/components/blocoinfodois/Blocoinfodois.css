@@ -26,6 +26,7 @@
     margin-left: 65px;
     position: absolute;
     font-size: 30px;
+    text-align: left;
     
 }
 
@@ -35,6 +36,7 @@
     position: absolute;
     font-size: 18px;
     text-align: justify;
+    z-index: 100;
 }
 
 .botao h1 {
