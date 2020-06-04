@@ -202,15 +202,13 @@ export default class Blocoinfo extends Component {
                         <div className="blocoinfo">
                             <div className="container-partesuperior">
                                 <div className="campanha">
-                                    <h1>Campanha de Doação:</h1>
-                                    <p><FormattedMessage id="paragrafo-exemplo" /></p>
+                                    <h1><FormattedMessage id="campanhaum" /></h1>
                                 </div>
                                 <div className="totaldoado">
-                                    <h1>R$ {this.state.totalCampanhas}</h1>
+                                    <h1><FormattedMessage id="totalum" /> {this.state.totalCampanhas}</h1>
                                 </div>
                                 <div className="informacao">
-                                    <h3>São 295 campanhas - mínimo 10 mil reais - e lives atualmente mapeadas.<br />
-                                    Clique <a href='https://docs.google.com/spreadsheets/d/1RA0oP9EBHxpsLGvHTaX2TTYHT2oQHTfNrM8Z40hqVus/edit#gid=0' target="_blank">AQUI</a> para conhecê-las e acessar os links</h3>
+                                    <h3><FormattedMessage id="informacaocamp" />  <a href='https://docs.google.com/spreadsheets/d/1RA0oP9EBHxpsLGvHTaX2TTYHT2oQHTfNrM8Z40hqVus/edit#gid=0' target="_blank"><FormattedMessage id="informacaoaqui" /></a> <FormattedMessage id="informacaocampdois" /></h3>
                                 </div>
                             <div>
                         </div>
