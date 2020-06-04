@@ -15,14 +15,14 @@ Highcharts.setOptions({
     lang: {
       thousandsSep: ".",
     },
-  });
+});
 
 class DoacaoSetores extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            options:{
+            optionsPT:{
                 chart: {
                     type: 'pie',
                     renderTo: 'doacao-setores',                    
@@ -56,73 +56,60 @@ class DoacaoSetores extends Component {
                     name: 'Setores',
                     data: [
                         {
-                        name: 'Setor Financeiro',
-                        y: 1640056334,
-                        
-                        },
-                        {
-                        name: 'Mineração',
-                        y: 612635000,
-                        
-                        },
-                        {
-                        name: 'Alimentação e Bebidas',
-                        y: 328173000,
-                        
-                        },
-                        {
-                        name: 'Educação',
-                        y: 267184223,
-                        
-                        },
-                        {
-                            name: 'Saúde',
-                            y: 165957000,
-                        
-                        },
-                        {
-                            name: 'Energia',
-                            y: 132440000,
-                        
-                        },
-                        {
-                            name: 'Famílias e indivíduos',
-                            y: 104861000,
-                        
-                        },
-                        {
-                            name: 'Comércio e Eletrônicos',
-                            y: 100000000,
-                        
-                        },
-                        {
-                            name: 'Autarquia / Funcional / Público',
-                            y: 66610000,
-                        
-                        },
-                        {
-                            name: 'Celulose',
-                            y: 62310000,
-                        
-                        },
-                        {
-                            name: 'Outros Setores (22)',
-                            y: 373500210,
+                        name: 'Doações',
+                        y: 100,
                         
                         }
+                        
                     ]
                 }]
             },
-            info: []
+            info: [],
+            optionsEN:{
+                chart: {
+                    type: 'pie',
+                    renderTo: 'doacao-setores',                    
+                    backgroundColor: 'rgba(0,0,0,0)'
+                },
+                
+                    credits: {
+                        enabled: false
+                    },
+                    title: {
+                    text: ''                    
+                    },
+                    colors: ['#8075ff'],
+                    plotOptions: {
+                    pie: {
+                        allowPointSelect: true,
+                        cursor: 'pointer',                
+                        dataLabels: {
+                            format: '{point.name}, {point.y} ',
+                            style: {
+                                fontSize: '16px',
+                                fontFamily: 'rubik, sans-serif',
+                                fontWeight: 'regular'
+                            }
+                        }
+                        
+                    }
+                    
+                },
+                series: [{
+                    name: 'Setores',
+                    data: []
+                }],
+                
+            }
         }
     }
 
     //info guarda as informações puxadas da API e joga no options do grafico
 
-    async componentDidMount() {
+    async componentDidMount() {  
         const response = await api.get();        
         this.setState({ info: response.data.Consolidação });
-        this.setState({ options:{
+        this.setState({ optionsPT:{
             series: [{
             name: 'Doação',
             data: [
@@ -193,13 +180,83 @@ class DoacaoSetores extends Component {
                 },
             ]
         }]}})
-        
+        this.setState({ optionsEN:{
+            series: [{
+            name: 'Donation',
+            data: [
+                {
+                name: this.state.info[33][6],
+                y: Math.round(this.state.info[33][7]),
+                
+                },
+                {
+                name: this.state.info[34][6],
+                y: Math.round(this.state.info[34][7]),
+                
+                },
+                {
+                name: this.state.info[35][6],
+                y: Math.round(this.state.info[35][7]),
+                
+                },
+                {
+                name: this.state.info[36][6],
+                y: Math.round(this.state.info[36][7]),
+                
+                },
+                {
+                name: this.state.info[37][6],
+                y: Math.round(this.state.info[37][7]),
+                
+                },
+                {
+                name: this.state.info[38][6],
+                y: Math.round(this.state.info[38][7]),
+                
+                },
+                {
+                name: this.state.info[39][6],
+                y: Math.round(this.state.info[39][7]),
+                
+                },
+                {
+                name: this.state.info[40][6],
+                y: Math.round(this.state.info[40][7]),
+                
+                },
+                {
+                name: this.state.info[41][6],
+                y: Math.round(this.state.info[42][7]),
+                
+                },
+                {
+                name: this.state.info[43][6],
+                y: Math.round(this.state.info[43][7]),
+                
+                },
+                {
+                name: this.state.info[44][6],
+                y: Math.round(this.state.info[44][7]),
+                
+                },
+                {
+                name: this.state.info[45][6],
+                y: Math.round(this.state.info[45][7]),
+                    
+                }
+            ]
+        }]}})
     }
 
 
 
    	render() {
-        const { options } = this.state;
+        const { optionsPT, optionsEN } = this.state;
+        const idiomaUrl = window.location.href;
+        let renderizaGrafico = null;
+        if (idiomaUrl.includes('/en') === false){
+            renderizaGrafico = true;
+        } 
        	return (
             <div className="container-setores" >
                 <div>
@@ -208,9 +265,16 @@ class DoacaoSetores extends Component {
                 <h2 className="chart-title">
                     <FormattedMessage id="chart-sectors-chart" />
                 </h2>
+                
+                
+                
                 <div id="doacao-setores">
-                    <HighchartsReact className="grafico-pie" highcharts={Highcharts} options={options} />
+                    {renderizaGrafico ? 
+                    <HighchartsReact className="grafico-pie" highcharts={Highcharts} options={optionsPT} /> :
+                
+                    <HighchartsReact className="grafico-pie" highcharts={Highcharts} options={optionsEN} /> }
                 </div>
+
                 <a href="https://docs.google.com/spreadsheets/d/1RA0oP9EBHxpsLGvHTaX2TTYHT2oQHTfNrM8Z40hqVus/edit#gid=816672137" target="_blank" rel="noopener noreferrer">
                     <button className="estiloBtn"><FormattedMessage id="chart-indicators-button" /></button>
                 </a>
