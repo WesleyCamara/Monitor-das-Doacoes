@@ -13,7 +13,7 @@ import axios from "axios";
 
 export default class App extends Component {
   state = {
-    newData: ['teste'],
+    newData: [],
   };
 
   async componentDidMount() {
@@ -33,7 +33,7 @@ export default class App extends Component {
       <div className="App">
          <Menu />
         <ChamadaInicialIndicadores />
-        <ListaDoadores />
+        <ListaDoadores valor={this.state.newData["Doações"]}/>
         <DoacaoSetoresHook valor={this.state.newData} />
         <GraficosIndicadores valor={this.state.newData} />
         <Blocoinfo valor={this.state.newData}/>
