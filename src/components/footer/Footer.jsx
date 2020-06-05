@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./Footer.css"
-import abcr from '../../assets/img/footer/abcr.png';
+import abcr from '../../assets/img/footer/abcr.webp';
 import promocao from '../../assets/img/footer/movimento-por-uma-cultura-de-doação.png';
 import qrcode from '../../assets/img/footer/qr-code-footer.png';
 import twitter from '../../assets/img/footer/twitter.svg';
@@ -24,16 +24,20 @@ export default class Footer extends Component {
                 
                 <div className="partner">
                     <div className="partner-one">
-                        <img src={(cocreare)}/>
+                        <img src={(cocreare)} alt="cocreare" title="Cocreare"/>
                     </div>
                     <div className="partner-two">
-                        <img src={(anna)}/>
+                    <a href="https://anna.center/pt/home/" target="_blank" rel="noopener noreferrer">
+                        <img src={(anna)} alt="anna" title="Anna"/>
+                        </a>
                     </div>
                     <div className="partner-three">
-                        <img src={(cocreare)}/>
+                        <img src={(cocreare)} alt="cocreare" title="Cocreare"/>
                     </div>
                     <div className="partner-four">
-                        <img src={(anna)}/>
+                    <a href="https://anna.center/pt/home/" target="_blank" rel="noopener noreferrer">
+                        <img src={(anna)} alt="anna" title="Anna"/>
+                        </a>
                     </div>
 
                 </div>
@@ -47,7 +51,7 @@ export default class Footer extends Component {
                                 </h3>
                             </div>
                             <div className="footer-img-promocao">
-                                <img src={(promocao)}/>
+                                <img src={(promocao)} alt="Promoção"/>
                             </div>
                         </div>
 
@@ -58,7 +62,9 @@ export default class Footer extends Component {
                                 </h3>
                             </div>
                             <div className="footer-img-realizacao">
-                                <img src={(abcr)} />
+                            <a href="https://captadores.org.br/" target="_blank" rel="noopener noreferrer">
+                                <img src={(abcr)} alt="ABCR" title="ABCR"/>
+                                </a>
                             </div>
                         </div>
 
@@ -77,10 +83,12 @@ export default class Footer extends Component {
                         </div>
                         <div className="footer-first-qrcode">
                             <div className="footer-img-qrcode">
-                                <img src={(qrcode)}></img>
+                            <a href="https://www.paypal.com/donate/?token=1bQivV0Os67wJQiuN9aFb59wqVx0KPQ44Z_CG-3nk-qiwMF8EmdXAyvQUlIEyxMp8DwMYG&country.x=BR&locale.x=BR" target="_blank" rel="noopener noreferrer">
+                                <img src={(qrcode)} alt="QR Code" title="QR Code"></img>
+                            </a>
                             </div>
                             <div className="footer-link">
-                                <a href="https://www.paypal.com/donate/?token=1bQivV0Os67wJQiuN9aFb59wqVx0KPQ44Z_CG-3nk-qiwMF8EmdXAyvQUlIEyxMp8DwMYG&country.x=BR&locale.x=BR" target="_blank">
+                                <a href="https://www.paypal.com/donate/?token=1bQivV0Os67wJQiuN9aFb59wqVx0KPQ44Z_CG-3nk-qiwMF8EmdXAyvQUlIEyxMp8DwMYG&country.x=BR&locale.x=BR" target="_blank" rel="noopener noreferrer">
                                     <p>
                                     <FormattedMessage id="footer-link-donation"/>
                                     </p>
@@ -91,7 +99,7 @@ export default class Footer extends Component {
             
                     <div className="footer-secondary">
                         <div className="footer-secondary-compartilhar">
-                            <a href="https://web.facebook.com/sharer.php?u=https%3A%2F%2Fwww.monitordasdoacoes.org.br&_rdc=1&_rdr" target="_blank">
+                            <a href="https://web.facebook.com/sharer.php?u=https%3A%2F%2Fwww.monitordasdoacoes.org.br&_rdc=1&_rdr" target="_blank" rel="noopener noreferrer">
                                 <img src={(facebook)} />
                                 <h4>
                                 <FormattedMessage id="footer-secondary-compartilhar"/>
@@ -99,24 +107,24 @@ export default class Footer extends Component {
                             </a>
                         </div>
                         <div className="footer-secondary-sociais">
-                            <a href="https://instagram.com/abcrbrasil" target="_blank">
+                            <a href="https://instagram.com/abcrbrasil" target="_blank" rel="noopener noreferrer">
                                 <img src={(instagram)} />
                             </a>
-                            <a href="https://twitter.com/captacaoabcr" target="_blank">
+                            <a href="https://twitter.com/captacaoabcr" target="_blank" rel="noopener noreferrer">
                                 <img src={(twitter)} />
                             </a>
-                            <a href="https://facebook.com/ABCRBrasil" target="_blank">
+                            <a href="https://facebook.com/ABCRBrasil" target="_blank" rel="noopener noreferrer">
                                 <img src={(facebook)} />
                             </a>
-                            <a href="" target="_blank">
+                            <a href="" target="_blank" rel="noopener noreferrer">
                                 <img src={(linkedin)} />
                             </a>
-                            <a href="https://www.youtube.com/channel/UCagSPBomjrVGxYuR3eUFyrQ" target="_blank">
+                            <a href="https://www.youtube.com/channel/UCagSPBomjrVGxYuR3eUFyrQ" target="_blank" rel="noopener noreferrer">
                                 <img src={(youtube)} />
                             </a>
                         </div>
                         <div className="footer-secondary-compartilhar">
-                            <a href="https://twitter.com/intent/tweet?original_referer=https%3A%2F%2Fstatic.parastorage.com%2Fservices%2Fwix-bolt%2F1.5874.0%2Fnode_modules%2Fwix-santa%2Fstatic%2Fexternal%2Ftwitter.html%3FcompId%3Dcomp-k96bfxus%26href%3Dhttps%253A%252F%252Ftwitter.com%252Fshare%26lang%3Den%26origin%3Dhttps%253A%252F%252Fwww.monitordasdoacoes.org.br%26related%26text%26url%3Dhttp%253A%252F%252Fwww.monitordasdoacoes.org.br%26widgetType%3DTWEET&ref_src=twsrc%5Etfw&tw_p=tweetbutton&url=http%3A%2F%2Fwww.monitordasdoacoes.org.br" target="_blank">
+                            <a href="https://twitter.com/intent/tweet?original_referer=https%3A%2F%2Fstatic.parastorage.com%2Fservices%2Fwix-bolt%2F1.5874.0%2Fnode_modules%2Fwix-santa%2Fstatic%2Fexternal%2Ftwitter.html%3FcompId%3Dcomp-k96bfxus%26href%3Dhttps%253A%252F%252Ftwitter.com%252Fshare%26lang%3Den%26origin%3Dhttps%253A%252F%252Fwww.monitordasdoacoes.org.br%26related%26text%26url%3Dhttp%253A%252F%252Fwww.monitordasdoacoes.org.br%26widgetType%3DTWEET&ref_src=twsrc%5Etfw&tw_p=tweetbutton&url=http%3A%2F%2Fwww.monitordasdoacoes.org.br" target="_blank" rel="noopener noreferrer">
                                 <img src={(twitter)} />
                                 <h4>Tweet</h4>
                             </a>
