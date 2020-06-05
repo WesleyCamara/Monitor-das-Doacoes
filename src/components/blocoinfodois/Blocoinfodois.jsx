@@ -65,6 +65,7 @@ export default class BlocoInfoDois extends Component {
                   className="botao-h1"
                   href="https://docs.google.com/spreadsheets/d/1RA0oP9EBHxpsLGvHTaX2TTYHT2oQHTfNrM8Z40hqVus/edit#gid=0"
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <FormattedMessage id="pessoasdoando" />
                 </a>
@@ -77,6 +78,7 @@ export default class BlocoInfoDois extends Component {
                   <a
                     href="http://bi.anna.center/w5/tdaportalclient.aspx"
                     target="_blank"
+                    rel="noopener noreferrer"
                   >
                     <img src={code} className="qrcode-img" />{" "}
                   </a>
@@ -102,6 +104,7 @@ export default class BlocoInfoDois extends Component {
                   <a
                     href="https://docs.google.com/spreadsheets/d/1RA0oP9EBHxpsLGvHTaX2TTYHT2oQHTfNrM8Z40hqVus/edit#gid=0"
                     target="_blank"
+                    rel="noopener noreferrer"
                   >
                     <FormattedMessage id="textinferiordois" />
                   </a>
@@ -123,6 +126,7 @@ export default class BlocoInfoDois extends Component {
                   className="email"
                   href="malito:abcr@captadores.org.br"
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <FormattedMessage id="textemail3" />
                 </a>
