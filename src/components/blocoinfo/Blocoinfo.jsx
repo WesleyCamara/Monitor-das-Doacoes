@@ -23,7 +23,7 @@ const Blocoinfo = (props) => {
         totalDoacoesCampanhas:
           totalCampanhas(props.valor["Campanhas"]) +
           totalLives(props.valor["Lives"]),
-        totalCampanhas: props.valor["Consolidação"][2][moeda.acessoIndiceTotal],
+        totalCampanhas: props.valor["Consolidação"][1][moeda.acessoIndiceTotal],
       });
     }
   }, [props, valores.campanhas]);

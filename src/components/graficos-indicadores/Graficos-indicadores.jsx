@@ -45,12 +45,12 @@ const GraficosIndicadores = (props) => {
         maiorDoador: filtraMaiorDoador(props.valor["Doações"]),
         maiorCampanha: filtraMaiorCampanha(props.valor["Campanhas"]),
         maiorLive: maiorLive(props.valor["Lives"]),
-        total: props.valor["Consolidação"][4][moeda.acessoIndiceTotal],
-        totalCampanhas: props.valor["Consolidação"][2][moeda.acessoIndiceTotal],
-        totalLives: props.valor["Consolidação"][3][moeda.acessoIndiceTotal],
+        total: props.valor["Consolidação"][3][moeda.acessoIndiceTotal],
+        totalCampanhas: props.valor["Consolidação"][1][moeda.acessoIndiceTotal],
+        totalLives: props.valor["Consolidação"][2][moeda.acessoIndiceTotal],
         totalDoadores: props.valor["Doações"].length - 2,
         totalDoadoresCampanhas: subtrai(
-          props.valor["Consolidação"][6][1],
+          props.valor["Consolidação"][5][1],
           valores.totalDoadores
         ),
         doacoesOrdenadas: ordenaDoacoes(props.valor["Doações"]),
@@ -60,6 +60,7 @@ const GraficosIndicadores = (props) => {
       setVisible({
         visibleStyle: { opacity: 1 },
       });
+      console.log(props.valor["Consolidação"][3][1])
     }
   }, [props, valores.maiorCampanha]);
 

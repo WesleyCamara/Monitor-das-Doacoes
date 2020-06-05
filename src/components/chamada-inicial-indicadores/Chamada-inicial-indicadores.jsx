@@ -29,9 +29,9 @@ const ChamadaInicialIndicadores = (props) => {
     if (props.valor.status === "ok") {
       setValores({
         maiorCampanha: filtraMaiorCampanha(props.valor["Campanhas"]),
-        total: props.valor["Consolidação"][4][moeda.acessoIndiceTotal],
-        totalDoadores: props.valor["Consolidação"][6][1],
-        totalSetor: props.valor["Consolidação"][9][0],
+        total: props.valor["Consolidação"][3][moeda.acessoIndiceTotal],
+        totalDoadores: props.valor["Consolidação"][5][1],
+        totalSetor: props.valor["Consolidação"][8][0],
         maiorLive: maiorLive(props.valor["Lives"]),
         //cidadeMaiorDoacao: props.valor["Campanhas"][0][0],
       });
