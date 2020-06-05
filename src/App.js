@@ -5,7 +5,6 @@ import Footer from "./components/footer/Footer";
 import ChamadaInicialIndicadores from "./components/chamada-inicial-indicadores/Chamada-inicial-indicadores";
 import Blocoinfo from "./components/blocoinfo/Blocoinfo";
 import BlocoInfoDois from "./components/blocoinfodois/Blocoinfodois";
-import BlocoInfoTres from "./components/blocoinfotres/Blocoinfotres";
 import ListaDoadores from "./components/lista-doadores/Lista-Doadores";
 import DoacaoSetoresHook from "./components/doacao-setores/DoacaoSetoresHook";
 import GraficosIndicadores from "./components/graficos-indicadores/Graficos-indicadores";
@@ -39,7 +38,7 @@ export default class App extends Component {
         <GraficosIndicadores valor={this.state.newData} />
         <Blocoinfo valor={this.state.newData}/>
         <BlocoInfoDois />
-        <BlocoInfoTres />
+        {/* <BlocoInfoTres /> */}
         <Footer />
       </div>
     );

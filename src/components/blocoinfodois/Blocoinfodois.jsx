@@ -1,16 +1,19 @@
 import React, { Component } from 'react';
 import { FormattedMessage } from "react-intl";
 import './Blocoinfodois.css';
+import './Blocoinfotres.css';
+
 import monitor from '../../assets/img/blocoinfo/monitor.svg';
 import imgcanto from '../../assets/img/blocoinfo/imgcanto.svg';
 import circles from '../../assets/img/blocoinfo/circles.svg';
 import code from '../../assets/img/blocoinfo/code.svg';
 import seta from '../../assets/img/blocoinfo/seta.svg';
+import doar from '../../assets/img/blocoinfo/doar.jpg';
 
 
 export default class BlocoInfoDois extends Component {
     render() {
-        return (
+        return ( <>
                 <div className="blocoinfodois">
                     <div className="container-parteprincipal">
                         <div className="container-texto">
@@ -56,6 +59,21 @@ export default class BlocoInfoDois extends Component {
                     </div>       
                 </div> 
             </div>
+
+            <div className="blocoinfotres">
+                <div className="container-final">
+                    <div className="doar">
+                        <img src={doar} />
+                    </div>
+                    <div className="textoemail">
+                        <p><FormattedMessage id="textemail1" /><br />
+                            <FormattedMessage id="textemail2" /> <a href="malito:abcr@captadores.org.br" target="_blank"><FormattedMessage id="textemail3" /></a><br />
+                            <FormattedMessage id="textemail4" /><br />
+                            <FormattedMessage id="textemail5" /></p>
+                    </div>
+                </div>
+            </div>
+            </>
         );
     }
     
