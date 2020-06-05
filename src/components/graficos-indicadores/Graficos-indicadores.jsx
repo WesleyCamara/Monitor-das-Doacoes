@@ -406,7 +406,7 @@ const GraficosIndicadores = (props) => {
 
                   <div className="biggest-donor">
                     <p>
-                      <FormattedMessage id="largest-donor" />:
+                      <FormattedMessage id="biggest-donor" />:
                       {valores.maiorDoador["Quem doa"]}
                     </p>
                     <p>
@@ -465,7 +465,7 @@ const GraficosIndicadores = (props) => {
 
                   <div className="biggest-donor">
                     <p>
-                      <FormattedMessage id="largest-campaign" />:{" "}
+                      <FormattedMessage id="biggest-campaign" />:{" "}
                       {valores.maiorCampanha["Campanhas"]}
                     </p>
                     <p>
