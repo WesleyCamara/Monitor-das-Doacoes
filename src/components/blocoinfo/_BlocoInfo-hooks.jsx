@@ -10,8 +10,8 @@ const Blocoinfo = (props) => {
 
   // Possui os valores iniciais de estado, serão atualizados quando receber as props pela API
   const [valores, setValores] = useState({
+    total: 0,
     campanhas: 0,
-    totalDoacoesCampanhas: 0,
     totalCampanhas: 0,
   });
 
@@ -19,11 +19,11 @@ const Blocoinfo = (props) => {
   useEffect(() => {
     if (props.valor.status === "ok") {
       setValores({
+        total: props.valor["Consolidação"][4][moeda.acessoIndiceTotal],
         campanhas: props.valor["Campanhas"],
-        totalDoacoesCampanhas:
+        totalCampanhas:
           totalCampanhas(props.valor["Campanhas"]) +
           totalLives(props.valor["Lives"]),
-        totalCampanhas: props.valor["Consolidação"][2][moeda.acessoIndiceTotal],
       });
     }
   }, [props, valores.campanhas]);
@@ -61,6 +61,7 @@ const Blocoinfo = (props) => {
         ++contador;
       }
     }
+    console.log("valor final", contador);
     return contador;
   };
 
@@ -68,36 +69,51 @@ const Blocoinfo = (props) => {
   const formatValue = () => {
     const url_atual = window.location.pathname;
     if (url_atual !== "/pt") {
+      moeda.valorAnunciado = "in Dollars";
+      moeda.valorDoado = "in Dollars";
       moeda.acessoIndiceTotal = 2;
       moeda.acessoIndiceLives = 6;
       moeda.simbolo = "$";
+      moeda.valorDoadoLabel = "Donated amount";
     }
   };
- 
-        return (<>
-        {formatValue()}
-                    <div className="container-bloco-info">
-                        <div className="blocoinfo">
-                            <div className="container-partesuperior">
-                                <div className="campanha">
-                                    <h1><FormattedMessage id="campanhaum" /></h1>
-                                </div>
-                                <div className="totaldoado">
-                                    <h2> {moeda.simbolo} {formatNumber(valores.totalCampanhas)}</h2>
 
-                                </div>
-                                <div className="informacao">
-                                    <h3><FormattedMessage id="iniciocamp" /> {valores.totalDoacoesCampanhas}<FormattedMessage id="informacaocamp" />  <a href='https://docs.google.com/spreadsheets/d/1RA0oP9EBHxpsLGvHTaX2TTYHT2oQHTfNrM8Z40hqVus/edit#gid=0' target="_blank"><FormattedMessage id="informacaoaqui" /></a> <FormattedMessage id="informacaocampdois" /></h3>
-                                </div>
-                            <div>
-                        </div>
-                    </div>
-                </div>
+  return (
+    <>
+      {formatValue()}
+      <div className="container-bloco-info">
+        <div className="blocoinfo">
+          <div className="container-partesuperior">
+            <div className="campanha">
+              <h1>Campanha de Doação:</h1>
+              <p></p>
             </div>
-            </>
-        );
-    }
-
-    export default Blocoinfo;
-
- 
+            <div className="totaldoado">
+              <h1>
+                {" "}
+                {moeda.simbolo} {formatNumber(valores.total)}
+              </h1>
+            </div>
+            <div className="informacao">
+              <h3>
+                São {valores.totalCampanhas} campanhas - mínimo 10 mil reais - e
+                lives atualmente mapeadas.
+                <br />
+                Clique{" "}
+                <a
+                  href="https://docs.google.com/spreadsheets/d/1RA0oP9EBHxpsLGvHTaX2TTYHT2oQHTfNrM8Z40hqVus/edit#gid=0"
+                  target="_blank"
+                >
+                  AQUI
+                </a>{" "}
+                para conhecê-las e acessar os links
+              </h3>
+            </div>
+            <div></div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+export default Blocoinfo;
