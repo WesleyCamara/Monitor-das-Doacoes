@@ -24,7 +24,10 @@ const GraficosIndicadores = (props) => {
     acessoIndiceLives: 5,
     simbolo: "R$",
     valorDoadoLabel: "Valor doado",
+    localeString : "pt-BR"
   };
+
+
 
   // Possui os valores iniciais de estado, serão atualizados quando receber as props pela API
   const [valores, setValores] = useState({
@@ -77,7 +80,7 @@ const GraficosIndicadores = (props) => {
 
   // Formata o número com arredondamento e adiciona os pontos nos milhares
   const formatNumber = (number) => {
-    let formattedNumber = Math.round(number).toLocaleString("pt-BR");
+    let formattedNumber = Math.round(number).toLocaleString(moeda.localeString);
     return formattedNumber;
   };
 
@@ -210,7 +213,12 @@ const GraficosIndicadores = (props) => {
           // textOverflow: "auto",
         },
         formatter: function () {
-          return this.value.toLocaleString("pt-BR");
+          console.log(this)
+          if (window.screen.width >= 1024){
+          return this.value.toLocaleString(moeda.localeString);
+        } else {
+          return ""
+        }
         },
       },
     },
@@ -308,6 +316,7 @@ const GraficosIndicadores = (props) => {
       moeda.acessoIndiceLives = 6;
       moeda.simbolo = "$";
       moeda.valorDoadoLabel = "Donated amount";
+      moeda.localeString = "en-US"
     }
   };
 
