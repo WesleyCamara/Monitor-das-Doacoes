@@ -8,7 +8,7 @@ import { FormattedMessage } from "react-intl";
 //import api from "../../services/API";
 
 const ChamadaInicialIndicadores = (props) => {
-  console.log(props.valor);
+
 
   const [valores, setValores] = useState({
     total: 0,
@@ -35,8 +35,17 @@ const ChamadaInicialIndicadores = (props) => {
         maiorLive: maiorLive(props.valor["Lives"]),
         //cidadeMaiorDoacao: props.valor["Campanhas"][0][0],
       });
+      cidade(props.valor["Campanhas"])
     }
   }, [props]);
+
+  const cidade  = (array) => {
+    console.log("oi:", array )
+    let saida = []
+    for (let item of array){
+      console.log(item)
+    }
+  }
 
   const maiorLive = (array) => {
     let maiorDoacao = 0;
@@ -85,6 +94,8 @@ const ChamadaInicialIndicadores = (props) => {
         moeda.simbolo = "$";
       }
     };
+
+
 
   return (
     <div id="container-chamada">
