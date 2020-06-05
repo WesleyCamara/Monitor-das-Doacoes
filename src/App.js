@@ -31,14 +31,14 @@ export default class App extends Component {
   render() {
     return (
       <div className="App">
-         <Menu />
+         {/* <Menu />
         <ChamadaInicialIndicadores />
         <ListaDoadores valor={this.state.newData["Doações"]}/>
-        <DoacaoSetoresHook valor={this.state.newData} />
+        <DoacaoSetoresHook valor={this.state.newData} /> */}
         <GraficosIndicadores valor={this.state.newData} />
-        <Blocoinfo valor={this.state.newData}/>
+        {/* <Blocoinfo valor={this.state.newData}/>
         <BlocoInfoDois />
-        <Footer />
+        <Footer /> */}
       </div>
     );
   }

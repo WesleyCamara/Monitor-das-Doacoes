@@ -83,7 +83,7 @@ const Blocoinfo = (props) => {
                                     <h1><FormattedMessage id="campanhaum" /></h1>
                                 </div>
                                 <div className="totaldoado">
-                                    <h1> {moeda.simbolo} {formatNumber(valores.totalCampanhas)}</h1>
+                                    <h2> {moeda.simbolo} {formatNumber(valores.totalCampanhas)}</h2>
 
                                 </div>
                                 <div className="informacao">

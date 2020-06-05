@@ -19,13 +19,13 @@
     font-size: 70px;
     color: #ffffff;
 }
-.totaldoado h1 {
+.totaldoado h2 {
     padding-top: 10px;
     margin: 20px;
     text-align: center;
     font-size: 50px;
     color: #60beb5;
-    font-weight: bolder;
+    font-weight: bold;
 }
 .informacao h3 {
     padding-top: 20px;
@@ -39,10 +39,43 @@
     font-size: 35px;
     color: #8e76fa;
 }
-@media only screen and (max-width: 1125px) {
-    .blocoinfo {
-        display: flex;
-        justify-content: center;
-        width: 90%;
+@media only screen and (max-width: 768px) {
+    .container-partesuperior {
+        padding: 0 9vw;
+        height: 545px;
+
     }
+    .campanha h1 {
+        padding-top: 0;
+        margin: 0;
+        font-size: 50px;
+    }
+    .informacao h3 {
+        padding-top: 10px;
+        margin: 0px;
+        text-align: center;
+        font-size: 30px;
+        color: #ffffff;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    .campanha h1 {
+        font-size: 40px;
+    }
+
+    .totaldoado h2 {
+        padding-top: 10px;
+        text-align: center;
+        font-size: 40px;
+    }
+
+    .informacao h3 {
+        font-size: 25px;
+        color: #ffffff;
+    }
+    .informacao a {
+        font-size: 25px;
+    }
+
 }
