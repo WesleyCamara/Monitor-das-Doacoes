@@ -1,0 +1,133 @@
+.blocoinfodois {
+    width: 100%;
+    font-family: "Rubik", sans-serif;
+    display: flex;
+    padding-top: 5px;
+
+}
+
+.container-parteprincipal {
+    width: 100%;
+    height: 570px;
+    background: #ffffff;
+    font-family: "Rubik", sans-serif; 
+}
+
+.fundo-sombra img {
+    float: left;
+    position: relative;
+    width: 580px;
+    height: 570px;
+    overflow: visible;
+}  
+
+.textotitulo h1{
+    margin-top: 70px;
+    margin-left: 65px;
+    position: absolute;
+    font-size: 30px;
+    text-align: left;
+    
+}
+
+.textotitulo p {
+    margin-top: 170px;
+    margin-left: 65px;
+    position: absolute;
+    font-size: 18px;
+    text-align: justify;
+    z-index: 100;
+}
+
+.botao h1 {
+    color: #ffffff;
+    margin-top: 448px;
+    margin-left: 65px;
+    position: absolute;
+    font-size: 15px;
+    border-radius: 30px;
+    background-color: #7600f8;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    z-index: 100;
+    letter-spacing: 5px;
+    
+}
+
+.botao a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.imgdecorativo img {
+    position: absolute;
+    left: 0;
+    width: 160px;
+    height: 160px;
+    margin-top: 380px;
+}
+
+.circulo img {
+    position: absolute;
+    right: 0;
+    margin: 0;
+    width: 200px;
+    height: 200px;
+}
+
+.qrcode img {
+    float: left;
+    margin-top: 120px;
+    width: 260px;
+    height: 260px;
+    margin-left: 220px;
+}
+
+.qrcode p {
+    font-family: "Rubik", sans-serif;
+    margin-left: 50px;
+    margin-top: 220px;
+    right: 0;
+    float: left;
+    text-align: left;
+    font-size: 14px;
+    font-weight: bolder;
+}
+
+.seta img {
+    position: absolute;
+    margin-top: 255px;
+    right: 50px;
+    width: 15px;
+    height: 15px;
+    
+
+}
+
+.textbaixo p {
+    margin-right: 30px;
+    float: right;
+    text-align: left;
+    margin-top: 115px;
+    font-size: 20px;
+}
+
+
+
+
+
+
+@media only screen and (max-width: 1125px) {
+    .blocoinfodois {
+        display: flex;
+        width: 90%;
+        justify-content: center;
+    }
+    .container-parteprincipal {
+        display: flex;
+        justify-content: center;
+        width: 90%;
+    }
+} 

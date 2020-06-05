@@ -1,0 +1,43 @@
+.blocoinfo {
+    width: 100%;
+    font-family: "Rubik", sans-serif;
+
+}
+.container-partesuperior {
+    padding: 50px;
+    height: 455px;
+    background: #262626;
+}
+.campanha h1 {
+    padding-top: 20px;
+    text-align: center;
+    margin: 20px;
+    font-size: 40px;
+    color: #ffffff;
+}
+.totaldoado h1 {
+    padding-top: 10px;
+    margin: 20px;
+    text-align: center;
+    font-size: 50px;
+    color: #60beb5;
+    font-weight: bolder;
+}
+.informacao h3 {
+    padding-top: 20px;
+    margin: 20px;
+    text-align: center;
+    font-size: 30px;
+    color: #ffffff;
+}
+.informacao a {
+    text-decoration: none;
+    color: #8e76fa;
+}
+@media only screen and (max-width: 1125px) {
+    .blocoinfo {
+        display: flex;
+        justify-content: center;
+        width: 90%;
+    }
+}

@@ -8,15 +8,15 @@
 .img-fundo-setor{
     position: absolute;
     left: -80px;
-    top: -100px;
-    z-index: -1;
+    top: -220px;
+    z-index: 1;
     width: 50%;
 }
 
 .square-shape2{
     position: absolute;
     right: 150px;
-    top: 50px;
+    top: -60px;
     z-index: 20;
 }
 
@@ -41,22 +41,31 @@
     margin: auto;
     justify-content: center;
     padding-bottom: 150px;
+    position: relative;
+    
 }
 
 .estiloBtn{
     display: flex;
-    width: 334px;
-    height: 79px;
+    width: 280px;
+    height: 70px;
     background-color:  #6320ee;
     border-radius: 40px;
-    font-size: 24px;
-    line-height: 28px;
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 2px;
     color: #FFFFFF;
-    margin: 0 auto;
-    margin-top: 100px;
+    margin: 100px auto 0;
     align-items: center;
     justify-content: center;
     text-transform: uppercase;
+    cursor: pointer;
+    border: none;
+    transition: ease-in 100ms;
+}
+
+.estiloBtn:hover {
+    box-shadow: 0 0 10px 1px #6320ee;
 }
 
 @media screen and (max-width: 600px){
