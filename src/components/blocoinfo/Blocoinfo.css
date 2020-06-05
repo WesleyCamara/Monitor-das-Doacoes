@@ -26,6 +26,7 @@
     font-size: 50px;
     color: #60beb5;
     font-weight: bold;
+    font-family: "Rubik", sans-serif;
 }
 .informacao h3 {
     padding-top: 20px;
@@ -33,11 +34,13 @@
     text-align: center;
     font-size: 37px;
     color: #ffffff;
+    font-family: "Rubik", sans-serif;
 }
 .informacao a {
     text-decoration: none;
     font-size: 35px;
     color: #8e76fa;
+    font-family: "Rubik", sans-serif;
 }
 @media only screen and (max-width: 768px) {
     .container-partesuperior {
