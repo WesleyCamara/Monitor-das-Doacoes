@@ -39,12 +39,21 @@ const ChamadaInicialIndicadores = (props) => {
     }
   }, [props]);
 
+  
+
   const cidade  = (array) => {
-    console.log("oi:", array )
+    console.log("Array inicial:", array )
     let saida = []
     for (let item of array){
-      console.log(item)
+      if (item.Doadores / item.Doadores === 1 && item.Cidade !== ""){
+        saida.push({
+          "Cidade" : item.Cidade,
+          "Doadores" : item.Doadores
+        })
+     
+      }
     }
+    console.log(saida)
   }
 
   const maiorLive = (array) => {
