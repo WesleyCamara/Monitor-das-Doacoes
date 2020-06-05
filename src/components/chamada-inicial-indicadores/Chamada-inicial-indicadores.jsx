@@ -19,11 +19,17 @@ const ChamadaInicialIndicadores = (props) => {
     //cidadeMaiorDoacao: 0,
   });
 
+    // A const possui os valores iniciais que servirão de referencia para mudar os valores para dolar
+    const moeda = {
+      acessoIndiceTotal: 1,
+      simbolo: "R$",
+    };
+
   useEffect(() => {
     if (props.valor.status === "ok") {
       setValores({
         maiorCampanha: filtraMaiorCampanha(props.valor["Campanhas"]),
-        total: props.valor["Consolidação"][4][1],
+        total: props.valor["Consolidação"][4][moeda.acessoIndiceTotal],
         totalDoadores: props.valor["Consolidação"][6][1],
         totalSetor: props.valor["Consolidação"][9][0],
         maiorLive: maiorLive(props.valor["Lives"]),
@@ -71,8 +77,18 @@ const ChamadaInicialIndicadores = (props) => {
     return formattedNumber;
   };
 
+    // Altera os parametros quando o site estiver em ingles, os dados são buscados na URL
+    const formatValue = () => {
+      const url_atual = window.location.pathname;
+      if (url_atual !== "/pt") {
+        moeda.acessoIndiceTotal = 2;
+        moeda.simbolo = "$";
+      }
+    };
+
   return (
     <div id="container-chamada">
+      {formatValue()}
       <section id="banner">
         {/*-----section-banner------*/}
         <div className="banner-container">
@@ -83,7 +99,7 @@ const ChamadaInicialIndicadores = (props) => {
               {/*-----doações-recebidas-----*/}
               <img src={money} alt="quantidade doada" />
               {/*-----"doacoes"->receberá-dados-da-api-qtd-de--doações*/}
-              <div id="doacoes">{formatNumber(valores.total)}</div>
+              <div id="doacoes">{moeda.simbolo}{formatNumber(valores.total)}</div>
               <h2>
                 <FormattedMessage id="banner-title-donations" />
               </h2>
@@ -133,9 +149,7 @@ const ChamadaInicialIndicadores = (props) => {
           </h4>
           {/*-----"dados"->receberá-dados-da-api---live-c/-mais-doações------*/}
           <div className="dados">
-            São Paulo
-            <br />
-            SP
+            {valores.maiorLive[1]}
           </div>
         </div>
         <div></div>
