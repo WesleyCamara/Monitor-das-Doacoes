@@ -38,7 +38,6 @@ export default class App extends Component {
         <GraficosIndicadores valor={this.state.newData} />
         <Blocoinfo valor={this.state.newData}/>
         <BlocoInfoDois />
-        {/* <BlocoInfoTres /> */}
         <Footer />
       </div>
     );

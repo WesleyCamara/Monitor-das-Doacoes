@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { FormattedMessage } from "react-intl";
 import './Blocoinfodois.css';
-import './Blocoinfotres.css';
 
 import monitor from '../../assets/img/blocoinfo/monitor.svg';
 import imgcanto from '../../assets/img/blocoinfo/imgcanto.svg';
@@ -61,7 +60,7 @@ export default class BlocoInfoDois extends Component {
                      <div className="container-qr">
                     <div className="container-qr-qrcode">
                         <div className="qrcode">
-                        <a href="http://bi.anna.center/w5/tdaportalclient.aspx" target="_blank"><img src={code} /> </a>
+                        <a href="http://bi.anna.center/w5/tdaportalclient.aspx" target="_blank">< img src={code} className="qrcode-img" /> </a>
                           
 
                         </div> 
