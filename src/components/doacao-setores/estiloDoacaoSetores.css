@@ -7,10 +7,11 @@
 
 .img-fundo-setor{
     position: absolute;
-    left: -80px;
-    top: -220px;
-    z-index: 1;
+    left: -60px;
+    top: -230px;
+    z-index: -1;
     width: 50%;
+    opacity: 100;
 }
 
 .square-shape2{
@@ -38,11 +39,10 @@
     width: 100%;    
     font-family: "Rubik", sans-serif;
     color: #cacaca;
-    margin: auto;
     justify-content: center;
     padding-bottom: 150px;
     position: relative;
-    
+    z-index: 1000;
 }
 
 .estiloBtn{
@@ -61,11 +61,11 @@
     text-transform: uppercase;
     cursor: pointer;
     border: none;
-    transition: ease-in 100ms;
+    transition: ease-in-out 100ms;
 }
 
 .estiloBtn:hover {
-    box-shadow: 0 0 10px 1px #6320ee;
+    box-shadow: 0 0 5px 1px #6320ee;
 }
 
 @media screen and (max-width: 600px){
