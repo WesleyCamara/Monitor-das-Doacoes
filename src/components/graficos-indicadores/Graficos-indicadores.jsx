@@ -6,12 +6,7 @@ import HighchartsReact from "highcharts-react-official";
 import Highcharts from "highcharts";
 
 const GraficosIndicadores = (props) => {
-  Highcharts.setOptions({
-    lang: {
-      thousandsSep: ".",
-    },
-  });
-
+  
   const [visible, setVisible] = useState({
     visibleStyle: { opacity: 0 },
   });
@@ -164,12 +159,56 @@ const GraficosIndicadores = (props) => {
     return maioresDoacoes;
   };
 
+
+  // Altera os parametros quando o site estiver em ingles, os dados são buscados na URL
+  const formatValue = () => {
+    const url_atual = window.location.pathname;
+    if (url_atual !== "/pt") {
+      moeda.valorAnunciado = "in Dollars";
+      moeda.valorDoado = "in Dollars";
+      moeda.acessoIndiceTotal = 2;
+      moeda.acessoIndiceLives = 6;
+      moeda.simbolo = "$";
+      moeda.valorDoadoLabel = "Donated amount";
+      moeda.localeString = "en-US"
+    }
+  };
+
+  Highcharts.setOptions({
+    lang: {
+      thousandsSep: ".",
+    },
+  });
+
   // Opções do gráfico
   const [chartOptions, setChartOptions] = useState({
     chart: {
       type: "column",
       backgroundColor: "#F3F3F3",
       height: 92 + "%",
+
+      events: {
+        load: function() {
+          const chart = this,
+            points = chart.series[0].data,
+            options = {
+              dataLabels: {
+                inside: false,
+                style: {
+                  color: 'black'
+                }
+              }
+            };
+  
+          points.forEach(function(point) {
+            if (point.shapeArgs.height > 80) {
+              point.update(options, false);
+            } 
+          });
+  
+          chart.redraw();
+        }
+      }
     },
     colors: ["#4DB6AC"],
     title: {
@@ -186,7 +225,7 @@ const GraficosIndicadores = (props) => {
       lineWidth: 1,
       lineColor: "#707070",
       labels: {
-        rotation: 0,
+        rotation: (window.screen.width < 1024) ? -45 : 0,
         style: {
           fontSize: "12px",
           fontFamily: "rubik, sans-serif",
@@ -213,7 +252,6 @@ const GraficosIndicadores = (props) => {
           // textOverflow: "auto",
         },
         formatter: function () {
-          console.log(this)
           if (window.screen.width >= 1024){
           return this.value.toLocaleString(moeda.localeString);
         } else {
@@ -306,20 +344,7 @@ const GraficosIndicadores = (props) => {
     });
   };
 
-  // Altera os parametros quando o site estiver em ingles, os dados são buscados na URL
-  const formatValue = () => {
-    const url_atual = window.location.pathname;
-    if (url_atual !== "/pt") {
-      moeda.valorAnunciado = "in Dollars";
-      moeda.valorDoado = "in Dollars";
-      moeda.acessoIndiceTotal = 2;
-      moeda.acessoIndiceLives = 6;
-      moeda.simbolo = "$";
-      moeda.valorDoadoLabel = "Donated amount";
-      moeda.localeString = "en-US"
-    }
-  };
-
+  
   return (
     <>
       {formatValue()}
