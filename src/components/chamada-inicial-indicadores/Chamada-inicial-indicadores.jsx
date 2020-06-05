@@ -118,7 +118,7 @@ const ChamadaInicialIndicadores = (props) => {
             <FormattedMessage id="card-title-city" />
           </h4>
           {/*-----"dados"->receberá-dados-da-api-cidade-c/-mais-doações--*/}
-          <div className="dados">{console.log(Object.values(props.valor))}</div>
+          {/* <div className="dados">{console.log(Object.values(props.valor))}</div> */}
         </div>
         <div className="section-container">
           <h4>
