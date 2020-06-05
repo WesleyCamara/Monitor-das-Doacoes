@@ -1,63 +1,140 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import { FormattedMessage } from "react-intl";
-import './Blocoinfodois.css';
-import monitor from '../../assets/img/blocoinfo/monitor.svg';
-import imgcanto from '../../assets/img/blocoinfo/imgcanto.svg';
-import circles from '../../assets/img/blocoinfo/circles.svg';
-import code from '../../assets/img/blocoinfo/code.svg';
-import seta from '../../assets/img/blocoinfo/seta.svg';
+import "./Blocoinfodois.css";
 
+import monitor from "../../assets/img/blocoinfo/monitor.svg";
+import imgcanto from "../../assets/img/blocoinfo/imgcanto.svg";
+import circles from "../../assets/img/blocoinfo/circles.svg";
+import code from "../../assets/img/blocoinfo/code.svg";
+import seta from "../../assets/img/blocoinfo/seta.svg";
+import doar from "../../assets/img/blocoinfo/doar.jpg";
 
 export default class BlocoInfoDois extends Component {
-    render() {
-        return (
-                <div className="blocoinfodois">
-                    <div className="container-parteprincipal">
-                        <div className="container-texto">
-                            <div className="fundo-sombra">
-                                <img src={monitor} />
-                            </div>
-                        </div>
-                        <div className="textotitulo">
-                            <h1>O Monitor das<br />Doações COVID 19:</h1>
-                            <p>O Monitor Das Doações COVID 19 é atualizado diariamente pela ABCR<br />
-                                com dados públicos, coletados diariamente na internet ou que são<br />
-                                enviados para nós. Nenhuma doação é somada se ela não tiver sido<br />
-                                anunciada publicamente - os links são divulgados para conferência. Os<br />
-                                números referentes aos doadorese às campanhas são checados para<br />
-                                que não sejam contados duas vezes<br /><br />
-                                O objetivo do Monitor Das Doações COVID 19 é consolidar e conhecer os<br />
-                                números das doações realizadas em razão do coronavírus, promovê-las e<br />
-                                inspirar doadores e organizações, e não fiscalizamos. A responsabilidade por<br />
-                                realizar a doação anunciada é de cada doador.
-                                </p>
-                        </div>
-                        <div className="botao">
-                            <h1><a href="https://docs.google.com/spreadsheets/d/1RA0oP9EBHxpsLGvHTaX2TTYHT2oQHTfNrM8Z40hqVus/edit#gid=0" target="_blank">VEJA QUEM ESTÁ DOANDO</a></h1>
-                        </div>
-                        <div className="imgdecorativo">
-                            <img src={imgcanto} />
-                        </div>
-                        <div className="circulo">
-                            <img src={circles} />
-                        </div>
-                        <div className="qrcode">
-                            <img src={code} /><a href="http://bi.anna.center/w5/tdaportalclient.aspx" target="_blank" />
-                            <p>Confira graficamente<br />
-                                os resultados do<br />
-                                MD COVID 19</p>
-                        <div className="seta">
-                            <img src={seta} />
-                        </div>
-                        <div className="textbaixo">
-                            <p>Confira a planilha COMPLETA de todo o<br />
-                            levantamento realizado acessando <a href='https://docs.google.com/spreadsheets/d/1RA0oP9EBHxpsLGvHTaX2TTYHT2oQHTfNrM8Z40hqVus/edit#gid=0' target="_blank">AQUI</a></p>
-                        </div> 
-                    </div>       
-                </div> 
+  render() {
+    return (
+      <>
+        <div className="blocodois">
+          <div className="container-fundo">
+            <div className="fundo-sombra">
+              <img src={monitor} />
             </div>
-        );
-    }
-    
-}
 
+            <div className="imgdecorativo">
+              <img src={imgcanto} />
+            </div>
+
+            <div className="quadrado"></div>
+
+            <div className="circulo">
+              <img src={circles} />
+            </div>
+          </div>
+
+          <div className="container-texto">
+            <div className="textotitulo">
+              <h1>
+                <FormattedMessage id="tituloumbldois" />
+                <br />
+                <FormattedMessage id="titulodoisbldois" />
+              </h1>
+              <p>
+                <FormattedMessage id="text1" />
+                <br />
+                <FormattedMessage id="text2" />
+                <br />
+                <FormattedMessage id="text3" />
+                <br />
+                <FormattedMessage id="text4" />
+                <br />
+                <FormattedMessage id="text5" />
+                <br />
+                <FormattedMessage id="text6" />
+                <br />
+                <br />
+                <FormattedMessage id="text7" />
+                <br />
+                <FormattedMessage id="text8" />
+                <br />
+                <FormattedMessage id="text9" />
+                <br />
+                <FormattedMessage id="text10" />
+              </p>
+
+              <div className="botao">
+                <a
+                  className="botao-h1"
+                  href="https://docs.google.com/spreadsheets/d/1RA0oP9EBHxpsLGvHTaX2TTYHT2oQHTfNrM8Z40hqVus/edit#gid=0"
+                  target="_blank"
+                >
+                  <FormattedMessage id="pessoasdoando" />
+                </a>
+              </div>
+            </div>
+
+            <div className="container-qr">
+              <div className="container-qr-qrcode">
+                <div className="qrcode">
+                  <a
+                    href="http://bi.anna.center/w5/tdaportalclient.aspx"
+                    target="_blank"
+                  >
+                    <img src={code} className="qrcode-img" />{" "}
+                  </a>
+                </div>
+
+                <div className="seta">
+                  <p>
+                    <FormattedMessage id="textcode" />
+                    <br />
+                    <FormattedMessage id="textcodeum" />
+                    <br />
+                    <FormattedMessage id="textcodedois" />
+                    <img src={seta} />
+                  </p>
+                </div>
+              </div>
+
+              <div className="textbaixo">
+                <p>
+                  <FormattedMessage id="textinferior" />
+                  <br />
+                  <FormattedMessage id="textinferiorum" />{" "}
+                  <a
+                    href="https://docs.google.com/spreadsheets/d/1RA0oP9EBHxpsLGvHTaX2TTYHT2oQHTfNrM8Z40hqVus/edit#gid=0"
+                    target="_blank"
+                  >
+                    <FormattedMessage id="textinferiordois" />
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="container-final">
+            <div className="doar">
+              <img src={doar} />
+            </div>
+            <div className="textoemail">
+              <p>
+                <FormattedMessage id="textemail1" />
+                <br />
+                <FormattedMessage id="textemail2" />{" "}
+                <a
+                  className="email"
+                  href="malito:abcr@captadores.org.br"
+                  target="_blank"
+                >
+                  <FormattedMessage id="textemail3" />
+                </a>
+                <br />
+                <FormattedMessage id="textemail4" />
+                <br />
+                <FormattedMessage id="textemail5" />
+              </p>
+            </div>
+          </div>
+        </div>
+      </>
+    );
+  }
+}

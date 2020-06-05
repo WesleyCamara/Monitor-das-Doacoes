@@ -1,263 +1,129 @@
-import React, { Component } from "react";
-import { FormattedMessage } from "react-intl";
-
-import Highcharts from "highcharts";
-import HighchartsReact from "highcharts-react-official";
-
-import handMoney from "../../assets/img/graficos-indicadores/hand-money.png";
+import React, { useState, useEffect } from "react";
 import "./Graficos-indicadores.css";
-import api from "../../services/API";
+import { FormattedMessage } from "react-intl";
+import handMoney from "../../assets/img/graficos-indicadores/hand-money.png";
+import HighchartsReact from "highcharts-react-official";
+import Highcharts from "highcharts";
 
-// import getData from "./API"
+const GraficosIndicadores = (props) => {
+  Highcharts.setOptions({
+    lang: {
+      thousandsSep: ".",
+    },
+  });
 
-Highcharts.setOptions({
-  lang: {
-    thousandsSep: ".",
-  },
-});
+  const [visible, setVisible] = useState({
+    visibleStyle: { opacity: 0 },
+  });
 
-export default class GraficosIndicators extends Component {
-  constructor(props) {
-    super(props);
+  // A const possui os valores iniciais que servirão de referencia para mudar os valores para dolar
+  const moeda = {
+    valorAnunciado: "Valor Anunciado",
+    valorDoado: "Valor Doado",
+    acessoIndiceTotal: 1,
+    acessoIndiceLives: 5,
+    simbolo: "R$",
+    valorDoadoLabel: "Valor doado",
+  };
 
-    this.state = {
-      options: {
-        chart: {
-          type: "column",
-          backgroundColor: "#F3F3F3",
-        },
-        colors: ["#4DB6AC"],
-        title: {
-          text: "",
-        },
-        plotOptions: {
-          series: {
-            groupPadding: 0,
-            borderColor: "none",
-          },
-        },
-        xAxis: {
-          type: "category",
-          lineWidth: 1,
-          lineColor: "#707070",
-          labels: {
-            rotation: 0,
-            style: {
-              fontSize: "12px",
-              fontFamily: "rubik, sans-serif",
-              width: 9,
-              textOverflow: "auto",
-            },
-          },
-        },
-        yAxis: {
-          min: 0,
-          title: {
-            text: "",
-          },
+  // Possui os valores iniciais de estado, serão atualizados quando receber as props pela API
+  const [valores, setValores] = useState({
+    total: 0,
+    totalCampanhas: 0,
+    maiorCampanha: 0,
+    maiorLive: "",
+    totalLives: 0,
+    totalDoadores: 0,
+    maiorDoador: "",
+    maiorDoacao: 0,
+    totalDoadoresCampanhas: 0,
+    doacoesOrdenadas: [],
+  });
 
-          gridLineDashStyle: "Dash",
-          lineWidth: 2,
-          lineColor: "#222222",
-        },
-        legend: {
-          enabled: false,
-        },
-        tooltip: {
-          enable: false,
-        },
+  // Atualiza os dados que serão tratados, somente quando recebe os valores das props
+  useEffect(() => {
+    if (props.valor.status === "ok" && valores.maiorCampanha === 0) {
+      setValores({
+        maiorDoador: filtraMaiorDoador(props.valor["Doações"]),
+        maiorCampanha: filtraMaiorCampanha(props.valor["Campanhas"]),
+        maiorLive: maiorLive(props.valor["Lives"]),
+        total: props.valor["Consolidação"][4][moeda.acessoIndiceTotal],
+        totalCampanhas: props.valor["Consolidação"][2][moeda.acessoIndiceTotal],
+        totalLives: props.valor["Consolidação"][3][moeda.acessoIndiceTotal],
+        totalDoadores: props.valor["Doações"].length - 2,
+        totalDoadoresCampanhas: subtrai(
+          props.valor["Consolidação"][6][1],
+          valores.totalDoadores
+        ),
+        doacoesOrdenadas: ordenaDoacoes(props.valor["Doações"]),
+      });
 
-        series: [
-          {
-            name: "Valor doado",
-            data: [],
+      // Torna os dados visiveis após receber e processar da API
+      setVisible({
+        visibleStyle: { opacity: 1 },
+      });
+    }
+  }, [props, valores.maiorCampanha]);
 
-            dataLabels: {
-              enabled: true,
-              rotation: -90,
-              color: "#222222",
-              y: 55, // 10 pixels down from the top
-              style: {
-                fontSize: "1.25em",
-                fontFamily: "rubik, sans-serif",
-                fontWeight: "400",
-                textOutline: "none",
-              },
-            },
-          },
-        ],
-      },
+  // Se a array com os valores para o gráfico estiver pronta, chama a atualização dele
+  useEffect(() => {
+    if (
+      valores.doacoesOrdenadas.length > 0 &&
+      valores.doacoesOrdenadas[0].doador.length > 0
+    ) {
+      updateSeries();
+    }
+  }, [valores.doacoesOrdenadas]);
 
-      data: [],
-      totalDoado: 0,
-      doadores: 0,
-      doadoresCampanhas: 0,
-      maiorDoador: [],
-      maiorValorDoado: 0,
-      maiorValorDoadoCampanha: 0,
-      maiorCampanha: [],
-      maiorLive: [],
-      totalLive: 0,
-      totalLivesAxiliar: 0,
-      totalCampanhas: 0,
-      totalDoadoresCampanhas: 0,
-      valor: 10,
-      valorMaiorLive: 0,
-      doacoesParaGrafico: [0],
-      doacoesOrdenadas: [],
-      porcentagemMaiorValor: [],
-      porcentagemCampanha: [],
-    };
-  }
-
-  async componentDidMount() {
-    const response = await api.get();
-
-    this.setState({ data: response.data });
-    this.setState({
-      totalDoado: this.formatNumber(this.state.data.Consolidação[1][1]),
-      doadores: this.state.data.Doações.length - 1,
-      maiorDoador: this.maiorDoador(this.state.data.Doações),
-      maiorValorDoado: this.formatNumber(
-        this.state.maiorDoador["Valor Anunciado"]
-      ),
-      totalLive: this.formatNumber(
-        this.state.data.Lives[this.state.data.Lives.length - 1][5]
-      ),
-      totalLiveAuxiliar: this.formatNumber(
-        this.state.data.Lives[this.state.data.Lives.length - 1][5]
-      ),
-      doadoresCampanhas:
-        this.state.data.Consolidação[6][1] - this.state.doadores,
-      maiorCampanha: this.maiorCampanha(this.state.data.Campanhas),
-    });
-
-    this.setState({
-      totalCampanhas:
-        this.formatNumber(this.state.data.Consolidação[2][1]) -
-        this.state.totalLiveAuxiliar,
-      maiorValorDoadoCampanha: this.formatNumber(
-        this.state.maiorCampanha["Valor Doado"]
-      ),
-      maiorLive: this.maiorLive(this.state.data.Lives),
-      doacoesOrdenadas: this.ordenaDoacoes(this.state.data.Doações),
-    });
-
-    this.setState({
-      valorMaiorLive: this.formatNumber(this.state.maiorLive[5]),
-      doacoesParaGrafico: this.filtraDoacoes(this.state.doacoesOrdenadas),
-    });
-
-    // chama a função que ordena a array de doações
-    this.ordenaDoacoes(this.state.data.Doações);
-
-    this.porcentagem(
-      this.state.maiorDoador["Valor Anunciado"],
-      this.state.totalDoado
-    );
-
-    // Atualiza o grafico com as 11 maiores doações
-    this.setState({
-      options: {
-        series: [
-          {
-            data: [
-              [
-                this.state.doacoesParaGrafico[0].doador,
-                this.state.doacoesParaGrafico[0].valorDoado,
-              ],
-              [
-                this.state.doacoesParaGrafico[1].doador,
-                this.state.doacoesParaGrafico[1].valorDoado,
-              ],
-              [
-                this.state.doacoesParaGrafico[2].doador,
-                this.state.doacoesParaGrafico[2].valorDoado,
-              ],
-              [
-                this.state.doacoesParaGrafico[3].doador,
-                this.state.doacoesParaGrafico[3].valorDoado,
-              ],
-              [
-                this.state.doacoesParaGrafico[4].doador,
-                this.state.doacoesParaGrafico[4].valorDoado,
-              ],
-              [
-                this.state.doacoesParaGrafico[5].doador,
-                this.state.doacoesParaGrafico[5].valorDoado,
-              ],
-              [
-                this.state.doacoesParaGrafico[6].doador,
-                this.state.doacoesParaGrafico[6].valorDoado,
-              ],
-              [
-                this.state.doacoesParaGrafico[7].doador,
-                this.state.doacoesParaGrafico[7].valorDoado,
-              ],
-              [
-                this.state.doacoesParaGrafico[8].doador,
-                this.state.doacoesParaGrafico[8].valorDoado,
-              ],
-              [
-                this.state.doacoesParaGrafico[9].doador,
-                this.state.doacoesParaGrafico[9].valorDoado,
-              ],
-              [
-                this.state.doacoesParaGrafico[10].doador,
-                this.state.doacoesParaGrafico[10].valorDoado,
-              ],
-            ],
-          },
-        ],
-      },
-    });
-  }
-
-  // Formata o número com arredondamento
-  formatNumber(number) {
-    let formattedNumber = Math.round(number);
+  // Formata o número com arredondamento e adiciona os pontos nos milhares
+  const formatNumber = (number) => {
+    let formattedNumber = Math.round(number).toLocaleString("pt-BR");
     return formattedNumber;
-  }
+  };
 
   // retorna o maior doador
-  maiorDoador(array) {
+  const filtraMaiorDoador = (array) => {
     let maiorDoacao = 0;
     let maiorDoador = [];
 
     for (let item of array) {
       if (
-        item["Valor Anunciado"] > maiorDoacao &&
+        item[moeda.valorAnunciado] > maiorDoacao &&
         item["Quem doa"] !== "Total"
       ) {
-        maiorDoacao = item["Valor Anunciado"];
+        maiorDoacao = item[moeda.valorAnunciado];
         maiorDoador = item;
       }
     }
     return maiorDoador;
-  }
+  };
 
-  // retorna a maior campanha de doações (lives não estão inclusas)
-  maiorCampanha(array) {
+  // filtra a campanha com maior arrecadação
+  const filtraMaiorCampanha = (array) => {
     let maiorDoacao = 0;
     let maiorDoador = [];
-
     for (let item of array) {
       if (
         item["Valor Doado"] > maiorDoacao &&
         item["Organizador (a) / Beneficiário (a)"] !== "Total" &&
-        item["Organizador (a) / Beneficiário (a)"] !== "Campanhas + lives"
+        item["Organizador (a) / Beneficiário (a)"] !== "Campanhas + lives" &&
+        item["Organizador (a) / Beneficiário (a)"] !== "Campanhas"
       ) {
         maiorDoacao = item["Valor Doado"];
         maiorDoador = item;
       }
     }
     return maiorDoador;
-  }
+  };
 
-  // retorna a maior live de doações
-  maiorLive(array) {
+  const subtrai = (itemMaior, itemMenor) => {
+    return itemMaior - itemMenor;
+  };
+
+  // filtra a live com maior arrecadação
+  const maiorLive = (array) => {
     let maiorDoacao = 0;
-    let maiorDoador = [];
+    let maiorLive = [];
 
     for (let item of array) {
       if (
@@ -266,41 +132,188 @@ export default class GraficosIndicators extends Component {
         item[2] !== "Total"
       ) {
         maiorDoacao = item[5];
-        maiorDoador = item;
+        maiorLive = item;
       }
     }
-    return maiorDoador;
-  }
+    return maiorLive;
+  };
 
-  // Ordena a array de doações de acordo com o valor doado em ordes decrescente
-  ordenaDoacoes(doacoes) {
-    let saida = doacoes.sort(function (a, b) {
-      return b["Valor Anunciado"] - a["Valor Anunciado"];
-    });
-    return saida;
-  }
+  // Calcula a porcentagem de uma valor sobre o outro
+  const porcentagem = (parte, total) => {
+    return Math.round((parte * 100) / total);
+  };
 
-  // filtra os primeiros 11 itens uteis da array
-  filtraDoacoes(itens) {
+  // Ordena as doações pelo maior valor e retorna as 11 maiores
+  const ordenaDoacoes = (doacoes) => {
     let maioresDoacoes = [];
+
+    let saida = doacoes.sort(function (a, b) {
+      return b[moeda.valorAnunciado] - a[moeda.valorAnunciado];
+    });
 
     for (let item = 2; item < 13; item++) {
       maioresDoacoes.push({
-        doador: itens[item]["Quem doa"],
-        valorDoado: itens[item]["Valor Anunciado"],
+        doador: saida[item]["Quem doa"],
+        valorDoado: saida[item][moeda.valorAnunciado],
       });
     }
+
     return maioresDoacoes;
-  }
+  };
 
-  porcentagem(parte, total) {
-    return (parte * 100) / total;
-  }
+  // Opções do gráfico
+  const [chartOptions, setChartOptions] = useState({
+    chart: {
+      type: "column",
+      backgroundColor: "#F3F3F3",
+      height: 92 + "%",
+    },
+    colors: ["#4DB6AC"],
+    title: {
+      text: "",
+    },
+    plotOptions: {
+      series: {
+        groupPadding: 0,
+        borderColor: "none",
+      },
+    },
+    xAxis: {
+      type: "category",
+      lineWidth: 1,
+      lineColor: "#707070",
+      labels: {
+        rotation: 0,
+        style: {
+          fontSize: "12px",
+          fontFamily: "rubik, sans-serif",
+          width: 9,
+          // textOverflow: "auto",
+        },
+      },
+    },
+    yAxis: {
+      min: 0,
+      title: {
+        text: "",
+      },
 
-  render() {
-    const { options } = this.state;
+      gridLineDashStyle: "Dash",
+      lineWidth: 2,
+      lineColor: "#222222",
+      labels: {
+        rotation: 0,
+        style: {
+          fontSize: "12px",
+          fontFamily: "rubik, sans-serif",
+          width: 9,
+          // textOverflow: "auto",
+        },
+        formatter: function () {
+          return this.value.toLocaleString("pt-BR");
+        },
+      },
+    },
+    legend: {
+      enabled: false,
+    },
+    tooltip: {
+      enable: false,
+    },
 
-    return (
+    series: [
+      {
+        name: moeda.valorDoadoLabel,
+        data: [],
+
+        dataLabels: {
+          enabled: true,
+          rotation: -90,
+          color: "#222222",
+          y: 50, // 10 pixels down from the top
+          style: {
+            fontSize: "1.25em",
+            fontFamily: "rubik, sans-serif",
+            fontWeight: "400",
+            textOutline: "none",
+          },
+        },
+      },
+    ],
+  });
+
+  // Atualiza as series do gráfico, é alimentado pela const doacoesOrdenadas e chamado quando essa const está pronta
+  const updateSeries = () => {
+    setChartOptions({
+      series: [
+        {
+          data: [
+            [
+              valores.doacoesOrdenadas[0]["doador"],
+              Math.round(valores.doacoesOrdenadas[0]["valorDoado"]),
+            ],
+            [
+              valores.doacoesOrdenadas[1]["doador"],
+              Math.round(valores.doacoesOrdenadas[1]["valorDoado"]),
+            ],
+            [
+              valores.doacoesOrdenadas[2]["doador"],
+              Math.round(valores.doacoesOrdenadas[2]["valorDoado"]),
+            ],
+            [
+              valores.doacoesOrdenadas[3]["doador"],
+              Math.round(valores.doacoesOrdenadas[3]["valorDoado"]),
+            ],
+            [
+              valores.doacoesOrdenadas[4]["doador"],
+              Math.round(valores.doacoesOrdenadas[4]["valorDoado"]),
+            ],
+            [
+              valores.doacoesOrdenadas[5]["doador"],
+              Math.round(valores.doacoesOrdenadas[5]["valorDoado"]),
+            ],
+            [
+              valores.doacoesOrdenadas[6]["doador"],
+              Math.round(valores.doacoesOrdenadas[6]["valorDoado"]),
+            ],
+            [
+              valores.doacoesOrdenadas[7]["doador"],
+              Math.round(valores.doacoesOrdenadas[7]["valorDoado"]),
+            ],
+            [
+              valores.doacoesOrdenadas[8]["doador"],
+              Math.round(valores.doacoesOrdenadas[8]["valorDoado"]),
+            ],
+            [
+              valores.doacoesOrdenadas[9]["doador"],
+              Math.round(valores.doacoesOrdenadas[9]["valorDoado"]),
+            ],
+            [
+              valores.doacoesOrdenadas[10]["doador"],
+              Math.round(valores.doacoesOrdenadas[10]["valorDoado"]),
+            ],
+          ],
+        },
+      ],
+    });
+  };
+
+  // Altera os parametros quando o site estiver em ingles, os dados são buscados na URL
+  const formatValue = () => {
+    const url_atual = window.location.pathname;
+    if (url_atual !== "/pt") {
+      moeda.valorAnunciado = "in Dollars";
+      moeda.valorDoado = "in Dollars";
+      moeda.acessoIndiceTotal = 2;
+      moeda.acessoIndiceLives = 6;
+      moeda.simbolo = "$";
+      moeda.valorDoadoLabel = "Donated amount";
+    }
+  };
+
+  return (
+    <>
+      {formatValue()}
       <section className="section-chart-container">
         <div className="chart-indicators">
           <div className="div-chart">
@@ -308,12 +321,16 @@ export default class GraficosIndicators extends Component {
               <FormattedMessage id="chart-indicators-chart" />
             </h2>
             <div className="chart">
-              <HighchartsReact highcharts={Highcharts} options={options} />
+              {/* Import do gráfico  */}
+              <HighchartsReact highcharts={Highcharts} options={chartOptions} />
             </div>
 
-            <a href="https://docs.google.com/spreadsheets/d/1RA0oP9EBHxpsLGvHTaX2TTYHT2oQHTfNrM8Z40hqVus/edit#gid=816672137" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://docs.google.com/spreadsheets/d/1RA0oP9EBHxpsLGvHTaX2TTYHT2oQHTfNrM8Z40hqVus/edit#gid=816672137"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <div className="chart-indicators-button">
-
                 <FormattedMessage id="chart-indicators-button" />
               </div>
             </a>
@@ -334,30 +351,47 @@ export default class GraficosIndicators extends Component {
                     <FormattedMessage id="indicators-donations" />
                   </h3>
                   <h3>
-                    <span className="span-h3">R$ {this.state.totalDoado}</span>
+                    <span className="span-h3" style={visible.visibleStyle}>
+                      {moeda.simbolo} {formatNumber(valores.total)}{" "}
+                    </span>
                   </h3>
                 </div>
 
                 <div className="indicators-subitem-doadores">
-                  <div>
+                  <div className="total-doadores-div">
                     <p className="total-doadores">
                       <FormattedMessage id="total-donors" />
                     </p>
                     <p>
-                      <span>{this.state.doadores}</span>
+                      <span style={visible.visibleStyle}>
+                        {formatNumber(valores.totalDoadores)}
+                      </span>
                     </p>
                   </div>
 
                   <div className="biggest-donor">
                     <p>
                       <FormattedMessage id="largest-donor" />:
-                      {this.state.maiorDoador["Quem doa"]}
+                      {valores.maiorDoador["Quem doa"]}
                     </p>
                     <p>
-                      <span className="valor-doado">
-                        R${this.state.maiorDoador["Valor Anunciado"]}
+                      <span
+                        className="valor-doado"
+                        style={visible.visibleStyle}
+                      >
+                        {moeda.simbolo}
+                        {formatNumber(
+                          valores.maiorDoador[moeda.valorAnunciado]
+                        )}
                       </span>
-                      <span>(00%)</span>
+                      <span style={visible.visibleStyle}>
+                        (
+                        {porcentagem(
+                          Number(valores.maiorDoador[moeda.valorAnunciado]),
+                          Number(valores.total)
+                        )}
+                        )%
+                      </span>
                     </p>
                   </div>
                 </div>
@@ -374,32 +408,47 @@ export default class GraficosIndicators extends Component {
                     <FormattedMessage id="donations-campaigns" />
                   </h3>
                   <h3>
-                    <span className="span-h3">
-                      R${this.state.totalCampanhas}
+                    <span className="span-h3" style={visible.visibleStyle}>
+                      {moeda.simbolo} {formatNumber(valores.totalCampanhas)}
                     </span>
                   </h3>
                 </div>
 
                 <div className="indicators-subitem-doadores">
-                  <div>
+                  <div className="total-doadores-div">
                     <p className="total-doadores">
                       <FormattedMessage id="total-donors" />
                     </p>
                     <p>
-                      <span>{this.state.doadoresCampanhas}</span>
+                      <span style={visible.visibleStyle}>
+                        {formatNumber(
+                          valores.totalDoadoresCampanhas - valores.totalDoadores
+                        )}
+                      </span>
                     </p>
                   </div>
 
                   <div className="biggest-donor">
                     <p>
-                      <FormattedMessage id="largest-campaign" />:
-                      {this.state.maiorCampanha.Campanhas}
+                      <FormattedMessage id="largest-campaign" />:{" "}
+                      {valores.maiorCampanha["Campanhas"]}
                     </p>
                     <p>
-                      <span className="valor-doado">
-                        R${this.state.maiorValorDoadoCampanha}
+                      <span
+                        className="valor-doado"
+                        style={visible.visibleStyle}
+                      >
+                        {moeda.simbolo}
+                        {formatNumber(valores.maiorCampanha[moeda.valorDoado])}
                       </span>
-                      <span>(00%)</span>
+                      <span style={visible.visibleStyle}>
+                        (
+                        {porcentagem(
+                          Number(valores.maiorCampanha[moeda.valorDoado]),
+                          Number(valores.totalCampanhas)
+                        )}
+                        )%
+                      </span>
                     </p>
                   </div>
                 </div>
@@ -416,20 +465,34 @@ export default class GraficosIndicators extends Component {
                     <FormattedMessage id="donations-lives" />
                   </h3>
                   <h3>
-                    <span className="span-h3">R$ {this.state.totalLive}</span>
+                    <span className="span-h3" style={visible.visibleStyle}>
+                      {moeda.simbolo} {formatNumber(valores.totalLives)}
+                    </span>
                   </h3>
                 </div>
 
                 <div className="indicators-subitem-doadores">
-                  <div>
+                  <div className="biggest-live">
                     <p className="biggest-donor">
                       <FormattedMessage id="biggest-live" />:
-                      {this.state.maiorLive[1]}
+                      {valores.maiorLive[1]}
                     </p>
 
-                    <p>
-                      <span>R${this.state.valorMaiorLive}</span>
-                      <span>(00%)</span>
+                    <p style={visible.visibleStyle}>
+                      <span>
+                        {moeda.simbolo}{" "}
+                        {formatNumber(
+                          valores.maiorLive[moeda.acessoIndiceLives]
+                        )}
+                      </span>
+                      <span style={visible.visibleStyle}>
+                        (
+                        {porcentagem(
+                          Number(valores.maiorLive[moeda.acessoIndiceLives]),
+                          Number(valores.totalLives)
+                        )}
+                        )%
+                      </span>
                     </p>
                   </div>
                 </div>
@@ -438,6 +501,7 @@ export default class GraficosIndicators extends Component {
           </div>
         </div>
       </section>
-    );
-  }
-}
+    </>
+  );
+};
+export default GraficosIndicadores;

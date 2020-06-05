@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import './Menu.css';
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { FormattedMessage } from "react-intl";
 
 export default class Menu extends Component {
@@ -15,11 +15,10 @@ export default class Menu extends Component {
                     </div>
                     <div className="menu-language">
                         <div className="menu-pt">
-                            {/* <a href="">PT</a> */}
-                            <Link to="/pt">PT</Link>
+                            <NavLink to="/pt" activeClassName="active">PT</NavLink>
                         </div>
                         <div className="menu-en">
-                            <Link to="/en">EN</Link>
+                            <NavLink to="/en" activeClassName="active">EN</NavLink>
                         </div>
                     </div>
                 </div>
