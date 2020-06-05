@@ -1,133 +1,157 @@
-.blocoinfodois {
-    width: 100%;
-    font-family: "Rubik", sans-serif;
-    display: flex;
-    padding-top: 5px;
-
+.blocodois{
+    position: relative;
 }
-
-.container-parteprincipal {
+.container-fundo {
     width: 100%;
-    height: 570px;
+    height: 1033px;
     background: #ffffff;
     font-family: "Rubik", sans-serif; 
 }
 
+
 .fundo-sombra img {
     float: left;
-    position: relative;
-    width: 580px;
-    height: 570px;
+    position: absolute;
+    width: 998px;
+    height: 998;
     overflow: visible;
+    left: -370px;
+    top: 0px
 }  
-
-.textotitulo h1{
-    margin-top: 70px;
-    margin-left: 65px;
-    position: absolute;
-    font-size: 30px;
-    text-align: left;
-    
-}
-
-.textotitulo p {
-    margin-top: 170px;
-    margin-left: 65px;
-    position: absolute;
-    font-size: 18px;
-    text-align: justify;
-    z-index: 100;
-}
-
-.botao h1 {
-    color: #ffffff;
-    margin-top: 448px;
-    margin-left: 65px;
-    position: absolute;
-    font-size: 15px;
-    border-radius: 30px;
-    background-color: #7600f8;
-    padding-left: 30px;
-    padding-right: 30px;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    z-index: 100;
-    letter-spacing: 5px;
-    
-}
-
-.botao a {
-    color: #ffffff;
-    text-decoration: none;
-}
 
 .imgdecorativo img {
     position: absolute;
-    left: 0;
-    width: 160px;
-    height: 160px;
-    margin-top: 380px;
+    left: 75px;
+    width: 260px;
+    height: 260px;
+    margin-top: 630px;
 }
+
 
 .circulo img {
     position: absolute;
-    right: 0;
-    margin: 0;
-    width: 200px;
-    height: 200px;
+    right: 200px;
+    margin-top: 37px;
+    width: 280px;
+    height: 280px;
 }
 
-.qrcode img {
-    float: left;
-    margin-top: 120px;
-    width: 260px;
-    height: 260px;
-    margin-left: 220px;
-}
-
-.qrcode p {
-    font-family: "Rubik", sans-serif;
-    margin-left: 50px;
-    margin-top: 220px;
-    right: 0;
-    float: left;
-    text-align: left;
-    font-size: 14px;
-    font-weight: bolder;
-}
-
-.seta img {
+.quadrado{
     position: absolute;
-    margin-top: 255px;
-    right: 50px;
-    width: 15px;
-    height: 15px;
-    
+    width: 41%;
+    height: 45%;
+    background: #F3F3F3;
+    top:0;
+    right: 0;
+}
+.container-texto {
+    position: absolute;
+    width: 100%;
+    height: 1033px;
+    font-family: "Rubik", sans-serif;
+    display: flex;
+
+
+    top: 0;
+    padding-left: 10%;
+    padding-right: 10%;
 
 }
 
-.textbaixo p {
-    margin-right: 30px;
-    float: right;
+.textotitulo{
+    margin-top: 165px;
     text-align: left;
-    margin-top: 115px;
-    font-size: 20px;
+    width: 55%;
+
 }
 
 
+.textotitulo h1{
+    font-size: 50px;
+
+}
+
+.textotitulo p {
+    margin-top: 35px;
+    font-size: 21px;
+    text-align: justify;
+}
+
+.botao {
+    display: flex;
+    width: 483px;
+    height: 83px;
+    background-color: #7600f8;
+    border-radius: 50px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 73px;
+}
+
+.botao a{
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+
+}
 
 
+.container-qr {
+    width: 45%;
+    margin-top:240px;
+    text-align: left;
+    margin-left: 146px;
+}
 
+.container-qr-qrcode {
+    display: flex;
+}
 
-@media only screen and (max-width: 1125px) {
-    .blocoinfodois {
-        display: flex;
-        width: 90%;
-        justify-content: center;
-    }
-    .container-parteprincipal {
-        display: flex;
-        justify-content: center;
-        width: 90%;
-    }
-} 
+.seta {
+    font-size: 28px;
+    width: 303px;
+    height: 99px;
+    margin-top: 116px;
+    margin-left: 30px;
+}
+
+.seta img{
+    margin-left: 20px;
+}
+
+.textbaixo {
+    margin-left: 95px;
+    margin-top: 100px;
+    text-align: left;
+    font-size: 22px;
+    font-weight: bold;
+    width: 567px;
+    height: 99px;
+    text-align: left;
+}
+
+.container-final {
+    display: flex;
+    height: 602px;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.doar{
+    width: 408px;
+    margin-left: 130px;
+}
+
+.textoemail {
+    width: 896px;
+    height: 168px;
+    font-size: 35px;
+    margin-top: 140px;
+    margin-left: 140px;
+    text-align: left;
+}
+
+.email {
+    text-decoration: underline ;
+}
+

@@ -6,10 +6,11 @@
 }
 
 .section-chart-container {
-  width: 100%;
+  width: 100vw;
   font-family: "Rubik", sans-serif;
   color: #222222;
   margin: 0;
+  /* background: red; */
 }
 
 /* Coloca os elementos lado a lado  */
