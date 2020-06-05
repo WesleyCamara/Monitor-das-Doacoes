@@ -346,9 +346,13 @@
 }
 
 @media screen and (max-width: 425px) {
-    .quadrado {
-        display: none
-    }
+  .fundo-sombra img {
+    max-width: 90%;
+  }
+
+  .quadrado {
+    display: none;
+  }
   .container-fundo {
     height: 1550px;
   }
@@ -412,9 +416,13 @@
 }
 
 @media screen and (max-width: 320px) {
-    .quadrado {
-        display: none
-    }
+  .fundo-sombra img {
+    max-width: 90%;
+  }
+
+  .quadrado {
+    display: none;
+  }
   .textoemail {
     margin-bottom: 180px;
   }

@@ -5,9 +5,7 @@ import handMoney from "../../assets/img/graficos-indicadores/hand-money.png";
 import HighchartsReact from "highcharts-react-official";
 import Highcharts from "highcharts";
 
-
 const GraficosIndicadores = (props) => {
-
   Highcharts.setOptions({
     lang: {
       thousandsSep: ".",
@@ -15,21 +13,20 @@ const GraficosIndicadores = (props) => {
   });
 
   const [visible, setVisible] = useState({
-    visibleStyle: {opacity: 0},
-})
+    visibleStyle: { opacity: 0 },
+  });
 
-  // A const possui os valores iniciais que servirão de referencia para mudar os valores para dolar 
+  // A const possui os valores iniciais que servirão de referencia para mudar os valores para dolar
   const moeda = {
-    valorAnunciado : "Valor Anunciado",
+    valorAnunciado: "Valor Anunciado",
     valorDoado: "Valor Doado",
     acessoIndiceTotal: 1,
     acessoIndiceLives: 5,
     simbolo: "R$",
-    valorDoadoLabel: "Valor doado"
-  }
+    valorDoadoLabel: "Valor doado",
+  };
 
-
-  // Possui os valores iniciais de estado, serão atualizados quando receber as props pela API 
+  // Possui os valores iniciais de estado, serão atualizados quando receber as props pela API
   const [valores, setValores] = useState({
     total: 0,
     totalCampanhas: 0,
@@ -60,12 +57,11 @@ const GraficosIndicadores = (props) => {
         ),
         doacoesOrdenadas: ordenaDoacoes(props.valor["Doações"]),
       });
-      
-      // Torna os dados visiveis após receber e processar da API 
-    setVisible({
-      visibleStyle: {opacity: 1},
-    })
-      
+
+      // Torna os dados visiveis após receber e processar da API
+      setVisible({
+        visibleStyle: { opacity: 1 },
+      });
     }
   }, [props, valores.maiorCampanha]);
 
@@ -76,7 +72,6 @@ const GraficosIndicadores = (props) => {
       valores.doacoesOrdenadas[0].doador.length > 0
     ) {
       updateSeries();
-
     }
   }, [valores.doacoesOrdenadas]);
 
@@ -163,7 +158,6 @@ const GraficosIndicadores = (props) => {
       });
     }
 
-
     return maioresDoacoes;
   };
 
@@ -172,7 +166,7 @@ const GraficosIndicadores = (props) => {
     chart: {
       type: "column",
       backgroundColor: "#F3F3F3",
-      height: (92) + '%'
+      height: 92 + "%",
     },
     colors: ["#4DB6AC"],
     title: {
@@ -216,8 +210,8 @@ const GraficosIndicadores = (props) => {
           // textOverflow: "auto",
         },
         formatter: function () {
-          return  this.value.toLocaleString("pt-BR")
-      }
+          return this.value.toLocaleString("pt-BR");
+        },
       },
     },
     legend: {
@@ -304,22 +298,20 @@ const GraficosIndicadores = (props) => {
     });
   };
 
-  // Altera os parametros quando o site estiver em ingles, os dados são buscados na URL 
+  // Altera os parametros quando o site estiver em ingles, os dados são buscados na URL
   const formatValue = () => {
     const url_atual = window.location.pathname;
     if (url_atual !== "/pt") {
-      moeda.valorAnunciado = "in Dollars"
-      moeda.valorDoado = "in Dollars"
-      moeda.acessoIndiceTotal = 2
-      moeda.acessoIndiceLives = 6
-      moeda.simbolo = "$"
-      moeda.valorDoadoLabel = "Donated amount"
-    } 
- 
+      moeda.valorAnunciado = "in Dollars";
+      moeda.valorDoado = "in Dollars";
+      moeda.acessoIndiceTotal = 2;
+      moeda.acessoIndiceLives = 6;
+      moeda.simbolo = "$";
+      moeda.valorDoadoLabel = "Donated amount";
+    }
   };
 
   return (
-    
     <>
       {formatValue()}
       <section className="section-chart-container">
@@ -366,12 +358,14 @@ const GraficosIndicadores = (props) => {
                 </div>
 
                 <div className="indicators-subitem-doadores">
-                  <div>
+                  <div className="total-doadores-div">
                     <p className="total-doadores">
                       <FormattedMessage id="total-donors" />
                     </p>
                     <p>
-                      <span style={visible.visibleStyle}>{formatNumber(valores.totalDoadores)}</span>
+                      <span style={visible.visibleStyle}>
+                        {formatNumber(valores.totalDoadores)}
+                      </span>
                     </p>
                   </div>
 
@@ -381,8 +375,15 @@ const GraficosIndicadores = (props) => {
                       {valores.maiorDoador["Quem doa"]}
                     </p>
                     <p>
-                      <span className="valor-doado" style={visible.visibleStyle}>
-                        {moeda.simbolo}{formatNumber(valores.maiorDoador[moeda.valorAnunciado])}</span>
+                      <span
+                        className="valor-doado"
+                        style={visible.visibleStyle}
+                      >
+                        {moeda.simbolo}
+                        {formatNumber(
+                          valores.maiorDoador[moeda.valorAnunciado]
+                        )}
+                      </span>
                       <span style={visible.visibleStyle}>
                         (
                         {porcentagem(
@@ -414,13 +415,15 @@ const GraficosIndicadores = (props) => {
                 </div>
 
                 <div className="indicators-subitem-doadores">
-                  <div>
+                  <div className="total-doadores-div">
                     <p className="total-doadores">
                       <FormattedMessage id="total-donors" />
                     </p>
                     <p>
                       <span style={visible.visibleStyle}>
-                        {formatNumber(valores.totalDoadoresCampanhas - valores.totalDoadores)}
+                        {formatNumber(
+                          valores.totalDoadoresCampanhas - valores.totalDoadores
+                        )}
                       </span>
                     </p>
                   </div>
@@ -431,8 +434,12 @@ const GraficosIndicadores = (props) => {
                       {valores.maiorCampanha["Campanhas"]}
                     </p>
                     <p>
-                      <span className="valor-doado" style={visible.visibleStyle}> 
-                        {moeda.simbolo}{formatNumber(valores.maiorCampanha[moeda.valorDoado])}
+                      <span
+                        className="valor-doado"
+                        style={visible.visibleStyle}
+                      >
+                        {moeda.simbolo}
+                        {formatNumber(valores.maiorCampanha[moeda.valorDoado])}
                       </span>
                       <span style={visible.visibleStyle}>
                         (
@@ -465,13 +472,19 @@ const GraficosIndicadores = (props) => {
                 </div>
 
                 <div className="indicators-subitem-doadores">
-                <div className="biggest-live">
+                  <div className="biggest-live">
                     <p className="biggest-donor">
-                      <FormattedMessage id="biggest-live" />:{valores.maiorLive[1]}
+                      <FormattedMessage id="biggest-live" />:
+                      {valores.maiorLive[1]}
                     </p>
 
                     <p style={visible.visibleStyle}>
-                      <span>{moeda.simbolo} {formatNumber(valores.maiorLive[moeda.acessoIndiceLives])}</span>
+                      <span>
+                        {moeda.simbolo}{" "}
+                        {formatNumber(
+                          valores.maiorLive[moeda.acessoIndiceLives]
+                        )}
+                      </span>
                       <span style={visible.visibleStyle}>
                         (
                         {porcentagem(
