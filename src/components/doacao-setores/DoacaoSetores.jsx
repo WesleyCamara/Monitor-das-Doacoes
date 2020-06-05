@@ -7,7 +7,7 @@ import "./estiloDoacaoSetores.css";
 import { FormattedMessage } from "react-intl";
 
 import squareShapes2 from '../../assets/img/doacao-setores/square-shapes-2.png'
-import setorBg from '../../assets/img/doacao-setores/setor-bg.png'
+import setorBg from '../../assets/img/doacao-setores/setor-bg.svgnp'
 
 
 
