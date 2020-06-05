@@ -42,7 +42,7 @@ export default class BlocoInfoDois extends Component {
                             <img src={circles} />
                         </div>
                         <div className="qrcode">
-                            <img src={code} /><a href="http://bi.anna.center/w5/tdaportalclient.aspx" target="_blank" />
+                        <a href="http://bi.anna.center/w5/tdaportalclient.aspx" target="_blank"><img src={code} /> </a>
                             <p><FormattedMessage id="textcode" /><br />
                             <FormattedMessage id="textcodeum" /><br />
                             <FormattedMessage id="textcodedois" /></p>
@@ -51,7 +51,7 @@ export default class BlocoInfoDois extends Component {
                         </div>
                         <div className="textbaixo">
                             <p><FormattedMessage id="textinferior" /><br />
-                            <FormattedMessage id="textinferiorum" /> <a href='https://docs.google.com/spreadsheets/d/1RA0oP9EBHxpsLGvHTaX2TTYHT2oQHTfNrM8Z40hqVus/edit#gid=0' target="_blank"><FormattedMessage id="textinferiordois" /></a></p>
+                            <a href='https://docs.google.com/spreadsheets/d/1RA0oP9EBHxpsLGvHTaX2TTYHT2oQHTfNrM8Z40hqVus/edit#gid=0' target="_blank"><FormattedMessage id="textinferiorum" /> <FormattedMessage id="textinferiordois" /></a></p>
                         </div> 
                     </div>       
                 </div> 

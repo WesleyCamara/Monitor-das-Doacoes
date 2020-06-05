@@ -108,7 +108,7 @@
         "card-title-campaign": "Campanha com mais doações",
         "card-title-live": "Live com mais doações",
         
-        "campanhaum": "Campanha de Doação:",
+        "campanhaum": "Campanhas de Doação:",
         "totalum": "R$",
         "iniciocamp" : "São ",
         "informacaocamp": " campanhas - mínimo 10 mil reais - e lives atualmente mapeadas. Clique",
@@ -133,8 +133,8 @@
         "textcodeum": "os resultados do",
         "textcodedois": "MD COVID 19",
         "textinferior": "Confira a planilha COMPLETA de todo o",
-        "textinferiorum": "levantamento realizado acessando",
-        "textinferiordois": "AQUI",
+        "textinferiorum": "levantamento realizado ",
+        "textinferiordois": "acessando AQUI",
 
         "textemail1": "Caso você queira incluir a informação sobre sua",
         "textemail2": "doação realizada escreva para",
