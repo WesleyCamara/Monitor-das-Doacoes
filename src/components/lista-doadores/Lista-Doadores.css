@@ -48,9 +48,10 @@
 }
 
 .loading {
-    width: 75%;
+    width: 100%;
     position: absolute;
-    margin: -30px auto 0;
+    margin: -30px auto;
+    left: 0;
 }
 
 .loading img {
@@ -165,9 +166,9 @@ p .donation {
         width: 95%;
     }
 
-    .loading {
+    /* .loading {
         width: 100%;
         position: absolute;
         margin: -30px auto 0;
-    }
+    } */
 }
