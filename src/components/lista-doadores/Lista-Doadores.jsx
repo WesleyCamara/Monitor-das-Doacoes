@@ -160,8 +160,7 @@ export default class ListaDoadores extends Component {
             <div className="lista">
               {this.listaDoadores || (
                 <div className="loading">
-                  {" "}
-                  <img src={Loading} />{" "}
+                  <img src={Loading} />
                 </div>
               )}
             </div>
