@@ -60,7 +60,6 @@ const GraficosIndicadores = (props) => {
       setVisible({
         visibleStyle: { opacity: 1 },
       });
-      console.log(props.valor["Consolidação"][3][1])
     }
   }, [props, valores.maiorCampanha]);
 

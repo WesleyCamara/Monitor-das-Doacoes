@@ -24,7 +24,6 @@ export default class App extends Component {
       .then((res) => {
         const data = res.data;
         this.setState({ newData: data });
-        console.log("chamada API ", this.state.newData);
       });
   }
 

@@ -51,7 +51,6 @@ const ChamadaInicialIndicadores = (props) => {
         });
       }
     }
-    console.log("primeira saida: ", saida);
     return somaItensCidades(saida);
   };
 
@@ -66,7 +65,7 @@ const ChamadaInicialIndicadores = (props) => {
       }
     });
 
-    console.log(arrayCity);
+
 
     // Agrupa as doações por cidade
     let arrayComplete = [];
@@ -78,7 +77,7 @@ const ChamadaInicialIndicadores = (props) => {
       );
       arrayComplete.push({ cidade: city, doadores: total });
     });
-    console.log(arrayComplete);
+
 
     return filtraCidadeMaisDoacoes(arrayComplete)
   };
@@ -95,7 +94,7 @@ const ChamadaInicialIndicadores = (props) => {
         maiorCidade = item;
       }
     }
-    console.log(maiorCidade)
+
 
     return maiorCidade
     
