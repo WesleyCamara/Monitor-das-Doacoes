@@ -136,7 +136,7 @@ indicators ---------------------  */
   justify-content: center;
   text-transform: uppercase;
   cursor: pointer;
-  transition: ease-in-out 100ms;
+  /* transition: ease-in-out 100ms; */
 }
 
 
