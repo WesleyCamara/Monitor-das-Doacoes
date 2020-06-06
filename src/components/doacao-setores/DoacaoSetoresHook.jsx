@@ -251,11 +251,7 @@ const DoacaoSetoresHook = (props) => {
             series: [{
                 name: 'Donation',
                 data: [
-                    {
-                    name: props.valor.Consolidação[33][6],
-                    y: Math.round(props.valor.Consolidação[33][7]),
                     
-                    },
                     {
                     name: props.valor.Consolidação[34][6],
                     y: Math.round(props.valor.Consolidação[34][7]),
@@ -310,6 +306,11 @@ const DoacaoSetoresHook = (props) => {
                     name: props.valor.Consolidação[45][6],
                     y: Math.round(props.valor.Consolidação[45][7]),
                         
+                    },
+                    {
+                    name: props.valor.Consolidação[46][6],
+                    y: Math.round(props.valor.Consolidação[46][7]),
+                    
                     }
                     
                 ]
