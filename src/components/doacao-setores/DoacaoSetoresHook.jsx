@@ -133,10 +133,25 @@ const DoacaoSetoresHook = (props) => {
                 condition: {
                     maxWidth: 600
                 },
-                chartOptions: {
-                    chart: {
-                        className: 'small-chart'
-                    }
+                chartOptions: {                    
+                    plotOptions: {
+                        pie: {
+                            allowPointSelect: true,
+                            cursor: 'pointer',                
+                            dataLabels: {
+                                connectorShape: 'crookedLine',                    
+                                connectorColor: 'gray',
+                                format: '{point.name}, {point.y:,.0f} ',
+                                style: {
+                                    fontSize: '8px',
+                                    fontFamily: 'rubik, sans-serif',
+                                    fontWeight: 'regular'
+                                }
+                            }
+                            
+                        }
+                        
+                    }                    
                 }
             }]
         },
