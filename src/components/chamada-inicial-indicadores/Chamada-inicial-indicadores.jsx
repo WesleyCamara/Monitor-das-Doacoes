@@ -8,22 +8,22 @@ import { FormattedMessage } from "react-intl";
 //import api from "../../services/API";
 
 const ChamadaInicialIndicadores = (props) => {
-
-
   const [valores, setValores] = useState({
     total: 0,
     totalDoadores: 0,
     totalSetor: "",
     maiorLive: "",
     maiorCampanha: 0,
-    //cidadeMaiorDoacao: 0,
+    cidadeMaiorDoacao: '',
   });
 
-    // A const possui os valores iniciais que servirão de referencia para mudar os valores para dolar
-    const moeda = {
-      acessoIndiceTotal: 1,
-      simbolo: "R$",
-    };
+  // A const possui os valores iniciais que servirão de referencia para mudar os valores para dolar
+  const moeda = {
+    acessoIndiceTotal: 1,
+    simbolo: "R$",
+  };
+
+  const cidade = ''
 
   useEffect(() => {
     if (props.valor.status === "ok") {
@@ -33,27 +33,72 @@ const ChamadaInicialIndicadores = (props) => {
         totalDoadores: props.valor["Consolidação"][6][1],
         totalSetor: props.valor["Consolidação"][9][0],
         maiorLive: maiorLive(props.valor["Lives"]),
-        //cidadeMaiorDoacao: props.valor["Campanhas"][0][0],
-      });
-      cidade(props.valor["Campanhas"])
+        cidadeMaiorDoacao: cidadeMaisDoacoes(props.valor["Campanhas"])
+        });
+      ;
+      // teste(lista)
+      cidadeMaisDoacoes(props.valor["Campanhas"])
     }
   }, [props]);
 
-  
-
-  const cidade  = (array) => {
-    console.log("Array inicial:", array )
-    let saida = []
-    for (let item of array){
-      if (item.Doadores / item.Doadores === 1 && item.Cidade !== ""){
+  const cidadeMaisDoacoes = (array) => {
+    let saida = [];
+    for (let item of array) {
+      if (item.Doadores / item.Doadores === 1 && item.Cidade !== "") {
         saida.push({
-          "Cidade" : item.Cidade,
-          "Doadores" : item.Doadores
-        })
-     
+          cidade: item.Cidade,
+          doadores: item.Doadores,
+        });
       }
     }
-    console.log(saida)
+    console.log("primeira saida: ", saida);
+    return somaItensCidades(saida);
+  };
+
+
+  // Soma e agrupa a quantidade de doadores de cada cidade 
+  const somaItensCidades = (array) => {
+    // Separa as cidades 
+        let arrayCity = [];
+    array.map((item) => {
+      if (arrayCity.indexOf(item.cidade) === -1) {
+        arrayCity.push(item.cidade);
+      }
+    });
+
+    console.log(arrayCity);
+
+    // Agrupa as doações por cidade
+    let arrayComplete = [];
+    arrayCity.map((city) => {
+      const total = array.reduce(
+        (total, data) =>
+          data.cidade === city ? total + data.doadores : parseInt(total),
+        0
+      );
+      arrayComplete.push({ cidade: city, doadores: total });
+    });
+    console.log(arrayComplete);
+
+    return filtraCidadeMaisDoacoes(arrayComplete)
+  };
+
+  // Filtra a cidade com mais doações 
+
+  const filtraCidadeMaisDoacoes = (array) => {
+    let maiorDoacao = 0;
+    let maiorCidade = [];
+
+    for (let item of array) {
+      if (item.doadores > maiorDoacao) {
+        maiorDoacao = item.doadores;
+        maiorCidade = item;
+      }
+    }
+    console.log(maiorCidade)
+
+    return maiorCidade
+    
   }
 
   const maiorLive = (array) => {
@@ -95,16 +140,14 @@ const ChamadaInicialIndicadores = (props) => {
     return formattedNumber;
   };
 
-    // Altera os parametros quando o site estiver em ingles, os dados são buscados na URL
-    const formatValue = () => {
-      const url_atual = window.location.pathname;
-      if (url_atual !== "/pt") {
-        moeda.acessoIndiceTotal = 2;
-        moeda.simbolo = "$";
-      }
-    };
-
-
+  // Altera os parametros quando o site estiver em ingles, os dados são buscados na URL
+  const formatValue = () => {
+    const url_atual = window.location.pathname;
+    if (url_atual !== "/pt") {
+      moeda.acessoIndiceTotal = 2;
+      moeda.simbolo = "$";
+    }
+  };
 
   return (
     <div id="container-chamada">
@@ -119,7 +162,10 @@ const ChamadaInicialIndicadores = (props) => {
               {/*-----doações-recebidas-----*/}
               <img src={money} alt="quantidade doada" />
               {/*-----"doacoes"->receberá-dados-da-api-qtd-de--doações*/}
-              <div id="doacoes">{moeda.simbolo}{formatNumber(valores.total)}</div>
+              <div id="doacoes">
+                {moeda.simbolo}
+                {formatNumber(valores.total)}
+              </div>
               <h2>
                 <FormattedMessage id="banner-title-donations" />
               </h2>
@@ -154,7 +200,7 @@ const ChamadaInicialIndicadores = (props) => {
             <FormattedMessage id="card-title-city" />
           </h4>
           {/*-----"dados"->receberá-dados-da-api-cidade-c/-mais-doações--*/}
-          {/* <div className="dados">{console.log(Object.values(props.valor))}</div> */}
+          <div className="dados">{valores.cidadeMaiorDoacao["cidade"]}</div>
         </div>
         <div className="section-container">
           <h4>
@@ -168,9 +214,7 @@ const ChamadaInicialIndicadores = (props) => {
             <FormattedMessage id="card-title-live" />
           </h4>
           {/*-----"dados"->receberá-dados-da-api---live-c/-mais-doações------*/}
-          <div className="dados">
-            {valores.maiorLive[1]}
-          </div>
+          <div className="dados">{valores.maiorLive[1]}</div>
         </div>
         <div></div>
       </section>
