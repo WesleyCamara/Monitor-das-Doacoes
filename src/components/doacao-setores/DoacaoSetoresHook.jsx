@@ -6,7 +6,7 @@ import "./estiloDoacaoSetores.css";
 import { FormattedMessage } from "react-intl";
 
 import squareShapes2 from '../../assets/img/doacao-setores/square-shapes-2.png'
-import setorBg from '../../assets/img/doacao-setores/setor-bg.png'
+import setorBg from '../../assets/img/doacao-setores/setor-bg.svg'
 
 const DoacaoSetoresHook = (props) => {
     
@@ -42,7 +42,9 @@ const DoacaoSetoresHook = (props) => {
                 allowPointSelect: true,
                 cursor: 'pointer',                
                 dataLabels: {
-                    format: '{point.name}, {point.y} ',
+                    connectorShape: 'crookedLine',                    
+                    connectorColor: 'gray',
+                    format: '{point.name}, {point.y:,.0f} ',
                     style: {
                         fontSize: '16px',
                         fontFamily: 'rubik, sans-serif',
@@ -52,6 +54,33 @@ const DoacaoSetoresHook = (props) => {
                 
             }
             
+        },
+        responsive: {
+            rules: [{
+                condition: {
+                    maxWidth: 600
+                },
+                chartOptions: {                    
+                    plotOptions: {
+                        pie: {
+                            allowPointSelect: true,
+                            cursor: 'pointer',                
+                            dataLabels: {
+                                connectorShape: 'crookedLine',                    
+                                connectorColor: 'gray',
+                                format: '{point.name}, {point.y:,.0f} ',
+                                style: {
+                                    fontSize: '8px',
+                                    fontFamily: 'rubik, sans-serif',
+                                    fontWeight: 'regular'
+                                }
+                            }
+                            
+                        }
+                        
+                    }                    
+                }
+            }]
         },
         series: [{
             name: 'Setores',
@@ -86,7 +115,9 @@ const DoacaoSetoresHook = (props) => {
                 allowPointSelect: true,
                 cursor: 'pointer',                
                 dataLabels: {
-                    format: '{point.name}, {point.y} ',
+                    format: '{point.name}, {point.y:,.0f} ',
+                    connectorShape: 'crookedLine',                    
+                    connectorColor: 'gray',
                     style: {
                         fontSize: '16px',
                         fontFamily: 'rubik, sans-serif',
@@ -96,6 +127,18 @@ const DoacaoSetoresHook = (props) => {
                 
             }
             
+        },
+        responsive: {
+            rules: [{
+                condition: {
+                    maxWidth: 600
+                },
+                chartOptions: {
+                    chart: {
+                        className: 'small-chart'
+                    }
+                }
+            }]
         },
         series: [{
             name: 'Setores',
@@ -123,12 +166,12 @@ const DoacaoSetoresHook = (props) => {
                     },
                     {
                     name: props.valor.Consolidação[11][6],
-                    y: props.valor.Consolidação[11][7],
+                    y: Math.round(props.valor.Consolidação[11][7]),
                     
                     },
                     {
                     name: props.valor.Consolidação[12][6],
-                    y: props.valor.Consolidação[12][7],
+                    y: Math.round(props.valor.Consolidação[12][7]),
                     
                     },
                     {
@@ -138,49 +181,50 @@ const DoacaoSetoresHook = (props) => {
                     },
                     {
                     name: props.valor.Consolidação[14][6],
-                    y: props.valor.Consolidação[14][7],
+                    y: Math.round(props.valor.Consolidação[14][7]),
                     
                     },
                     {
                     name: props.valor.Consolidação[15][6],
-                    y: props.valor.Consolidação[15][7],
+                    y: Math.round(props.valor.Consolidação[15][7]),
                     
                     },
                     {
                     name: props.valor.Consolidação[16][6],
-                    y: props.valor.Consolidação[16][7],
+                    y: Math.round(props.valor.Consolidação[16][7]),
                     
                     },
                     {
                     name: props.valor.Consolidação[17][6],
-                    y: props.valor.Consolidação[17][7],
+                    y: Math.round(props.valor.Consolidação[17][7]),
                     
                     },
                     {
                     name: props.valor.Consolidação[18][6],
-                    y: props.valor.Consolidação[18][7],
+                    y: Math.round(props.valor.Consolidação[18][7]),
                     
                     },
                     {
                     name: props.valor.Consolidação[19][6],
-                    y: props.valor.Consolidação[19][7],
+                    y: Math.round(props.valor.Consolidação[19][7]),
                     
                     },
                     {
                     name: props.valor.Consolidação[20][6],
-                    y: props.valor.Consolidação[20][7],
+                    y: Math.round(props.valor.Consolidação[20][7]),
                     
                     },
                     {
                     name: props.valor.Consolidação[21][6],
-                    y: props.valor.Consolidação[21][7],
+                    y: Math.round(props.valor.Consolidação[21][7]),
                         
                     },
                     {
                     name: props.valor.Consolidação[22][6],
                     y: Math.round(props.valor.Consolidação[22][7]),
                         
-                    },
+                    }
+                    
                 ]
             }]
         })
@@ -252,6 +296,7 @@ const DoacaoSetoresHook = (props) => {
                     y: Math.round(props.valor.Consolidação[45][7]),
                         
                     }
+                    
                 ]
             }]
         })
@@ -271,7 +316,7 @@ const DoacaoSetoresHook = (props) => {
                 <div>
                     <img className="img-fundo-setor" src={setorBg} />                
                 </div>
-                <h2 className="chart-title">
+                <h2 className="chart-title-setores">
                     <FormattedMessage id="chart-sectors-chart" />
                 </h2>            
                 
