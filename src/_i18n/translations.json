@@ -3,7 +3,7 @@
         "paragrafo-exemplo" : "paragrafo em ingles",
 
         "_comment-menu": "Idioma Menu",
-        "menu-title": "Donation monitor",
+        "menu-title": "COVID 19 Donations Monitor",
 
         "chart-sectors-chart": "Donations by Sector",
 
@@ -37,15 +37,15 @@
         "footer-link-donation": "Donate to ABCR for us to keep developing the Monitor.",
         "footer-secondary-compartilhar": "share",
 
-        "campanhaum": "Donation Campaign:",
+        "campanhaum": "Fundraising campaigns and live streamings:",
         "totalum": "$",
-        "iniciocamp" : "There are ",
-        "informacaocamp": " campaigns - minimum 10 thousand reais - and lives currently mapped. Click",
+        "iniciocamp" : " There are",
+        "informacaocamp": " campaigns. Enter",
         "informacaoaqui": "HERE",
-        "informacaocampdois": "to know them and access the links",
+        "informacaocampdois": " to know them and access the link to the internet page - in Portuguese",
 
-        "tituloumbldois": "The Monitor of",
-        "titulodoisbldois": "Donations COVID-19",
+        "tituloumbldois": "The COVID-19",
+        "titulodoisbldois": "Donations Monitor",
         "text1":"The COVID 19 Donation Monitor is updated daily by ABCR",
         "text2":"with public data, collected daily on the internet or that are",
         "text3":"sent to us. No donation is added if it has not been",
@@ -74,7 +74,7 @@
         "paragrafo-exemplo" : "paragrafo em portugues",
 
         "_comment-menu": "Idioma Menu",
-        "menu-title": "Monitor das doações COVID 19",
+        "menu-title": "Monitor das Doações COVID 19",
 
         "chart-sectors-chart": "Doação por Setores",
 
@@ -85,8 +85,8 @@
         "donations-campaigns" : "Campanhas Doações",
         "donations-lives" : "Lives de Doações",
         "total-donors" : "Total de doadores",
-        "largest-donor" : "Maior Doador",
-        "largest-campaign" : "Maior Campanha",
+        "biggest-donor" : "Maior Doador",
+        "biggest-campaign" : "Maior Campanha",
         "biggest-live" : "Maior Live",
         "_comment-list-donations": "Idioma Lista Doadores",
         "donations-top-title": "Quem está doando:",
@@ -126,7 +126,7 @@
         "text6": "que não sejam contados duas vezes",
         "text7": "O objetivo do Monitor Das Doações COVID 19 é consolidar e conhecer os",
         "text8": "números das doações realizadas em razão do coronavírus, promovê-las e",
-        "text9": "inspirar doadores e organizações, e não fiscalizamos. A responsabilidade por",
+        "text9": "inspirar doadores e organizações, e não fiscalizarmos. A responsabilidade por",
         "text10": "realizar a doação anunciada é de cada doador.",
         "pessoasdoando": "VEJA QUEM ESTÁ DOANDO",
         "textcode": "Confira graficamente",
