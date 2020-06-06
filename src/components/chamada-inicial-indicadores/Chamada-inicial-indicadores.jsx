@@ -4,6 +4,7 @@ import "./Chamada-inicial-indicadores.css";
 import money from "../../assets/img/chamada-inicial-indicadores/money-bill.png";
 import hand from "../../assets/img/chamada-inicial-indicadores/hand-holding-money.png";
 import centerImg from "../../assets/img/chamada-inicial-indicadores/center-img.png";
+import loading from "../../assets/img/chamada-inicial-indicadores/loading.gif";
 import { FormattedMessage } from "react-intl";
 //import api from "../../services/API";
 
@@ -23,7 +24,12 @@ const ChamadaInicialIndicadores = (props) => {
     simbolo: "R$",
   };
 
-  const cidade = ''
+  const [visible, setVisible] = useState({
+    loading: { display: "block" },
+    number: { display: "none" }
+  });
+
+  
 
   useEffect(() => {
     if (props.valor.status === "ok") {
@@ -38,6 +44,10 @@ const ChamadaInicialIndicadores = (props) => {
       ;
       // teste(lista)
       cidadeMaisDoacoes(props.valor["Campanhas"])
+      setVisible({
+        loading: { display: "none" },
+        number: { display: "block" }
+      });
     }
   }, [props]);
 
@@ -161,10 +171,12 @@ const ChamadaInicialIndicadores = (props) => {
               {/*-----doações-recebidas-----*/}
               <img src={money} alt="quantidade doada" />
               {/*-----"doacoes"->receberá-dados-da-api-qtd-de--doações*/}
-              <div id="doacoes">
+              
+              <div id="doacoes" style={visible.number}>
                 {moeda.simbolo}
                 {formatNumber(valores.total)}
               </div>
+              <div style={visible.loading}><img src={loading} /></div>
               <h2>
                 <FormattedMessage id="banner-title-donations" />
               </h2>
@@ -173,7 +185,8 @@ const ChamadaInicialIndicadores = (props) => {
               {/*-----doadores------*/}
               <img src={hand} alt="doadores" />
               {/*-----"doadores"->receberá-dados-da-api-qtd-doadores----*/}
-              <div id="doadores">{formatNumber(valores.totalDoadores)}</div>
+              <div id="doadores" style={visible.number}>{formatNumber(valores.totalDoadores)}</div>
+              <div style={visible.loading}><img src={loading} /></div>
               <h2>
                 <FormattedMessage id="banner-title-donors" />
               </h2>
