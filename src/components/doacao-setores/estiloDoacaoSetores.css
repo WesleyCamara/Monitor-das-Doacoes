@@ -63,7 +63,6 @@
     text-transform: uppercase;
     cursor: pointer;
     border: none;
-    transition: ease-in-out 100ms;
 }
 
 .estiloBtn:hover {
