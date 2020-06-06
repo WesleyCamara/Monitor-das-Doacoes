@@ -48,9 +48,10 @@
 }
 
 .loading {
-    width: 75%;
+    width: 100%;
     position: absolute;
-    margin: -30px auto 0;
+    margin: -30px auto;
+    left: 0;
 }
 
 .loading img {
@@ -60,8 +61,8 @@
 
 .donations-list {
     max-width: 100%;
-    width: 95%;
-    background: #F7F7F7;
+    width: 100%;
+    background: #F3F3F3;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -131,10 +132,14 @@ p .donation {
 }
 
 @media only screen and (max-width: 800px) {
+    .container-donations-list {
+        margin: 100px auto;
+    }
+
     .donations-list {
         width: 90%;
         margin: 0 auto;
-        padding: 5px;
+        padding: 15px;
     }
 
     .lista {
@@ -161,9 +166,9 @@ p .donation {
         width: 95%;
     }
 
-    .loading {
+    /* .loading {
         width: 100%;
         position: absolute;
         margin: -30px auto 0;
-    }
+    } */
 }
