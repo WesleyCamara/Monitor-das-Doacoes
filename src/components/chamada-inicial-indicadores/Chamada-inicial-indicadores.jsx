@@ -9,27 +9,28 @@ import { FormattedMessage } from "react-intl";
 //import api from "../../services/API";
 
 const ChamadaInicialIndicadores = (props) => {
+  // Guarda os valores "iniciais"
   const [valores, setValores] = useState({
     total: 0,
     totalDoadores: 0,
     totalSetor: "",
     maiorLive: "",
     maiorCampanha: 0,
-    cidadeMaiorDoacao: '',
+    cidadeMaiorDoacao: "",
   });
 
   // A const possui os valores iniciais que servirão de referencia para mudar os valores para dolar
   const moeda = {
     acessoIndiceTotal: 1,
     simbolo: "R$",
+    localeString: "pt-BR",
   };
 
+  // Alterna o loading entre visível ou não
   const [visible, setVisible] = useState({
     loading: { display: "block" },
-    number: { display: "none" }
+    number: { display: "none" },
   });
-
-  
 
   useEffect(() => {
     if (props.valor.status === "ok") {
@@ -39,18 +40,19 @@ const ChamadaInicialIndicadores = (props) => {
         totalDoadores: props.valor["Consolidação"][5][1],
         totalSetor: props.valor["Consolidação"][8][0],
         maiorLive: maiorLive(props.valor["Lives"]),
-        cidadeMaiorDoacao: cidadeMaisDoacoes(props.valor["Campanhas"])
-        });
-      ;
-      // teste(lista)
-      cidadeMaisDoacoes(props.valor["Campanhas"])
+        cidadeMaiorDoacao: cidadeMaisDoacoes(props.valor["Campanhas"]),
+      });
+      cidadeMaisDoacoes(props.valor["Campanhas"]);
+
+      // Torna o loading invisivel e o número visível
       setVisible({
         loading: { display: "none" },
-        number: { display: "block" }
+        number: { display: "block" },
       });
     }
   }, [props]);
 
+  // Cria um nova array contendo somente o nome da cidade e a quantidade de doadores
   const cidadeMaisDoacoes = (array) => {
     let saida = [];
     for (let item of array) {
@@ -64,18 +66,15 @@ const ChamadaInicialIndicadores = (props) => {
     return somaItensCidades(saida);
   };
 
-
-  // Soma e agrupa a quantidade de doadores de cada cidade 
+  // Soma e agrupa a quantidade de doadores de cada cidade
   const somaItensCidades = (array) => {
-    // Separa as cidades 
-        let arrayCity = [];
+    // Separa as cidades
+    let arrayCity = [];
     array.map((item) => {
       if (arrayCity.indexOf(item.cidade) === -1) {
         arrayCity.push(item.cidade);
       }
     });
-
-
 
     // Agrupa as doações por cidade
     let arrayComplete = [];
@@ -88,12 +87,10 @@ const ChamadaInicialIndicadores = (props) => {
       arrayComplete.push({ cidade: city, doadores: total });
     });
 
-
-    return filtraCidadeMaisDoacoes(arrayComplete)
+    return filtraCidadeMaisDoacoes(arrayComplete);
   };
 
-  // Filtra a cidade com mais doações 
-
+  // Filtra a cidade com mais doações
   const filtraCidadeMaisDoacoes = (array) => {
     let maiorDoacao = 0;
     let maiorCidade = [];
@@ -105,11 +102,10 @@ const ChamadaInicialIndicadores = (props) => {
       }
     }
 
+    return maiorCidade;
+  };
 
-    return maiorCidade
-    
-  }
-
+  //  Encontra a live com maior valor de doação
   const maiorLive = (array) => {
     let maiorDoacao = 0;
     let maiorLive = [];
@@ -127,6 +123,7 @@ const ChamadaInicialIndicadores = (props) => {
     return maiorLive;
   };
 
+  // Filtra a campanha com maior valor de doação
   const filtraMaiorCampanha = (array) => {
     let maiorDoacao = 0;
     let maiorDoador = [];
@@ -144,8 +141,9 @@ const ChamadaInicialIndicadores = (props) => {
     return maiorDoador;
   };
 
+  // Arredonda e formada o número de acordo com o idioma
   const formatNumber = (number) => {
-    let formattedNumber = Math.round(number).toLocaleString("pt-BR");
+    let formattedNumber = Math.round(number).toLocaleString(moeda.localeString);
     return formattedNumber;
   };
 
@@ -155,6 +153,7 @@ const ChamadaInicialIndicadores = (props) => {
     if (url_atual !== "/pt") {
       moeda.acessoIndiceTotal = 2;
       moeda.simbolo = "$";
+      moeda.localeString = "en-US";
     }
   };
 
@@ -171,12 +170,14 @@ const ChamadaInicialIndicadores = (props) => {
               {/*-----doações-recebidas-----*/}
               <img src={money} alt="quantidade doada" />
               {/*-----"doacoes"->receberá-dados-da-api-qtd-de--doações*/}
-              
+
               <div id="doacoes" style={visible.number}>
                 {moeda.simbolo}
                 {formatNumber(valores.total)}
               </div>
-              <div style={visible.loading}><img src={loading} /></div>
+              <div style={visible.loading}>
+                <img src={loading} />
+              </div>
               <h2>
                 <FormattedMessage id="banner-title-donations" />
               </h2>
@@ -185,8 +186,12 @@ const ChamadaInicialIndicadores = (props) => {
               {/*-----doadores------*/}
               <img src={hand} alt="doadores" />
               {/*-----"doadores"->receberá-dados-da-api-qtd-doadores----*/}
-              <div id="doadores" style={visible.number}>{formatNumber(valores.totalDoadores)}</div>
-              <div style={visible.loading}><img src={loading} /></div>
+              <div id="doadores" style={visible.number}>
+                {formatNumber(valores.totalDoadores)}
+              </div>
+              <div style={visible.loading}>
+                <img src={loading} />
+              </div>
               <h2>
                 <FormattedMessage id="banner-title-donors" />
               </h2>
