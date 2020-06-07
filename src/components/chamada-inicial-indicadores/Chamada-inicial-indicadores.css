@@ -55,6 +55,7 @@ h2 {
   width: 75px;
   margin-left: 40%;
   margin-right: 40%;
+  margin: 0 auto;
 }
 
 /*----------Class------------------*/
@@ -106,6 +107,8 @@ h2 {
 /*-----------Mobil----------------*/
 /*----------------------------*/
 /*-----------ids-----------------*/
+
+
 
 @media only screen and (max-width: 425px) {
   h4 {
@@ -172,7 +175,10 @@ h2 {
   #hand,
   #money {
     margin-top: 1.25rem;
+    width: 100%;
   }
+
+  
 }
 
 /*-----------Laptop----------------*/
