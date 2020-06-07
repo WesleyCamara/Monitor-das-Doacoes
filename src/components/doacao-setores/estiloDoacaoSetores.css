@@ -48,13 +48,14 @@
 }
 
 .estiloBtn{
+    font-family: "Rubik", sans-serif;
+    font-weight: 500;
     display: flex;
     width: 280px;
     height: 70px;
     background-color:  #6320ee;
     border-radius: 40px;
     font-size: 22px;
-    font-weight: 600;
     letter-spacing: 2px;
     color: #FFFFFF;
     margin: 100px auto 0;
