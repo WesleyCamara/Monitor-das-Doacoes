@@ -81,9 +81,9 @@
 }
 
 .botao a {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Rubik", sans-serif;
+  font-weight: 500;
   font-size: 24px;
-  font-weight: 600;
   color: #ffffff;
   letter-spacing: 2px;
 }

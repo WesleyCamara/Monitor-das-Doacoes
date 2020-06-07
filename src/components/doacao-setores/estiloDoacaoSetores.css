@@ -45,22 +45,23 @@
   z-index: 1000;
 }
 
-.estiloBtn {
-  display: flex;
-  width: 280px;
-  height: 70px;
-  background-color: #6320ee;
-  border-radius: 40px;
-  font-size: 22px;
-  font-weight: 600;
-  letter-spacing: 2px;
-  color: #ffffff;
-  margin: 100px auto 0;
-  align-items: center;
-  justify-content: center;
-  text-transform: uppercase;
-  cursor: pointer;
-  border: none;
+.estiloBtn{
+    font-family: "Rubik", sans-serif;
+    font-weight: 500;
+    display: flex;
+    width: 280px;
+    height: 70px;
+    background-color:  #6320ee;
+    border-radius: 40px;
+    font-size: 22px;
+    letter-spacing: 2px;
+    color: #FFFFFF;
+    margin: 100px auto 0;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: none;
 }
 
 .estiloBtn:hover {

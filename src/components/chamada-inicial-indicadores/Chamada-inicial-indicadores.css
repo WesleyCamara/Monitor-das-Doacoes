@@ -9,17 +9,20 @@
 /*-----------Font-----------------*/
 /*----------------------------*/
 h4 {
-  color: #fff;
-  margin-top: 1.25rem;
-  font-size: 100%;
-  font-family: adobe-clean, sans-serif;
+    color: #fff;
+    margin-top: 1.25rem;
+    font-size: 21px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 500;
+    margin-top: 49px;
 }
 
 h2 {
-  font-size: 100%;
-  font-family: adobe-clean, sans-serif;
-  margin: 8px 0 17px 0;
-  text-align: center;
+    font-size: 27px;
+    font-weight: 500;
+    font-family: 'Rubik', sans-serif;
+    margin: 8px 0 17px 0;
+    text-align: center;
 }
 
 /*----------------------------*/
@@ -35,10 +38,10 @@ h2 {
 
 #doacoes,
 #doadores {
-  color: #6e5fbd;
-  font-weight: 900;
-  font-size: 4rem;
-  font-family: adobe-clean, sans-serif;
+    color: #6e5fbd;
+    font-weight: 500;
+    font-size: 4rem;
+    font-family: 'Rubik', sans-serif;
 }
 
 #img-center {
@@ -80,22 +83,24 @@ h2 {
 }
 
 .dados {
-  padding-top: 10px;
-  color: #6e5fbd;
-  font-size: 128%;
-  font-family: "Rubik", sans-serif;
-  font-weight: 700;
+    padding-top: 10px;
+    color: #6e5fbd;
+    font-size: 31px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 700;
 }
 
 .section-container {
-  width: 20%;
-  min-height: 8rem;
-  text-align: start;
-  margin: 1rem 0.5% 0 0.5%;
-  border-radius: 5px;
-  background-color: #2c2b32;
-  padding: 0 0.7% 0 2%;
+    width: 20%;
+    min-height: 8rem;
+    text-align: start;
+    margin: 1rem 0.50% 1rem 0.50%;
+    border-radius: 5px;
+    background-color: #2c2b32;
+    padding: 0 0.70% 0 2%;
+    /* height: 203px; */
 }
+
 
 /*----------------------------*/
 /*-----------Mobil----------------*/
