@@ -86,7 +86,6 @@
   font-weight: 600;
   color: #ffffff;
   letter-spacing: 2px;
-  
 }
 
 .botao:hover {
@@ -94,7 +93,7 @@
 }
 
 .link-acessando-aqui:hover {
-  color: #8075FF;
+  color: #8075ff;
 }
 
 .container-qr {

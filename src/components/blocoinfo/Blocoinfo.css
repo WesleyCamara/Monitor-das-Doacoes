@@ -1,89 +1,85 @@
 .blocoinfo {
-    width: 100%;
-    font-family: "Rubik", sans-serif;
-
+  width: 100%;
+  font-family: "Rubik", sans-serif;
 }
 .container-partesuperior {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 0 16vw;
-    height: 643px;
-    background: #262626;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 16vw;
+  height: 643px;
+  background: #262626;
 }
 .campanha h1 {
-    padding-top: 20px;
-    text-align: center;
-    margin: 20px;
-    font-size: 70px;
-    color: #ffffff;
+  padding-top: 20px;
+  text-align: center;
+  margin: 20px;
+  font-size: 70px;
+  color: #ffffff;
 }
 .totaldoado h2 {
-    padding-top: 10px;
-    margin: 20px;
-    text-align: center;
-    font-size: 50px;
-    color: #60beb5;
-    font-weight: bold;
-    font-family: "Rubik", sans-serif;
+  padding-top: 10px;
+  margin: 20px;
+  text-align: center;
+  font-size: 50px;
+  color: #60beb5;
+  font-weight: bold;
+  font-family: "Rubik", sans-serif;
 }
 .informacao h3 {
-    padding-top: 20px;
-    margin: 20px;
-    text-align: center;
-    font-size: 37px;
-    color: #ffffff;
-    font-family: "Rubik", sans-serif;
+  padding-top: 20px;
+  margin: 20px;
+  text-align: center;
+  font-size: 37px;
+  color: #ffffff;
+  font-family: "Rubik", sans-serif;
 }
 .informacao a {
-    text-decoration: none;
-    font-size: 35px;
-    color: #8e76fa;
-    font-family: "Rubik", sans-serif;
+  text-decoration: none;
+  font-size: 35px;
+  color: #8e76fa;
+  font-family: "Rubik", sans-serif;
 }
 
-.informacaoaqui:hover{
-        color: #60beb5;
-
+.informacaoaqui:hover {
+  color: #60beb5;
 }
 @media only screen and (max-width: 768px) {
-    .container-partesuperior {
-        padding: 0 9vw;
-        height: 545px;
-
-    }
-    .campanha h1 {
-        padding-top: 0;
-        margin: 0;
-        font-size: 50px;
-    }
-    .informacao h3 {
-        padding-top: 10px;
-        margin: 0px;
-        text-align: center;
-        font-size: 30px;
-        color: #ffffff;
-    }
+  .container-partesuperior {
+    padding: 0 9vw;
+    height: 545px;
+  }
+  .campanha h1 {
+    padding-top: 0;
+    margin: 0;
+    font-size: 50px;
+  }
+  .informacao h3 {
+    padding-top: 10px;
+    margin: 0px;
+    text-align: center;
+    font-size: 30px;
+    color: #ffffff;
+  }
 }
 
 @media only screen and (max-width: 425px) {
-    .campanha h1 {
-        font-size: 40px;
-    }
+  .campanha h1 {
+    font-size: 40px;
+  }
 
-    .totaldoado h2 {
-        padding-top: 10px;
-        text-align: center;
-        font-size: 40px;
-    }
+  .totaldoado h2 {
+    padding-top: 10px;
+    text-align: center;
+    font-size: 40px;
+  }
 
-    .informacao h3 {
-        font-size: 25px;
-        color: #ffffff;
-    }
-    .informacao a {
-        font-size: 25px;
-    }
-
+  .informacao h3 {
+    font-size: 25px;
+    color: #ffffff;
+  }
+  .informacao a {
+    font-size: 25px;
+  }
 }

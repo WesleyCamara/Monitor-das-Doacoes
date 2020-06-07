@@ -14,6 +14,8 @@ export default class BlocoInfoDois extends Component {
     return (
       <>
         <div className="blocodois">
+
+          {/* Contem as imagens que ficam no fundo do componente, atras do conteudo principal  */}
           <div className="container-fundo">
             <div className="fundo-sombra">
               <img src={monitor} />
@@ -30,6 +32,7 @@ export default class BlocoInfoDois extends Component {
             </div>
           </div>
 
+      {/* Contem o conteudo principal com os textos  */}
           <div className="container-texto">
             <div className="textotitulo">
               <h1>
