@@ -73,7 +73,7 @@
   display: flex;
   width: 483px;
   height: 83px;
-  background-color: #7600f8;
+  background-color: #6320ee;
   border-radius: 50px;
   justify-content: center;
   align-items: center;
@@ -81,9 +81,19 @@
 }
 
 .botao a {
+  font-family: "Rubik", sans-serif;
+  font-weight: 500;
   font-size: 24px;
-  font-weight: bold;
   color: #ffffff;
+  letter-spacing: 2px;
+}
+
+.botao:hover {
+  box-shadow: 0 0 5px 1px #6320ee;
+}
+
+.link-acessando-aqui:hover {
+  color: #8075ff;
 }
 
 .container-qr {
@@ -441,5 +451,6 @@
 
   .botao a {
     font-size: 14px;
+    letter-spacing: 1px;
   }
 }

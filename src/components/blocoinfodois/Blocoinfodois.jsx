@@ -14,6 +14,8 @@ export default class BlocoInfoDois extends Component {
     return (
       <>
         <div className="blocodois">
+
+          {/* Contem as imagens que ficam no fundo do componente, atras do conteudo principal  */}
           <div className="container-fundo">
             <div className="fundo-sombra">
               <img src={monitor} />
@@ -30,6 +32,7 @@ export default class BlocoInfoDois extends Component {
             </div>
           </div>
 
+      {/* Contem o conteudo principal com os textos  */}
           <div className="container-texto">
             <div className="textotitulo">
               <h1>
@@ -101,7 +104,7 @@ export default class BlocoInfoDois extends Component {
                   <FormattedMessage id="textinferior" />
                   <br />
                   <FormattedMessage id="textinferiorum" />{" "}
-                  <a
+                  <a className="link-acessando-aqui"
                     href="https://docs.google.com/spreadsheets/d/1RA0oP9EBHxpsLGvHTaX2TTYHT2oQHTfNrM8Z40hqVus/edit#gid=0"
                     target="_blank"
                     rel="noopener noreferrer"

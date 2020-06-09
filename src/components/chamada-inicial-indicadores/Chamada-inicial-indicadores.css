@@ -1,8 +1,8 @@
 /*-------Reset------------*/
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 /*----------------------------*/
@@ -11,13 +11,16 @@
 h4 {
     color: #fff;
     margin-top: 1.25rem;
-    font-size: 100%;
-    font-family: adobe-clean, sans-serif;
+    font-size: 21px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 500;
+    margin-top: 49px;
 }
 
 h2 {
-    font-size: 100%;
-    font-family: adobe-clean, sans-serif;
+    font-size: 27px;
+    font-weight: 500;
+    font-family: 'Rubik', sans-serif;
     margin: 8px 0 17px 0;
     text-align: center;
 }
@@ -27,42 +30,42 @@ h2 {
 /*----------------------------*/
 /*-----------Ids-----------------*/
 #banner {
-    margin-top: 8rem;
-    width: 100%;
-    height: auto;
-    background-color: #fff;
+  margin-top: 8rem;
+  width: 100%;
+  height: auto;
+  background-color: #fff;
 }
 
 #doacoes,
 #doadores {
     color: #6e5fbd;
-    font-weight: 900;
+    font-weight: 500;
     font-size: 4rem;
-    font-family: adobe-clean, sans-serif;
+    font-family: 'Rubik', sans-serif;
 }
 
 #img-center {
-    margin-top: 20px;
-    margin-bottom: 0;
-
+  margin-top: 20px;
+  margin-bottom: 0;
 }
 
-#money>img,
-#hand>img {
-    height: 75px;
-    width: 75px;
-    margin-left: 40%;
-    margin-right: 40%;
+#money > img,
+#hand > img {
+  height: 75px;
+  width: 75px;
+  margin-left: 40%;
+  margin-right: 40%;
+  margin: 0 auto;
 }
 
 /*----------Class------------------*/
-.banner-container>#banner-content,
+.banner-container > #banner-content,
 #img-center {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    padding-top: 68px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding-top: 68px;
 }
 
 /*----------------------------*/
@@ -71,19 +74,19 @@ h2 {
 
 /*-----------Class-----------------*/
 .container {
-    width: 100%;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    flex-direction: row;
-    background-color: #262626;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  background-color: #262626;
 }
 
 .dados {
     padding-top: 10px;
     color: #6e5fbd;
-    font-size: 128%;
+    font-size: 31px;
     font-family: 'Rubik', sans-serif;
     font-weight: 700;
 }
@@ -92,116 +95,122 @@ h2 {
     width: 20%;
     min-height: 8rem;
     text-align: start;
-    margin: 1rem 0.50% 0 0.50%;
+    margin: 1rem 0.50% 1rem 0.50%;
     border-radius: 5px;
     background-color: #2c2b32;
     padding: 0 0.70% 0 2%;
+    /* height: 203px; */
 }
+
 
 /*----------------------------*/
 /*-----------Mobil----------------*/
 /*----------------------------*/
 /*-----------ids-----------------*/
 
-@media only screen and (max-width:425px) {
-    h4 {
-        font-size: 1.2rem;
-    }
 
-    /*-----------ids-----------------*/
-    #banner {
-        width: 100%;
-        height: auto;
-    }
 
-    #doacoes,
-    #doadores {
-        font-size: 2.5rem;
-        text-align: center;
-    }
+@media only screen and (max-width: 425px) {
+  h4 {
+    font-size: 1.2rem;
+  }
 
-    #img-center>img {
-        width: 100%;
-    }
+  /*-----------ids-----------------*/
+  #banner {
+    width: 100%;
+    height: auto;
+  }
 
-    #hand,
-    #money {
-        margin: 10px;
-    }
+  #doacoes,
+  #doadores {
+    font-size: 2.5rem;
+    text-align: center;
+  }
 
-    /*----------Class------------------*/
-    .banner-container {
-        display: flex;
-        flex-direction: column;
-        align-self: center;
-    }
+  #img-center > img {
+    width: 100%;
+  }
 
-    .container {
-        width: 100%;
-        height: auto;
-        justify-content: center;
-    }
+  #hand,
+  #money {
+    margin: 10px;
+  }
 
-    .dados {
-        font-size: 1.8rem;
-    }
+  /*----------Class------------------*/
+  .banner-container {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+  }
+
+  .container {
+    width: 100%;
+    height: auto;
+    justify-content: center;
+  }
+
+  .dados {
+    font-size: 1.8rem;
+  }
 }
 
 /*----------Tablet------------------*/
 @media only screen and (max-width: 768px) {
+  .container,
+  #banner {
+    width: 100%;
+    margin: auto;
+  }
 
-    .container,
-    #banner {
-        width: 100%;
-        margin: auto;
-    }
+  .section-container {
+    margin: 20px 20px 0 20px;
+    padding: 10px 1px 0 15px;
+  }
 
-    .section-container {
-        margin: 20px 20px 0 20px;
-        padding: 10px 1px 0 15px;
-    }
+  .container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
 
-    .container {
-        padding-left: 40px;
-        padding-right: 40px;
-    }
+  #hand,
+  #money {
+    margin-top: 1.25rem;
+    width: 100%;
+  }
 
-    #hand,
-    #money {
-        margin-top: 1.25rem;
-    }
+  
 }
 
 /*-----------Laptop----------------*/
 
 @media only screen and (max-width: 1024px) {
+  .container,
+  #banner {
+    width: 100%;
+    margin: auto;
+    height: auto;
+  }
 
-    .container,
-    #banner {
-        width: 100%;
-        margin: auto;
-        height: auto;
-    }
+  #banner {
+    margin-top: 60px;
+  }
 
-    #banner {
-        margin-top: 60px;
-    }
+  h4 {
+    font-size: 0.875rem;
+    margin-top: 1.25rem;
+  }
 
-    h4 {
-        font-size: 0.875rem;
-        margin-top: 1.25rem;
-    }
+  .dados {
+    font-size: 1.125rem;
+  }
 
-    .dados {
-        font-size: 1.125rem;
-    }
-
-    .section-container {
-        width: 15rem;
-        height: 8rem;
-        margin: 10px 4px 0 4px;
-        padding-right: 1px;
-    }
+  .section-container {
+    width: 15rem;
+    height: 8rem;
+    margin: 10px 4px 0 4px;
+    padding-right: 1px;
+  }
 }
 
-@media only screen and (max-width: 1024px) {}
+@media only screen and (max-width: 1024px) {
+}

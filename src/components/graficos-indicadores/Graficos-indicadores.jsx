@@ -6,7 +6,7 @@ import HighchartsReact from "highcharts-react-official";
 import Highcharts from "highcharts";
 
 const GraficosIndicadores = (props) => {
-  
+  // Esconde os números vazios antes de receber o valor da API
   const [visible, setVisible] = useState({
     visibleStyle: { opacity: 0 },
   });
@@ -19,10 +19,8 @@ const GraficosIndicadores = (props) => {
     acessoIndiceLives: 5,
     simbolo: "R$",
     valorDoadoLabel: "Valor doado",
-    localeString : "pt-BR"
+    localeString: "pt-BR",
   };
-
-
 
   // Possui os valores iniciais de estado, serão atualizados quando receber as props pela API
   const [valores, setValores] = useState({
@@ -159,7 +157,6 @@ const GraficosIndicadores = (props) => {
     return maioresDoacoes;
   };
 
-
   // Altera os parametros quando o site estiver em ingles, os dados são buscados na URL
   const formatValue = () => {
     const url_atual = window.location.pathname;
@@ -170,7 +167,7 @@ const GraficosIndicadores = (props) => {
       moeda.acessoIndiceLives = 6;
       moeda.simbolo = "$";
       moeda.valorDoadoLabel = "Donated amount";
-      moeda.localeString = "en-US"
+      moeda.localeString = "en-US";
     }
   };
 
@@ -188,27 +185,27 @@ const GraficosIndicadores = (props) => {
       height: 92 + "%",
 
       events: {
-        load: function() {
+        load: function () {
           const chart = this,
             points = chart.series[0].data,
             options = {
               dataLabels: {
                 inside: false,
                 style: {
-                  color: 'black'
-                }
-              }
+                  color: "black",
+                },
+              },
             };
-  
-          points.forEach(function(point) {
+
+          points.forEach(function (point) {
             if (point.shapeArgs.height > 80) {
               point.update(options, false);
-            } 
+            }
           });
-  
+
           chart.redraw();
-        }
-      }
+        },
+      },
     },
     colors: ["#4DB6AC"],
     title: {
@@ -225,7 +222,7 @@ const GraficosIndicadores = (props) => {
       lineWidth: 1,
       lineColor: "#707070",
       labels: {
-        rotation: (window.screen.width < 1024) ? -45 : 0,
+        rotation: window.screen.width < 1024 ? -45 : 0,
         style: {
           fontSize: "12px",
           fontFamily: "rubik, sans-serif",
@@ -252,11 +249,11 @@ const GraficosIndicadores = (props) => {
           // textOverflow: "auto",
         },
         formatter: function () {
-          if (window.screen.width >= 1024){
-          return this.value.toLocaleString(moeda.localeString);
-        } else {
-          return ""
-        }
+          if (window.screen.width >= 1024) {
+            return this.value.toLocaleString(moeda.localeString);
+          } else {
+            return "";
+          }
         },
       },
     },
@@ -344,7 +341,6 @@ const GraficosIndicadores = (props) => {
     });
   };
 
-  
   return (
     <>
       {formatValue()}
