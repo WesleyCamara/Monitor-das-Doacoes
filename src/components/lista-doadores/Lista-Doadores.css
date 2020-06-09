@@ -161,4 +161,8 @@ p .donation {
     .donations {
         width: 95%;
     }
+
+    .donations-list p {
+        padding: 10px 0;
+    }
 }
