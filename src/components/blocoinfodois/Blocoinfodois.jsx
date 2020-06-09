@@ -42,24 +42,23 @@ export default class BlocoInfoDois extends Component {
               </h1>
               <p>
                 <FormattedMessage id="text1" />
-                <br />
+
                 <FormattedMessage id="text2" />
-                <br />
+
                 <FormattedMessage id="text3" />
-                <br />
+
                 <FormattedMessage id="text4" />
-                <br />
                 <FormattedMessage id="text5" />
-                <br />
+
                 <FormattedMessage id="text6" />
                 <br />
                 <br />
                 <FormattedMessage id="text7" />
-                <br />
+
                 <FormattedMessage id="text8" />
-                <br />
+
                 <FormattedMessage id="text9" />
-                <br />
+
                 <FormattedMessage id="text10" />
               </p>
 
@@ -88,6 +87,13 @@ export default class BlocoInfoDois extends Component {
                 </div>
 
                 <div className="seta">
+
+                <a
+                    href="http://bi.anna.center/w5/tdaportalclient.aspx"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+
                   <p>
                     <FormattedMessage id="textcode" />
                     <br />
@@ -96,6 +102,7 @@ export default class BlocoInfoDois extends Component {
                     <FormattedMessage id="textcodedois" />
                     <img src={seta} alt="Seta para direita" />
                   </p>
+                  </a>
                 </div>
               </div>
 
@@ -109,7 +116,7 @@ export default class BlocoInfoDois extends Component {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <FormattedMessage id="textinferiordois" />
+                    <span class="textinferiordois"><FormattedMessage id="textinferiordois" /></span>
                   </a>
                 </p>
               </div>
