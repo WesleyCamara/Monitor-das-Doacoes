@@ -4,7 +4,8 @@
     display: flex;
     flex-direction: column;
     font-family: 'Rubik', sans-serif;
-    margin-top: 50px;
+    padding-top: 100px;
+    background: #F7F7F7;
 }
 
 .partner-title {
@@ -32,7 +33,7 @@
 .partner-three img,
 .partner-four img {
     width: 200px;
-    margin: 30px 0;
+    margin: 30px auto;
 }
 
 
@@ -135,6 +136,7 @@
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
+    justify-items: center;
 }
 
 .footer-secondary-compartilhar {
@@ -145,7 +147,6 @@
 .footer-secondary-compartilhar a {
     text-decoration: none;
     display: flex;
-    align-items: baseline;
     justify-content: center;
 }
 
@@ -158,8 +159,9 @@
     color: #FFF;
     text-transform: lowercase;
     font-size: 12px;
-    letter-spacing: 3px;
+    letter-spacing: 3.8px;
     font-family: 'Rubik', sans-serif;
+    margin: auto 0;
 }
 
 .footer-secondary-sociais {
@@ -284,6 +286,10 @@
 
     .footer-first-qrcode {
         margin-top: 30px;
+    }
+
+    .partner {
+        flex-direction: column;
     }
 
 }
