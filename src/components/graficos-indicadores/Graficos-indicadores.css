@@ -250,9 +250,7 @@ indicators ---------------------  */
     margin-right: 5px;
   }
 
-  /* .total-doadores-div, .biggest-donor {
-    width: 50%;
-  } */
+ 
   .total-doadores-div p {
     width: 10.5vw;
   }
@@ -277,7 +275,6 @@ indicators ---------------------  */
   }
   .chart-indicators {
     flex-wrap: wrap;
-    /* flex-direction: column; */
   }
 
   .div-chart,
@@ -317,19 +314,14 @@ indicators ---------------------  */
     margin-top: 25px;
     margin-bottom: 25px;
   }
-  /* .biggest-donor p {
-    width: 39vw;
-    margin-right: 0;
-  } */
+
   .section-chart-container h3,
   .span-h3 {
     width: 100%;
     margin-left: 0;
     margin-right: 0;
   }
-  /* .total-doadores-div, .biggest-donor {
-    width: 50%;
-  } */
+
   .total-doadores-div p {
     width: 30vw;
   }

@@ -15,23 +15,27 @@
   padding-top: 20px;
   text-align: center;
   margin: 20px;
-  font-size: 70px;
+  font-size: 50px;
+  line-height: 60px;
   color: #ffffff;
 }
 .totaldoado h2 {
   padding-top: 10px;
   margin: 20px;
   text-align: center;
-  font-size: 50px;
-  color: #60beb5;
-  font-weight: bold;
+  font-size: 74px;
+  line-height: 88px;
+  color: #4DB6AC;
+  font-weight: 700;
   font-family: "Rubik", sans-serif;
 }
 .informacao h3 {
   padding-top: 20px;
   margin: 20px;
   text-align: center;
-  font-size: 37px;
+  font-size: 35px;
+  line-height: 42px;
+  font-weight: 400;
   color: #ffffff;
   font-family: "Rubik", sans-serif;
 }

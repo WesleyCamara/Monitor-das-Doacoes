@@ -18,17 +18,17 @@ export default class BlocoInfoDois extends Component {
           {/* Contem as imagens que ficam no fundo do componente, atras do conteudo principal  */}
           <div className="container-fundo">
             <div className="fundo-sombra">
-              <img src={monitor} />
+              <img src={monitor} alt="fundo" />
             </div>
 
             <div className="imgdecorativo">
-              <img src={imgcanto} />
+              <img src={imgcanto} alt=" fundo" />
             </div>
 
             <div className="quadrado"></div>
 
             <div className="circulo">
-              <img src={circles} />
+              <img src={circles} alt="Circulo fundo"/>
             </div>
           </div>
 
@@ -83,7 +83,7 @@ export default class BlocoInfoDois extends Component {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <img src={code} className="qrcode-img" />{" "}
+                    <img src={code} className="qrcode-img" alt="QR code"/>{" "}
                   </a>
                 </div>
 
@@ -94,7 +94,7 @@ export default class BlocoInfoDois extends Component {
                     <FormattedMessage id="textcodeum" />
                     <br />
                     <FormattedMessage id="textcodedois" />
-                    <img src={seta} />
+                    <img src={seta} alt="Seta para direita" />
                   </p>
                 </div>
               </div>
@@ -118,7 +118,7 @@ export default class BlocoInfoDois extends Component {
 
           <div className="container-final">
             <div className="doar">
-              <img src={doar} />
+              <img src={doar} alt="doar"/>
             </div>
             <div className="textoemail">
               <p>
