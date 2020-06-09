@@ -342,7 +342,7 @@ indicators ---------------------  */
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 425px) {
   .section-chart-container {
     width: 100%;
   }
