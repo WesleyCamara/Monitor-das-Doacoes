@@ -373,7 +373,7 @@ const GraficosIndicadores = (props) => {
 
             <div className="indicators-subitem">
               <div>
-                <img className="img-hand-money" src={handMoney} />
+                <img className="img-hand-money" src={handMoney} alt="hand money"/>
               </div>
               <div>
                 <div>
@@ -401,7 +401,7 @@ const GraficosIndicadores = (props) => {
 
                   <div className="biggest-donor">
                     <p>
-                      <FormattedMessage id="biggest-donor" />:
+                      <FormattedMessage id="biggest-donor" />:{" "}
                       {valores.maiorDoador["Quem doa"]}
                     </p>
                     <p>
@@ -409,18 +409,18 @@ const GraficosIndicadores = (props) => {
                         className="valor-doado"
                         style={visible.visibleStyle}
                       >
-                        {moeda.simbolo}
+                        {moeda.simbolo}{" "}
                         {formatNumber(
                           valores.maiorDoador[moeda.valorAnunciado]
                         )}
                       </span>
                       <span style={visible.visibleStyle}>
-                        (
+                      {" "}(
                         {porcentagem(
                           Number(valores.maiorDoador[moeda.valorAnunciado]),
                           Number(valores.total)
                         )}
-                        )%
+                        %)
                       </span>
                     </p>
                   </div>
@@ -430,7 +430,7 @@ const GraficosIndicadores = (props) => {
             <div className="linhas"></div>
             <div className="indicators-subitem">
               <div>
-                <img className="img-hand-money" src={handMoney} />
+                <img className="img-hand-money" src={handMoney} alt="hand money"/>
               </div>
               <div>
                 <div>
@@ -468,16 +468,16 @@ const GraficosIndicadores = (props) => {
                         className="valor-doado"
                         style={visible.visibleStyle}
                       >
-                        {moeda.simbolo}
+                        {moeda.simbolo}{" "}
                         {formatNumber(valores.maiorCampanha[moeda.valorDoado])}
                       </span>
                       <span style={visible.visibleStyle}>
-                        (
+                      {" "}(
                         {porcentagem(
                           Number(valores.maiorCampanha[moeda.valorDoado]),
                           Number(valores.totalCampanhas)
                         )}
-                        )%
+                        %)
                       </span>
                     </p>
                   </div>
@@ -487,7 +487,7 @@ const GraficosIndicadores = (props) => {
             <div className="linhas"></div>
             <div className="indicators-subitem">
               <div>
-                <img className="img-hand-money" src={handMoney} />
+                <img className="img-hand-money" src={handMoney} alt="hand money"/>
               </div>
               <div>
                 <div>
@@ -516,12 +516,12 @@ const GraficosIndicadores = (props) => {
                         )}
                       </span>
                       <span style={visible.visibleStyle}>
-                        (
+                      {" "} (
                         {porcentagem(
                           Number(valores.maiorLive[moeda.acessoIndiceLives]),
                           Number(valores.totalLives)
                         )}
-                        )%
+                        %)
                       </span>
                     </p>
                   </div>

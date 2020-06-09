@@ -10,7 +10,6 @@
   font-family: "Rubik", sans-serif;
   color: #222222;
   margin: 0;
-  /* background: red; */
 }
 
 /* Coloca os elementos lado a lado  */
@@ -23,6 +22,7 @@ title dos dois itens  */
 .indicators-title,
 .chart-title {
   font-size: 50px;
+  line-height: 60px;
   margin-top: 140px;
   margin-bottom: 86px;
   font-weight: 700;
@@ -76,9 +76,9 @@ indicators ---------------------  */
 
 .section-chart-container h3,
 .span-h3 {
-  font-size: 37.5px;
+  font-size: 37px;
   line-height: 44px;
-  font-weight: 300;
+  font-weight: 400;
   margin-bottom: 16px;
   text-align: left;
 }
@@ -86,7 +86,6 @@ indicators ---------------------  */
 .span-h3 {
   color: #6320ee;
   font-weight: bold;
-  text-align: left;
 }
 
 .section-chart-container span {
@@ -100,41 +99,43 @@ indicators ---------------------  */
 
 .indicators-subitem-doadores {
   display: flex;
+  width: 100%;
+  justify-content: space-between;
 }
 
 .indicators-subitem-doadores p {
-  margin-right: 9vw;
-  line-height: 33px;
+  font-size: 22px;
+  line-height: 27px;
+  margin-bottom: 13px;
 }
 
-.total-doadores {
-  width: 181px;
+.total-doadores-div,
+.biggest-donor {
+  width: 14.5vw;
 }
 
-.biggest-donor p {
-  width: 8vw;
+.biggest-live p {
+  width: 100%;
 }
 
 /* Botão ver mais */
 
 .chart-indicators-button {
   display: flex;
-  width: 280px;
-  height: 70px;
+  align-items: center;
+  justify-content: center;
+  width: 334px;
+  height: 79px;
   border-radius: 40px;
   font-family: "Rubik", sans-serif;
   font-weight: 500;
   background-color: #6320ee;
   color: #ffffff;
-  font-size: 22px;
-
+  font-size: 24px;
   line-height: 28px;
-  letter-spacing: 2px;
-
+  letter-spacing: 2.4px;
   margin: 0 auto;
   margin-top: 100px;
-  align-items: center;
-  justify-content: center;
   text-transform: uppercase;
   cursor: pointer;
   /* transition: ease-in-out 100ms; */
@@ -165,8 +166,13 @@ indicators ---------------------  */
   .indicators-subitem-doadores p {
     margin-right: 6vw;
   }
+
+  .total-doadores-div,
+  .biggest-donor {
+    width: 19vw;
+  }
   .biggest-donor p {
-    width: 10vw;
+    width: 19vw;
   }
 }
 
@@ -191,8 +197,10 @@ indicators ---------------------  */
   .img-hand-money {
     width: 5vw;
   }
-  .biggest-donor p {
-    width: 14vw;
+
+  .total-doadores-div,
+  .biggest-donor {
+    width: 20vw;
   }
 }
 
@@ -242,12 +250,18 @@ indicators ---------------------  */
     margin-right: 5px;
   }
 
+  /* .total-doadores-div, .biggest-donor {
+    width: 50%;
+  } */
+  .total-doadores-div p {
+    width: 10.5vw;
+  }
   .biggest-donor p {
-    width: 18.5vw;
+    width: 25vw;
   }
 
   .linhas {
-    width: 45vw;
+    width: 40vw;
     top: -45px;
   }
 }
@@ -278,16 +292,19 @@ indicators ---------------------  */
     margin-bottom: 150px;
   }
 
-  .biggest-donor p {
-    width: 60%;
+  .total-doadores-div,
+  .biggest-donor {
+    width: 50%;
   }
-
+  .total-doadores-div p {
+    width: 49vw;
+  }
+  .biggest-donor p {
+    width: 45vw;
+  }
   .linhas {
     width: 80vw;
     top: -45px;
-  }
-  .total-doadores-div {
-    width: 50%;
   }
 }
 
@@ -300,17 +317,25 @@ indicators ---------------------  */
     margin-top: 25px;
     margin-bottom: 25px;
   }
-  .biggest-donor p {
+  /* .biggest-donor p {
     width: 39vw;
     margin-right: 0;
-  }
+  } */
   .section-chart-container h3,
   .span-h3 {
     width: 100%;
     margin-left: 0;
     margin-right: 0;
   }
-
+  /* .total-doadores-div, .biggest-donor {
+    width: 50%;
+  } */
+  .total-doadores-div p {
+    width: 30vw;
+  }
+  .biggest-donor p {
+    width: 51vw;
+  }
   .linhas {
     width: 90vw;
     top: -45px;
@@ -330,6 +355,7 @@ indicators ---------------------  */
   .span-h3 {
     text-align: center;
     max-width: 100vw;
+    margin-bottom: 5px;
   }
 
   .indicators-subitem p {
@@ -354,9 +380,24 @@ indicators ---------------------  */
     text-align: center;
   }
 
-  .biggest-live {
-    width: 100vw;
+  .total-doadores-div,
+  .biggest-donor {
+    width: 100%;
+  }
+  .total-doadores-div p {
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 14px;
+    text-align: center;
+  }
+  .biggest-donor p {
+    width: 100%;
+  }
+
+  .biggest-live p {
+    width: 100%;
     margin: 0 auto;
     text-align: center;
+    margin-bottom: 14px;
   }
 }
