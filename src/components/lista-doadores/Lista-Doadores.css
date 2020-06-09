@@ -110,6 +110,8 @@ p .donation {
     color: #6320EE;
     font-weight: bold;
     cursor: pointer;
+    position: relative;
+    z-index: 1001;
 }
 
 @media only screen and (max-width: 1000px) {
