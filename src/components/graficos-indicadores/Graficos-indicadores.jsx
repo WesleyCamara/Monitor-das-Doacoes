@@ -206,6 +206,7 @@ const GraficosIndicadores = (props) => {
       lineColor: "#707070",
       labels: {
         useHTML: true,
+        rotation: 0,
         formatter: function () {
           let item = this.value,
             len = item.length;
@@ -264,10 +265,7 @@ const GraficosIndicadores = (props) => {
 
     series: [
       {
-        style: {
-          backgroundColor: "red",
-          position: "relative",
-        },
+
         name: moeda.valorDoadoLabel,
         data: [],
 
@@ -276,6 +274,7 @@ const GraficosIndicadores = (props) => {
           enabled: true,
           rotation: -90,
           color: "#222222",
+          
           y: -45, // 10 pixels down from the top
           style: {
             fontSize: "1em",
