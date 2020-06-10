@@ -77,12 +77,13 @@
   column-count: 2;
   -webkit-column-count: 2;
   -moz-column-count: 2;
-  column-width: 50%;
+  /* column-width: 50%; */
   column-gap: 100px;
   -moz-column-gap: 100px;
   margin: 10px auto;
   width: 100%;
   padding: 10px 0;
+  column-width: 8rem;
 }
 
 .donations-list p {
