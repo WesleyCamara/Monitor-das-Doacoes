@@ -60,42 +60,40 @@
 }
 
 .donations-list {
-  max-width: 100%;
-  width: 100%;
-  background: #f3f3f3;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 30px;
-  margin: 0 auto;
+    max-width: 100%;
+    width: 100%;
+    background: #F7F7F7;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 30px 0;
+    margin: 0 auto;
 }
 
 .lista {
-  column-count: 2;
-  column-width: 50%;
-  column-gap: 100px;
+  column-gap: 50px;
+  -moz-column-gap: 50px;
   margin: 10px auto;
   width: 100%;
   padding: 10px 0;
+  columns: 50vh 2;
+  padding: 0 30px
 }
 
 .donations-list p {
-  text-align: left;
-  margin: 0;
-  padding: 10px 0;
+    text-align: left;
+    font-size: 16px;
+    margin: 0;
+    padding: 10px 0;
 }
 
 p .donation {
-  font-weight: 600;
+    font-weight: bold;
 }
 
 .donation a {
-  font-size: 16px;
-  margin: 0;
-  padding: 10px 0;
-  text-align: left;
-  text-decoration: none;
-  color: #222222;
+    text-decoration: none;
+    color: #222222;
 }
 
 .donation a:hover {
@@ -103,17 +101,18 @@ p .donation {
 }
 
 .load-more {
-  margin: 30px auto 10px;
+    margin: 30px auto 10px; 
 }
 
-.load-more a {
-  font-size: calc (26dp * 0.75);
-  text-transform: uppercase;
-  word-spacing: 2px;
-  letter-spacing: 2px;
-  color: #6320ee;
-  font-weight: 600;
-  cursor: pointer;
+.load-more .button {
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 3.12px;
+    color: #6320EE;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    z-index: 1001;
 }
 
 @media only screen and (max-width: 1000px) {
@@ -142,15 +141,6 @@ p .donation {
     padding: 15px;
   }
 
-  .lista {
-    column-count: 1;
-    column-width: 100%;
-    column-gap: 0px;
-    margin: 0;
-    width: 100%;
-    padding: 5px 0;
-  }
-
   .donations-top-img {
     display: none;
   }
@@ -162,7 +152,20 @@ p .donation {
 }
 
 @media only screen and (max-width: 600px) {
-  .donations {
-    width: 95%;
-  }
+    .donations {
+        width: 95%;
+    }
+
+    .lista {
+      columns: 100vh 1;
+      column-gap: 0px;
+      -moz-column-gap: 0px;
+      margin: 0;
+      width: 100%;
+      padding: 5px 0;
+    }
+
+    .donations-list p {
+        padding: 10px 0;
+    }
 }
