@@ -73,12 +73,13 @@
 .botao {
   display: flex;
   height: 79px;
-  width: 490px;
+  max-width: 490px;
   background-color: #6320ee;
   border-radius: 50px;
   justify-content: center;
   align-items: center;
   margin-top: 73px;
+  margin-bottom: 50px;
 }
 
 .botao a {
@@ -444,12 +445,20 @@
 }
 
 @media screen and (max-width: 320px) {
+  .container-fundo {
+    height: 1650px;
+  }
   .fundo-sombra img {
     max-width: 90%;
   }
 
   .quadrado {
     display: none;
+  }
+
+  .container-qr {
+    width: 100%;
+    margin-top: 150px;
   }
   .textoemail {
     margin-bottom: 180px;
