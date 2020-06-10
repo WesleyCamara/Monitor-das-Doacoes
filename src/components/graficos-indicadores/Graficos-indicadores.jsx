@@ -196,6 +196,9 @@ const GraficosIndicadores = (props) => {
         groupPadding: 0,
         borderColor: "none",
       },
+      labels: {
+        useHTML: true,
+      }
     },
     xAxis: {
       type: "category",
