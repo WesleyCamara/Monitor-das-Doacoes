@@ -69,6 +69,9 @@
 }
 
 @media only screen and (max-width: 425px) {
+  .container-partesuperior{
+    padding: 0 5%;
+  }
   .campanha h1 {
     font-size: 40px;
   }
@@ -85,5 +88,55 @@
   }
   .informacao a {
     font-size: 25px;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .container-partesuperior{
+    padding: 13% 5%;
+    height: inherit;
+  }
+  .campanha h1 {
+    font-size: 30px;
+    margin-bottom: 0;
+  }
+
+  .totaldoado h2 {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-align: center;
+    font-size: 35px;
+  }
+
+  .informacao h3 {
+    font-size: 22px;
+    color: #ffffff;
+  }
+  .informacao a {
+    font-size: 25px;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .container-partesuperior{
+    padding: 15% 4%;
+    height: inherit;
+  }
+  .campanha h1 {
+    font-size: 25px;
+  }
+
+  .totaldoado h2 {
+    padding-top: 10px;
+    text-align: center;
+    font-size: 30px;
+  }
+
+  .informacao h3 {
+    font-size: 20px;
+    color: #ffffff;
+  }
+  .informacao a {
+    font-size: 20px;
   }
 }

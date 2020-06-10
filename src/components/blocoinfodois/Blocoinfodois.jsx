@@ -116,7 +116,7 @@ export default class BlocoInfoDois extends Component {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <span class="textinferiordois"><FormattedMessage id="textinferiordois" /></span>
+                    <span className="textinferiordois"><FormattedMessage id="textinferiordois" /></span>
                   </a>
                 </p>
               </div>
