@@ -20,7 +20,6 @@ export default class ListaDoadores extends Component {
 
   // Evento de clique no botão chamando as funções
   handleSubmit(event) {
-    this.state.doacao = [];
     this.emptyDoacaoObject();
     this.moreResults();
     event.preventDefault();
@@ -30,6 +29,7 @@ export default class ListaDoadores extends Component {
   moreResults = () => {
     this.setState({
       num: this.state.num + 10,
+      doacao: []
     });
   };
 
@@ -120,7 +120,7 @@ export default class ListaDoadores extends Component {
             <p>
               <span className="donation">
                 {" "}
-                <a href={donation.referencia} target="_blank">
+                <a href={donation.referencia} target="_blank" rel="noopener noreferrer">
                   {" "}
                   {donation.quemdoa}{" "}
                 </a>{" "}
@@ -140,7 +140,6 @@ export default class ListaDoadores extends Component {
             <div className="donations-top-text">
               <div className="donations-top-title">
                 <h2>
-                  {" "}
                   <FormattedMessage id="donations-top-title" />{" "}
                 </h2>
               </div>
@@ -153,22 +152,21 @@ export default class ListaDoadores extends Component {
               </div>
             </div>
             <div className="donations-top-img">
-              <img src={shape} />
+              <img src={shape} alt="" />
             </div>
           </div>
           <div className="donations-list">
             <div className="lista">
               {this.listaDoadores || (
                 <div className="loading">
-                  <img src={Loading} />
+                  <img src={Loading} alt="Carregando..."/>
                 </div>
               )}
             </div>
             <div className="load-more">
-              <a onClick={this.handleSubmit}>
-                {" "}
+              <div className="button" onClick={this.handleSubmit}>
                 + <FormattedMessage id="load-more" />
-              </a>
+              </div>
             </div>
           </div>
         </div>
