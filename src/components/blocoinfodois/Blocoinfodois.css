@@ -124,7 +124,7 @@
   color: #222222;
 }
 
-.seta a:visited, .seta a:active{
+.seta a,.seta a:visited, .seta a:active{
   color: #222222;
 }
 
@@ -290,6 +290,11 @@
     height: 99px;
     text-align: left;
   }
+
+  .textoemail {
+   margin-top: 140px;
+
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -377,7 +382,7 @@
     display: none;
   }
   .container-fundo {
-    height: 1550px;
+    height: 1650px;
   }
   .container-texto {
     flex-direction: column;
@@ -406,7 +411,7 @@
     font-size: 25px;
     width: 90%;
     height: 60px;
-    margin-top: 60px;
+    margin-top: 60px;;
   }
 
   .seta img {
@@ -424,7 +429,7 @@
   }
 
   .doar img {
-    max-width: 355px;
+    max-width: 95%;
     margin: 0 auto;
   }
 
@@ -451,7 +456,7 @@
   }
 
   .doar img {
-    max-width: 300px;
+    max-width: 95%;
     margin: 0 auto;
   }
 
