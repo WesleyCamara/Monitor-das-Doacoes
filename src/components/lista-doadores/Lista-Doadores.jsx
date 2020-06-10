@@ -140,7 +140,6 @@ export default class ListaDoadores extends Component {
             <div className="donations-top-text">
               <div className="donations-top-title">
                 <h2>
-                  {" "}
                   <FormattedMessage id="donations-top-title" />{" "}
                 </h2>
               </div>
@@ -153,22 +152,21 @@ export default class ListaDoadores extends Component {
               </div>
             </div>
             <div className="donations-top-img">
-              <img src={shape} />
+              <img src={shape} alt="" />
             </div>
           </div>
           <div className="donations-list">
             <div className="lista">
               {this.listaDoadores || (
                 <div className="loading">
-                  <img src={Loading} />
+                  <img src={Loading} alt="Carregando..."/>
                 </div>
               )}
             </div>
             <div className="load-more">
-              <a onClick={this.handleSubmit}>
-                {" "}
+              <div className="button" onClick={this.handleSubmit}>
                 + <FormattedMessage id="load-more" />
-              </a>
+              </div>
             </div>
           </div>
         </div>

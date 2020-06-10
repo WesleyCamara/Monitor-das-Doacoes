@@ -23,9 +23,7 @@ export default class Footer extends Component {
         </div>
 
         <div className="partner">
-          <div className="partner-one">
-            <img src={cocreare} alt="cocreare" title="Cocreare" />
-          </div>
+          <div className="partner-one"></div>
           <div className="partner-two">
             <a
               href="https://anna.center/pt/home/"
@@ -38,15 +36,7 @@ export default class Footer extends Component {
           <div className="partner-three">
             <img src={cocreare} alt="cocreare" title="Cocreare" />
           </div>
-          <div className="partner-four">
-            <a
-              href="https://anna.center/pt/home/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img src={anna} alt="anna" title="Anna" />
-            </a>
-          </div>
+          <div className="partner-four"></div>
         </div>
 
         <div className="footer">
@@ -87,13 +77,9 @@ export default class Footer extends Component {
               </div>
               <div className="footer-description">
                 <p>
-                  {" "}
-                  <span className="footer-description-name">
-                    Ana Moretto
-                  </span>{" "}
+                  <span className="footer-description-name">Ana Moretto</span>
                 </p>
                 <a href="mailto:anamoretto@4pressnews.com.br">
-                  {" "}
                   <p> anamoretto@4pressnews.com.br </p>
                 </a>
                 <p> Tel: (11) 5096-0439 </p>
@@ -131,7 +117,7 @@ export default class Footer extends Component {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img src={facebook} />
+                <img src={facebook} alt="compartilhar" />
                 <h4>
                   <FormattedMessage id="footer-secondary-compartilhar" />
                 </h4>
@@ -143,31 +129,31 @@ export default class Footer extends Component {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img src={instagram} />
+                <img src={instagram} alt="instagram" />
               </a>
               <a
                 href="https://twitter.com/captacaoabcr"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img src={twitter} />
+                <img src={twitter} alt="twitter" />
               </a>
               <a
                 href="https://facebook.com/ABCRBrasil"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img src={facebook} />
+                <img src={facebook} alt="facebook" />
               </a>
-              <a href="" target="_blank" rel="noopener noreferrer">
-                <img src={linkedin} />
+              <a href="#" target="_blank" rel="noopener noreferrer">
+                <img src={linkedin} alt="linkedin" />
               </a>
               <a
                 href="https://www.youtube.com/channel/UCagSPBomjrVGxYuR3eUFyrQ"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img src={youtube} />
+                <img src={youtube} alt="youtube" />
               </a>
             </div>
             <div className="footer-secondary-compartilhar">
@@ -176,7 +162,7 @@ export default class Footer extends Component {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img src={twitter} />
+                <img src={twitter} alt="tweet" />
                 <h4>Tweet</h4>
               </a>
             </div>
