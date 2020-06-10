@@ -393,3 +393,15 @@ indicators ---------------------  */
     margin-bottom: 14px;
   }
 }
+
+.highcharts-data-series span {
+  width: 100px; 
+  word-break: break-word !important;
+  white-space: normal !important;
+  color: "red";
+}
+
+.highcharts-xaxis-labels text{
+  background: blue;
+  color: blue
+}

@@ -183,29 +183,32 @@ const GraficosIndicadores = (props) => {
       type: "column",
       backgroundColor: "#F3F3F3",
       height: 92 + "%",
+      dataLabels: {
+        enabled: true,
+        useHTML: true}
 
-      events: {
-        load: function () {
-          const chart = this,
-            points = chart.series[0].data,
-            options = {
-              dataLabels: {
-                inside: false,
-                style: {
-                  color: "black",
-                },
-              },
-            };
+      // events: {
+      //   load: function () {
+      //     const chart = this,
+      //       points = chart.series[0].data,
+      //       options = {
+      //         dataLabels: {
+      //           inside: false,
+      //           style: {
+      //             color: "red",
+      //           },
+      //         },
+      //       };
 
-          points.forEach(function (point) {
-            if (point.shapeArgs.height > 80) {
-              point.update(options, false);
-            }
-          });
+      //     points.forEach(function (point) {
+      //       if (point.shapeArgs.height > 80) {
+      //         point.update(options, false);
+      //       }
+      //     });
 
-          chart.redraw();
-        },
-      },
+      //     chart.redraw();
+      //   },
+      // },
     },
     colors: ["#4DB6AC"],
     title: {
@@ -216,17 +219,23 @@ const GraficosIndicadores = (props) => {
         groupPadding: 0,
         borderColor: "none",
       },
+      labels: {
+        useHTML: true,
+      }
     },
     xAxis: {
       type: "category",
       lineWidth: 1,
       lineColor: "#707070",
       labels: {
+        useHTML: true,
         rotation: window.screen.width < 1024 ? -45 : 0,
         style: {
-          fontSize: "12px",
+          fontSize: "10px",
           fontFamily: "rubik, sans-serif",
-          width: 9,
+          width: 8,
+          // wordBreak: "break-all",
+
           // textOverflow: "auto",
         },
       },
@@ -275,7 +284,7 @@ const GraficosIndicadores = (props) => {
           color: "#222222",
           y: 50, // 10 pixels down from the top
           style: {
-            fontSize: "1.25em",
+            fontSize: "1em",
             fontFamily: "rubik, sans-serif",
             fontWeight: "400",
             textOutline: "none",

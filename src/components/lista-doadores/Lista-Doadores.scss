@@ -1,0 +1,172 @@
+.container-donations-list {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    background: #fff;
+    font-family: "Rubik", sans-serif;
+    color: #222222;
+    display: flex;
+    margin: 200px auto 100px;
+  }
+  
+  .donations {
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    align-items: flex-start;
+    margin: 0 auto;
+    width: 80%;
+  }
+  
+  .donations-top {
+    display: flex;
+  }
+  
+  .donations-top img {
+    margin-top: -150px;
+    margin-right: -100px;
+    width: 180px;
+  }
+  
+  .donations-top-title h2 {
+    font-size: 36px;
+    text-align: left;
+    margin: 0;
+  }
+  
+  .donations-top-description {
+    width: 55%;
+    min-width: 55%;
+    margin-bottom: 50px;
+  }
+  
+  .donations-top-description p {
+    font-size: 24px;
+    text-align: left;
+    margin: 0;
+    line-height: 35px;
+  }
+  
+  .loading {
+    width: 100%;
+    position: absolute;
+    margin: -30px auto;
+    left: 0;
+  }
+  
+  .loading img {
+    width: 80px;
+    margin: 0;
+  }
+  
+  .donations-list {
+      max-width: 100%;
+      width: 100%;
+      background: #F7F7F7;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 30px 0;
+      margin: 0 auto;
+  }
+  
+  .lista {
+    column-count: 2;
+    -moz-column-count: 2;
+    column-width: 50%;
+    column-gap: 100px;
+    margin: 10px auto;
+    width: 100%;
+    padding: 10px 0;
+  }
+  
+  .donations-list p {
+      text-align: left;
+      font-size: 16px;
+      margin: 0;
+      padding: 10px 30px;
+  }
+  
+  p .donation {
+      font-weight: bold;
+  }
+  
+  .donation a {
+      text-decoration: none;
+      color: #222222;
+  }
+  
+  .donation a:hover {
+    text-decoration: underline;
+  }
+  
+  .load-more {
+      margin: 30px auto 10px; 
+  }
+  
+  .load-more .button {
+      font-size: 18px;
+      text-transform: uppercase;
+      letter-spacing: 3.12px;
+      color: #6320EE;
+      font-weight: bold;
+      cursor: pointer;
+      position: relative;
+      z-index: 1001;
+  }
+  
+  @media only screen and (max-width: 1000px) {
+    .donations-top-img img {
+      margin-right: 0;
+    }
+    .donations-top-description {
+      width: 100%;
+    }
+  }
+  
+  @media only screen and (max-width: 860px) {
+    .donations {
+      width: 90%;
+    }
+  }
+  
+  @media only screen and (max-width: 800px) {
+    .container-donations-list {
+      margin: 100px auto;
+    }
+  
+    .donations-list {
+      width: 90%;
+      margin: 0 auto;
+      padding: 15px;
+    }
+  
+    .lista {
+      column-count: 1;
+      column-width: 100%;
+      column-gap: 0px;
+      margin: 0;
+      width: 100%;
+      padding: 5px 0;
+    }
+  
+    .donations-top-img {
+      display: none;
+    }
+  
+    .donations-top-text {
+      width: 90%;
+      margin: 0 auto;
+    }
+  }
+  
+  @media only screen and (max-width: 600px) {
+      .donations {
+          width: 95%;
+      }
+  
+      .donations-list p {
+          padding: 10px 0;
+      }
+  }
+  
