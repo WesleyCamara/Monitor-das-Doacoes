@@ -34,7 +34,13 @@ export default class Footer extends Component {
             </a>
           </div>
           <div className="partner-three">
+          <a
+              href="https://www.cocreare.com.br"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
             <img src={cocreare} alt="cocreare" title="Cocreare" />
+            </a>
           </div>
           <div className="partner-four"></div>
         </div>

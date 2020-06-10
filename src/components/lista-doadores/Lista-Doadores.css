@@ -72,6 +72,7 @@
 
 .lista {
   column-count: 2;
+  -webkit-column-count: 2;
   -moz-column-count: 2;
   column-width: 50%;
   column-gap: 100px;
