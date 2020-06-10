@@ -20,7 +20,6 @@ export default class ListaDoadores extends Component {
 
   // Evento de clique no botão chamando as funções
   handleSubmit(event) {
-    this.state.doacao = [];
     this.emptyDoacaoObject();
     this.moreResults();
     event.preventDefault();
@@ -30,6 +29,7 @@ export default class ListaDoadores extends Component {
   moreResults = () => {
     this.setState({
       num: this.state.num + 10,
+      doacao: []
     });
   };
 
@@ -120,7 +120,7 @@ export default class ListaDoadores extends Component {
             <p>
               <span className="donation">
                 {" "}
-                <a href={donation.referencia} target="_blank">
+                <a href={donation.referencia} target="_blank" rel="noopener noreferrer">
                   {" "}
                   {donation.quemdoa}{" "}
                 </a>{" "}
