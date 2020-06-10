@@ -3,7 +3,9 @@ import React, { useState, useEffect } from "react";
 import "./Chamada-inicial-indicadores.css";
 import money from "../../assets/img/chamada-inicial-indicadores/money-bill.png";
 import hand from "../../assets/img/chamada-inicial-indicadores/hand-holding-money.png";
-import centerImg from "../../assets/img/chamada-inicial-indicadores/center-img.png";
+import nv1 from "../../assets/img/chamada-inicial-indicadores/Caminho49.svg";
+import nv2 from "../../assets/img/chamada-inicial-indicadores/Caminho59.svg";
+import centerImg from "../../assets/img/chamada-inicial-indicadores/Grupo1.svg";
 import loading from "../../assets/img/chamada-inicial-indicadores/loading.gif";
 import { FormattedMessage } from "react-intl";
 //import api from "../../services/API";
@@ -169,11 +171,11 @@ const ChamadaInicialIndicadores = (props) => {
             <div id="money">
               {/*-----doações-recebidas-----*/}
               <img src={money} alt="quantidade doada" />
+              <img id="nv1" src={nv1} alt="nuvem" />
               {/*-----"doacoes"->receberá-dados-da-api-qtd-de--doações*/}
-
+              <div className="nvs2"></div>
               <div id="doacoes" style={visible.number}>
-                {moeda.simbolo}
-                {formatNumber(valores.total)}
+                {moeda.simbolo} {formatNumber(valores.total)}
               </div>
               <div style={visible.loading}>
                 <img src={loading} />
@@ -185,6 +187,8 @@ const ChamadaInicialIndicadores = (props) => {
             <div id="hand">
               {/*-----doadores------*/}
               <img src={hand} alt="doadores" />
+              <img id="nv2" src={nv2} alt="nuvem" />
+              <div className="nvs1"></div>
               {/*-----"doadores"->receberá-dados-da-api-qtd-doadores----*/}
               <div id="doadores" style={visible.number}>
                 {formatNumber(valores.totalDoadores)}
