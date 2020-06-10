@@ -148,8 +148,11 @@ p .donation {
 
   .lista {
     column-count: 1;
+    -webkit-column-count: 1;
+    -moz-column-count: 1;
     column-width: 100%;
     column-gap: 0px;
+    -moz-column-gap: 0px;
     margin: 0;
     width: 100%;
     padding: 5px 0;
