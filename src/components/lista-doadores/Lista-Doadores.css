@@ -68,29 +68,23 @@
     align-items: flex-start;
     padding: 30px 0;
     margin: 0 auto;
-    -moz-column-count: 2;
-  -webkit-column-count: 2;
-  column-count: 2;
 }
 
 .lista {
-  column-count: 2;
-  -webkit-column-count: 2;
-  -moz-column-count: 2;
-  /* column-width: 50%; */
-  column-gap: 100px;
-  -moz-column-gap: 100px;
+  column-gap: 50px;
+  -moz-column-gap: 50px;
   margin: 10px auto;
   width: 100%;
   padding: 10px 0;
-  column-width: 9rem;
+  columns: 50vh 2;
+  padding: 0 30px
 }
 
 .donations-list p {
     text-align: left;
     font-size: 16px;
     margin: 0;
-    padding: 10px 30px;
+    padding: 10px 0;
 }
 
 p .donation {
@@ -147,18 +141,6 @@ p .donation {
     padding: 15px;
   }
 
-  .lista {
-    column-count: 1;
-    -webkit-column-count: 1;
-    -moz-column-count: 1;
-    column-width: 100%;
-    column-gap: 0px;
-    -moz-column-gap: 0px;
-    margin: 0;
-    width: 100%;
-    padding: 5px 0;
-  }
-
   .donations-top-img {
     display: none;
   }
@@ -172,6 +154,15 @@ p .donation {
 @media only screen and (max-width: 600px) {
     .donations {
         width: 95%;
+    }
+
+    .lista {
+      columns: 100vh 1;
+      column-gap: 0px;
+      -moz-column-gap: 0px;
+      margin: 0;
+      width: 100%;
+      padding: 5px 0;
     }
 
     .donations-list p {
