@@ -262,6 +262,10 @@ indicators ---------------------  */
     width: 40vw;
     top: -45px;
   }
+
+  .chart {
+    margin-right: 0;
+  }
 }
 
 @media screen and (max-width: 425px) {
