@@ -7,7 +7,6 @@
 
 .section-chart-container {
   width: 100%;
-  font-family: "Rubik", sans-serif;
   color: #222222;
   margin: 0;
 }
@@ -25,7 +24,7 @@ title dos dois itens  */
   line-height: 60px;
   margin-top: 140px;
   margin-bottom: 86px;
-  font-weight: 700;
+  font-family: "rubikbold";
   text-align: left;
 }
 
@@ -76,21 +75,27 @@ indicators ---------------------  */
 
 .section-chart-container h3,
 .span-h3 {
-  font-size: 37px;
+  font-family: "rubikregular";
+  font-size: 34px;
   line-height: 44px;
-  font-weight: 400;
   margin-bottom: 16px;
   text-align: left;
 }
 
 .span-h3 {
-  color: #6320ee;
-  font-weight: bold;
+  font-family: "rubikbold";
+  font-size: 34px;
 }
 
 .section-chart-container span {
   color: #6320ee;
-  font-weight: bold;
+  font-family: "rubikbold";
+}
+
+.section-chart-container p span {
+  color: #6320ee;
+  font-family: "rubikbold";
+  line-height: 0px;
 }
 
 .section-chart-container p {
@@ -104,9 +109,11 @@ indicators ---------------------  */
 }
 
 .indicators-subitem-doadores p {
-  font-size: 22px;
   line-height: 27px;
+  letter-spacing: 0px;
   margin-bottom: 13px;
+  font-family: "rubikregular";
+  font-size: 18px;
 }
 
 .total-doadores-div,
@@ -121,24 +128,21 @@ indicators ---------------------  */
 /* Botão ver mais */
 
 .chart-indicators-button {
+  font-family: "rubikmedium";
   display: flex;
   align-items: center;
   justify-content: center;
-  max-width: 334px;
-  height: 79px;
-  border-radius: 40px;
-  font-family: "Rubik", sans-serif;
-  font-weight: 500;
-  background-color: #6320ee;
-  color: #ffffff;
+  padding: 25px 50px;
+  background: #6320ee 0% 0% no-repeat padding-box;
+  border-radius: 100px;
+  border: none;
   font-size: 24px;
-  line-height: 28px;
   letter-spacing: 2.4px;
-  margin: 0 auto;
-  margin-top: 100px;
+  color: #ffffff;
+  margin: 100px auto 0;
   text-transform: uppercase;
   cursor: pointer;
-  /* transition: ease-in-out 100ms; */
+  max-width: 320px;
 }
 
 .chart-indicators-button:hover {
@@ -250,7 +254,6 @@ indicators ---------------------  */
     margin-right: 5px;
   }
 
- 
   .total-doadores-div p {
     width: 10.5vw;
   }
@@ -263,7 +266,7 @@ indicators ---------------------  */
     top: -45px;
   }
 
-  .chart{
+  .chart {
     margin-right: 0;
   }
 }

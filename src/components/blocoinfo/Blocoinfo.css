@@ -1,6 +1,5 @@
 .blocoinfo {
   width: 100%;
-  font-family: "Rubik", sans-serif;
 }
 .container-partesuperior {
   display: flex;
@@ -8,11 +7,12 @@
   justify-content: center;
   align-items: center;
   padding: 0 16vw;
-  height: 643px;
+  height: 600px;
   background: #262626;
 }
 .campanha h1 {
-  padding-top: 20px;
+  font-family: "rubikbold";
+  padding-top: 15px;
   text-align: center;
   margin: 20px;
   font-size: 50px;
@@ -24,26 +24,24 @@
   margin: 20px;
   text-align: center;
   font-size: 74px;
-  line-height: 88px;
-  color: #4DB6AC;
-  font-weight: 700;
-  font-family: "Rubik", sans-serif;
+  line-height: 80px;
+  color: #4db6ac;
+  font-family: "rubikbold";
 }
 .informacao h3 {
   padding-top: 20px;
   margin: 20px;
   text-align: center;
-  font-size: 35px;
+  font-size: 28px;
   line-height: 42px;
-  font-weight: 400;
   color: #ffffff;
-  font-family: "Rubik", sans-serif;
+  font-family: "rubikregular";
 }
 .informacao a {
   text-decoration: none;
-  font-size: 35px;
+  font-size: 28px;
   color: #8e76fa;
-  font-family: "Rubik", sans-serif;
+  font-family: "rubikregular";
 }
 
 .informacaoaqui:hover {
@@ -69,7 +67,7 @@
 }
 
 @media only screen and (max-width: 425px) {
-  .container-partesuperior{
+  .container-partesuperior {
     padding: 0 5%;
   }
   .campanha h1 {
@@ -92,7 +90,7 @@
 }
 
 @media only screen and (max-width: 425px) {
-  .container-partesuperior{
+  .container-partesuperior {
     padding: 13% 5%;
     height: inherit;
   }
@@ -118,7 +116,7 @@
 }
 
 @media only screen and (max-width: 375px) {
-  .container-partesuperior{
+  .container-partesuperior {
     padding: 15% 4%;
     height: inherit;
   }

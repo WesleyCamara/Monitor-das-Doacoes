@@ -19,12 +19,10 @@
 
 .menu-title h1 {
     font-size: 20px;
-    font-family: 'Rubik', sans-serif;
+    font-family: 'rubikmedium';
 }
 
 .menu-language {
-    font-size: 20px;
-    font-family: 'Rubik', sans-serif;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -32,10 +30,9 @@
 }
 
 .menu-language a {
-    font-family: 'Rubik', sans-serif;
     font-size: 20px;
+    font-family: 'rubikmedium';
     color: #222222;
-    font-weight: 600;
     text-decoration: none;
 }
 

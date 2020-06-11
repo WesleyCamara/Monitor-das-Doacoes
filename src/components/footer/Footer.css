@@ -3,7 +3,6 @@
     height: auto;
     display: flex;
     flex-direction: column;
-    font-family: 'Rubik', sans-serif;
     padding-top: 100px;
     background: #F7F7F7;
 }
@@ -14,8 +13,10 @@
 }
 
 .partner-title h3 {
-  font-size: 30px;
+  font-family: "rubikbold";
+  font-size: 40px;
   text-align: left;
+  color: #222222;
 }
 
 .partner {
@@ -63,8 +64,9 @@
 .footer-title h3 {
   color: #fff;
   text-transform: uppercase;
+  font-family: 'rubikmedium';
   font-size: 16px;
-  letter-spacing: 4px;
+  letter-spacing: 5px;
   margin: 10px auto;
   text-align: center;
 }
@@ -103,7 +105,7 @@
   font-size: 12px;
   text-align: center;
   color: #fff;
-  font-family: "Rubik", sans-serif;
+  font-family: "rubikregular";
 }
 
 .footer-description a {
@@ -115,6 +117,7 @@
 }
 
 .footer-link a {
+  font-family: "rubikregular";
   color: #fff;
   font-size: 12px;
   font-style: italic;
@@ -159,7 +162,7 @@
     text-transform: lowercase;
     font-size: 12px;
     letter-spacing: 3.8px;
-    font-family: 'Rubik', sans-serif;
+    font-family: "rubikmedium";
     margin: auto 0;
 }
 

@@ -3,7 +3,6 @@
   max-width: 100%;
   height: auto;
   background: #fff;
-  font-family: "Rubik", sans-serif;
   color: #222222;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -17,13 +16,13 @@
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -ms-flex-line-pack: start;
-      align-content: flex-start;
+  align-content: flex-start;
   -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
   margin: 0 auto;
   width: 80%;
 }
@@ -41,22 +40,23 @@
 }
 
 .donations-top-title h2 {
-  font-size: 36px;
+  font-size: 50px;
   text-align: left;
   margin: 0;
+  font-family: 'rubikbold';
 }
 
 .donations-top-description {
-  width: 55%;
+  width: 60%;
   min-width: 55%;
   margin-bottom: 50px;
 }
 
 .donations-top-description p {
-  font-size: 24px;
+  font-size: 28px;
   text-align: left;
   margin: 0;
-  line-height: 35px;
+  font-family: 'rubikregular';
 }
 
 .loading {
@@ -80,11 +80,11 @@
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
   padding: 30px 0;
   margin: 0 auto;
 }
@@ -100,14 +100,15 @@
 }
 
 .donations-list p {
-    text-align: left;
-    font-size: 16px;
-    margin: 0;
-    padding: 10px 0;
+  text-align: left;
+  font-size: 18px;
+  margin: 0;
+  padding: 10px 0;
+  font-family: 'rubikregular';
 }
 
 p .donation {
-  font-weight: bold;
+  font-family: 'rubikbold';
 }
 
 .donation a {
@@ -120,15 +121,15 @@ p .donation {
 }
 
 .load-more {
-  margin: 30px auto 10px;
-}
-
-.load-more .button {
-  font-size: 18px;
+  margin: 60px auto 10px;
+  font-family: 'rubikbold';
+  font-size: 22px;
   text-transform: uppercase;
   letter-spacing: 3.12px;
   color: #6320EE;
-  font-weight: bold;
+}
+
+.load-more .button {
   cursor: pointer;
   position: relative;
   z-index: 1001;
@@ -138,6 +139,7 @@ p .donation {
   .donations-top-img img {
     margin-right: 0;
   }
+
   .donations-top-description {
     width: 100%;
   }
@@ -153,14 +155,17 @@ p .donation {
   .container-donations-list {
     margin: 100px auto;
   }
+
   .donations-list {
     width: 90%;
     margin: 0 auto;
     padding: 15px;
   }
+
   .donations-top-img {
     display: none;
   }
+
   .donations-top-text {
     width: 90%;
     margin: 0 auto;
@@ -168,20 +173,20 @@ p .donation {
 }
 
 @media only screen and (max-width: 600px) {
-    .donations {
-        width: 95%;
-    }
+  .donations {
+    width: 95%;
+  }
 
-    .lista {
-      columns: 100vh 1;
-      column-gap: 0px;
-      -moz-column-gap: 0px;
-      margin: 0;
-      width: 100%;
-      padding: 5px 0;
-    }
+  .lista {
+    columns: 100vh 1;
+    column-gap: 0px;
+    -moz-column-gap: 0px;
+    margin: 0;
+    width: 100%;
+    padding: 5px 0;
+  }
 
-    .donations-list p {
-        padding: 10px 0;
-    }
+  .donations-list p {
+    padding: 10px 0;
+  }
 }
