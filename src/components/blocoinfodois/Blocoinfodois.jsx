@@ -14,7 +14,6 @@ export default class BlocoInfoDois extends Component {
     return (
       <>
         <div className="blocodois">
-
           {/* Contem as imagens que ficam no fundo do componente, atras do conteudo principal  */}
           <div className="container-fundo">
             <div className="fundo-sombra">
@@ -28,11 +27,11 @@ export default class BlocoInfoDois extends Component {
             <div className="quadrado"></div>
 
             <div className="circulo">
-              <img src={circles} alt="Circulo fundo"/>
+              <img src={circles} alt="Circulo fundo" />
             </div>
           </div>
 
-      {/* Contem o conteudo principal com os textos  */}
+          {/* Contem o conteudo principal com os textos  */}
           <div className="container-texto">
             <div className="textotitulo">
               <h1>
@@ -82,26 +81,24 @@ export default class BlocoInfoDois extends Component {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <img src={code} className="qrcode-img" alt="QR code"/>{" "}
+                    <img src={code} className="qrcode-img" alt="QR code" />{" "}
                   </a>
                 </div>
 
                 <div className="seta">
-
-                <a
+                  <a
                     href="http://bi.anna.center/w5/tdaportalclient.aspx"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-
-                  <p>
-                    <FormattedMessage id="textcode" />
-                    <br />
-                    <FormattedMessage id="textcodeum" />
-                    <br />
-                    <FormattedMessage id="textcodedois" />
-                    <img src={seta} alt="Seta para direita" />
-                  </p>
+                    <p>
+                      <FormattedMessage id="textcode" />
+                      <br />
+                      <FormattedMessage id="textcodeum" />
+                      <br />
+                      <FormattedMessage id="textcodedois" />
+                      <img src={seta} alt="Seta para direita" />
+                    </p>
                   </a>
                 </div>
               </div>
@@ -111,12 +108,15 @@ export default class BlocoInfoDois extends Component {
                   <FormattedMessage id="textinferior" />
                   <br />
                   <FormattedMessage id="textinferiorum" />{" "}
-                  <a className="link-acessando-aqui"
+                  <a
+                    className="link-acessando-aqui"
                     href="https://docs.google.com/spreadsheets/d/1RA0oP9EBHxpsLGvHTaX2TTYHT2oQHTfNrM8Z40hqVus/edit#gid=0"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <span className="textinferiordois"><FormattedMessage id="textinferiordois" /></span>
+                    <span className="textinferiordois">
+                      <FormattedMessage id="textinferiordois" />
+                    </span>
                   </a>
                 </p>
               </div>
@@ -125,7 +125,7 @@ export default class BlocoInfoDois extends Component {
 
           <div className="container-final">
             <div className="doar">
-              <img src={doar} alt="doar"/>
+              <img src={doar} alt="doar" />
             </div>
             <div className="textoemail">
               <p>
