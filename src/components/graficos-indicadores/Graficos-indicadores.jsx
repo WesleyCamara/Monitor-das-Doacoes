@@ -509,7 +509,7 @@ const GraficosIndicadores = (props) => {
                 <div className="indicators-subitem-doadores">
                   <div className="biggest-live">
                     <p className="biggest-donor">
-                      <FormattedMessage id="biggest-live" />:
+                      <FormattedMessage id="biggest-live" />: {" "}
                       {valores.maiorLive[1]}
                     </p>
 
