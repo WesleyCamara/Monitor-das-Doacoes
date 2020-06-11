@@ -11,7 +11,7 @@
 h4 {
   color: #fff;
   margin-top: 0.313rem;
-  font-size: 15px;
+  font-size: 0.875rem;
   font-family: 'Rubik', sans-serif;
   font-weight: 500;
   margin-top: 20px;
@@ -50,15 +50,20 @@ h2 {
 }
 
 
-#nv1,
-#nv2 {
-  position: relative;
-  max-width: 100px;
-  max-height: 100px;
+#nvd {
+  left: 0;
+  width: 15%;
+  height: 15%;
 }
 
-#money>img,
-#hand>img {
+#nve {
+  width: 5%;
+  height: 10%;
+}
+
+
+#money>#doa,
+#hand>#hand-p {
   height: 4.688rem;
   width: 4.688rem;
 
@@ -93,7 +98,7 @@ h2 {
 .dados {
   padding: 10px 0 5px 0;
   color: #8075FF;
-  font-size: 1.688;
+  font-size: 1.875;
   font-family: 'Rubik', sans-serif;
   font-weight: 600;
 }
