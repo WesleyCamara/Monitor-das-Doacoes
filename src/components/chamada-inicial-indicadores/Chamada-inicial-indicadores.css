@@ -57,10 +57,13 @@ h2 {
 }
 
 #nve {
-  width: 15%;
+  max-width: 15%;
   height: 15%;
 }
 
+#nv1{
+  width: 25vw;
+}
 #money>#doa,
 #hand>#hand-p {
   height: 4.688rem;
@@ -79,6 +82,9 @@ h2 {
   padding-top: 68px;
 }
 
+#img-center {
+  padding-top: 0;
+}
 /*----------------------------*/
 /*-----------Sections-cards----------------*/
 /*----------------------------*/

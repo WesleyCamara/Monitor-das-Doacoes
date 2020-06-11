@@ -316,7 +316,7 @@
 
 @media only screen and (max-width: 1024px){
   .container-fundo{
-    height: 130vh;
+    height: 900px;
   }
 
 }
@@ -379,7 +379,7 @@
     margin-right: 10%;
     justify-content: center;
     align-items: center;
-    margin-bottom: 250px;
+    margin-bottom: 50px;
     margin-top: 15%;
   }
 
@@ -473,7 +473,8 @@
     margin-bottom: 0;
   }
   .container-final{
-    margin-top: 90vh;
+    margin-top: 700px;
+    margin-bottom: 250px;
   }
 }
 
@@ -516,3 +517,8 @@
   }
 
 }
+
+@media screen and (max-width: 320px) {
+  
+}
+
