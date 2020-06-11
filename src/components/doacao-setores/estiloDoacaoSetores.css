@@ -110,3 +110,11 @@
     margin-top: 0;
   }
 }
+
+@media only screen and (max-width: 425px) {
+  .estiloBtn{
+    width: 90vw;
+    padding: 0;
+  }
+}
+

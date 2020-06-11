@@ -132,16 +132,18 @@ indicators ---------------------  */
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 25px 50px;
+  /* padding: 25px 50px; */
   background: #6320ee 0% 0% no-repeat padding-box;
   border-radius: 100px;
   border: none;
   font-size: 24px;
-  letter-spacing: 2.4px;
+  letter-spacing: 2px;
   color: #ffffff;
   margin: 100px auto 0;
   text-transform: uppercase;
   cursor: pointer;
+  width: 335px;
+  height: 80px;
   max-width: 320px;
 }
 
@@ -271,14 +273,7 @@ indicators ---------------------  */
   }
 }
 
-@media screen and (max-width: 600px) {
- .chart-indicators-button {
-  width: 280px;
-  height: 70px;
-  margin: 0 auto 0;
-  font-size: 22px;
-  }
-}
+
 
 @media screen and (max-width: 425px) {
   .section-chart-container .indicators-title,
@@ -320,13 +315,7 @@ indicators ---------------------  */
     top: -45px;
   }
 
-  .chart-indicators-button {
-    max-width: 280px;
-    height: 70px;
-    font-size: 22px;
-    }
 
- 
 }
 
 @media screen and (max-width: 375px) {
