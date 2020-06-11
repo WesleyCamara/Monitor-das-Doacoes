@@ -49,11 +49,12 @@
     font-family: "Rubik", sans-serif;
     font-weight: 500;
     display: flex;
-    width: 280px;
-    height: 70px;
-    background-color:  #6320ee;
-    border-radius: 40px;
-    font-size: 22px;
+    width: 335px;
+    height: 80px;
+    background-color:  #6320EE;
+    border-radius: 100px;
+    font-size: 24px;
+    line-height: 28px;
     letter-spacing: 2px;
     color: #FFFFFF;
     margin: 100px auto 0;
@@ -103,4 +104,12 @@
     text-align: center;
     color: #222222;
   }
+
+  .estiloBtn{
+    width: 280px;
+    height: 70px;
+    margin: 0 auto 0;
+    font-size: 22px;
+  }
+
 }
