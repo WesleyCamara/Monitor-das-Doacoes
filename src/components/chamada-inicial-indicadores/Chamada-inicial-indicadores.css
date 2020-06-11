@@ -217,13 +217,13 @@ h2 {
     margin-top: 1.25rem;
     width: 100%;
   }
-  /* #nvd {
+  #nvd {
     margin-left: 25vw;
   }
 
   #nve {
     margin-left: 25vw;
-  } */
+  }
 
 }
 
@@ -258,5 +258,15 @@ h2 {
     height: 8rem;
     margin: 10px 4px 0 4px;
     padding-right: 1px;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  #nvd {
+    margin-left: 15vw;
+  }
+
+  #nve {
+    margin-left: 0vw;
   }
 }
