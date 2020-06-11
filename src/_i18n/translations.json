@@ -41,28 +41,21 @@
         "informacaocampdois": " to know them and access the link to the internet page - in Portuguese",
         "tituloumbldois": "The COVID-19",
         "titulodoisbldois": "Donations Monitor",
-        "text1":"The COVID 19 Donation Monitor is updated daily by ABCR ",
-        "text2":"with public data, collected daily on the internet or that are ",
-        "text3":"sent to us. No donation is added if it has not been ",
-        "text4": "publicly announced - links are released for conference. The ",
-        "text5": "Donor numbers and campaigns are checked for ",
-        "text6": "that are not counted twice ",
-        "text7": "The objective of the COVID 19 Donation Monitor is to consolidate and learn about the ",
-        "text8": "numbers of donations made due to the coronavirus, promoting them and ",
-        "text9": "inspire donors and organizations, and we don't oversee. Responsibility for ",
-        "text10": "making the announced donation belongs to each donor.",
+        "text1":"The COVID 19 Donations Monitor is updated daily by ABCR with public data directly collected online or that has been sent to us. No donation is added if it has not being made public - the links are shared for conference. The numbers are checked to avoid being counted more than once. We only share donations that have been announced publicly.",
+        "text2":"The goal of the COVID 19 Donations Monitor is to know and consolidate the numbers of the donations that have been made as a response to COVID 19 in Brazil, to promote them and inspire even more donations. The donor is in charge of effectively make the donation that has been announced.",
         "pessoasdoando": "SEE WHO'S GIVING",
         "textcode": "Check graphically",
         "textcodeum": "the results of",
         "textcodedois": "MD COVID 19",
-        "textinferior": "Check out the FULL spreadsheet of the entire",
-        "textinferiorum": "survey carried out accessing",
+        "textinferior": "The complete ",
+        "textinferiorum": "monitoring can be found",
         "textinferiordois": "HERE",
-        "textemail1": "If you want to include information about your",
-        "textemail2": "donation made write to",
-        "textemail3": "abcr@captadores.org.br.",
-        "textemail4": "We can only count donations whose",
-        "textemail5": "value in reais is informed."
+        "textemail1": "If you want to share about a donation that was made, write to ",
+        "textemail2": "abcr@captadores.org.br.",
+        "textemail3": " We can only count gifts that have its value in reais."
+
+
+         
     },
     "pt-BR": {
         "paragrafo-exemplo": "paragrafo em portugues",
@@ -106,16 +99,8 @@
         "informacaocampdois": "para conhecê-las e acessar os links",
         "tituloumbldois": "O Monitor das",
         "titulodoisbldois": "Doações COVID 19:",
-        "text1": "O Monitor Das Doações COVID 19 é atualizado diariamente pela ABCR ",
-        "text2": "com dados públicos, coletados diariamente na internet ou que são ",
-        "text3": "enviados para nós. Nenhuma doação é somada se ela não tiver sido ",
-        "text4": "anunciada publicamente - os links são divulgados para conferência. Os ",
-        "text5": "números referentes aos doadorese às campanhas são checados para ",
-        "text6": "que não sejam contados duas vezes ",
-        "text7": "O objetivo do Monitor Das Doações COVID 19 é consolidar e conhecer os ",
-        "text8": "números das doações realizadas em razão do coronavírus, promovê-las e ",
-        "text9": "inspirar doadores e organizações, e não fiscalizarmos. A responsabilidade por ",
-        "text10": "realizar a doação anunciada é de cada doador. ",
+        "text1": "O Monitor das Doações COVID 19 é atualizado diariamente pela ABCR com dados públicos, coletados diretamente na internet, ou que são enviados para nós. Nenhuma doação é somada se ela não tiver sido anunciada publicamente - os links são divulgados para conferência. Os números referentes aos doadores e às campanhas são checados para que não sejam contados duas vezes",
+        "text2": "O objetivo do Monitor das Doações COVID 19 é consolidar e conhecer os números das doações realizadas em razão do coronavírus, promovê-las e inspirar ainda mais doações. Nós não realizamos a intermediação entre doadores e organizações, e não fiscalizamos. A responsabilidade por realizar a doação anunciada é de cada doador.",
         "pessoasdoando": "VEJA QUEM ESTÁ DOANDO",
         "textcode": "Confira graficamente",
         "textcodeum": "os resultados do",
@@ -124,10 +109,8 @@
         "textinferiorum": "levantamento realizado acessando",
         "textinferiordois": " AQUI",
 
-        "textemail1": "Caso você queira incluir a informação sobre sua",
-        "textemail2": "doação realizada escreva para",
-        "textemail3": "abcr@captadores.org.br.",
-        "textemail4": "Somente conseguimos contabilizar doações cujo",
-        "textemail5": "valor em reais seja informado."
+        "textemail1": "Caso você queira incluir a informação sobre a sua doação realizada escreva para ",
+        "textemail2": "abcr@captadores.org.br.",
+        "textemail3": "Somente conseguimos contabilizar doações cujo valor em reais seja informado."
     }
 }

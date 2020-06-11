@@ -42,23 +42,18 @@ export default class BlocoInfoDois extends Component {
               <p>
                 <FormattedMessage id="text1" />
 
-                <FormattedMessage id="text2" />
+                {/* <FormattedMessage id="text2" />
 
                 <FormattedMessage id="text3" />
 
                 <FormattedMessage id="text4" />
                 <FormattedMessage id="text5" />
 
-                <FormattedMessage id="text6" />
+                <FormattedMessage id="text6" /> */}
                 <br />
                 <br />
-                <FormattedMessage id="text7" />
+                <FormattedMessage id="text2" />
 
-                <FormattedMessage id="text8" />
-
-                <FormattedMessage id="text9" />
-
-                <FormattedMessage id="text10" />
               </p>
 
               <div className="botao">
@@ -130,20 +125,18 @@ export default class BlocoInfoDois extends Component {
             <div className="textoemail">
               <p>
                 <FormattedMessage id="textemail1" />
-                <br />
-                <FormattedMessage id="textemail2" />{" "}
+               {" "}
                 <a
                   className="email"
                   href="malito:abcr@captadores.org.br"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <FormattedMessage id="textemail3" />
+                  <FormattedMessage id="textemail2" />
                 </a>
                 <br />
-                <FormattedMessage id="textemail4" />
-                <br />
-                <FormattedMessage id="textemail5" />
+                <FormattedMessage id="textemail3" />
+      
               </p>
             </div>
           </div>
