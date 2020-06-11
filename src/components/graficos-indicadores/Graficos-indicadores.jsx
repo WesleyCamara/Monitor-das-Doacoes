@@ -376,11 +376,7 @@ const GraficosIndicadores = (props) => {
 
             <div className="indicators-subitem">
               <div>
-                <img
-                  className="img-hand-money"
-                  src={handMoney}
-                  alt="hand money"
-                />
+                <img className="img-hand-money" src={handMoney} alt="icone, mão segurando dinheiro" />
               </div>
               <div>
                 <div>
@@ -438,11 +434,7 @@ const GraficosIndicadores = (props) => {
             <div className="linhas"></div>
             <div className="indicators-subitem">
               <div>
-                <img
-                  className="img-hand-money"
-                  src={handMoney}
-                  alt="hand money"
-                />
+                <img className="img-hand-money" src={handMoney}  alt="icone, mão segurando dinheiro"/>
               </div>
               <div>
                 <div>
@@ -500,11 +492,7 @@ const GraficosIndicadores = (props) => {
             <div className="linhas"></div>
             <div className="indicators-subitem">
               <div>
-                <img
-                  className="img-hand-money"
-                  src={handMoney}
-                  alt="hand money"
-                />
+                <img className="img-hand-money" src={handMoney}  alt="icone, mão segurando dinheiro" />
               </div>
               <div>
                 <div>

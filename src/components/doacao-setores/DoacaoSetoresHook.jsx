@@ -35,7 +35,7 @@ const DoacaoSetoresHook = (props) => {
     title: {
       text: "",
     },
-    colors: ["#8075ff"],
+    colors: ["#8075FF"],
     plotOptions: {
       pie: {
         allowPointSelect: true,

@@ -141,7 +141,6 @@
   line-height: 33px;
   font-weight: bold;
   width: 567px;
-  height: 99px;
   text-align: left;
 }
 
@@ -149,7 +148,7 @@
 
 .container-final {
   display: flex;
-  height: 602px;
+  min-height: 602px;
   margin-left: 10%;
   margin-right: 10%;
 }
@@ -202,9 +201,22 @@
     margin-left: 100px;
     text-align: left;
   }
+
+  .container-qr, .textbaixo{
+    margin-left: 30px;
+  }
+
+  .seta{
+    line-height: 1.4em;
+  }
+
+
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1368px) {
+  .container-fundo{
+    height: 120vh;
+  }
   .fundo-sombra img {
     float: left;
     position: absolute;
@@ -296,19 +308,34 @@
    margin-top: 140px;
 
   }
+
+  .container-final {
+    margin-top: 0%;
+    }
+}
+
+@media only screen and (max-width: 1024px){
+  .container-fundo{
+    height: 900px;
+  }
+
 }
 
 @media screen and (max-width: 768px) {
-  .container-texto,
-  .container-fundo {
+  .container-texto {
     height: 900px;
+    position: relative;
   }
-  .imgdecorativo img {
+
+  .container-fundo, .imgdecorativo img,  .circulo img,   .fundo-sombra img, .quadrado  {
+    display: none;
+  }
+  /* .imgdecorativo img {
     left: 10px;
     width: 150px;
     height: 150px;
     margin-top: 580px;
-  }
+  } */
 
   .textotitulo {
     margin-top: 50px;
@@ -326,10 +353,6 @@
   .container-qr-qrcode {
     display: flex;
     flex-wrap: wrap;
-  }
-
-  .circulo img {
-    display: none;
   }
 
   .seta {
@@ -356,12 +379,17 @@
     margin-right: 10%;
     justify-content: center;
     align-items: center;
-    margin-bottom: 250px;
+    margin-bottom: 50px;
+    margin-top: 15%;
   }
 
   .doar {
     width: 408px;
     margin: 0 auto;
+  }
+
+  .doar img{
+    max-width: 90%;
   }
   .textoemail {
     margin: 0 auto;
@@ -374,11 +402,13 @@
   }
 }
 
-@media screen and (max-width: 425px) {
-  .fundo-sombra img {
-    max-width: 90%;
-  }
+@media screen and (max-width: 669px) {
+.container-final{
+  margin-top: 35vh;
+}
+}
 
+@media screen and (max-width: 425px) {
   .quadrado {
     display: none;
   }
@@ -442,11 +472,15 @@
     text-align: justify;
     margin-bottom: 0;
   }
+  .container-final{
+    margin-top: 700px;
+    margin-bottom: 250px;
+  }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 375px) {
   .container-fundo {
-    height: 1650px;
+    height: 1750px;
   }
   .fundo-sombra img {
     max-width: 90%;
@@ -458,7 +492,7 @@
 
   .container-qr {
     width: 100%;
-    margin-top: 150px;
+    margin-top: 100px;
   }
   .textoemail {
     margin-bottom: 180px;
@@ -467,6 +501,7 @@
   .doar img {
     max-width: 95%;
     margin: 0 auto;
+    margin-top: 50%;
   }
 
   .imgdecorativo img {
@@ -480,4 +515,10 @@
     font-size: 14px;
     letter-spacing: 1px;
   }
+
 }
+
+@media screen and (max-width: 320px) {
+  
+}
+

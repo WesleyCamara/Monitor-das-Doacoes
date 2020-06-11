@@ -46,6 +46,15 @@
 .estiloBtn{
     font-family: 'rubikmedium';
     display: flex;
+    width: 335px;
+    height: 80px;
+    background-color:  #6320EE;
+    border-radius: 100px;
+    font-size: 24px;
+    line-height: 28px;
+    letter-spacing: 2px;
+    color: #FFFFFF;
+    margin: 100px auto 0;
     align-items: center;
     justify-content: center;
     padding: 25px 50px;
