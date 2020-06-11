@@ -268,6 +268,15 @@ indicators ---------------------  */
   }
 }
 
+@media screen and (max-width: 600px) {
+ .chart-indicators-button {
+  width: 280px;
+  height: 70px;
+  margin: 0 auto 0;
+  font-size: 22px;
+  }
+}
+
 @media screen and (max-width: 425px) {
   .section-chart-container .indicators-title,
   .section-chart-container .chart-title {
@@ -307,6 +316,14 @@ indicators ---------------------  */
     width: 80vw;
     top: -45px;
   }
+
+  .chart-indicators-button {
+    max-width: 280px;
+    height: 70px;
+    font-size: 22px;
+    }
+
+ 
 }
 
 @media screen and (max-width: 375px) {
