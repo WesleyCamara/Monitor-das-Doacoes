@@ -8,6 +8,7 @@ body {
        url('../src/assets/font/rubik-bold-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 
 }
 
@@ -18,6 +19,7 @@ body {
        url('../src/assets/font/rubik-medium-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 
 }
 
@@ -28,5 +30,6 @@ body {
        url('../src/assets/font/rubik-regular-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 
 }
