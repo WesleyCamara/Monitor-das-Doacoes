@@ -179,7 +179,7 @@ const ChamadaInicialIndicadores = (props) => {
                 {moeda.simbolo} {formatNumber(valores.total)}
               </div>
               <div style={visible.loading}>
-                <img src={loading} />
+                <img src={loading}  alt="imagem de loading"/>
               </div>
               <h2>
                 <FormattedMessage id="banner-title-donations" />
@@ -196,7 +196,7 @@ const ChamadaInicialIndicadores = (props) => {
                 {formatNumber(valores.totalDoadores)}
               </div>
               <div style={visible.loading}>
-                <img src={loading} />
+                <img src={loading} alt="imagem de loading"/>
               </div>
               <h2>
                 <FormattedMessage id="banner-title-donors" />
