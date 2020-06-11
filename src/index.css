@@ -2,3 +2,31 @@ body {
   margin: 0;
 }
 
+@font-face {
+  font-family: 'rubikbold';
+  src: url('../src/assets/font/rubik-bold-webfont.woff2') format('woff2'),
+       url('../src/assets/font/rubik-bold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+
+@font-face {
+  font-family: 'rubikmedium';
+  src: url('../src/assets/font/rubik-medium-webfont.woff2') format('woff2'),
+       url('../src/assets/font/rubik-medium-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+
+@font-face {
+  font-family: 'rubikregular';
+  src: url('../src/assets/font/rubik-regular-webfont.woff2') format('woff2'),
+       url('../src/assets/font/rubik-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
