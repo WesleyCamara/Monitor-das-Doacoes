@@ -8,7 +8,7 @@
   align-items: center;
   padding: 0 16vw;
   height: 600px;
-  background: #262626;
+  background: #222222;
 }
 .campanha h1 {
   font-family: "rubikbold";
@@ -25,7 +25,7 @@
   text-align: center;
   font-size: 74px;
   line-height: 80px;
-  color: #4db6ac;
+  color: #BB772E;
   font-family: "rubikbold";
 }
 .informacao h3 {
@@ -40,12 +40,12 @@
 .informacao a {
   text-decoration: none;
   font-size: 28px;
-  color: #8e76fa;
+  color: #408EC5;
   font-family: "rubikregular";
 }
 
 .informacaoaqui:hover {
-  color: #60beb5;
+  color: #4C87B1;
 }
 @media only screen and (max-width: 768px) {
   .container-partesuperior {
@@ -82,7 +82,6 @@
 
   .informacao h3 {
     font-size: 25px;
-    color: #ffffff;
   }
   .informacao a {
     font-size: 25px;

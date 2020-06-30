@@ -181,13 +181,13 @@ const GraficosIndicadores = (props) => {
   const [chartOptions, setChartOptions] = useState({
     chart: {
       type: "column",
-      backgroundColor: "#F3F3F3",
+      backgroundColor: "#f7f7f7",
       height: 92 + "%",
     },
     credits: {
       enabled: false,
     },
-    colors: ["#4DB6AC"],
+    colors: ["#777F3F"],
     title: {
       text: "",
     },

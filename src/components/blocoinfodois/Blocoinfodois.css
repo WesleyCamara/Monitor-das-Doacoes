@@ -74,7 +74,7 @@
   display: flex;
   height: 79px;
   max-width: 490px;
-  background-color: #6320ee;
+  background-color: #4C87B1;
   border-radius: 50px;
   justify-content: center;
   align-items: center;
@@ -94,13 +94,13 @@
 }
 
 .botao:hover {
-  box-shadow: 0 0 5px 1px #6320ee;
+  box-shadow: 0 0 5px 1px #4C87B1;
 }
 .link-acessando-aqui, .email{
-  color: #6320EE;
+  color: #4C87B1;
 }
 .link-acessando-aqui:hover {
-  color: #8075ff;
+  color: #408EC5;
 }
 
 .container-qr {

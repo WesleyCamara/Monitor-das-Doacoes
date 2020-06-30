@@ -35,7 +35,7 @@ title dos dois itens  */
 /* Estilos do item 
 indicators ---------------------  */
 .div-chart {
-  background: #f3f3f3;
+  background: #f7f7f7;
   width: 50%;
   padding-left: 10%;
   border-radius: 5px;
@@ -88,12 +88,12 @@ indicators ---------------------  */
 }
 
 .section-chart-container span {
-  color: #6320ee;
+  color: #4C87B1;
   font-family: "rubikbold";
 }
 
 .section-chart-container p span {
-  color: #6320ee;
+  color: #4C87B1;
   font-family: "rubikbold";
   line-height: 0px;
 }
@@ -133,7 +133,7 @@ indicators ---------------------  */
   align-items: center;
   justify-content: center;
   /* padding: 25px 50px; */
-  background: #6320ee 0% 0% no-repeat padding-box;
+  background: #4C87B1 0% 0% no-repeat padding-box;
   border-radius: 100px;
   border: none;
   font-size: 24px;
@@ -148,7 +148,7 @@ indicators ---------------------  */
 }
 
 .chart-indicators-button:hover {
-  box-shadow: 0 0 5px 1px #6320ee;
+  box-shadow: 0 0 5px 1px #4C87B1;
 }
 
 /* Ajustes para responsivo  */
