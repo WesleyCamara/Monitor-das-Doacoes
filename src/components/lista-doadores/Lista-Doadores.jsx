@@ -10,7 +10,7 @@ export default class ListaDoadores extends Component {
     this.state = {
       lista: [],
       doacao: [],
-      num: 10,
+      num: 30,
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -25,10 +25,10 @@ export default class ListaDoadores extends Component {
     event.preventDefault();
   }
 
-  // Acrescenta mais 10 resultados na lista de doadores
+  // Acrescenta mais 30 resultados na lista de doadores
   moreResults = () => {
     this.setState({
-      num: this.state.num + 10,
+      num: this.state.num + 30,
       doacao: []
     });
   };

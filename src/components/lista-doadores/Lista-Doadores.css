@@ -94,16 +94,15 @@
   -moz-column-gap: 50px;
   margin: 10px auto;
   width: 100%;
-  padding: 10px 0;
   columns: 50vh 2;
-  padding: 0 30px
+  padding: 0 30px;
 }
 
 .donations-list p {
   text-align: left;
   font-size: 18px;
   margin: 0;
-  padding: 10px 0;
+  line-height: 28px;
   font-family: 'rubikregular';
 }
 
@@ -126,7 +125,7 @@ p .donation {
   font-size: 22px;
   text-transform: uppercase;
   letter-spacing: 3.12px;
-  color: #6320EE;
+  color: #4C87B1;
 }
 
 .load-more .button {
