@@ -5,7 +5,7 @@ import HighchartsReact from "highcharts-react-official";
 import "./estiloDoacaoSetores.css";
 import { FormattedMessage } from "react-intl";
 
-import squareShapes2 from "../../assets/img/doacao-setores/square-shapes-2.png";
+import squareShapes2 from "../../assets/img/doacao-setores/square-shapes-2.svg";
 import setorBg from "../../assets/img/doacao-setores/setor-bg.svg";
 
 const DoacaoSetoresHook = (props) => {
@@ -35,7 +35,7 @@ const DoacaoSetoresHook = (props) => {
     title: {
       text: "",
     },
-    colors: ["#8075FF"],
+    colors: ["#408EC5"],
     plotOptions: {
       pie: {
         allowPointSelect: true,

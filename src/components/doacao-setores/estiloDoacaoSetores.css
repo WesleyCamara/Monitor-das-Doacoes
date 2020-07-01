@@ -58,7 +58,7 @@
     align-items: center;
     justify-content: center;
     padding: 25px 50px;
-    background: #6320EE 0% 0% no-repeat padding-box;
+    background: #4C87B1 0% 0% no-repeat padding-box;
     border-radius: 100px;
     border: none;
     font-size: 24px;
@@ -71,7 +71,7 @@
 }
 
 .estiloBtn:hover {
-  box-shadow: 0 0 5px 1px #6320ee;
+  box-shadow: 0 0 5px 1px #4C87B1;
 }
 
 @media only screen and (max-width: 900px) {
