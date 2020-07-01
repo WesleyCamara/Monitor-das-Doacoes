@@ -10,6 +10,7 @@ import linkedin from "../../assets/img/footer/linkedin.svg";
 import youtube from "../../assets/img/footer/youtube.svg";
 import cocreare from "../../assets/img/footer/partner-cocreare.png";
 import anna from "../../assets/img/footer/partner-anna.png";
+import sitawi from "../../assets/img/footer/sitawi.svg";
 import { FormattedMessage } from "react-intl";
 
 export default class Footer extends Component {
@@ -42,7 +43,15 @@ export default class Footer extends Component {
             <img src={cocreare} alt="cocreare" title="Cocreare" />
             </a>
           </div>
-          <div className="partner-four"></div>
+          <div className="partner-four">
+          <a
+              href="https://www.sitawi.net/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+            <img src={sitawi} alt="sitawi" title="Sitawi" />
+            </a>
+          </div>
         </div>
 
         <div className="footer">
