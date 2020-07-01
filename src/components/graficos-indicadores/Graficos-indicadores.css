@@ -373,6 +373,10 @@ indicators ---------------------  */
     flex-wrap: wrap;
     justify-content: center;
   }
+
+  .indicators-subitem div{
+    width: 90vw;
+  }
   .span-h3 {
     text-align: center;
   }

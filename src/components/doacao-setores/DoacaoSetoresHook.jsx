@@ -105,7 +105,7 @@ const DoacaoSetoresHook = (props) => {
     title: {
       text: "",
     },
-    colors: ["#8075ff"],
+    colors: ["#408EC5"],
     plotOptions: {
       pie: {
         allowPointSelect: true,
@@ -170,10 +170,6 @@ const DoacaoSetoresHook = (props) => {
           name: "Doação",
           data: [
             {
-              name: props.valor.Consolidação[10][6],
-              y: Math.round(props.valor.Consolidação[10][7]),
-            },
-            {
               name: props.valor.Consolidação[11][6],
               y: Math.round(props.valor.Consolidação[11][7]),
             },
@@ -221,6 +217,10 @@ const DoacaoSetoresHook = (props) => {
               name: props.valor.Consolidação[22][6],
               y: Math.round(props.valor.Consolidação[22][7]),
             },
+            {
+              name: props.valor.Consolidação[23][6],
+              y: Math.round(props.valor.Consolidação[23][7]),
+            },
           ],
         },
       ],
@@ -234,14 +234,6 @@ const DoacaoSetoresHook = (props) => {
         {
           name: "Donation",
           data: [
-            {
-              name: props.valor.Consolidação[34][6],
-              y: Math.round(props.valor.Consolidação[34][7]),
-            },
-            {
-              name: props.valor.Consolidação[35][6],
-              y: Math.round(props.valor.Consolidação[35][7]),
-            },
             {
               name: props.valor.Consolidação[36][6],
               y: Math.round(props.valor.Consolidação[36][7]),
@@ -264,6 +256,10 @@ const DoacaoSetoresHook = (props) => {
             },
             {
               name: props.valor.Consolidação[41][6],
+              y: Math.round(props.valor.Consolidação[41][7]),
+            },
+            {
+              name: props.valor.Consolidação[42][6],
               y: Math.round(props.valor.Consolidação[42][7]),
             },
             {
@@ -282,6 +278,14 @@ const DoacaoSetoresHook = (props) => {
               name: props.valor.Consolidação[46][6],
               y: Math.round(props.valor.Consolidação[46][7]),
             },
+            {
+              name: props.valor.Consolidação[47][6],
+              y: Math.round(props.valor.Consolidação[47][7]),
+            },
+            {
+              name: props.valor.Consolidação[48][6],
+              y: Math.round(props.valor.Consolidação[48][7]),
+            },
           ],
         },
       ],
@@ -298,7 +302,7 @@ const DoacaoSetoresHook = (props) => {
   return (
     <div className="container-setores">
       <div>
-        <img className="img-fundo-setor" src={setorBg} />
+        <img className="img-fundo-setor" src={setorBg} alt="imagem de fundo"/>
       </div>
       <h2 className="chart-title-setores">
         <FormattedMessage id="chart-sectors-chart" />
@@ -330,7 +334,7 @@ const DoacaoSetoresHook = (props) => {
         </button>
       </a>
       <div>
-        <img className="square-shape2" src={squareShapes2} />
+        <img className="square-shape2" src={squareShapes2} alt="imagem de fundo"/>
       </div>
     </div>
   );
