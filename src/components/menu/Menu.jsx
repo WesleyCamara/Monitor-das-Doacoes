@@ -3,7 +3,7 @@ import "./Menu.css";
 import { NavLink } from "react-router-dom";
 import { FormattedMessage } from "react-intl";
 
-import logo from "../../assets/img/lista-doadores/ABCR_Logo POSITIVO.png";
+import logo from "../../assets/img/menu/ABCR_Logo POSITIVO.png";
 
 export default class Menu extends Component {
   render() {
