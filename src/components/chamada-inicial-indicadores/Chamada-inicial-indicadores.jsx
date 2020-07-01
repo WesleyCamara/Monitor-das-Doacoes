@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 //import React from "react";
 import "./Chamada-inicial-indicadores.css";
-import money from "../../assets/img/chamada-inicial-indicadores/money-bill.png";
-import hand from "../../assets/img/chamada-inicial-indicadores/hand-holding-money.png";
+import money from "../../assets/img/chamada-inicial-indicadores/money-bill.svg";
+import hand from "../../assets/img/chamada-inicial-indicadores/hand-holding-money.svg";
 import nv2 from "../../assets/img/chamada-inicial-indicadores/Caminho49.svg";
 import nv1 from "../../assets/img/chamada-inicial-indicadores/Caminho59.svg";
 import centerImg from "../../assets/img/chamada-inicial-indicadores/Grupo1.svg";
-import loading from "../../assets/img/chamada-inicial-indicadores/loading.gif";
+import loading from "../../assets/img/chamada-inicial-indicadores/loading.svg";
 import { FormattedMessage } from "react-intl";
 //import api from "../../services/API";
 
@@ -225,13 +225,13 @@ const ChamadaInicialIndicadores = (props) => {
           {/*-----"dados"->receberá-dados-da-api-cidade-c/-mais-doações--*/}
           <div className="dados">{valores.cidadeMaiorDoacao["cidade"]}</div>
         </div>
-        <div className="section-container">
+        {/* <div className="section-container">
           <h4>
             <FormattedMessage id="card-title-campaign" />
           </h4>
-          {/*-----"dados"->receberá-dados-da-api--campanha-c/-mais-doações-*/}
+          -----"dados"->receberá-dados-da-api--campanha-c/-mais-doações-
           <div className="dados">{valores.maiorCampanha["Campanhas"]}</div>
-        </div>
+        </div> */}
         <div className="section-container">
           <h4>
             <FormattedMessage id="card-title-live" />

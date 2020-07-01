@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./Lista-Doadores.css";
-import Loading from "../../assets/img/lista-doadores/loading.gif";
+import Loading from "../../assets/img/lista-doadores/loading.svg";
 import shape from "../../assets/img/lista-doadores/square-shapes.svg";
 import { FormattedMessage } from "react-intl";
 

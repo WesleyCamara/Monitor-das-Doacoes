@@ -29,26 +29,26 @@
     <rect id="Retângulo_26" data-name="Retângulo 26" width="43.643" height="37.964" transform="translate(111.938 242.604)" fill="#fff"/>
     <rect id="Retângulo_27" data-name="Retângulo 27" width="978.576" height="1.942" transform="translate(0 435.576)" fill="#3f3d56"/>
     <ellipse id="Elipse_1" data-name="Elipse 1" cx="28.253" cy="57.648" rx="28.253" ry="57.648" transform="translate(119.203 284.575)" fill="#3f3d56"/>
-    <path id="Caminho_7" data-name="Caminho 7" d="M255.478,670.175c-11.316-67.892-.114-135.539,0-136.214l2.2.373c-.114.672-11.251,67.963,0,135.475Z" transform="translate(-105.412 -233.591)" fill="#8075ff"/>
-    <rect id="Retângulo_28" data-name="Retângulo 28" width="28.974" height="2.233" transform="translate(146.78 343.491) rotate(-28.142)" fill="#8075ff"/>
-    <rect id="Retângulo_29" data-name="Retângulo 29" width="2.233" height="28.975" transform="translate(119.816 338.639) rotate(-61.842)" fill="#8075ff"/>
-    <ellipse id="Elipse_2" data-name="Elipse 2" cx="55.26" cy="112.752" rx="55.26" ry="112.752" transform="translate(24.312 140.564)" fill="#8075ff"/>
+    <path id="Caminho_7" data-name="Caminho 7" d="M255.478,670.175c-11.316-67.892-.114-135.539,0-136.214l2.2.373c-.114.672-11.251,67.963,0,135.475Z" transform="translate(-105.412 -233.591)" fill="#408EC5"/>
+    <rect id="Retângulo_28" data-name="Retângulo 28" width="28.974" height="2.233" transform="translate(146.78 343.491) rotate(-28.142)" fill="#408EC5"/>
+    <rect id="Retângulo_29" data-name="Retângulo 29" width="2.233" height="28.975" transform="translate(119.816 338.639) rotate(-61.842)" fill="#408EC5"/>
+    <ellipse id="Elipse_2" data-name="Elipse 2" cx="55.26" cy="112.752" rx="55.26" ry="112.752" transform="translate(24.312 140.564)" fill="#408EC5"/>
     <path id="Caminho_8" data-name="Caminho 8" d="M189.068,667.436c-22.1-132.614-.223-264.745,0-266.064l2.2.373c-.223,1.316-22.038,133.091,0,265.325Z" transform="translate(-103.341 -229.736)" fill="#3f3d56"/>
     <rect id="Retângulo_30" data-name="Retângulo 30" width="56.67" height="2.233" transform="translate(78.754 256.739) rotate(-28.142)" fill="#3f3d56"/>
     <rect id="Retângulo_31" data-name="Retângulo 31" width="2.233" height="56.67" transform="translate(26.017 245.373) rotate(-61.842)" fill="#3f3d56"/>
-    <ellipse id="Elipse_3" data-name="Elipse 3" cx="75.619" cy="154.293" rx="75.619" ry="154.293" transform="translate(134.833 31.161)" fill="#8075ff"/>
+    <ellipse id="Elipse_3" data-name="Elipse 3" cx="75.619" cy="154.293" rx="75.619" ry="154.293" transform="translate(134.833 31.161)" fill="#408EC5"/>
     <path id="Caminho_9" data-name="Caminho 9" d="M326.512,664.5c-30.234-181.4-.305-362.147,0-363.952l2.2.373c-.305,1.8-30.17,182.188,0,363.212Z" transform="translate(-98.023 -226.805)" fill="#3f3d56"/>
     <rect id="Retângulo_32" data-name="Retângulo 32" width="77.549" height="2.233" transform="translate(219.463 190.501) rotate(-28.142)" fill="#3f3d56"/>
     <rect id="Retângulo_33" data-name="Retângulo 33" width="2.233" height="77.549" transform="matrix(0.472, -0.882, 0.882, 0.472, 137.359, 174.215)" fill="#3f3d56"/>
     <ellipse id="Elipse_4" data-name="Elipse 4" cx="28.253" cy="57.648" rx="28.253" ry="57.648" transform="translate(860.103 284.575)" fill="#3f3d56"/>
-    <path id="Caminho_10" data-name="Caminho 10" d="M969.346,670.175c11.316-67.892.114-135.539,0-136.214l-2.2.373c.114.672,11.251,67.963,0,135.475Z" transform="translate(-83.598 -233.591)" fill="#8075ff"/>
-    <rect id="Retângulo_34" data-name="Retângulo 34" width="2.233" height="28.974" transform="translate(862.424 331.799) rotate(-61.858)" fill="#8075ff"/>
-    <rect id="Retângulo_35" data-name="Retângulo 35" width="28.975" height="2.233" transform="translate(889.393 350.349) rotate(-28.158)" fill="#8075ff"/>
-    <ellipse id="Elipse_5" data-name="Elipse 5" cx="55.26" cy="112.752" rx="55.26" ry="112.752" transform="translate(900.98 140.564)" fill="#8075ff"/>
+    <path id="Caminho_10" data-name="Caminho 10" d="M969.346,670.175c11.316-67.892.114-135.539,0-136.214l-2.2.373c.114.672,11.251,67.963,0,135.475Z" transform="translate(-83.598 -233.591)" fill="#408EC5"/>
+    <rect id="Retângulo_34" data-name="Retângulo 34" width="2.233" height="28.974" transform="translate(862.424 331.799) rotate(-61.858)" fill="#408EC5"/>
+    <rect id="Retângulo_35" data-name="Retângulo 35" width="28.975" height="2.233" transform="translate(889.393 350.349) rotate(-28.158)" fill="#408EC5"/>
+    <ellipse id="Elipse_5" data-name="Elipse 5" cx="55.26" cy="112.752" rx="55.26" ry="112.752" transform="translate(900.98 140.564)" fill="#408EC5"/>
     <path id="Caminho_11" data-name="Caminho 11" d="M1035.614,667.436c22.1-132.614.223-264.745,0-266.064l-2.2.373c.223,1.316,22.038,133.091,0,265.325Z" transform="translate(-85.525 -229.736)" fill="#3f3d56"/>
     <rect id="Retângulo_36" data-name="Retângulo 36" width="2.233" height="56.67" transform="translate(906.028 231.985) rotate(-61.858)" fill="#3f3d56"/>
     <rect id="Retângulo_37" data-name="Retângulo 37" width="56.67" height="2.233" transform="translate(958.777 270.137) rotate(-28.158)" fill="#3f3d56"/>
-    <ellipse id="Elipse_6" data-name="Elipse 6" cx="75.619" cy="154.293" rx="75.619" ry="154.293" transform="translate(749.743 31.161)" fill="#8075ff"/>
+    <ellipse id="Elipse_6" data-name="Elipse 6" cx="75.619" cy="154.293" rx="75.619" ry="154.293" transform="translate(749.743 31.161)" fill="#408EC5"/>
     <path id="Caminho_12" data-name="Caminho 12" d="M898.058,664.5c30.234-181.4.305-362.147,0-363.952l-2.2.373c.305,1.8,30.17,182.188,0,363.212Z" transform="translate(-89.646 -226.805)" fill="#3f3d56"/>
     <rect id="Retângulo_38" data-name="Retângulo 38" width="2.233" height="77.549" transform="translate(748.062 155.897) rotate(-61.858)" fill="#3f3d56"/>
     <rect id="Retângulo_39" data-name="Retângulo 39" width="77.549" height="2.233" transform="matrix(0.882, -0.472, 0.472, 0.882, 829.025, 208.847)" fill="#3f3d56"/>

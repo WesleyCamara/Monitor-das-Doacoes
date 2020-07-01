@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Graficos-indicadores.css";
 import { FormattedMessage } from "react-intl";
-import handMoney from "../../assets/img/graficos-indicadores/hand-money.png";
+import handMoney from "../../assets/img/graficos-indicadores/hand-money.svg";
 import HighchartsReact from "highcharts-react-official";
 import Highcharts from "highcharts";
 
