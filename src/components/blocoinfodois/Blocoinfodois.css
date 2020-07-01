@@ -158,6 +158,10 @@
   margin-left: 130px;
 }
 
+.doar img {
+width: 100%;
+margin-top: 50px;
+}
 .textoemail {
   max-width: 896px;
   max-height: 168px;
@@ -165,6 +169,7 @@
   margin-top: 140px;
   margin-left: 140px;
   text-align: left;
+  /* background: green; */
 }
 
 .email {
@@ -389,7 +394,7 @@
   }
 
   .doar img{
-    max-width: 90%;
+    width: 90%;
   }
   .textoemail {
     margin: 0 auto;

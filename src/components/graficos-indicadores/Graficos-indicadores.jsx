@@ -41,7 +41,7 @@ const GraficosIndicadores = (props) => {
     if (props.valor.status === "ok" && valores.maiorCampanha === 0) {
       setValores({
         maiorDoador: filtraMaiorDoador(props.valor["Doações"]),
-        maiorCampanha: filtraMaiorCampanha(props.valor["Campanhas"]),
+        // maiorCampanha: filtraMaiorCampanha(props.valor["Campanhas"]),
         maiorLive: maiorLive(props.valor["Lives"]),
         total: props.valor["Consolidação"][3][moeda.acessoIndiceTotal],
         totalCampanhas: props.valor["Consolidação"][1][moeda.acessoIndiceTotal],
@@ -95,22 +95,22 @@ const GraficosIndicadores = (props) => {
   };
 
   // filtra a campanha com maior arrecadação
-  const filtraMaiorCampanha = (array) => {
-    let maiorDoacao = 0;
-    let maiorDoador = [];
-    for (let item of array) {
-      if (
-        item["Valor Doado"] > maiorDoacao &&
-        item["Organizador (a) / Beneficiário (a)"] !== "Total" &&
-        item["Organizador (a) / Beneficiário (a)"] !== "Campanhas + lives" &&
-        item["Organizador (a) / Beneficiário (a)"] !== "Campanhas"
-      ) {
-        maiorDoacao = item["Valor Doado"];
-        maiorDoador = item;
-      }
-    }
-    return maiorDoador;
-  };
+  // const filtraMaiorCampanha = (array) => {
+  //   let maiorDoacao = 0;
+  //   let maiorDoador = [];
+  //   for (let item of array) {
+  //     if (
+  //       item["Valor Doado"] > maiorDoacao &&
+  //       item["Organizador (a) / Beneficiário (a)"] !== "Total" &&
+  //       item["Organizador (a) / Beneficiário (a)"] !== "Campanhas + lives" &&
+  //       item["Organizador (a) / Beneficiário (a)"] !== "Campanhas"
+  //     ) {
+  //       maiorDoacao = item["Valor Doado"];
+  //       maiorDoador = item;
+  //     }
+  //   }
+  //   return maiorDoador;
+  // };
 
   const subtrai = (itemMaior, itemMenor) => {
     return itemMaior - itemMenor;
@@ -462,7 +462,7 @@ const GraficosIndicadores = (props) => {
                     </p>
                   </div>
 
-                  <div className="biggest-donor">
+                  {/* <div className="biggest-donor">
                     <p>
                       <FormattedMessage id="biggest-campaign" />:{" "}
                       {valores.maiorCampanha["Campanhas"]}
@@ -485,7 +485,7 @@ const GraficosIndicadores = (props) => {
                         %)
                       </span>
                     </p>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>

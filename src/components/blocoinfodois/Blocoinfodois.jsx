@@ -7,7 +7,7 @@ import imgcanto from "../../assets/img/blocoinfo/imgcanto.svg";
 import circles from "../../assets/img/blocoinfo/circles.svg";
 import code from "../../assets/img/blocoinfo/code.svg";
 import seta from "../../assets/img/blocoinfo/seta.svg";
-import doar from "../../assets/img/blocoinfo/doar.jpg";
+import doar from "../../assets/img/blocoinfo/doar.svg";
 
 export default class BlocoInfoDois extends Component {
   render() {
@@ -41,15 +41,6 @@ export default class BlocoInfoDois extends Component {
               </h1>
               <p>
                 <FormattedMessage id="text1" />
-
-                {/* <FormattedMessage id="text2" />
-
-                <FormattedMessage id="text3" />
-
-                <FormattedMessage id="text4" />
-                <FormattedMessage id="text5" />
-
-                <FormattedMessage id="text6" /> */}
                 <br />
                 <br />
                 <FormattedMessage id="text2" />
@@ -72,7 +63,7 @@ export default class BlocoInfoDois extends Component {
               <div className="container-qr-qrcode">
                 <div className="qrcode">
                   <a
-                    href="http://bi.anna.center/w5/tdaportalclient.aspx"
+                    href="https://e.anna.center/?v0Roey"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -82,7 +73,7 @@ export default class BlocoInfoDois extends Component {
 
                 <div className="seta">
                   <a
-                    href="http://bi.anna.center/w5/tdaportalclient.aspx"
+                    href="https://e.anna.center/?v0Roey"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
