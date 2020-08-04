@@ -127,18 +127,21 @@ const ChamadaInicialIndicadores = (props) => {
 
   // Filtra a campanha com maior valor de doação
   const filtraMaiorCampanha = (array) => {
+
+    let exclusionArray = ["Total Campanhas Offline", "Doadores", "Campanhas acima de 22 milhões não são somadas para evitar duplicidade de contagem de doadores", "", "Total s/ Grandes Campanhas Offline", "Total Geral", "Total Geral s/ Grandes Campanhas", "Total Geral Doadores", "Total Campanhas Online"]
+
     let maiorDoacao = 0;
     let maiorDoador = [];
     for (let item of array) {
       if (
-        item["Valor Doado"] > maiorDoacao &&
-        item["Organizador (a) / Beneficiário (a)"] !== "Total" &&
-        item["Organizador (a) / Beneficiário (a)"] !== "Campanhas + lives" &&
-        item["Organizador (a) / Beneficiário (a)"] !== "Campanhas"
+        item["Valor Captado"] > maiorDoacao &&
+        !exclusionArray.includes(item["Organizador (a) / Beneficiário (a)"]) 
       ) {
-        maiorDoacao = item["Valor Doado"];
+        console.log(item)
+        maiorDoacao = item["Valor Captado"];
         maiorDoador = item;
       }
+      
     }
     return maiorDoador;
   };
@@ -179,7 +182,7 @@ const ChamadaInicialIndicadores = (props) => {
                 {moeda.simbolo} {formatNumber(valores.total)}
               </div>
               <div style={visible.loading}>
-                <img src={loading}  alt="imagem de loading"/>
+                <img src={loading} alt="imagem de loading" />
               </div>
               <h2>
                 <FormattedMessage id="banner-title-donations" />
@@ -196,7 +199,7 @@ const ChamadaInicialIndicadores = (props) => {
                 {formatNumber(valores.totalDoadores)}
               </div>
               <div style={visible.loading}>
-                <img src={loading} alt="imagem de loading"/>
+                <img src={loading} alt="imagem de loading" />
               </div>
               <h2>
                 <FormattedMessage id="banner-title-donors" />
@@ -225,13 +228,13 @@ const ChamadaInicialIndicadores = (props) => {
           {/*-----"dados"->receberá-dados-da-api-cidade-c/-mais-doações--*/}
           <div className="dados">{valores.cidadeMaiorDoacao["cidade"]}</div>
         </div>
-        {/* <div className="section-container">
+        <div className="section-container">
           <h4>
             <FormattedMessage id="card-title-campaign" />
           </h4>
-          -----"dados"->receberá-dados-da-api--campanha-c/-mais-doações-
+          {/* -----"dados"->receberá-dados-da-api--campanha-c/-mais-doações- */}
           <div className="dados">{valores.maiorCampanha["Campanhas"]}</div>
-        </div> */}
+        </div>
         <div className="section-container">
           <h4>
             <FormattedMessage id="card-title-live" />
