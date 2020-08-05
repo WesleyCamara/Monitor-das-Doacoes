@@ -7,12 +7,6 @@ import "./EvolucaoSemanal.css";
 import { FormattedMessage } from "react-intl";
 
 const EvolucaoSemanal = (props) => {
-  Highcharts.setOptions({
-    lang: {
-      thousandsSep: ".",
-    },
-  });
-
   let seriesDoacoes = []
   let seriesDoadores = []
   let categories = []
@@ -94,12 +88,8 @@ const EvolucaoSemanal = (props) => {
         categories: categories
       },
       series: [{
-        color: "#AE1920",
-        name: 'Doações (em milhões)',
         data: seriesDoacoes
       }, {
-        color: "#4C87B1",
-        name: 'Doadores (em milhares)',
         data:  seriesDoadores
       }]
 
