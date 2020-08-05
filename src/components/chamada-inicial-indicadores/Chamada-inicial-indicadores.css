@@ -72,6 +72,14 @@ h2 {
   margin: 0 auto;
 }
 
+.total-campanhas{
+  width: 100%;
+}
+
+#money, #hand{
+  height: 280px;
+}
+
 /*----------Class------------------*/
 .banner-container>#banner-content,
 #img-center {
@@ -84,6 +92,7 @@ h2 {
 
 #img-center {
   padding-top: 0;
+  
 }
 /*----------------------------*/
 /*-----------Sections-cards----------------*/

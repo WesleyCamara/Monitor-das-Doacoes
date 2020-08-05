@@ -11,6 +11,9 @@ import { FormattedMessage } from "react-intl";
 //import api from "../../services/API";
 
 const ChamadaInicialIndicadores = (props) => {
+  //termos usados nos titulos da planilha
+  const exclusionArray = ["Total Campanhas Offline", "Doadores", "Campanhas acima de 22 milhões não são somadas para evitar duplicidade de contagem de doadores", "", "Total s/ Grandes Campanhas Offline", "Total Geral", "Total Geral s/ Grandes Campanhas", "Total Geral Doadores", "Total Campanhas Online"]
+
   // Guarda os valores "iniciais"
   const [valores, setValores] = useState({
     total: 0,
@@ -127,9 +130,6 @@ const ChamadaInicialIndicadores = (props) => {
 
   // Filtra a campanha com maior valor de doação
   const filtraMaiorCampanha = (array) => {
-
-    let exclusionArray = ["Total Campanhas Offline", "Doadores", "Campanhas acima de 22 milhões não são somadas para evitar duplicidade de contagem de doadores", "", "Total s/ Grandes Campanhas Offline", "Total Geral", "Total Geral s/ Grandes Campanhas", "Total Geral Doadores", "Total Campanhas Online"]
-
     let maiorDoacao = 0;
     let maiorDoador = [];
     for (let item of array) {
@@ -203,6 +203,20 @@ const ChamadaInicialIndicadores = (props) => {
               </div>
               <h2>
                 <FormattedMessage id="banner-title-donors" />
+              </h2>
+            </div>
+
+            {/* Soma geral das campanhas  */}
+            <div className="total-campanhas">
+              <img  src={hand} alt="doadores" />
+              <div id="doadores" style={visible.number}>
+                R$ 903.299.052
+              </div>
+              <div style={visible.loading}>
+                <img src={loading} alt="imagem de loading" />
+              </div>
+              <h2>
+                <FormattedMessage id="banner-title-campaigns" />
               </h2>
             </div>
           </div>
