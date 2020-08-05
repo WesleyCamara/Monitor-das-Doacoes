@@ -111,7 +111,14 @@ export default class BlocoInfoDois extends Component {
 
           <div className="container-final">
             <div className="doar">
+            <a
+                  className="email"
+                  href="https://www.diadedoar.org.br/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
               <img src={doar} alt="doar" />
+              </a>
             </div>
             <div className="textoemail">
               <p>
