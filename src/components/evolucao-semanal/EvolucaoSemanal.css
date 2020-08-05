@@ -5,90 +5,57 @@
   text-decoration: none;
 }
 
-.img-fundo-setor {
-  position: absolute;
-  left: -60px;
-  top: -230px;
-  z-index: -1;
-  width: 50%;
-  opacity: 100;
-}
-
-.square-shape2 {
-  position: absolute;
-  right: 150px;
-  top: -60px;
-  z-index: 20;
-}
-
-.grafico-pie {
-  z-index: 10;
-}
-
 .chart-title-setores {
   font-size: 50px;
   margin-top: 140px;
   margin-bottom: 86px;
-  font-family: 'rubikbold';
+  font-family: "rubikbold";
   text-align: left;
   color: #222222;
   margin-left: 140px;
 }
 
-.container-setores {
-  width: 100%;
-  justify-content: center;
-  padding-bottom: 150px;
-  position: relative;
-  z-index: 1000;
+.grafico {
+  width: 80%;
+  margin: 0 auto;
 }
 
-.estiloBtn{
-    font-family: 'rubikmedium';
-    display: flex;
-    width: 335px;
-    height: 80px;
-    background-color:  #6320EE;
-    border-radius: 100px;
-    font-size: 24px;
-    line-height: 28px;
-    letter-spacing: 2px;
-    color: #FFFFFF;
-    margin: 100px auto 0;
-    align-items: center;
-    justify-content: center;
-    padding: 25px 50px;
-    background: #4C87B1 0% 0% no-repeat padding-box;
-    border-radius: 100px;
-    border: none;
-    font-size: 24px;
-    letter-spacing: 2.4px;
-    color: #FFFFFF;
-    margin: 100px auto 0;
-    text-transform: uppercase;
-    cursor: pointer;
-    max-width: 320px;
+.estiloBtn {
+  font-family: "rubikmedium";
+  display: flex;
+  width: 335px;
+  height: 80px;
+  background-color: #6320ee;
+  border-radius: 100px;
+  font-size: 24px;
+  line-height: 28px;
+  letter-spacing: 2px;
+  color: #ffffff;
+  margin: 100px auto 0;
+  align-items: center;
+  justify-content: center;
+  padding: 25px 50px;
+  background: #4c87b1 0% 0% no-repeat padding-box;
+  border-radius: 100px;
+  border: none;
+  font-size: 24px;
+  letter-spacing: 2.4px;
+  color: #ffffff;
+  margin: 100px auto 0;
+  text-transform: uppercase;
+  cursor: pointer;
+  max-width: 320px;
 }
 
 .estiloBtn:hover {
-  box-shadow: 0 0 5px 1px #4C87B1;
+  box-shadow: 0 0 5px 1px #4c87b1;
 }
 
 @media only screen and (max-width: 900px) {
-  .square-shape2 {
-    display: none;
-  }
-
-  .img-fundo-setor {
-    display: none;
-  }
   .chart-title-setores {
     font-size: 35px;
     margin-top: 140px;
     text-align: center;
-  }
-  .grafico-pie {
-    width: 100%;
   }
 }
 
@@ -106,15 +73,14 @@
     text-align: center;
   }
 
-  .estiloBtn{
+  .estiloBtn {
     margin-top: 0;
   }
 }
 
 @media only screen and (max-width: 425px) {
-  .estiloBtn{
+  .estiloBtn {
     width: 90vw;
     padding: 0;
   }
 }
-

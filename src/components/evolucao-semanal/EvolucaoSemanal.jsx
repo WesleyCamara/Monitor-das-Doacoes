@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from "react";
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
+import moment from 'moment';
 
 import "./EvolucaoSemanal.css";
 import { FormattedMessage } from "react-intl";
-
-// import squareShapes2 from "../../assets/img/doacao-setores/square-shapes-2.svg";
-// import setorBg from "../../assets/img/doacao-setores/setor-bg.svg";
 
 const EvolucaoSemanal = (props) => {
   Highcharts.setOptions({
@@ -15,29 +13,59 @@ const EvolucaoSemanal = (props) => {
     },
   });
 
-  // useEffect(() => {
-  //   if (props.valor.status === "ok") {
-  //     updateGraficos();
-  //     updateGraphic();
-  //   }
-  // }, [props]);
+  let seriesDoacoes = []
+  let seriesDoadores = []
+  let categories = []
+
+
+
+  useEffect(() => {
+    if (props.valor.status === "ok") {
+      seriesDoacoes = chartSeries(props.valor["Gráficos"], 2)
+      seriesDoadores = chartSeries(props.valor["Gráficos"], 3)
+      categories = chartCategories(props.valor["Gráficos"])
+      updateSeries()
+    }
+  }, [props]);
+
+  const chartSeries = (values, index) => {
+    let final = []
+    values.forEach((item) =>{
+      if(item[0] !== "" && !isNaN(item[index]) ){
+      final.push(Math.round(item[index]))
+      }
+    })
+    return final
+  }
+
+  const chartCategories = (array) => {
+    const categorias = []
+    array.forEach( item => {
+      const date = moment(item[1]).format('DD/MM')
+      if (date !== "Invalid date"){
+        categorias.push(date)
+      }
+    }) 
+    console.log(categorias)
+    return categorias    
+  }
 
   const [chartOptions, setChartOptions] = useState({
-
     title: {
-      text: 'Monitor das Doações COVID-19 - Evolução Semanal'
+      text: ''
     },
-
-    // subtitle: {
-    //     text: ''
-    // },
-
+    credits: false,
     xAxis: {
-      categories: ["31/03", "11/04", "18/04", "25/04", "02/05",]
+      categories: [""]
     },
     yAxis: {
+      labels: {
+        formatter: function () {
+            return this.value.toLocaleString("pt-BR");
+        },
+      },
       title: {
-        text: ''
+        text: false
       }
     },
     plotOptions: {
@@ -51,14 +79,33 @@ const EvolucaoSemanal = (props) => {
     series: [{
       color: "#AE1920",
       name: 'Doações (em milhões)',
-      data: [450, 1200, 2700, 3700, 3996]
+      data: ['']
     }, {
       color: "#4C87B1",
       name: 'Doadores (em milhares)',
-      data: ['', '', 100, 154, 178]
+      data: ['']
     }]
 
   });
+
+  const updateSeries = () => {
+    setChartOptions({
+      xAxis: {
+        categories: categories
+      },
+      series: [{
+        color: "#AE1920",
+        name: 'Doações (em milhões)',
+        data: seriesDoacoes
+      }, {
+        color: "#4C87B1",
+        name: 'Doadores (em milhares)',
+        data:  seriesDoadores
+      }]
+
+    })
+  
+  }
 
 
 
@@ -71,31 +118,16 @@ const EvolucaoSemanal = (props) => {
 
   return (
     <div className="container-setores">
-      <div>
-        {/* <img className="img-fundo-setor" src={setorBg} alt="imagem de fundo"/> */}
-      </div>
+      
       <h2 className="chart-title-setores">
-        {/* <FormattedMessage id="chart-sectors-chart" /> */}
         Monitor das Doações COVID-19 - Evolução Semanal
       </h2>
 
 
-      <HighchartsReact highcharts={Highcharts} options={chartOptions} />
-      {/* <div id="doacao-setores">
-        {renderizaGrafico ? (
-          <HighchartsReact
-            className="grafico-pie"
-            highcharts={Highcharts}
-            options={optionsPT}
-          />
-        ) : (
-          <HighchartsReact
-            className="grafico-pie"
-            highcharts={Highcharts}
-            options={optionsEN}
-          />
-        )}
-      </div> */}
+      
+      <div className="grafico">
+  <HighchartsReact highcharts={Highcharts} options={chartOptions} />
+      </div>
 
       <a
         href="https://docs.google.com/spreadsheets/d/1RA0oP9EBHxpsLGvHTaX2TTYHT2oQHTfNrM8Z40hqVus/edit#gid=816672137"
