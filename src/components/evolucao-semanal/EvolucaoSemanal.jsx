@@ -11,12 +11,19 @@ const EvolucaoSemanal = (props) => {
   let seriesDoadores = []
   let categories = []
 
+  // A const possui os valores iniciais que servirão de referencia para mudar os valores para dolar
+  const idioma = {
+    indiceDoacoes: 2,
+    indiceDoadores: 3,
+    localeString: "pt-BR",
+  };
+
 
 
   useEffect(() => {
     if (props.valor.status === "ok") {
-      seriesDoacoes = chartSeries(props.valor["Gráficos"], 2)
-      seriesDoadores = chartSeries(props.valor["Gráficos"], 3)
+      seriesDoacoes = chartSeries(props.valor["Gráficos"], idioma.indiceDoacoes)
+      seriesDoadores = chartSeries(props.valor["Gráficos"], idioma.indiceDoadores)
       categories = chartCategories(props.valor["Gráficos"])
       updateSeries()
     }
@@ -24,9 +31,9 @@ const EvolucaoSemanal = (props) => {
 
   const chartSeries = (values, index) => {
     let final = []
-    values.forEach((item) =>{
-      if(item[0] !== "" && !isNaN(item[index]) ){
-      final.push(Math.round(item[index]))
+    values.forEach((item) => {
+      if (item[0] !== "" && !isNaN(item[index])) {
+        final.push(Math.round(item[index]))
       }
     })
     return final
@@ -34,14 +41,14 @@ const EvolucaoSemanal = (props) => {
 
   const chartCategories = (array) => {
     const categorias = []
-    array.forEach( item => {
+    array.forEach(item => {
       const date = moment(item[1]).format('DD/MM')
-      if (date !== "Invalid date"){
+      if (date !== "Invalid date") {
         categorias.push(date)
       }
-    }) 
+    })
     console.log(categorias)
-    return categorias    
+    return categorias
   }
 
   const [chartOptions, setChartOptions] = useState({
@@ -55,7 +62,7 @@ const EvolucaoSemanal = (props) => {
     yAxis: {
       labels: {
         formatter: function () {
-            return this.value.toLocaleString("pt-BR");
+          return this.value.toLocaleString(idioma.localeString);
         },
       },
       title: {
@@ -65,6 +72,7 @@ const EvolucaoSemanal = (props) => {
     plotOptions: {
       line: {
         dataLabels: {
+          
           enabled: true
         },
         enableMouseTracking: false
@@ -90,33 +98,38 @@ const EvolucaoSemanal = (props) => {
       series: [{
         data: seriesDoacoes
       }, {
-        data:  seriesDoadores
+        data: seriesDoadores
       }]
 
     })
-  
+
   }
 
 
 
   //   Verifica o idima do site de acordo com a URL, depois altera as informações do gráfico de acordo com o idioma
-  const idiomaUrl = window.location.href;
-  let renderizaGrafico = null;
-  if (idiomaUrl.includes("/en") === false) {
-    renderizaGrafico = true;
-  }
+  // Altera os parametros quando o site estiver em ingles, os dados são buscados na URL
+  const formatValue = () => {
+    const url_atual = window.location.pathname;
+    if (url_atual !== "/pt") {
+        idioma.indiceDoacoes = 8;
+        idioma.localeString = "en-US";
+    }
+  };
 
+  formatValue()
   return (
+    
     <div className="container-setores">
-      
+
       <h2 className="chart-title-setores">
         Monitor das Doações COVID-19 - Evolução Semanal
       </h2>
 
 
-      
+
       <div className="grafico">
-  <HighchartsReact highcharts={Highcharts} options={chartOptions} />
+        <HighchartsReact highcharts={Highcharts} options={chartOptions} />
       </div>
 
       <a
