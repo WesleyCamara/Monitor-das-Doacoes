@@ -44,10 +44,19 @@ export default class BlocoInfoDois extends Component {
                 <br />
                 <br />
                 <FormattedMessage id="text2" />
+                <br />
+                <br />
+                <FormattedMessage id="text3" />
+                <br />
+                <br />
+                <FormattedMessage id="text4" />
+                <br />
+                <br />
+                <FormattedMessage id="text5" />
 
               </p>
 
-              <div className="botao">
+              {/* <div className="botao">
                 <a
                   className="botao-h1"
                   href="https://docs.google.com/spreadsheets/d/1RA0oP9EBHxpsLGvHTaX2TTYHT2oQHTfNrM8Z40hqVus/edit#gid=0"
@@ -56,10 +65,10 @@ export default class BlocoInfoDois extends Component {
                 >
                   <FormattedMessage id="pessoasdoando" />
                 </a>
-              </div>
+              </div> */}
             </div>
 
-            <div className="container-qr">
+            {/* <div className="container-qr">
               <div className="container-qr-qrcode">
                 <div className="qrcode">
                   <a
@@ -106,7 +115,7 @@ export default class BlocoInfoDois extends Component {
                   </a>
                 </p>
               </div>
-            </div>
+            </div> */}
           </div>
 
           <div className="container-final">
