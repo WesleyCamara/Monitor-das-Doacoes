@@ -13,6 +13,8 @@ const EvolucaoSemanal = (props) => {
 
   // A const possui os valores iniciais que servirão de referencia para mudar os valores para dolar
   const idioma = {
+    legendaDoacoes: 'Doações (em milhões)',
+    legendaDoadores: 'Doadores (em milhares)',
     indiceDoacoes: 2,
     indiceDoadores: 3,
     localeString: "pt-BR",
@@ -72,7 +74,7 @@ const EvolucaoSemanal = (props) => {
     plotOptions: {
       line: {
         dataLabels: {
-          
+
           enabled: true
         },
         enableMouseTracking: false
@@ -80,11 +82,11 @@ const EvolucaoSemanal = (props) => {
     },
     series: [{
       color: "#AE1920",
-      name: 'Doações (em milhões)',
+      name: idioma.legendaDoacoes,
       data: ['']
     }, {
       color: "#4C87B1",
-      name: 'Doadores (em milhares)',
+      name: idioma.legendaDoadores,
       data: ['']
     }]
 
@@ -96,8 +98,10 @@ const EvolucaoSemanal = (props) => {
         categories: categories
       },
       series: [{
+        name: idioma.legendaDoacoes,
         data: seriesDoacoes
       }, {
+        name: idioma.legendaDoadores,
         data: seriesDoadores
       }]
 
@@ -112,18 +116,20 @@ const EvolucaoSemanal = (props) => {
   const formatValue = () => {
     const url_atual = window.location.pathname;
     if (url_atual !== "/pt") {
-        idioma.indiceDoacoes = 8;
-        idioma.localeString = "en-US";
+      idioma.legendaDoacoes = 'Donations (in millions)';
+      idioma.legendaDoadores = 'Donors (in thousands)';
+      idioma.indiceDoacoes = 8;
+      idioma.localeString = "en-US";
     }
   };
 
   formatValue()
   return (
-    
+
     <div className="container-setores">
 
       <h2 className="chart-title-setores">
-        Monitor das Doações COVID-19 - Evolução Semanal
+        <FormattedMessage id="chart-weekly-evolution" />
       </h2>
 
 

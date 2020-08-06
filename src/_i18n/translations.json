@@ -3,6 +3,7 @@
         "paragrafo-exemplo": "paragrafo em ingles",
         "_comment-menu": "Idioma Menu",
         "menu-title": "COVID 19 Donations Monitor",
+        "chart-weekly-evolution": "COVID 19 Donations Monitor - Weekly Evolution",
         "chart-sectors-chart": "Donations by Sector",
         "chart-indicators-chart": "Companies with more donations",
         "chart-indicators-button": "see details",
@@ -42,8 +43,8 @@
         "informacaocampdois": " to know them and access the link to the internet page - in Portuguese",
         "tituloumbldois": "The COVID-19",
         "titulodoisbldois": "Donations Monitor",
-        "text1":"The COVID 19 Donations Monitor is updated daily by ABCR with public data directly collected online or that has been sent to us. No donation is added if it has not being made public - the links are shared for conference. The numbers are checked to avoid being counted more than once. We only share donations that have been announced publicly.",
-        "text2":"The goal of the COVID 19 Donations Monitor is to know and consolidate the numbers of the donations that have been made as a response to COVID 19 in Brazil, to promote them and inspire even more donations. The donor is in charge of effectively make the donation that has been announced.",
+        "text1": "The COVID 19 Donations Monitor is updated daily by ABCR with public data directly collected online or that has been sent to us. No donation is added if it has not being made public - the links are shared for conference. The numbers are checked to avoid being counted more than once. We only share donations that have been announced publicly.",
+        "text2": "The goal of the COVID 19 Donations Monitor is to know and consolidate the numbers of the donations that have been made as a response to COVID 19 in Brazil, to promote them and inspire even more donations. The donor is in charge of effectively make the donation that has been announced.",
         "pessoasdoando": "SEE WHO'S GIVING",
         "textcode": "Check graphically",
         "textcodeum": "the results of",
@@ -54,14 +55,12 @@
         "textemail1": "If you want to share about a donation that was made, write to ",
         "textemail2": "abcr@captadores.org.br.",
         "textemail3": " We can only count gifts that have its value in reais."
-
-
-         
     },
     "pt-BR": {
         "paragrafo-exemplo": "paragrafo em portugues",
         "_comment-menu": "Idioma Menu",
         "menu-title": "Monitor das Doações COVID 19",
+        "chart-weekly-evolution": "Monitor das Doações COVID-19 - Evolução Semanal",
         "chart-sectors-chart": "Doação por Setores",
         "chart-indicators-chart": "Empresas com mais doações",
         "chart-indicators-button": "ver detalhes",
@@ -110,7 +109,6 @@
         "textinferior": "Confira a planilha COMPLETA de todo o",
         "textinferiorum": "levantamento realizado acessando",
         "textinferiordois": " AQUI",
-
         "textemail1": "Caso você queira incluir a informação sobre a sua doação realizada escreva para ",
         "textemail2": "abcr@captadores.org.br.",
         "textemail3": "Somente conseguimos contabilizar doações cujo valor em reais seja informado."
