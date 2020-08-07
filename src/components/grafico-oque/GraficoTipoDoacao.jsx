@@ -15,6 +15,7 @@ const GraficoTipoDoacao = (props) => {
   const idioma = {
     legendaDoacoes: 'Doações (em milhões)',
     legendaDoadores: 'Doadores (em milhares)',
+    percentual: 'Percentual',
     indiceDoacoes: 2,
     indiceDoadores: 3,
     localeString: "pt-BR",
@@ -128,7 +129,7 @@ const GraficoTipoDoacao = (props) => {
 
     series: [
       {
-        name: 'Percentual',
+        name: idioma.percentual,
         data: [["Dinheiro", 62],
         ["Produtos", 32],
         ["Serviços", 5],
@@ -255,7 +256,7 @@ const GraficoTipoDoacao = (props) => {
 
     series: [
       {
-        name: 'Percentual',
+        name: idioma.percentual,
         data: [["Doação para pessoa jurídica", 58],
         ["Doação para instituto/fundação própria", 23],
         ["Doação para pessoa física", 9],
@@ -361,7 +362,7 @@ const GraficoTipoDoacao = (props) => {
 
     series: [
       {
-        name: 'Percentual',
+        name: idioma.percentual,
         data: [["Saúde", 77],
         ["Assistência Social", 19],
         ["Educação", 5],
@@ -394,6 +395,7 @@ const GraficoTipoDoacao = (props) => {
     if (url_atual !== "/pt") {
       idioma.legendaDoacoes = 'Donations (in millions)';
       idioma.legendaDoadores = 'Donors (in thousands)';
+      idioma.percentual = 'Percentage'
       idioma.indiceDoacoes = 8;
       idioma.localeString = "en-US";
     }
@@ -408,7 +410,7 @@ const GraficoTipoDoacao = (props) => {
 
         <div className="chart-item">
           <h2>
-            O que está sendo doado
+          <FormattedMessage id="chart-whats" />
       </h2>
           <div className="chart-whats">
             <HighchartsReact highcharts={Highcharts} options={chartChartWhatsOptions} />
@@ -417,7 +419,7 @@ const GraficoTipoDoacao = (props) => {
 
         <div className="chart-item">
           <h2>
-            Como está sendo doado
+          <FormattedMessage id="chart-where" />
       </h2>
           <div className="chart-whats">
             <HighchartsReact highcharts={Highcharts} options={chartChartWhereOptions} />
@@ -426,7 +428,7 @@ const GraficoTipoDoacao = (props) => {
 
         <div className="chart-item">
           <h2>
-            Para quais causas
+          <FormattedMessage id="chart-to" />
       </h2>
           <div className="chart-whats">
             <HighchartsReact highcharts={Highcharts} options={chartChartToOptions} />
