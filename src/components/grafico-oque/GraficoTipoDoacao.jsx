@@ -26,18 +26,18 @@ const GraficoTipoDoacao = (props) => {
 
   const chartSeries = (values, index) => {
     let final = []
-    for (let i = 0; i < values.length -1; i++){
+    for (let i = 0; i < values.length - 1; i++) {
       let percentValue = Math.round(values[i][index] * 100)
-      if (percentValue){
-      final.push(percentValue)
-    }
+      if (percentValue) {
+        final.push(percentValue)
+      }
     }
     return final
   }
 
   const chartCategories = (array, index) => {
     const categorias = []
-    for (let i = 0; i < array.length -1; i++){
+    for (let i = 0; i < array.length - 1; i++) {
       categorias.push(array[i][index])
     }
     return categorias
@@ -74,7 +74,7 @@ const GraficoTipoDoacao = (props) => {
     },
     plotOptions: {
       formatter: function () {
-          return this.value + "%";
+        return this.value + "%";
       },
       series: {
         groupPadding: 0,
@@ -118,7 +118,7 @@ const GraficoTipoDoacao = (props) => {
           width: 9,
         },
         formatter: function () {
-            return this.value + "%";
+          return this.value + "%";
         },
       },
     },
@@ -166,7 +166,7 @@ const GraficoTipoDoacao = (props) => {
     },
     plotOptions: {
       formatter: function () {
-          return this.value + "%";
+        return this.value + "%";
       },
       series: {
         groupPadding: 0,
@@ -210,7 +210,7 @@ const GraficoTipoDoacao = (props) => {
           width: 9,
         },
         formatter: function () {
-            return this.value + "%";
+          return this.value + "%";
         },
       },
     },
@@ -259,7 +259,7 @@ const GraficoTipoDoacao = (props) => {
     },
     plotOptions: {
       formatter: function () {
-          return this.value + "%";
+        return this.value + "%";
       },
       series: {
         groupPadding: 0,
@@ -302,7 +302,7 @@ const GraficoTipoDoacao = (props) => {
           width: 9,
         },
         formatter: function () {
-            return this.value + "%";
+          return this.value + "%";
         },
       },
     },
@@ -366,7 +366,7 @@ const GraficoTipoDoacao = (props) => {
       }]
     })
   }
-  
+
 
   //   Verifica o idima do site de acordo com a URL, depois altera as informações do gráfico de acordo com o idioma
   // Altera os parametros quando o site estiver em ingles, os dados são buscados na URL
@@ -388,27 +388,27 @@ const GraficoTipoDoacao = (props) => {
 
         <div className="chart-item">
           <h2>
-          <FormattedMessage id="chart-whats" />
-      </h2>
-          <div className="chart-whats">
+            <FormattedMessage id="chart-whats" />
+          </h2>
+          <div className="chart-type">
             <HighchartsReact highcharts={Highcharts} options={chartWhatsOptions} />
           </div>
         </div>
 
         <div className="chart-item">
           <h2>
-          <FormattedMessage id="chart-where" />
-      </h2>
-          <div className="chart-whats">
+            <FormattedMessage id="chart-where" />
+          </h2>
+          <div className="chart-type">
             <HighchartsReact highcharts={Highcharts} options={chartChartWhereOptions} />
           </div>
         </div>
 
         <div className="chart-item">
           <h2>
-          <FormattedMessage id="chart-to" />
-      </h2>
-          <div className="chart-whats">
+            <FormattedMessage id="chart-to" />
+          </h2>
+          <div className="chart-type">
             <HighchartsReact highcharts={Highcharts} options={chartChartToOptions} />
           </div>
         </div>

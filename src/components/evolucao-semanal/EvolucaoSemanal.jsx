@@ -147,9 +147,6 @@ const EvolucaoSemanal = (props) => {
           <FormattedMessage id="chart-indicators-button" />
         </button>
       </a>
-      <div>
-        {/* <img className="square-shape2" src={squareShapes2} alt="imagem de fundo"/> */}
-      </div>
     </div>
   );
 };
