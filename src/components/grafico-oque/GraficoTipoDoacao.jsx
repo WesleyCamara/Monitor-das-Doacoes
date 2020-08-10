@@ -7,50 +7,59 @@ import "./GraficoTipoDoacao.css";
 import { FormattedMessage } from "react-intl";
 
 const GraficoTipoDoacao = (props) => {
-  let seriesDonations = []
-  let seriesDonnors = []
-  let categories = []
+  let seriesChartWhats = []
+  let categoriesChartWhats = []
+
+  let categoriesChartWhere = []
+  let seriesChartWhere = []
+
+  let categoriesChartTo = []
+  let seriesChartTo = []
 
   // A const possui os valores iniciais que servirão de referencia para mudar os valores para dolar
   const idioma = {
-    legendaDoacoes: 'Doações (em milhões)',
-    legendaDoadores: 'Doadores (em milhares)',
+    categoriesChart: 0,
     percentual: 'Percentual',
     indiceDoacoes: 2,
-    indiceDoadores: 3,
     localeString: "pt-BR",
   };
 
-  // useEffect(() => {
-  //   if (props.valor.status === "ok") {
-  //     seriesDonations = chartSeries(props.valor["Gráficos"], idioma.indiceDoacoes)
-  //     seriesDonnors = chartSeries(props.valor["Gráficos"], idioma.indiceDoadores)
-  //     categories = chartCategories(props.valor["Gráficos"])
-  //     updateSeries()
-  //   }
-  // }, [props]);
-
   const chartSeries = (values, index) => {
     let final = []
-    values.forEach((item) => {
-      if (item[0] !== "" && !isNaN(item[index])) {
-        final.push(Math.round(item[index]))
-      }
-    })
+    for (let i = 0; i < values.length -1; i++){
+      let percentValue = Math.round(values[i][index] * 100)
+      if (percentValue){
+      final.push(percentValue)
+    }
+    }
     return final
   }
-  const chartCategories = (array) => {
+
+  const chartCategories = (array, index) => {
     const categorias = []
-    array.forEach(item => {
-      const date = moment(item[1]).format('DD/MM')
-      if (date !== "Invalid date") {
-        categorias.push(date)
-      }
-    })
-    console.log(categorias)
+    for (let i = 0; i < array.length -1; i++){
+      categorias.push(array[i][index])
+    }
     return categorias
   }
-  const [chartChartWhatsOptions, setChartWhatsOptions] = useState({
+
+  useEffect(() => {
+    if (props.valor.status === "ok") {
+      categoriesChartWhats = chartCategories(props.valor["A"], idioma.categoriesChart)
+      seriesChartWhats = chartSeries(props.valor["A"], idioma.indiceDoacoes)
+
+      categoriesChartWhere = chartCategories(props.valor["B"], idioma.categoriesChart)
+      seriesChartWhere = chartSeries(props.valor["B"], idioma.indiceDoacoes)
+
+      categoriesChartTo = chartCategories(props.valor["C"], idioma.categoriesChart)
+      seriesChartTo = chartSeries(props.valor["C"], idioma.indiceDoacoes)
+
+      updateChartsData()
+    }
+  }, [props]);
+
+
+  const [chartWhatsOptions, setChartWhatsOptions] = useState({
     chart: {
       type: "column",
       backgroundColor: "#fff",
@@ -65,9 +74,7 @@ const GraficoTipoDoacao = (props) => {
     },
     plotOptions: {
       formatter: function () {
-        if (window.screen.width >= 1024) {
           return this.value + "%";
-        }
       },
       series: {
         groupPadding: 0,
@@ -109,14 +116,9 @@ const GraficoTipoDoacao = (props) => {
           fontSize: "12px",
           fontFamily: "rubik, sans-serif",
           width: 9,
-          // textOverflow: "auto",
         },
         formatter: function () {
-          if (window.screen.width >= 1024) {
             return this.value + "%";
-          } else {
-            return "";
-          }
         },
       },
     },
@@ -129,20 +131,14 @@ const GraficoTipoDoacao = (props) => {
 
     series: [
       {
-        name: idioma.percentual,
-        data: [["Dinheiro", 62],
-        ["Produtos", 32],
-        ["Serviços", 5],
-        ["Estrutura", 1],
-        ["Isenção de tarifas", 1]],
+        data: [],
 
         dataLabels: {
           inside: false,
           enabled: true,
           rotation: -90,
           color: "#222222",
-
-          y: -45, // 10 pixels down from the top
+          y: -45,
           style: {
             fontSize: "1em",
             fontFamily: "rubik, sans-serif",
@@ -154,29 +150,6 @@ const GraficoTipoDoacao = (props) => {
       },
     ],
   });
-
-  // const updateChartWhatsSeries = () => {
-  //   setChartOptions({
-  //     xAxis: {
-  //       categories: categories
-  //     },
-  //     series: [{
-  //       name: idioma.legendaDoacoes,
-  //       data: seriesDonations
-  //     }, {
-  //       name: idioma.legendaDoadores,
-  //       data: seriesDonnors
-  //     }]
-
-  //   })
-
-  // }
-
-
-
-  //   Verifica o idima do site de acordo com a URL, depois altera as informações do gráfico de acordo com o idioma
-  // Altera os parametros quando o site estiver em ingles, os dados são buscados na URL
-
 
   const [chartChartWhereOptions, setChartWhereOptions] = useState({
     chart: {
@@ -193,9 +166,7 @@ const GraficoTipoDoacao = (props) => {
     },
     plotOptions: {
       formatter: function () {
-        if (window.screen.width >= 1024) {
           return this.value + "%";
-        }
       },
       series: {
         groupPadding: 0,
@@ -239,11 +210,7 @@ const GraficoTipoDoacao = (props) => {
           width: 9,
         },
         formatter: function () {
-          if (window.screen.width >= 1024) {
             return this.value + "%";
-          } else {
-            return "";
-          }
         },
       },
     },
@@ -257,14 +224,7 @@ const GraficoTipoDoacao = (props) => {
     series: [
       {
         name: idioma.percentual,
-        data: [["Doação para pessoa jurídica", 58],
-        ["Doação para instituto/fundação própria", 23],
-        ["Doação para pessoa física", 9],
-        ["Doação para fundo filantrópico", 6],
-        ["Doação para campanha de financiamento coletivo", 4]
-        ["Doação por meio de live na internet", 0]
-        ],
-
+        data: [],
         dataLabels: {
           inside: false,
           enabled: true,
@@ -299,9 +259,7 @@ const GraficoTipoDoacao = (props) => {
     },
     plotOptions: {
       formatter: function () {
-        if (window.screen.width >= 1024) {
           return this.value + "%";
-        }
       },
       series: {
         groupPadding: 0,
@@ -333,7 +291,6 @@ const GraficoTipoDoacao = (props) => {
       title: {
         text: "",
       },
-
       gridLineDashStyle: "Dash",
       lineWidth: 2,
       lineColor: "#222222",
@@ -345,11 +302,7 @@ const GraficoTipoDoacao = (props) => {
           width: 9,
         },
         formatter: function () {
-          if (window.screen.width >= 1024) {
             return this.value + "%";
-          } else {
-            return "";
-          }
         },
       },
     },
@@ -363,19 +316,13 @@ const GraficoTipoDoacao = (props) => {
     series: [
       {
         name: idioma.percentual,
-        data: [["Saúde", 77],
-        ["Assistência Social", 19],
-        ["Educação", 5],
-        ["Cultura", 0],
-        ],
-
+        data: [],
         dataLabels: {
           inside: false,
           enabled: true,
           rotation: -90,
           color: "#222222",
-
-          y: -45, // 10 pixels down from the top
+          y: -45,
           style: {
             fontSize: "1em",
             fontFamily: "rubik, sans-serif",
@@ -388,15 +335,46 @@ const GraficoTipoDoacao = (props) => {
     ],
   });
 
+  const updateChartsData = () => {
+    setChartWhatsOptions({
+      xAxis: {
+        categories: categoriesChartWhats
+      },
+      series: [{
+        name: idioma.percentual,
+        data: seriesChartWhats
+      }]
+    })
 
+    setChartWhereOptions({
+      xAxis: {
+        categories: categoriesChartWhere
+      },
+      series: [{
+        name: idioma.percentual,
+        data: seriesChartWhere
+      }]
+    })
 
+    setChartToOptions({
+      xAxis: {
+        categories: categoriesChartTo
+      },
+      series: [{
+        name: idioma.percentual,
+        data: seriesChartTo
+      }]
+    })
+  }
+  
+
+  //   Verifica o idima do site de acordo com a URL, depois altera as informações do gráfico de acordo com o idioma
+  // Altera os parametros quando o site estiver em ingles, os dados são buscados na URL
   const formatValue = () => {
     const url_atual = window.location.pathname;
     if (url_atual !== "/pt") {
-      idioma.legendaDoacoes = 'Donations (in millions)';
-      idioma.legendaDoadores = 'Donors (in thousands)';
+      idioma.categoriesChart = 3;
       idioma.percentual = 'Percentage'
-      idioma.indiceDoacoes = 8;
       idioma.localeString = "en-US";
     }
   };
@@ -413,7 +391,7 @@ const GraficoTipoDoacao = (props) => {
           <FormattedMessage id="chart-whats" />
       </h2>
           <div className="chart-whats">
-            <HighchartsReact highcharts={Highcharts} options={chartChartWhatsOptions} />
+            <HighchartsReact highcharts={Highcharts} options={chartWhatsOptions} />
           </div>
         </div>
 
