@@ -12,7 +12,7 @@ h4 {
   color: #fff;
   margin-top: 0.313rem;
   font-size: 0.875rem;
-  font-family: 'Rubik', sans-serif;
+  font-family: "Rubik", sans-serif;
   font-weight: 500;
   margin-top: 20px;
 }
@@ -20,7 +20,7 @@ h4 {
 h2 {
   font-size: 27px;
   font-weight: 500;
-  font-family: 'Rubik', sans-serif;
+  font-family: "Rubik", sans-serif;
   margin: 8px 0 17px 0;
   text-align: center;
 }
@@ -37,18 +37,18 @@ h2 {
 }
 
 #doacoes,
-#doadores {
-  color: #4C87B1;
+#doadores,
+#money-campaign {
+  color: #4c87b1;
   font-weight: 500;
   font-size: 4rem;
-  font-family: 'Rubik', sans-serif;
+  font-family: "Rubik", sans-serif;
 }
 
-#img-center>img {
+#img-center > img {
   width: 50%;
   padding-top: 0.313rem;
 }
-
 
 #nvd {
   left: 0;
@@ -61,27 +61,27 @@ h2 {
   height: 15%;
 }
 
-#nv1{
+#nv1 {
   width: 25vw;
 }
-#money>#doa,
-#hand>#hand-p {
+#money > #doa,
+#hand > #hand-p {
   height: 4.688rem;
   width: 4.688rem;
-
   margin: 0 auto;
 }
 
-.total-campanhas{
+.total-campanhas {
   width: 100%;
 }
 
-#money, #hand{
+#money,
+#hand {
   height: 280px;
 }
 
 /*----------Class------------------*/
-.banner-container>#banner-content,
+.banner-container > #banner-content,
 #img-center {
   display: flex;
   flex-direction: row;
@@ -92,7 +92,6 @@ h2 {
 
 #img-center {
   padding-top: 0;
-  
 }
 /*----------------------------*/
 /*-----------Sections-cards----------------*/
@@ -111,9 +110,9 @@ h2 {
 
 .dados {
   padding: 10px 0 5px 0;
-  color: #408EC5;
+  color: #408ec5;
   font-size: 1.875;
-  font-family: 'Rubik', sans-serif;
+  font-family: "Rubik", sans-serif;
   font-weight: 600;
 }
 
@@ -121,20 +120,17 @@ h2 {
   width: 20%;
   min-height: 8rem;
   text-align: start;
-  margin: 1rem 0.48% 1rem 0.50%;
+  margin: 1rem 0.48% 1rem 0.5%;
   border-radius: 5px;
   background-color: #2c2b32;
-  padding: 0 0.70% 0 2%;
+  padding: 0 0.7% 0 2%;
   /* height: 203px; */
 }
-
 
 /*----------------------------*/
 /*-----------Mobil----------------*/
 /*----------------------------*/
 /*-----------ids-----------------*/
-
-
 
 @media only screen and (max-width: 425px) {
   h4 {
@@ -142,7 +138,7 @@ h2 {
   }
 
   h2 {
-    font-size: 1.580rem;
+    font-size: 1.58rem;
   }
 
   /*-----------ids-----------------*/
@@ -152,12 +148,12 @@ h2 {
   }
 
   #doacoes,
-  #doadores {
+  #doadores, #money-campaign {
     font-size: 2rem;
     text-align: center;
   }
 
-  #img-center>img {
+  #img-center > img {
     width: 100%;
   }
 
@@ -195,7 +191,6 @@ h2 {
   #nvd {
     margin-left: 15vw;
   }
-  
 
   #nv1 {
     width: 70vw;
@@ -203,14 +198,13 @@ h2 {
   }
 
   #nv2 {
-      width: 90vw;
-      margin: 0 auto;
-    }
+    width: 90vw;
+    margin: 0 auto;
+  }
 }
 
 /*----------Tablet------------------*/
 @media only screen and (max-width: 768px) {
-
   .container,
   #banner {
     width: 100%;
@@ -239,15 +233,11 @@ h2 {
   #nve {
     margin-left: 25vw;
   }
-
 }
-
-
 
 /*-----------Laptop----------------*/
 
 @media only screen and (max-width: 1024px) {
-
   .container,
   #banner {
     width: 100%;

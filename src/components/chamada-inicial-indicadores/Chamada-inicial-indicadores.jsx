@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
-//import React from "react";
 import "./Chamada-inicial-indicadores.css";
 import money from "../../assets/img/chamada-inicial-indicadores/money-bill.svg";
+import campaign from "../../assets/img/chamada-inicial-indicadores/money-campaign.svg";
 import hand from "../../assets/img/chamada-inicial-indicadores/hand-holding-money.svg";
 import nv2 from "../../assets/img/chamada-inicial-indicadores/Caminho49.svg";
 import nv1 from "../../assets/img/chamada-inicial-indicadores/Caminho59.svg";
 import centerImg from "../../assets/img/chamada-inicial-indicadores/Grupo1.svg";
 import loading from "../../assets/img/chamada-inicial-indicadores/loading.svg";
 import { FormattedMessage } from "react-intl";
-//import api from "../../services/API";
+
 
 const ChamadaInicialIndicadores = (props) => {
   //termos usados nos titulos da planilha
@@ -22,6 +22,7 @@ const ChamadaInicialIndicadores = (props) => {
     maiorLive: "",
     maiorCampanha: 0,
     cidadeMaiorDoacao: "",
+    totalGeralCampanhas: 0
   });
 
   // A const possui os valores iniciais que servirão de referencia para mudar os valores para dolar
@@ -46,8 +47,11 @@ const ChamadaInicialIndicadores = (props) => {
         totalSetor: props.valor["Consolidação"][8][0],
         maiorLive: maiorLive(props.valor["Lives"]),
         cidadeMaiorDoacao: cidadeMaisDoacoes(props.valor["Campanhas"]),
+        totalGeralCampanhas: totalGeral(props.valor["Campanhas"])
       });
       cidadeMaisDoacoes(props.valor["Campanhas"]);
+
+      totalGeral(props.valor["Campanhas"])
 
       // Torna o loading invisivel e o número visível
       setVisible({
@@ -137,7 +141,6 @@ const ChamadaInicialIndicadores = (props) => {
         item["Valor Captado"] > maiorDoacao &&
         !exclusionArray.includes(item["Organizador (a) / Beneficiário (a)"]) 
       ) {
-        console.log(item)
         maiorDoacao = item["Valor Captado"];
         maiorDoador = item;
       }
@@ -161,6 +164,16 @@ const ChamadaInicialIndicadores = (props) => {
       moeda.localeString = "en-US";
     }
   };
+
+  const totalGeral = (donations) => {
+    let total
+        donations.forEach( item => {
+      if (item["Organizador (a) / Beneficiário (a)"] === "Total Geral"){
+        total = Math.floor(item["Valor Captado"])
+      }  
+    })
+    return total
+  }
 
   return (
     <div id="container-chamada">
@@ -208,9 +221,9 @@ const ChamadaInicialIndicadores = (props) => {
 
             {/* Soma geral das campanhas  */}
             <div className="total-campanhas">
-              <img  src={hand} alt="doadores" />
-              <div id="doadores" style={visible.number}>
-                R$ 903.299.052
+              <img  src={campaign} alt="doadores" />
+              <div id="money-campaign" style={visible.number}>
+              {moeda.simbolo} {formatNumber(valores.totalGeralCampanhas)}
               </div>
               <div style={visible.loading}>
                 <img src={loading} alt="imagem de loading" />

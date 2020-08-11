@@ -34,14 +34,14 @@ export default class App extends Component {
       <div className="App">
         <Menu />
         <ChamadaInicialIndicadores valor={this.state.newData} />
-        <ListaDoadores valor={this.state.newData["Doações"]} />
+        {/* <ListaDoadores valor={this.state.newData["Doações"]} />
         <EvolucaoSemanal valor={this.state.newData} />
         <GraficoTipoDoacao valor={this.state.newData} />
         <DoacaoSetoresHook valor={this.state.newData} />
         <GraficosIndicadores valor={this.state.newData} />
         <Blocoinfo valor={this.state.newData} /> 
         <BlocoInfoDois /> 
-        <Footer />
+        <Footer /> */}
       </div>
     );
   }

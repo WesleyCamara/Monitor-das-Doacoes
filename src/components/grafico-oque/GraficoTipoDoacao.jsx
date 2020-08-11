@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
-import moment from 'moment';
 
 import "./GraficoTipoDoacao.css";
 import { FormattedMessage } from "react-intl";

@@ -49,7 +49,6 @@ const EvolucaoSemanal = (props) => {
         categorias.push(date)
       }
     })
-    console.log(categorias)
     return categorias
   }
 
