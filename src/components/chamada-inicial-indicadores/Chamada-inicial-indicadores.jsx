@@ -12,13 +12,15 @@ import { FormattedMessage } from "react-intl";
 
 const ChamadaInicialIndicadores = (props) => {
   //termos usados nos titulos da planilha
-  const exclusionArray = ["Total Campanhas Offline", "Doadores", "Campanhas acima de 22 milhões não são somadas para evitar duplicidade de contagem de doadores", "", "Total s/ Grandes Campanhas Offline", "Total Geral", "Total Geral s/ Grandes Campanhas", "Total Geral Doadores", "Total Campanhas Online"]
+  const exclusionArray = ["Total Campanhas Offline", "Doadores", "Campanhas acima de 22 milhões não são somadas para evitar duplicidade de contagem de doadores", "", "Total s/ Grandes Campanhas Offline", "Total Geral", "Total Geral s/ Grandes Campanhas", "Total Geral Doadores", 
+  "Total Campanhas Online", "Campanhas de Doação - Offline (mínimo 10 mil reais mobilizados)", "Campanhas"]
 
   // Guarda os valores "iniciais"
   const [valores, setValores] = useState({
     total: 0,
     totalDoadores: 0,
     totalSetor: "",
+    totalCampanhas: "",
     maiorLive: "",
     maiorCampanha: 0,
     cidadeMaiorDoacao: "",
@@ -30,6 +32,7 @@ const ChamadaInicialIndicadores = (props) => {
     acessoIndiceTotal: 1,
     simbolo: "R$",
     localeString: "pt-BR",
+    acessoTotalGeral: "Valor Captado"
   };
 
   // Alterna o loading entre visível ou não
@@ -47,11 +50,13 @@ const ChamadaInicialIndicadores = (props) => {
         totalSetor: props.valor["Consolidação"][8][0],
         maiorLive: maiorLive(props.valor["Lives"]),
         cidadeMaiorDoacao: cidadeMaisDoacoes(props.valor["Campanhas"]),
-        totalGeralCampanhas: totalGeral(props.valor["Campanhas"])
+        totalGeralCampanhas: totalGeral(props.valor["Campanhas"]),
+        totalCampanhas : totalCampanhas(props.valor["Campanhas"])
       });
       cidadeMaisDoacoes(props.valor["Campanhas"]);
+      totalGeral(props.valor["Campanhas"], moeda.acessoTotalGeral)
 
-      totalGeral(props.valor["Campanhas"])
+
 
       // Torna o loading invisivel e o número visível
       setVisible({
@@ -139,16 +144,36 @@ const ChamadaInicialIndicadores = (props) => {
     for (let item of array) {
       if (
         item["Valor Captado"] > maiorDoacao &&
-        !exclusionArray.includes(item["Organizador (a) / Beneficiário (a)"]) 
+        !exclusionArray.includes(item["Organizador (a) / Beneficiário (a)"])
       ) {
         maiorDoacao = item["Valor Captado"];
         maiorDoador = item;
       }
-      
+
     }
     return maiorDoador;
   };
 
+  const totalGeral = (donations) => {
+    let total
+    donations.forEach(item => {
+      if (item["Organizador (a) / Beneficiário (a)"] === "Total Geral") {
+        total = item
+      }
+    })
+    return total[moeda.acessoTotalGeral]
+  }
+
+  const totalCampanhas = (geral) => {
+    let total = 0
+    geral.forEach(item => {
+      if (!exclusionArray.includes(item.Campanhas)) {
+        total++
+      }
+    }
+    )
+    return total
+  }
   // Arredonda e formada o número de acordo com o idioma
   const formatNumber = (number) => {
     let formattedNumber = Math.round(number).toLocaleString(moeda.localeString);
@@ -162,18 +187,10 @@ const ChamadaInicialIndicadores = (props) => {
       moeda.acessoIndiceTotal = 2;
       moeda.simbolo = "$";
       moeda.localeString = "en-US";
+      moeda.acessoTotalGeral = "in Dollars"
     }
   };
 
-  const totalGeral = (donations) => {
-    let total
-        donations.forEach( item => {
-      if (item["Organizador (a) / Beneficiário (a)"] === "Total Geral"){
-        total = Math.floor(item["Valor Captado"])
-      }  
-    })
-    return total
-  }
 
   return (
     <div id="container-chamada">
@@ -221,16 +238,16 @@ const ChamadaInicialIndicadores = (props) => {
 
             {/* Soma geral das campanhas  */}
             <div className="total-campanhas">
-              <img  src={campaign} alt="doadores" />
+              <img src={campaign} alt="doadores" />
               <div id="money-campaign" style={visible.number}>
-              {moeda.simbolo} {formatNumber(valores.totalGeralCampanhas)}
+                {moeda.simbolo} {formatNumber(valores.totalGeralCampanhas)}
               </div>
               <div style={visible.loading}>
                 <img src={loading} alt="imagem de loading" />
               </div>
               <h2>
-                <FormattedMessage id="banner-title-campaigns" />
-              </h2>
+                <FormattedMessage id="banner-title-campaigns" /> {valores.totalCampanhas}
+                {" "}<FormattedMessage id="banner-title-campaigns2" />              </h2>
             </div>
           </div>
           <div id="img-center">
