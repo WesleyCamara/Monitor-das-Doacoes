@@ -431,8 +431,8 @@ const GraficosIndicadores = (props) => {
                 </div>
               </div>
             </div>
-            <div className="linhas"></div>
-            <div className="indicators-subitem">
+            {/* <div className="linhas"></div> */}
+            {/* <div className="indicators-subitem">
               <div>
                 <img className="img-hand-money" src={handMoney}  alt="icone, mão segurando dinheiro"/>
               </div>
@@ -462,7 +462,7 @@ const GraficosIndicadores = (props) => {
                     </p>
                   </div>
 
-                  {/* <div className="biggest-donor">
+                  <div className="biggest-donor">
                     <p>
                       <FormattedMessage id="biggest-campaign" />:{" "}
                       {valores.maiorCampanha["Campanhas"]}
@@ -485,10 +485,10 @@ const GraficosIndicadores = (props) => {
                         %)
                       </span>
                     </p>
-                  </div> */}
+                  </div>
                 </div>
               </div>
-            </div>
+            </div> */}
             <div className="linhas"></div>
             <div className="indicators-subitem">
               <div>
