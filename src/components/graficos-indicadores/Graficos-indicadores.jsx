@@ -434,64 +434,6 @@ const GraficosIndicadores = (props) => {
             <div className="linhas"></div>
             <div className="indicators-subitem">
               <div>
-                <img className="img-hand-money" src={handMoney}  alt="icone, mão segurando dinheiro"/>
-              </div>
-              <div>
-                <div>
-                  <h3>
-                    <FormattedMessage id="donations-campaigns" />
-                  </h3>
-                  <h3>
-                    <span className="span-h3" style={visible.visibleStyle}>
-                      {moeda.simbolo} {formatNumber(valores.totalCampanhas)}
-                    </span>
-                  </h3>
-                </div>
-
-                <div className="indicators-subitem-doadores">
-                  <div className="total-doadores-div">
-                    <p className="total-doadores">
-                      <FormattedMessage id="total-donors" />
-                    </p>
-                    <p>
-                      <span style={visible.visibleStyle}>
-                        {formatNumber(
-                          valores.totalDoadoresCampanhas - valores.totalDoadores
-                        )}
-                      </span>
-                    </p>
-                  </div>
-
-                  {/* <div className="biggest-donor">
-                    <p>
-                      <FormattedMessage id="biggest-campaign" />:{" "}
-                      {valores.maiorCampanha["Campanhas"]}
-                    </p>
-                    <p>
-                      <span
-                        className="valor-doado"
-                        style={visible.visibleStyle}
-                      >
-                        {moeda.simbolo}{" "}
-                        {formatNumber(valores.maiorCampanha[moeda.valorDoado])}
-                      </span>
-                      <span style={visible.visibleStyle}>
-                        {" "}
-                        (
-                        {porcentagem(
-                          Number(valores.maiorCampanha[moeda.valorDoado]),
-                          Number(valores.totalCampanhas)
-                        )}
-                        %)
-                      </span>
-                    </p>
-                  </div> */}
-                </div>
-              </div>
-            </div>
-            <div className="linhas"></div>
-            <div className="indicators-subitem">
-              <div>
                 <img className="img-hand-money" src={handMoney}  alt="icone, mão segurando dinheiro" />
               </div>
               <div>
@@ -534,6 +476,7 @@ const GraficosIndicadores = (props) => {
                 </div>
               </div>
             </div>
+            
           </div>
         </div>
       </section>
