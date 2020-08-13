@@ -8,8 +8,10 @@ import BlocoInfoDois from "./components/blocoinfodois/Blocoinfodois";
 import ListaDoadores from "./components/lista-doadores/Lista-Doadores";
 import DoacaoSetoresHook from "./components/doacao-setores/DoacaoSetoresHook";
 import GraficosIndicadores from "./components/graficos-indicadores/Graficos-indicadores";
+import Imprensa from "./components/imprensa/Imprensa";
 
 import axios from "axios";
+
 
 export default class App extends Component {
   state = {
@@ -37,6 +39,7 @@ export default class App extends Component {
         <GraficosIndicadores valor={this.state.newData} />
         <Blocoinfo valor={this.state.newData} />
         <BlocoInfoDois />
+        <Imprensa valor={this.state.newData["Imprensa"]} />
         <Footer />
       </div>
     );
