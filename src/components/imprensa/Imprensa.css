@@ -1,28 +1,26 @@
-h2 {
-  font-size: 32px;
+.press {
+  margin: 100px 0;
+}
+
+.press h2 {
+  font-size: 2.2rem;
   text-align: left;
   color: #222222;
   width: 80%;
+  max-width: 1440px;
   padding: 10px;
   letter-spacing: -1px;
   margin: 50px auto 0;
   font-family: 'rubikbold';
 }
 
-.press {
-  margin: 50px 0;
-}
-
 .list {
-  /* column-gap: 10px;
-  -moz-column-gap: 10px; */
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
   width: 80%;
-  max-width: 1440px;
+  max-width: 1240px;
   margin: 20px auto 0;
-  /* columns: 50px 5; */
 }
 
 .list__item {
@@ -32,7 +30,7 @@ h2 {
   border-radius: 5px;
   box-shadow: 0px 0px 2px 0px #4C87B1;
   
-  width: 270px;
+  width: 15rem;
   height: 8rem;
   padding: 5px;
   transition: 0.2s;
@@ -43,8 +41,12 @@ h2 {
   justify-content: center;
   align-items: center;
 
-  /* animation-duration: 10s; */
   animation: sobe .5s;
+}
+
+.list__item:hover {
+  box-shadow: 0px 2px 2px 0px #4C87B1;
+  transform: scale(1.05);
 }
 
 @keyframes sobe {
@@ -52,27 +54,15 @@ h2 {
   100% { opacity: 1; margin-top: 20px;}
 }
 
-.list__item:hover {
-  /* box-shadow: 0px 2px 3px 0px #a7a7a7; */
-  /* background-color: #4C87B1; */
-  transform: scale(1.05);
-}
-
-.list p {
-  font-size: 1.2rem;
-  /* color: #000000; */
-  font-family: 'rubikregular';
-}
-
-.list p a:hover{
-  color: red;
+.press .list__item p {
+  font-size: 1rem;
 }
 
 .press .button {
   width: 18rem;
   margin: 20px auto;
   font-family: 'rubikbold';
-  font-size: 20px;
+  font-size: 1.2rem;
   text-transform: uppercase;
   letter-spacing: 1px;
   color: #4C87B1;
