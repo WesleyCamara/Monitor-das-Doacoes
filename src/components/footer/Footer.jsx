@@ -9,7 +9,7 @@ import facebook from "../../assets/img/footer/facebook.svg";
 import linkedin from "../../assets/img/footer/linkedin.svg";
 import youtube from "../../assets/img/footer/youtube.svg";
 import cocreare from "../../assets/img/footer/partner-cocreare.png";
-import anna from "../../assets/img/footer/partner-anna.png";
+import fundacao from "../../assets/img/footer/partner-fundacao.svg";
 import sitawi from "../../assets/img/footer/sitawi.svg";
 import { FormattedMessage } from "react-intl";
 
@@ -27,11 +27,11 @@ export default class Footer extends Component {
           <div className="partner-one"></div>
           <div className="partner-two">
             <a
-              href="https://anna.center/pt/home/"
+              href="https://fundacaojles.org.br/"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img src={anna} alt="anna" title="Anna" />
+              <img src={fundacao} alt="parceiro fundação jles" title="Fundação" />
             </a>
           </div>
           <div className="partner-three">
@@ -40,7 +40,7 @@ export default class Footer extends Component {
               target="_blank"
               rel="noopener noreferrer"
             >
-            <img src={cocreare} alt="cocreare" title="Cocreare" />
+            <img src={cocreare} alt="parceiro cocreare" title="Cocreare" />
             </a>
           </div>
           <div className="partner-four">
@@ -49,7 +49,7 @@ export default class Footer extends Component {
               target="_blank"
               rel="noopener noreferrer"
             >
-            <img src={sitawi} alt="sitawi" title="Sitawi" />
+            <img src={sitawi} alt="parceiro sitawi" title="Sitawi" />
             </a>
           </div>
         </div>
