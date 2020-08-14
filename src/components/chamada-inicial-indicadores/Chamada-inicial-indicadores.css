@@ -61,6 +61,11 @@ h2 {
   height: 15%;
 }
 
+#nve img {
+  width: 200px;
+  height: 200px;
+}
+
 #nv1{
   width: 25vw;
 }
