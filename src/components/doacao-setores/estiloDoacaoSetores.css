@@ -7,7 +7,7 @@
 
 .img-fundo-setor {
   position: absolute;
-  left: -70px;
+  left: -50px;
   top: -270px;
   z-index: -1;
   opacity: 100;
@@ -32,14 +32,15 @@
   width: 80%;
   max-width: 1440px;
   letter-spacing: -1px;
-  margin: 0 auto 40px;
+  margin: 0 auto 120px;
   font-family: 'rubikbold';
 }
 
 .container-setores {
   width: 100%;
+  max-width: 1800px;
   justify-content: center;
-  margin-bottom: 150px;
+  margin: 140px auto;
   position: relative;
   z-index: 1000;
 }
