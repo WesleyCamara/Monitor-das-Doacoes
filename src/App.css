@@ -2,6 +2,44 @@
   text-align: center;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+input,
+button,
+textarea {
+  font: 400 1.6rem "rubikregular";
+}
+
+.estiloBtn{
+  width: 12rem;
+  height: 4rem;
+  margin: 60px auto;
+  transition: ease .2s;
+
+  border: none;
+  background-color: #4C87B1;
+  border-radius: 5px;
+  
+  font-family: 'rubikmedium';
+  word-spacing: 5px;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  color: #ffffff;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.estiloBtn:hover {
+  background-color: #4c94b1;
+}
 
 
 
