@@ -1,11 +1,11 @@
 .ranking-container {
   font-family: "Rubik", sans-serif;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-wrap: wrap;
   width: 100%;
   margin: 0 auto;
-  padding: 60px 5%;
+  padding: 60px;
   background-color: #222222;
 }
 
@@ -68,8 +68,6 @@ table thead td{
   border-bottom: 2px solid #408ec5;
 }
 
-
-
 .campanhas-arrecadacao tbody tr:last-child,
 .campanhas-doadores tbody tr:last-child {
   border-bottom: #222222;
@@ -85,3 +83,80 @@ table thead td{
 }
 
 
+@media only screen and (max-width: 1440px) {
+  .campanhas-doadores{
+    margin-top: 60px;
+    flex-direction: column;
+  }
+  .campanhas-arrecadacao{
+  width: 100%;
+}
+.campanhas-doadores{
+  width: 100%;
+}
+
+table {
+  width: 80%;
+  margin: 0 auto
+}
+}
+
+@media only screen and (max-width: 1024px) {
+  table {
+    width: 90%;
+    margin: 0 auto
+  }
+
+  .cabecalho td:last-child {
+    text-align: center;
+  }
+
+  .campanhas-arrecadacao td:last-child,
+.campanhas-doadores td:last-child,
+.cabecalho td:last-child {
+  border-left: none;
+}
+
+.tabela-linha td:last-child {
+  text-align: right;
+}
+}
+
+@media only screen and (max-width: 768px) {
+  table {
+    width: 100%;
+    margin: 0 auto
+  }
+  .campanhas-arrecadacao tbody td:last-child, .campanhas-doadores tbody td:last-child {
+    padding-left: 0;
+    padding-right: 0;
+    width: 20vw;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .ranking-container{
+    padding: 60px 5%;
+  }
+
+  .campanhas-arrecadacao thead,
+.campanhas-doadores thead {
+  width: 100%;
+  font-size: 16px;
+}
+
+.campanhas-arrecadacao tbody,
+.campanhas-doadores tbody {
+  width: 100%;
+  font-size: 12px;
+}
+
+.campanhas-arrecadacao tbody td:last-child{
+  width: 30vw;
+}
+
+.campanhas-doadores tbody td:last-child, .campanhas-doadores thead td:last-child{
+  width: 5vw;
+  padding-left: 5px;
+}
+}
