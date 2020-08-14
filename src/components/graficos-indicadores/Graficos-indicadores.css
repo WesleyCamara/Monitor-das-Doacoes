@@ -39,6 +39,7 @@ indicators ---------------------  */
   width: 50%;
   padding-left: 10%;
   border-radius: 5px;
+  padding-bottom: 50px;
 }
 
 .chart {

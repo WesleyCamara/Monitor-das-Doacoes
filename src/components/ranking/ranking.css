@@ -1,0 +1,87 @@
+.ranking-container {
+  font-family: "Rubik", sans-serif;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 0 auto;
+  padding: 60px 5%;
+  background-color: #222222;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+table thead td{
+  height: 70px;
+  vertical-align: top;
+}
+
+.campanhas-arrecadacao thead,
+.campanhas-doadores thead {
+  width: 45%;
+  font-family: "Rubik", sans-serif;
+  font-weight: 500;
+  color: #408ec5;
+  font-size: 30px;
+  text-transform: uppercase;
+  margin-bottom: 100px;
+}
+
+.cabecalho td:first-child {
+  padding-right: 10px;
+}
+
+.cabecalho td:last-child {
+  text-align: left;
+}
+
+.campanhas-arrecadacao tbody,
+.campanhas-doadores tbody {
+  width: 45%;
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 20px;
+  line-height: 35px;
+}
+
+.campanhas-arrecadacao tbody td,
+.campanhas-doadores tbody td{
+  padding-right: 20px;
+}
+
+.campanhas-arrecadacao tbody td:last-child,
+.campanhas-doadores tbody td:last-child{
+  letter-spacing: 1px;
+}
+.campanhas-arrecadacao td:last-child,
+.campanhas-doadores td:last-child,
+.cabecalho td:last-child {
+  border-left: 2px solid rgba(64, 142, 197, 0.3);
+  padding-left: 20px;
+}
+
+.campanhas-arrecadacao tbody tr,
+.campanhas-doadores tbody tr {
+  border-bottom: 2px solid #408ec5;
+}
+
+
+
+.campanhas-arrecadacao tbody tr:last-child,
+.campanhas-doadores tbody tr:last-child {
+  border-bottom: #222222;
+}
+
+.campanhas-arrecadacao td,
+.campanhas-doadores {
+  text-align: left;
+}
+
+.tabela-linha td:last-child {
+  text-align: left;
+}
+
+

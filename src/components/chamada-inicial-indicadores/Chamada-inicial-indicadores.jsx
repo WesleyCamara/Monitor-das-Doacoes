@@ -149,7 +149,6 @@ const ChamadaInicialIndicadores = (props) => {
         maiorDoacao = item["Valor Captado"];
         maiorDoador = item;
       }
-
     }
     return maiorDoador;
   };

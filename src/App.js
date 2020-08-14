@@ -10,6 +10,7 @@ import EvolucaoSemanal from "./components/evolucao-semanal/EvolucaoSemanal"
 import DoacaoSetoresHook from "./components/doacao-setores/DoacaoSetoresHook";
 import GraficosIndicadores from "./components/graficos-indicadores/Graficos-indicadores";
 import GraficoTipoDoacao from "./components/grafico-oque/GraficoTipoDoacao"
+import Ranking from "./components/ranking/ranking"
 
 import axios from "axios";
 
@@ -32,14 +33,14 @@ export default class App extends Component {
   render() {
     return (
       <div className="App">
-        <Menu />
+<Menu />
         <ChamadaInicialIndicadores valor={this.state.newData} />
         <ListaDoadores valor={this.state.newData["Doações"]} />
         <EvolucaoSemanal valor={this.state.newData} />
         <GraficoTipoDoacao valor={this.state.newData} />
         <DoacaoSetoresHook valor={this.state.newData} />
         <GraficosIndicadores valor={this.state.newData} />
-        {/* <Blocoinfo valor={this.state.newData} />  */}
+        <Ranking valor={this.state.newData}/>
         <BlocoInfoDois /> 
         <Footer />
       </div>
