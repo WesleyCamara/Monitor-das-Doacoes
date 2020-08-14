@@ -324,15 +324,17 @@ const DoacaoSetoresHook = (props) => {
         )}
       </div>
 
-      <a
+      
+        <div >
+        <a className="estiloBtn"
         href="https://docs.google.com/spreadsheets/d/1RA0oP9EBHxpsLGvHTaX2TTYHT2oQHTfNrM8Z40hqVus/edit#gid=816672137"
         target="_blank"
         rel="noopener noreferrer"
       >
-        <button className="estiloBtn">
           <FormattedMessage id="chart-indicators-button" />
-        </button>
-      </a>
+          </a>
+        </div>
+      
       <div>
         <img className="square-shape2" src={squareShapes2} alt="imagem de fundo"/>
       </div>
