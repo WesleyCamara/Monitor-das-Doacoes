@@ -7,29 +7,43 @@ import "./EvolucaoSemanal.css";
 import { FormattedMessage } from "react-intl";
 
 const EvolucaoSemanal = (props) => {
-  let seriesDoacoes = []
-  let seriesDoadores = []
-  let categories = []
+  // let seriesDoacoes = []
+  // let seriesDoadores = []
+  // let categories = []
 
   // A const possui os valores iniciais que servirão de referencia para mudar os valores para dolar
-  const idioma = {
+  const [idioma, setIdioma] = useState({
     legendaDoacoes: 'Doações (em milhões)',
     legendaDoadores: 'Doadores (em milhares)',
     indiceDoacoes: 2,
     indiceDoadores: 3,
     localeString: "pt-BR",
-  };
+  });
+
+  const [series, setSeries] = useState ({
+    seriesDoacoes : [],
+    seriesDoadores: [],
+    categories: []
+  }
+  )
 
 
 
   useEffect(() => {
     if (props.valor.status === "ok") {
-      seriesDoacoes = chartSeries(props.valor["Gráficos"], idioma.indiceDoacoes)
-      seriesDoadores = chartSeries(props.valor["Gráficos"], idioma.indiceDoadores)
-      categories = chartCategories(props.valor["Gráficos"])
-      updateSeries()
+      setSeries ({
+        ...series,
+        seriesDoacoes : chartSeries(props.valor["Gráficos"], idioma.indiceDoacoes),
+        seriesDoadores: chartSeries(props.valor["Gráficos"], idioma.indiceDoadores),
+        categories: chartCategories(props.valor["Gráficos"])
+      })
+      formatValue()
     }
   }, [props]);
+
+  useEffect(() => {
+    updateSeries()
+  }, [series.seriesDoacoes])
 
   const chartSeries = (values, index) => {
     let final = []
@@ -94,35 +108,34 @@ const EvolucaoSemanal = (props) => {
   const updateSeries = () => {
     setChartOptions({
       xAxis: {
-        categories: categories
+        categories: series.categories
       },
       series: [{
         name: idioma.legendaDoacoes,
-        data: seriesDoacoes
+        data: series.seriesDoacoes
       }, {
         name: idioma.legendaDoadores,
-        data: seriesDoadores
+        data: series.seriesDoadores
       }]
 
     })
 
   }
 
-
-
   //   Verifica o idima do site de acordo com a URL, depois altera as informações do gráfico de acordo com o idioma
   // Altera os parametros quando o site estiver em ingles, os dados são buscados na URL
   const formatValue = () => {
     const url_atual = window.location.pathname;
     if (url_atual !== "/pt") {
-      idioma.legendaDoacoes = 'Donations (in millions)';
-      idioma.legendaDoadores = 'Donors (in thousands)';
-      idioma.indiceDoacoes = 8;
-      idioma.localeString = "en-US";
+      setIdioma({
+        legendaDoacoes: 'Donations (in millions)',
+        legendaDoadores: 'Donors (in thousands)',
+        indiceDoacoes: 8,
+        localeString: "en-US"
+      })
     }
   };
 
-  formatValue()
   return (
 
     <div className="container-setores">
