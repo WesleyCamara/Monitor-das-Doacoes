@@ -7,8 +7,9 @@
 
 .section-chart-container {
   width: 100%;
+  max-width: 1440px;
   color: #222222;
-  margin: 0;
+  margin: 0 auto;
 }
 
 /* Coloca os elementos lado a lado  */
@@ -20,12 +21,15 @@
 title dos dois itens  */
 .indicators-title,
 .chart-title {
-  font-size: 50px;
-  line-height: 60px;
-  margin-top: 140px;
-  margin-bottom: 86px;
-  font-family: "rubikbold";
+  font-size: 2.2rem;
   text-align: left;
+  color: #222222;
+  width: 80%;
+  max-width: 1440px;
+  padding: 10px;
+  letter-spacing: -1px;
+  margin: 50px auto 80px;
+  font-family: 'rubikbold';
 }
 
 .section-chart-container .chart-title {
@@ -77,7 +81,7 @@ indicators ---------------------  */
 .section-chart-container h3,
 .span-h3 {
   font-family: "rubikregular";
-  font-size: 34px;
+  font-size: 1.8rem;
   line-height: 44px;
   margin-bottom: 16px;
   text-align: left;
@@ -218,7 +222,7 @@ indicators ---------------------  */
 
   .section-chart-container .indicators-title,
   .section-chart-container .chart-title {
-    font-size: 50px;
+    font-size: 2rem;
     margin-top: 100px;
     margin-bottom: 20px;
     text-align: left;

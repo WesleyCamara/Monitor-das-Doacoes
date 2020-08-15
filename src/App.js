@@ -11,8 +11,10 @@ import DoacaoSetoresHook from "./components/doacao-setores/DoacaoSetoresHook";
 import GraficosIndicadores from "./components/graficos-indicadores/Graficos-indicadores";
 import GraficoTipoDoacao from "./components/grafico-oque/GraficoTipoDoacao"
 import Ranking from "./components/ranking/ranking"
+import Imprensa from "./components/imprensa/Imprensa";
 
 import axios from "axios";
+
 
 export default class App extends Component {
   state = {
@@ -41,7 +43,9 @@ export default class App extends Component {
         <DoacaoSetoresHook valor={this.state.newData} />
         <GraficosIndicadores valor={this.state.newData} />
         <Ranking valor={this.state.newData} />
-        <BlocoInfoDois /> 
+        <Blocoinfo valor={this.state.newData} />
+        <BlocoInfoDois />
+        <Imprensa valor={this.state.newData["Imprensa"]} />
         <Footer />
       </div>
     );

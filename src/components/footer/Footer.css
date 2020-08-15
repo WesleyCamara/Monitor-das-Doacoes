@@ -3,30 +3,32 @@
     height: auto;
     display: flex;
     flex-direction: column;
-    padding-top: 100px;
+    padding-top: 80px;
     background: #F7F7F7;
-}
-
-.partner-title {
-  width: 50%;
-  margin-left: 6%;
+    margin-top: 100px;
 }
 
 .partner-title h3 {
-  font-family: "rubikbold";
-  font-size: 40px;
+  font-size: 2.2rem;
   text-align: left;
   color: #222222;
+  width: 80%;
+  max-width: 1440px;
+  /* padding: 10px; */
+  letter-spacing: -1px;
+  margin: 0 auto;
+  font-family: 'rubikbold';
 }
 
 .partner {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
+  max-width: 1440px;
   justify-content: space-around;
   align-items: center;
   padding: 20px 0;
-  margin-bottom: 50px;
+  margin: 0 auto 40px;
 }
 
 .partner-one img,
@@ -64,8 +66,7 @@
 .footer-title h3 {
   color: #fff;
   text-transform: uppercase;
-  font-family: 'rubikmedium';
-  font-size: 16px;
+  font-size: 1rem;
   letter-spacing: 5px;
   margin: 10px auto;
   text-align: center;

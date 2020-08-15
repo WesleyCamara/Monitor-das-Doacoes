@@ -1,16 +1,18 @@
 .container-menu {
     min-width: 100%;
-    height: 129px;
+    height: 110px;
     background: #F3F3F3;
     margin: 0;
     display: flex;
     position: fixed;
     top: 0;
     z-index: 2000;
+    box-shadow: 0 0 3px 0 #979797;
 }
 
 .menu {
     width: 80%;
+    max-width: 1440px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
@@ -22,8 +24,12 @@
     align-items: center;
 }
 
+.menu-title img {
+    width: 14rem;
+}
+
 .menu-title h1 {
-    font-size: 24px;
+    font-size: 1.4rem;
     font-family: 'rubikmedium';
     min-width: 120px;
 }
@@ -36,7 +42,7 @@
 }
 
 .menu-language a {
-    font-size: 24px;
+    font-size: 1.4rem;
     font-family: 'rubikmedium';
     color: #222222;
     text-decoration: none;
@@ -87,14 +93,15 @@
     .menu-title img {
         width: 120px;
     }
+    .menu-title h1 {
+        font-size: 1.1rem;
+        font-family: 'rubikmedium';
+        min-width: 120px;
+    }
 }
 
 @media only screen and (max-width: 320px) {
     .menu-title {
         flex-direction: column;
-    }
-
-    .menu-title h1 {
-        font-size: 20px;
     }
 }
