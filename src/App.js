@@ -43,7 +43,6 @@ export default class App extends Component {
         <DoacaoSetoresHook valor={this.state.newData} />
         <GraficosIndicadores valor={this.state.newData} />
         <Ranking valor={this.state.newData} />
-        {/* <Blocoinfo valor={this.state.newData} /> */}
         <BlocoInfoDois />
         <Imprensa valor={this.state.newData["Imprensa"]} />
         <Footer />
