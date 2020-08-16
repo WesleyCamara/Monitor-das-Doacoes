@@ -417,14 +417,14 @@ const GraficoTipoDoacao = (props) => {
 
 
 
-      <a
+      <a className="estiloBtn"
         href="https://docs.google.com/spreadsheets/d/1RA0oP9EBHxpsLGvHTaX2TTYHT2oQHTfNrM8Z40hqVus/edit#gid=816672137"
         target="_blank"
         rel="noopener noreferrer"
       >
-        <button className="estiloBtn">
+        {/* <button > */}
           <FormattedMessage id="chart-indicators-button" />
-        </button>
+        {/* </button> */}
       </a>
 
     </div>
