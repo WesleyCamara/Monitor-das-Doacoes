@@ -1,5 +1,5 @@
 .container-menu {
-    min-width: 100%;
+    width: 100%;
     height: 110px;
     background: #F3F3F3;
     margin: 0;
@@ -80,8 +80,7 @@
     
 }
 
-@media only screen and (max-width: 450px) {
-    
+@media only screen and (max-width: 450px) { 
     .menu {
         width: 95%;
     }
@@ -101,7 +100,23 @@
 }
 
 @media only screen and (max-width: 320px) {
+    .container-menu {
+        /* border: solid red;*/
+        width: 100%; 
+    }
+
     .menu-title {
         flex-direction: column;
     }
+
+    .menu-language {
+        display: flex;
+        flex-direction: column;
+        height: 70px;
+    }
+
+    /* .menu-language a {
+        margin-top: 30px;
+        border: solid green;
+    } */
 }
