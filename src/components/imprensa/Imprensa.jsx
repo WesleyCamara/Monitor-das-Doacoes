@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { FormattedMessage } from "react-intl";
 import "../imprensa/Imprensa.css";
 
 // import styled from 'styled-components';
@@ -84,7 +84,7 @@ const Imprensa = ({valor}) => {
     <>
     <div className="press">
     <h2>
-      O Monitor na imprensa
+    <FormattedMessage id="press-title" />
     </h2>
     
 
@@ -93,7 +93,7 @@ const Imprensa = ({valor}) => {
     </div>
     
     <div className="button" onClick={() => setContador(contador + 4)}>
-+ Carregar Mais
++ <FormattedMessage id="load-more" />
     </div>
       {/* {materia.materia && materia.materia.map ((valor, index) => (
         <div key={index}>
