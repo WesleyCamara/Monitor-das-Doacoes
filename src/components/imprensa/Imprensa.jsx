@@ -33,11 +33,12 @@ const Imprensa = ({valor}) => {
     let saidaDados = [];
     valor && valor.map ((materia) => {
       saidaDados.push({
-        veiculo: materia["1"],
-        link: materia["3"],
+        titulo: materia["1"],
+        veiculo: materia["2"],
+        link: materia["4"],
       });
     })
-    return saidaDados
+    return saidaDados.reverse();
   } 
 
   console.log("Materia", materia["0"]);
@@ -48,14 +49,14 @@ const Imprensa = ({valor}) => {
   materia["0"] && materia["0"].map ((valor) => {
     if (listaObject.length < contador) { 
     listaObject.push({
+      titulo: valor.titulo,
       veiculo: valor.veiculo,
       link: valor.link
     })
   }})
 
-  // console.log("Lista:", lista)
-
   let lista = []
+
   
   for (var value of listaObject) {
     lista = 
@@ -66,6 +67,7 @@ const Imprensa = ({valor}) => {
       <div className="list__item">
       
       <p>{valor.veiculo}</p>
+      <p>"{valor.titulo}"</p>
       
       </div>
       </a>
