@@ -7,8 +7,9 @@
 
 .img-fundo-setor {
   position: absolute;
+  height: 800px;
   left: -50px;
-  top: -270px;
+  top: -100px;
   z-index: -1;
   opacity: 100;
 }
