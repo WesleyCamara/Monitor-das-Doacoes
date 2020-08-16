@@ -100,16 +100,20 @@
   justify-content: space-around;
   flex-wrap: wrap;
   margin: 0 auto;
-  width: 80%;
+  width: 70%;
 }
 
-.container-final img {
-  margin: 50px;
+.container-final img:first-child {
+  margin-bottom: 50px;
 }
 
+.doar img {
+  width: 240px;
+}
 .qrcode img {
-  width: 170px;
+  width: 180px;
 }
+
 
 /* Responsivo  */
 
@@ -170,7 +174,7 @@
 
 @media screen and (max-width: 450px) {
   .container-fundo {
-    height: 1800px;
+    height: 1650px;
   }
 
   .text__title h1 {
@@ -186,11 +190,17 @@
 
 @media screen and (max-width: 375px) {
   .container-fundo {
-    height: 1980px;
+    height: 1880px;
   }
 }
 @media screen and (max-width: 320px) {
   .container-fundo {
-    height: 2300px;
+    height: 2100px;
+  }
+}
+
+@media screen and (max-width: 280px) {
+  .container-fundo {
+    height: 2400px;
   }
 }

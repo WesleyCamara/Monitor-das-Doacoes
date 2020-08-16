@@ -79,7 +79,6 @@ export default class BlocoInfoDois extends Component {
         <div className="container-final">
           <div className="doar">
             <a
-              className="email"
               href="https://www.diadedoar.org.br/"
               target="_blank"
               rel="noopener noreferrer"
@@ -89,7 +88,6 @@ export default class BlocoInfoDois extends Component {
           </div>
           <div className="qrcode">
             <a
-              className="email"
               href="https://www.paypal.com/donate/?token=1bQivV0Os67wJQiuN9aFb59wqVx0KPQ44Z_CG-3nk-qiwMF8EmdXAyvQUlIEyxMp8DwMYG&country.x=BR&locale.x=BR"
               target="_blank"
               rel="noopener noreferrer"
