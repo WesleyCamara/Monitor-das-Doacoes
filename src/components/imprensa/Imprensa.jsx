@@ -1,6 +1,7 @@
 import React from 'react';
 import { FormattedMessage } from "react-intl";
 import "../imprensa/Imprensa.css";
+import Loading from '../../assets/img/lista-doadores/loading.svg';
 
 // import styled from 'styled-components';
 
@@ -21,12 +22,20 @@ const Imprensa = ({valor}) => {
 
   const [materia, setMateria] = React.useState("");
   const [contador, setContador] = React.useState(8);
-  // const [lista, setLista] = React.useState("");
+  // Alterna o loading entre visível ou não
+  const [visible, setVisible] = React.useState({
+    Loading: { display: "block" },
+  });
 
   React.useEffect(() => {
     setMateria([
       dados(valor)
     ])
+    if(materia !== "") {
+      setVisible({
+        Loading: { display: "none" },
+      });
+    }
   }, [valor]);
 
   const dados = (valor) => {
@@ -53,7 +62,8 @@ const Imprensa = ({valor}) => {
       veiculo: valor.veiculo,
       link: valor.link
     })
-  }})
+  }
+})
 
   let lista = []
 
@@ -72,8 +82,8 @@ const Imprensa = ({valor}) => {
       </div>
       </a>
       </div>
-    
-    ))};
+    )) 
+  };
 
     React.useEffect(() => {
       setContador(contador
@@ -91,18 +101,15 @@ const Imprensa = ({valor}) => {
     
 
     <div className="list">
-    {lista} 
+    {lista}
+    </div>
+    <div style={visible.Loading}>
+    <img src={Loading} alt="imagem de loading" />
     </div>
     
     <div className="button" onClick={() => setContador(contador + 4)}>
 + <FormattedMessage id="load-more" />
     </div>
-      {/* {materia.materia && materia.materia.map ((valor, index) => (
-        <div key={index}>
-        <p>Veículo: {valor.veiculo}</p>
-        <p>Acesse a notícia clicando <a href={valor.link} target="_blank"> AQUI </a> </p>
-        </div>
-        ))}; */}
     </div>
     <div>
     
