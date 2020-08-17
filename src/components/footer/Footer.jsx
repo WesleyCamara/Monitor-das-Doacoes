@@ -160,7 +160,7 @@ export default class Footer extends Component {
               >
                 <img src={facebook} alt="facebook" />
               </a>
-              <a href="#" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.linkedin.com/company/abcr/" target="_blank" rel="noopener noreferrer">
                 <img src={linkedin} alt="linkedin" />
               </a>
               <a

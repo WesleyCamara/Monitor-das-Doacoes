@@ -43,7 +43,7 @@ const DoacaoSetoresHook = (props) => {
         dataLabels: {
           connectorShape: "crookedLine",
           connectorColor: "gray",
-          format: "{point.name}, {point.y:,.0f} ",
+          format: "{point.name}, {point.y:,.0f}%",
           style: {
             fontSize: "16px",
             fontFamily: "rubik, sans-serif",
@@ -66,7 +66,7 @@ const DoacaoSetoresHook = (props) => {
                 dataLabels: {
                   connectorShape: "crookedLine",
                   connectorColor: "gray",
-                  format: "{point.name}, {point.y:,.0f} ",
+                  format: "{point.name}, {point.y:,.0f}%",
                   style: {
                     fontSize: "8px",
                     fontFamily: "rubik, sans-serif",
@@ -111,7 +111,7 @@ const DoacaoSetoresHook = (props) => {
         allowPointSelect: true,
         cursor: "pointer",
         dataLabels: {
-          format: "{point.name}, {point.y:,.0f} ",
+          format: "{point.name}, {point.y:,.0f}%",
           connectorShape: "crookedLine",
           connectorColor: "gray",
           style: {
@@ -136,7 +136,7 @@ const DoacaoSetoresHook = (props) => {
                 dataLabels: {
                   connectorShape: "crookedLine",
                   connectorColor: "gray",
-                  format: "{point.name}, {point.y:,.0f} ",
+                  format: "{point.name}, {point.y:,.0f}%",
                   style: {
                     fontSize: "8px",
                     fontFamily: "rubik, sans-serif",
@@ -171,55 +171,55 @@ const DoacaoSetoresHook = (props) => {
           data: [
             {
               name: props.valor.Consolidação[11][6],
-              y: Math.round(props.valor.Consolidação[11][7]),
+              y: Math.round(props.valor.Consolidação[11][8]*100),
             },
             {
               name: props.valor.Consolidação[12][6],
-              y: Math.round(props.valor.Consolidação[12][7]),
+              y: Math.round(props.valor.Consolidação[12][8]*100),
             },
             {
               name: props.valor.Consolidação[13][6],
-              y: Math.round(props.valor.Consolidação[13][7]),
+              y: Math.round(props.valor.Consolidação[13][8]*100),
             },
             {
               name: props.valor.Consolidação[14][6],
-              y: Math.round(props.valor.Consolidação[14][7]),
+              y: Math.round(props.valor.Consolidação[14][8]*100),
             },
             {
               name: props.valor.Consolidação[15][6],
-              y: Math.round(props.valor.Consolidação[15][7]),
+              y: Math.round(props.valor.Consolidação[15][8]*100),
             },
             {
               name: props.valor.Consolidação[16][6],
-              y: Math.round(props.valor.Consolidação[16][7]),
+              y: Math.round(props.valor.Consolidação[16][8]*100),
             },
             {
               name: props.valor.Consolidação[17][6],
-              y: Math.round(props.valor.Consolidação[17][7]),
+              y: Math.round(props.valor.Consolidação[17][8]*100),
             },
             {
               name: props.valor.Consolidação[18][6],
-              y: Math.round(props.valor.Consolidação[18][7]),
+              y: Math.round(props.valor.Consolidação[18][8]*100),
             },
             {
               name: props.valor.Consolidação[19][6],
-              y: Math.round(props.valor.Consolidação[19][7]),
+              y: Math.round(props.valor.Consolidação[19][8]*100),
             },
             {
               name: props.valor.Consolidação[20][6],
-              y: Math.round(props.valor.Consolidação[20][7]),
+              y: Math.round(props.valor.Consolidação[20][8]*100),
             },
             {
               name: props.valor.Consolidação[21][6],
-              y: Math.round(props.valor.Consolidação[21][7]),
+              y: Math.round(props.valor.Consolidação[21][8]*100),
             },
             {
               name: props.valor.Consolidação[22][6],
-              y: Math.round(props.valor.Consolidação[22][7]),
+              y: Math.round(props.valor.Consolidação[22][8]*100),
             },
             {
               name: props.valor.Consolidação[23][6],
-              y: Math.round(props.valor.Consolidação[23][7]),
+              y: Math.round(props.valor.Consolidação[23][8]*100),
             },
           ],
         },
@@ -236,55 +236,55 @@ const DoacaoSetoresHook = (props) => {
           data: [
             {
               name: props.valor.Consolidação[36][6],
-              y: Math.round(props.valor.Consolidação[36][7]),
+              y: Math.round(props.valor.Consolidação[36][8]*100),
             },
             {
               name: props.valor.Consolidação[37][6],
-              y: Math.round(props.valor.Consolidação[37][7]),
+              y: Math.round(props.valor.Consolidação[37][8]*100),
             },
             {
               name: props.valor.Consolidação[38][6],
-              y: Math.round(props.valor.Consolidação[38][7]),
+              y: Math.round(props.valor.Consolidação[38][8]*100),
             },
             {
               name: props.valor.Consolidação[39][6],
-              y: Math.round(props.valor.Consolidação[39][7]),
+              y: Math.round(props.valor.Consolidação[39][8]*100),
             },
             {
               name: props.valor.Consolidação[40][6],
-              y: Math.round(props.valor.Consolidação[40][7]),
+              y: Math.round(props.valor.Consolidação[40][8]*100),
             },
             {
               name: props.valor.Consolidação[41][6],
-              y: Math.round(props.valor.Consolidação[41][7]),
+              y: Math.round(props.valor.Consolidação[41][8]*100),
             },
             {
               name: props.valor.Consolidação[42][6],
-              y: Math.round(props.valor.Consolidação[42][7]),
+              y: Math.round(props.valor.Consolidação[42][8]*100),
             },
             {
               name: props.valor.Consolidação[43][6],
-              y: Math.round(props.valor.Consolidação[43][7]),
+              y: Math.round(props.valor.Consolidação[43][8]*100),
             },
             {
               name: props.valor.Consolidação[44][6],
-              y: Math.round(props.valor.Consolidação[44][7]),
+              y: Math.round(props.valor.Consolidação[44][8]*100),
             },
             {
               name: props.valor.Consolidação[45][6],
-              y: Math.round(props.valor.Consolidação[45][7]),
+              y: Math.round(props.valor.Consolidação[45][8]*100),
             },
             {
               name: props.valor.Consolidação[46][6],
-              y: Math.round(props.valor.Consolidação[46][7]),
+              y: Math.round(props.valor.Consolidação[46][8]*100),
             },
             {
               name: props.valor.Consolidação[47][6],
-              y: Math.round(props.valor.Consolidação[47][7]),
+              y: Math.round(props.valor.Consolidação[47][8]*100),
             },
             {
               name: props.valor.Consolidação[48][6],
-              y: Math.round(props.valor.Consolidação[48][7]),
+              y: Math.round(props.valor.Consolidação[48][8]*100),
             },
           ],
         },

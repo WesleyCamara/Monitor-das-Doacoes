@@ -90,11 +90,26 @@ const GraficoTipoDoacao = (props) => {
       labels: {
         useHTML: true,
         rotation: 0,
+
+        formatter: function () {
+          let item = this.value,
+            len = item.length;
+          if (len > 11) {
+            item = item.slice(0, 11) + "<br/>" + item.slice(11, len);
+          }
+
+          if (len > 11) {
+            item = item.slice(0, 50) + "...";
+          }
+
+          return item;
+        },
+
         style: {
           fontSize: "0.6em",
           fontFamily: "rubik, sans-serif",
           fontWeight: "400",
-          width: 30,
+          width: 60,
           padding: 0,
         },
       },
@@ -182,12 +197,28 @@ const GraficoTipoDoacao = (props) => {
       labels: {
         useHTML: true,
         rotation: 0,
+        align: 'center',
+        reserveSpace: true,
+
+        formatter: function () {
+          let item = this.value,
+            len = item.length;
+          if (len > 15) {
+            item = item.slice(0, 21) + "<br/>" + item.slice(21, len);
+          }
+          if (len > 30) {
+            item = item.slice(0, 39) + "...";
+          }
+          return item;
+        },
+
         style: {
           fontSize: "0.6em",
           fontFamily: "rubik, sans-serif",
           fontWeight: "400",
-          width: 30,
+          width: 60,
           padding: 0,
+          wordBreak: "breack-all",
         },
       },
     },
@@ -279,7 +310,7 @@ const GraficoTipoDoacao = (props) => {
           fontSize: "0.6em",
           fontFamily: "rubik, sans-serif",
           fontWeight: "400",
-          width: 30,
+          width: 60,
           padding: 0,
         },
       },
