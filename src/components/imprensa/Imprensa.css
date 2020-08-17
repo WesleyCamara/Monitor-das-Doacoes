@@ -33,7 +33,7 @@
   width: 15rem;
   height: 8rem;
   padding: 5px;
-  transition: 0.2s;
+  transition: 0.3s;
   color: #4C87B1;
   margin: 20px 10px;
 
@@ -46,9 +46,10 @@
 }
 
 .list__item:hover {
-  box-shadow: 0px 2px 2px 0px #4C87B1;
-  transform: scale(1.05);
+  box-shadow: 0px 6px 6px 0px #4C87B1;
+  margin-top: 14px;
 }
+
 
 @keyframes sobe {
   0% {opacity: 0; margin-top: 0px;}
