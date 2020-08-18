@@ -50,7 +50,6 @@ const Imprensa = ({valor}) => {
     return saidaDados.reverse();
   } 
 
-  console.log("Materia", materia["0"]);
 
   let listaObject = [];
   
@@ -90,7 +89,6 @@ const Imprensa = ({valor}) => {
         );
     }, [contador])
 
-    console.log("Lista", lista.length)
 
   return (
     <>

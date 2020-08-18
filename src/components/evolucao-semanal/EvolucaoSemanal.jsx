@@ -7,9 +7,6 @@ import "./EvolucaoSemanal.css";
 import { FormattedMessage } from "react-intl";
 
 const EvolucaoSemanal = (props) => {
-  // let seriesDoacoes = []
-  // let seriesDoadores = []
-  // let categories = []
 
   // A const possui os valores iniciais que servirão de referencia para mudar os valores para dolar
   const [idioma, setIdioma] = useState({
@@ -58,7 +55,7 @@ const EvolucaoSemanal = (props) => {
   const chartCategories = (array) => {
     const categorias = []
     array.forEach(item => {
-      const date = moment(item[1]).format('DD/MM')
+      const date = moment(item[1]).format('DD[/]MM')
       if (date !== "Invalid date") {
         categorias.push(date)
       }

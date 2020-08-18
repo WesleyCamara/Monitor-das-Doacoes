@@ -3,13 +3,12 @@ import "./App.css";
 import Menu from "./components/menu/Menu";
 import Footer from "./components/footer/Footer";
 import ChamadaInicialIndicadores from "./components/chamada-inicial-indicadores/Chamada-inicial-indicadores";
-import Blocoinfo from "./components/blocoinfo/Blocoinfo";
 import BlocoInfoDois from "./components/blocoinfodois/Blocoinfodois";
 import ListaDoadores from "./components/lista-doadores/Lista-Doadores";
 import EvolucaoSemanal from "./components/evolucao-semanal/EvolucaoSemanal"
 import DoacaoSetoresHook from "./components/doacao-setores/DoacaoSetoresHook";
 import GraficosIndicadores from "./components/graficos-indicadores/Graficos-indicadores";
-import GraficoTipoDoacao from "./components/grafico-oque/GraficoTipoDoacao"
+import TypeDonationsChart from "./components/type-donations-chart/TypeDonationsChart"
 import Ranking from "./components/ranking/ranking"
 import Imprensa from "./components/imprensa/Imprensa";
 
@@ -39,7 +38,7 @@ export default class App extends Component {
         <ChamadaInicialIndicadores valor={this.state.newData} />
         <ListaDoadores valor={this.state.newData["Doações"]} />
         <EvolucaoSemanal valor={this.state.newData} />
-        <GraficoTipoDoacao valor={this.state.newData} />
+        <TypeDonationsChart valor={this.state.newData} />
         <DoacaoSetoresHook valor={this.state.newData} />
         <GraficosIndicadores valor={this.state.newData} />
         <Ranking valor={this.state.newData} />

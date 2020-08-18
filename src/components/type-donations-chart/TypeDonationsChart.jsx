@@ -2,10 +2,10 @@ import React, { useState, useEffect } from "react";
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 
-import "./GraficoTipoDoacao.css";
+import "./TypeDonationsChart.css";
 import { FormattedMessage } from "react-intl";
 
-const GraficoTipoDoacao = (props) => {
+const TypeDonationsChart = (props) => {
   let seriesChartWhats = []
   let categoriesChartWhats = []
 
@@ -16,10 +16,10 @@ const GraficoTipoDoacao = (props) => {
   let seriesChartTo = []
 
   // A const possui os valores iniciais que servirão de referencia para mudar os valores para dolar
-  const idioma = {
+  const language = {
     categoriesChart: 0,
     percentual: 'Percentual',
-    indiceDoacoes: 2,
+    indexDonations: 2,
     localeString: "pt-BR",
   };
 
@@ -44,14 +44,14 @@ const GraficoTipoDoacao = (props) => {
 
   useEffect(() => {
     if (props.valor.status === "ok") {
-      categoriesChartWhats = chartCategories(props.valor["A"], idioma.categoriesChart)
-      seriesChartWhats = chartSeries(props.valor["A"], idioma.indiceDoacoes)
+      categoriesChartWhats = chartCategories(props.valor["A"], language.categoriesChart)
+      seriesChartWhats = chartSeries(props.valor["A"], language.indexDonations)
 
-      categoriesChartWhere = chartCategories(props.valor["B"], idioma.categoriesChart)
-      seriesChartWhere = chartSeries(props.valor["B"], idioma.indiceDoacoes)
+      categoriesChartWhere = chartCategories(props.valor["B"], language.categoriesChart)
+      seriesChartWhere = chartSeries(props.valor["B"], language.indexDonations)
 
-      categoriesChartTo = chartCategories(props.valor["C"], idioma.categoriesChart)
-      seriesChartTo = chartSeries(props.valor["C"], idioma.indiceDoacoes)
+      categoriesChartTo = chartCategories(props.valor["C"], language.categoriesChart)
+      seriesChartTo = chartSeries(props.valor["C"], language.indexDonations)
 
       updateChartsData()
     }
@@ -253,7 +253,7 @@ const GraficoTipoDoacao = (props) => {
 
     series: [
       {
-        name: idioma.percentual,
+        name: language.percentual,
         data: [],
         dataLabels: {
           inside: false,
@@ -345,7 +345,7 @@ const GraficoTipoDoacao = (props) => {
 
     series: [
       {
-        name: idioma.percentual,
+        name: language.percentual,
         data: [],
         dataLabels: {
           inside: false,
@@ -371,7 +371,7 @@ const GraficoTipoDoacao = (props) => {
         categories: categoriesChartWhats
       },
       series: [{
-        name: idioma.percentual,
+        name: language.percentual,
         data: seriesChartWhats
       }]
     })
@@ -381,7 +381,7 @@ const GraficoTipoDoacao = (props) => {
         categories: categoriesChartWhere
       },
       series: [{
-        name: idioma.percentual,
+        name: language.percentual,
         data: seriesChartWhere
       }]
     })
@@ -391,28 +391,28 @@ const GraficoTipoDoacao = (props) => {
         categories: categoriesChartTo
       },
       series: [{
-        name: idioma.percentual,
+        name: language.percentual,
         data: seriesChartTo
       }]
     })
   }
 
 
-  //   Verifica o idima do site de acordo com a URL, depois altera as informações do gráfico de acordo com o idioma
+  //   Verifica o idima do site de acordo com a URL, depois altera as informações do gráfico de acordo com o language
   // Altera os parametros quando o site estiver em ingles, os dados são buscados na URL
   const formatValue = () => {
     const url_atual = window.location.pathname;
     if (url_atual !== "/pt") {
-      idioma.categoriesChart = 3;
-      idioma.percentual = 'Percentage'
-      idioma.localeString = "en-US";
+      language.categoriesChart = 3;
+      language.percentual = 'Percentage'
+      language.localeString = "en-US";
     }
   };
 
   formatValue()
   return (
 
-    <div className="container-setores">
+    <div className="container-sectors">
 
       <div className="charts-donations">
 
@@ -442,10 +442,7 @@ const GraficoTipoDoacao = (props) => {
             <HighchartsReact highcharts={Highcharts} options={chartChartToOptions} />
           </div>
         </div>
-
       </div>
-
-
 
 
       <a className="estiloBtn"
@@ -462,4 +459,4 @@ const GraficoTipoDoacao = (props) => {
   );
 };
 
-export default GraficoTipoDoacao;
+export default TypeDonationsChart;
