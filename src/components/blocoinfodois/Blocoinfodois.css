@@ -194,11 +194,6 @@
   }
 }
 
-/* @media screen and (max-width: 375px) {
-  .container-fundo {
-    height: 1880px;
-  }
-} */
 @media screen and (max-width: 375px) {
   .container-fundo {
     height: 2100px;
