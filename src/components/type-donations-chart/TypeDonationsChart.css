@@ -15,18 +15,25 @@
 }
 
 .chart-item{
-  margin: 30px 10px;
-  width: 30vw;
+  margin: 30px 5px;
+  width: 38vw;
 }
 
 .chart-item:last-child{
   margin-bottom: 50px;
 }
 
+@media only screen and (max-width: 1368px) {
+  .chart-item{
+    margin: 30px 10px;
+    width: 30vw;
+  }
+}
+
 @media only screen and (max-width: 1024px) {
   .chart-item{
     margin: 10px 5px;
-    widows: 40vw;
+    /* widows: 40vw; */
   }
 }
 
