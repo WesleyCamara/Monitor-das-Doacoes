@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./Footer.css";
-import abcr from "../../assets/img/footer/abcr.webp";
+import abcr from "../../assets/img/footer/abcr.png";
 import promocao from "../../assets/img/footer/movimento-por-uma-cultura-de-doação.png";
 import qrcode from "../../assets/img/footer/qr-code-footer.png";
 import twitter from "../../assets/img/footer/twitter.svg";
