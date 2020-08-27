@@ -106,7 +106,7 @@ const TypeDonationsChart = (props) => {
         },
 
         style: {
-          fontSize: "0.6em",
+          fontSize: "0.9rem",
           fontFamily: "rubik, sans-serif",
           fontWeight: "400",
           width: 60,
@@ -141,6 +141,25 @@ const TypeDonationsChart = (props) => {
     },
     tooltip: {
       enable: false,
+    },
+
+    responsive: {
+      rules: [
+        {
+          condition: {
+            maxWidth: 1368,
+          },
+          chartOptions: {
+            xAxis: {
+              labels: {    
+                style: {
+                  fontSize: "0.8rem",
+                },
+              },
+            },
+          },
+        },
+      ],
     },
 
     series: [
@@ -213,7 +232,7 @@ const TypeDonationsChart = (props) => {
         },
 
         style: {
-          fontSize: "0.6em",
+          fontSize: "0.9rem",
           fontFamily: "rubik, sans-serif",
           fontWeight: "400",
           width: 60,
@@ -250,6 +269,26 @@ const TypeDonationsChart = (props) => {
     tooltip: {
       enable: false,
     },
+
+    responsive: {
+      rules: [
+        {
+          condition: {
+            maxWidth: 1368,
+          },
+          chartOptions: {
+            xAxis: {
+              labels: {    
+                style: {
+                  fontSize: "0.8rem",
+                },
+              },
+            },
+          },
+        },
+      ],
+    },
+
 
     series: [
       {
@@ -307,7 +346,7 @@ const TypeDonationsChart = (props) => {
         useHTML: true,
         rotation: 0,
         style: {
-          fontSize: "0.6em",
+          fontSize: "0.9rem",
           fontFamily: "rubik, sans-serif",
           fontWeight: "400",
           width: 60,
@@ -341,6 +380,25 @@ const TypeDonationsChart = (props) => {
     },
     tooltip: {
       enable: false,
+    },
+
+    responsive: {
+      rules: [
+        {
+          condition: {
+            maxWidth: 1368,
+          },
+          chartOptions: {
+            xAxis: {
+              labels: {    
+                style: {
+                  fontSize: "0.8rem",
+                },
+              },
+            },
+          },
+        },
+      ],
     },
 
     series: [
