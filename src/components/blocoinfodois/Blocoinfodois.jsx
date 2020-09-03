@@ -64,7 +64,7 @@ export default class BlocoInfoDois extends Component {
                 <FormattedMessage id="text5" />
                 <a
                   className="link"
-                  href="malito:abcr@captadores.org.br"
+                  href="https://docs.google.com/spreadsheets/d/1RA0oP9EBHxpsLGvHTaX2TTYHT2oQHTfNrM8Z40hqVus/edit#gid=0"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
