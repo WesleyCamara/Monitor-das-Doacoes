@@ -1,17 +1,17 @@
-import React, { Component } from "react";
-import "./Footer.css";
-import abcr from "../../assets/img/footer/abcr.png";
-import promocao from "../../assets/img/footer/movimento-por-uma-cultura-de-doação.png";
-import qrcode from "../../assets/img/footer/qr-code-footer.png";
-import twitter from "../../assets/img/footer/twitter.svg";
-import instagram from "../../assets/img/footer/instagram.svg";
-import facebook from "../../assets/img/footer/facebook.svg";
-import linkedin from "../../assets/img/footer/linkedin.svg";
-import youtube from "../../assets/img/footer/youtube.svg";
-import cocreare from "../../assets/img/footer/partner-cocreare.png";
-import fundacao from "../../assets/img/footer/partner-fundacao.svg";
-import sitawi from "../../assets/img/footer/sitawi.svg";
-import { FormattedMessage } from "react-intl";
+import React, { Component } from 'react';
+import './Footer.css';
+import abcr from '../../assets/img/footer/abcr.png';
+import promocao from '../../assets/img/footer/movimento-por-uma-cultura-de-doação.png';
+import qrcode from '../../assets/img/footer/qr-code-footer.png';
+import twitter from '../../assets/img/footer/twitter.svg';
+import instagram from '../../assets/img/footer/instagram.svg';
+import facebook from '../../assets/img/footer/facebook.svg';
+import linkedin from '../../assets/img/footer/linkedin.svg';
+import youtube from '../../assets/img/footer/youtube.svg';
+import cocreare from '../../assets/img/footer/partner-cocreare.png';
+import fundacao from '../../assets/img/footer/partner-fundacao.svg';
+import sitawi from '../../assets/img/footer/sitawi.svg';
+import { FormattedMessage } from 'react-intl';
 
 export default class Footer extends Component {
   render() {
@@ -31,25 +31,29 @@ export default class Footer extends Component {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img src={fundacao} alt="parceiro fundação jles" title="Fundação" />
+              <img
+                src={fundacao}
+                alt="parceiro fundação jles"
+                title="Fundação"
+              />
             </a>
           </div>
           <div className="partner-three">
-          <a
+            <a
               href="https://www.cocreare.com.br"
               target="_blank"
               rel="noopener noreferrer"
             >
-            <img src={cocreare} alt="parceiro cocreare" title="Cocreare" />
+              <img src={cocreare} alt="parceiro cocreare" title="Cocreare" />
             </a>
           </div>
           <div className="partner-four">
-          <a
+            <a
               href="https://www.sitawi.net/"
               target="_blank"
               rel="noopener noreferrer"
             >
-            <img src={sitawi} alt="parceiro sitawi" title="Sitawi" />
+              <img src={sitawi} alt="parceiro sitawi" title="Sitawi" />
             </a>
           </div>
         </div>
@@ -92,13 +96,14 @@ export default class Footer extends Component {
               </div>
               <div className="footer-description">
                 <p>
-                  <span className="footer-description-name">Ana Moretto</span>
+                  <span className="footer-description-name">
+                    Gabriela Cassoli
+                  </span>
                 </p>
-                <a href="mailto:anamoretto@4pressnews.com.br">
-                  <p> anamoretto@4pressnews.com.br </p>
+                <a href="mailto:falecom@captadores.org.br">
+                  <p> falecom@captadores.org.br </p>
                 </a>
-                <p> Tel: (11) 5096-0439 </p>
-                <p> Cel: (11) 97300-8584 </p>
+                <p> Tel: (11) 98331-7020 </p>
               </div>
             </div>
             <div className="footer-first-qrcode">
@@ -160,7 +165,11 @@ export default class Footer extends Component {
               >
                 <img src={facebook} alt="facebook" />
               </a>
-              <a href="https://www.linkedin.com/company/abcr/" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://www.linkedin.com/company/abcr/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <img src={linkedin} alt="linkedin" />
               </a>
               <a
